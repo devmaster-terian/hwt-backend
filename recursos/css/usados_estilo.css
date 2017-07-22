@@ -1,0 +1,552 @@
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.thumbnail{
+    max-height: 100px !important;
+}
+
+/* Removes the default 20px margin and creates some padding space for the indicators and controls */
+.carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+    left: -12px;
+}
+.carousel-control.right {
+    right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: 0;
+    margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+    background: #FFFFFF;
+}
+.carousel-indicators .active {
+    background: #19ff00;
+}
+
+.carousel-inner{
+    width: 120% !important;
+    height: 90%;
+    margin: 0 auto !important;
+    position: relative  !important;
+    left: -50px  !important;
+    border: /*Guia*/ 0 solid #ff7b00 !important;
+}
+
+.no-border{
+    border: 0;
+}
+
+.well{
+    background-color: rgba(4, 31, 48, 0.12) !important;
+    border: 0 !important;
+}
+
+.producto_resultado_imagen{
+    image-orientation: 90deg !important;
+}
+
+.producto-titulo-detalle{
+    float        : right;
+    width        : 80%;
+    text-align   : right !important;
+    font-size    : 14px  !important;
+    font-weight  : bold  !important;
+    margin-top   : 7px   !important;
+    margin-right : 10px  !important;
+    margin-left  : 3px  !important;
+    display      : inline-block !important;
+}
+.producto-titulo-cierre{
+    background-color: rgba(177, 4, 36, 0.96) !important;
+    float: left;
+    width: 24px;
+    text-align: center !important;
+    display: inline-block !important;
+    padding: 05px !important;
+    margin-left: 4px !important;
+    margin-top: 2px !important;
+    border: /*Guia*/ 0 solid #79041d;
+}
+
+div.ion-close{
+    font-size: 20px;
+    color : #ffffff;
+}
+
+.producto-titulo-ventana{
+    height: 38px !important;
+    width: 100%; !important;
+    background-color: #053f6a !important;
+    color: #FFFFFF !important;
+    margin-left: 0px !important;
+}
+
+.celda-titulo{
+    background-color: rgba(4, 31, 48, 0.12) !important;
+    text-align: center !important;
+    font-size: 130% !important;
+    padding: 10px !important;
+    font-weight    : bolder  !important;
+    width: 100%;
+}
+
+.celda-titulo{
+    background-color: rgba(4, 31, 48, 0.12) !important;
+    text-align: center !important;
+    font-size: 130% !important;
+    padding: 10px !important;
+    font-weight    : bolder  !important;
+}
+
+.celda-propiedad{
+    padding: 00px 10px 07px !important;
+    font-weight    : bolder  !important;
+}
+
+.celda-valor{
+    padding: 00px 10px 07px !important;
+    font-weight    : normal;
+}
+
+.producto-thumbs-carousel{
+    background-color: rgba(53, 74, 192, 0.79) !important;
+    width: 100%;
+    display: inline-block;
+    border: /*Guia*/ 0 solid #ff6000 !important;
+}
+
+.producto-carousel{
+    float: right;
+    width: 39%;
+    height: 90%;
+    border: /*Guia*/ 0 solid #46ff00 !important;
+}
+
+.producto-imagen-producto{
+    color         : black;
+    margin        : 00px !important;
+    display       : inline-block !important;
+    width         : 25% !important;
+    height        : 100%;
+    border        : /*Guia*/ 0 solid #ff00a1 !important;
+}
+
+.producto-imagen{
+    color         : black;
+    margin: 00px auto !important;
+    width         : 100% !important;
+    height        : 100%;
+    -webkit-box-shadow: 7px 7px 17px -1px rgba(0,0,0,0.59);
+    -moz-box-shadow: 7px 7px 17px -1px rgba(0,0,0,0.59);
+    box-shadow: 7px 7px 17px -1px rgba(0,0,0,0.59);
+    border        : /*Guia*/ 0 solid #ff6000 !important;
+}
+
+.producto-especificaciones{
+    color: black;
+    font-size: 15px;
+    font-weight: normal;
+    margin-top   : 00px !important;
+    margin-left  : 00px !important;
+    margin-bottom: 00px !important;
+    margin-right : 02px !important;
+    float: left;
+    width: 33%;
+    display: inline-block;
+    border: /*Guia*/ 0 solid #ff6000 !important;
+}
+
+.producto-informacion{
+    width   : 100%;
+    height  : 80%;
+    display : inline-block;
+    color: black;
+    background-color: white !important;;
+    border  : /*Guia*/ 0 solid #ff6000 !important;
+}
+
+.producto-precio{
+    color: black;
+    background-color    : white !important;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px !important;
+    margin-left: 10px !important;
+    margin-bottom: 10px !important;
+    margin-right: 10px !important;
+    border: /*Guia*/ 0 solid #ff6000 !important;
+}
+
+.producto-datos{
+    color: black;
+    background-color    : white !important;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right !important;
+    margin-top: 10px !important;
+    margin-left: 10px !important;
+    margin-bottom: 10px !important;
+    margin-right: 10px !important;
+    float: right;
+    width: 45%;
+    border: /*Guia*/ 0 solid #ff6000 !important;
+}
+.producto-marca-modelo{
+    color: black;
+    background-color    : white !important;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px !important;
+    margin-left: 10px !important;
+    margin-bottom: 10px !important;
+    margin-right: 10px !important;
+    float: left;
+    width: 50%;
+    border: /*Guia*/ 0 solid #ff6000 !important;
+}
+
+.producto-encabezado{
+    height: 20%;
+    background: white !important;
+    color: black !important;
+}
+
+.producto-vista{
+    background-color: white !important;
+    align-self: center !important;
+    width: 90% !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border:2px solid #054F7D;
+}
+
+@media (max-width : 768px) {
+    .slide{
+        width: 90% !important;
+        margin: 0 auto !important;
+        padding: 0 auto !important;
+        float: left !important;
+        border: /*Guia*/ 0 solid #ff003b !important;
+    }
+
+    .carousel-inner{
+        width: 120% !important;
+        margin: 0 auto !important;
+        position: relative  !important;
+        left: -50px  !important;
+        border: /*Guia*/ 0 solid #ff7b00 !important;
+    }
+
+    .item{
+        width  : 100% !important;
+        margin: 0 auto !important;
+        display: block;
+        border: /*Guia*/ 0 solid #eeff00 !important;
+    }
+
+    .img-thumb-fila{
+        width: 100% !important;
+        display: inline-block !important;
+        border: /*Guia*/ 0 solid #19ff00 !important;
+    }
+
+    .img-thumb {
+        margin-top    : 05px !important;
+        margin-left   : 05px !important;
+        margin-bottom : 05px !important;
+        margin-right  : 05px !important;
+        display: inline-block !important;
+        width  : 60% !important;
+        height : 60% !important;
+        imageQuality: 20 !important;
+        border: /*Guia*/ 0 solid #19ff00 !important;
+    }
+    .producto-vista{
+        background-color: white !important;
+        align-self: center !important;
+        width: 100% !important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: /*Guia*/ 0 solid #054F7D;
+    }
+    .producto-carousel{
+        height: 100% !important;
+        width: 100% !important;
+        display: block !important;
+        border: /*Guia*/ 0 solid #ff6000 !important;
+    }
+
+    .producto-imagen-producto{
+        color         : black;
+        margin-top    : 00px !important;
+        margin-left   : 00px !important;
+        margin-bottom : 00px !important;
+        margin-right  : 00px !important;
+
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        border: /*Guia*/ 0 solid #19ff00 !important;
+
+    }
+
+    .producto-imagen{
+        color         : black;
+        margin-top    : 00px !important;
+        margin-left   : 00px !important;
+        margin-bottom : 00px !important;
+        margin-right  : 00px !important;
+        width         : 100% !important;
+        height        : 100% !important;
+        -webkit-box-shadow: 7px 7px 17px -1px rgba(0,0,0,0.59);
+        -moz-box-shadow: 7px 7px 17px -1px rgba(0,0,0,0.59);
+        box-shadow: 7px 7px 17px -1px rgba(0,0,0,0.59);
+        border        : /*Guia*/ 0 solid #f500ff !important;
+    }
+
+    .producto-especificaciones{
+        color         : black;
+        font-size     : 15px;
+        font-weight   : normal;
+        margin-top    : 02px !important;
+        margin-left   : 00px !important;
+        margin-bottom : 02px !important;
+        margin-right  : 00px !important;
+        width         : 100%;
+        display       : block;
+        border        : /*Guia*/ 0 solid #ff6000 !important;
+    }
+
+    .producto-marca-modelo{
+        color         : black;
+        font-size     : 20px !important;
+        font-weight   : bold !important;
+        margin-top    : 02px !important;
+        margin-left   : 00px !important;
+        margin-bottom : 02px !important;
+        margin-right  : 00px !important;
+        display       : inline-block !important;;
+        width         : 100% !important;
+        border        : /*Guia*/ 0 solid #ff6000 !important;
+    }
+
+    .producto-precio{
+        color         : black;
+        background-color    : white !important;
+        font-size     : 12px !important;
+        font-weight   : bold !important;
+        margin-top    : 02px !important;
+        margin-left   : 00px !important;
+        margin-bottom : 02px !important;
+        margin-right  : 00px !important;
+        border        : /*Guia*/ 0 solid #ff6000;
+    }
+
+    .producto-datos{
+        color         : black;
+        font-size     : 15px !important;
+        font-weight   : bold;
+        text-align    : center !important;
+        margin-top    : 02px !important;
+        margin-left   : 00px !important;
+        margin-bottom : 02px !important;
+        margin-right  : 00px !important;
+        display       : inline-block !important;;
+        width         : 100% !important;;
+        border        : /*Guia*/ 0 solid #ff6000 !important;
+    }
+} /* @media */
+
+.usados_filtro_resultado{
+    width:100% !important;
+    display:inline-table;
+}
+
+.img-thumb {
+    margin-top    : 05px !important;
+    margin-left   : 05px !important;
+    margin-bottom : 05px !important;
+    margin-right  : 05px !important;
+    display       : inline-block !important;
+    width         : 27% !important;
+    height        : auto !important;
+    imageQuality  : 30 !important;
+    border        : /*Guia*/ 0 solid #eeff00;
+}
+
+.new_html_code {
+    width:25%;
+    height:350px;
+    min-width:220px;
+    min-height:350px;
+    max-width:220px;
+    max-height:350px;
+    overflow:hidden;
+    display:inline-table;
+    border:1px solid #9aa5ac;
+    background-color: #FFFFFF !important;
+    margin-top: 10px !important;
+    margin-left: 7px !important;
+    margin-bottom: 5px !important;
+    margin-right: 7px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.item-unidad{
+    height           : 100px !important;
+    width            : 100%; !important;
+    background-color : #054F7D !important;
+    color: aliceblue !important;
+    display:block !important;
+
+}
+
+.item-unidad-imagen{
+    margin-top    : 10px !important;
+    margin-left   : 04px !important;
+    margin-bottom : 00px !important;
+    margin-right  : 2px !important;
+    width         : 96% !important;
+    height        : 320px !important;
+    object-fit: scale-down; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    border        : /*Guia*/ 0 solid #ff6000 !important;
+}
+
+.img_thumb_producto{
+    max-width:100% !important;
+    display: block !important;
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+.img_thumb_producto_comun{
+    max-width:100% !important;
+    display: block !important;;
+}
+
+.item-unidad-informacion{
+    color: #000000 !important;
+    margin-top: 5px !important;
+    margin-left: 5px !important;
+    margin-bottom: 5px !important;
+    margin-right: 5px !important;
+    font-family: "Roboto";
+    font-size: small;
+    line-height: 1.0;
+}
+
+.tabla-unidad-informacion-celda{
+    border: none;
+    align-self: center;
+    color: #364b59;
+}
+
+.boton-titulo-unidad{
+    height: 48px !important;
+    width: 100%; !important;
+    padding-left: 7px !important;
+    background-color: #364b59 !important;
+    color: aliceblue !important;
+}
+
+.boton-unidad-precio{
+    height: 35px !important;
+    width: 100%; !important;
+    background-color: #ccd2d5 !important;
+    color: #041f30 !important;
+    border: none !important;
+}
+.boton-unidad-mas{
+    height: 25px !important;
+    width: 100%; !important;
+    background-color: #e5e8ea !important;
+    color: #041f30 !important;
+    border: none !important;
+    font-size: small;
+}
+
+.boton-titulo{
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 3px;
+
+    height: 30px !important;
+    width: 100%; !important;
+    background-color: #1d3544 !important;
+    color: aliceblue !important;
+    border: none !important;
+}
+
+.boton-nueva-busqueda{
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 3px;
+
+    height: 30px !important;
+    width: 95%; !important;
+    background-color: #041f30 !important;
+    color: aliceblue !important;
+    border: none !important;
+}
+
+
+.boton-envio{
+    height: 35px !important;
+    width: 100%; !important;
+    background-color: #008001 !important;
+    color: aliceblue !important;
+}
+
+.seleccion-unidad{
+    padding: 0 0 0 0 !important;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 3px;
+    height: 32px !important;
+    width: 100%; !important;
+    background-color: #ccd2d5 !important;
+    color: #041f30 !important;
+}
+
+.seleccion-unidad-mitad{
+    padding: 0 0 0 0 !important;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 3px;
+    height: 32px !important;
+    width: 100%; !important;
+    background-color: #ccd2d5 !important;
+    color: #041f30 !important;
+}
+
+.completo_div{
+    width: 100% !important;
+}
+
+.mitad_izq_div{
+    width: 50% !important;
+    float: left !important;
+}
+
+.mitad_der_div{
+    width: 50% !important;
+    float: right !important;
+}
