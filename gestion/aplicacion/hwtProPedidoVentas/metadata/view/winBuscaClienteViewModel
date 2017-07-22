@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winbuscacliente",
+        "designer|userClassName": "winBuscaClienteViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyWindowViewModel",
+    "designerId": "652b79cf-7b01-416b-884c-a58dc9c5c353"
+}

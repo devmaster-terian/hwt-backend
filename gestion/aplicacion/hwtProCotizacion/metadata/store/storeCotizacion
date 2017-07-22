@@ -1,0 +1,124 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCotizacion",
+        "model": "modCotizacion",
+        "storeId": "storeCotizacion"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "2d87dc6b-831d-4e7c-9110-b35bc8dd1924",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "restProxyCotizacion"
+            },
+            "configAlternates": {
+                "designer|displayName": "string"
+            },
+            "name": "MyRestProxy1",
+            "designerId": "433c1c43-4aa7-408f-b687-51be8ae9fd7f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "jsonReaderCotizacion"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "function",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "c1072cd8-bc96-4b23-949f-cd7dc00efc6e",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "rootProperty",
+                                "implHandler": [
+                                    "var storeCotizacion = Ext.getStore('storeCotizacion');",
+                                    "var rawData = storeCotizacion.getProxy().getReader().rawData;",
+                                    "return rawData.hwtCotizacion;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "rootProperty",
+                            "designerId": "16a3cfd4-cfd5-4836-bc91-815e82601a50"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreBeforeLoad",
+                "implHandler": [
+                    "var storeCotizacion = Ext.getStore('storeCotizacion');",
+                    "var proxyCotizacion = storeCotizacion.getProxy();",
+                    "",
+                    "var objJsonData = new Object();",
+                    "objJsonData.page  = storeCotizacion.currentPage;",
+                    "objJsonData.start = (storeCotizacion.currentPage - 1) * storeCotizacion.pageSize;",
+                    "objJsonData.limit = storeCotizacion.pageSize;",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = 'apiCotizacion';",
+                    "objJsonRequest.apiMethod     = 'listaCotizacion';",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "proxyCotizacion.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                    "proxyCotizacion.extraParams = objJsonRequest;",
+                    ""
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onStoreBeforeLoad",
+            "designerId": "7fc130b1-a56b-4708-89b2-d4776a7281a9"
+        }
+    ]
+}

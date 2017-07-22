@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modVolquetePuerta"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "modColor6",
+    "designerId": "ddd8254a-6496-436a-ac55-7e227b07dc96",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField29",
+            "designerId": "67c77648-0d07-4e36-989f-4d4679138c29"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField30",
+            "designerId": "1d8067d9-fe85-4987-a1bf-2973bcdb8394"
+        }
+    ]
+}

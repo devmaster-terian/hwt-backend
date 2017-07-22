@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modCajonTipoPiso"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "modEstadoUnidad4",
+    "designerId": "24bcba4c-7fd6-4ce0-842e-6472d9d8367e",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField29",
+            "designerId": "0aa25d2e-d662-44d0-9a1d-989c6b8382d4"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField30",
+            "designerId": "40c8a09a-2a32-4a0d-b59e-a0d535262002"
+        }
+    ]
+}

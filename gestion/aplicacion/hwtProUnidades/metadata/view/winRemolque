@@ -1,0 +1,2612 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": false,
+        "designer|userAlias": "winRemolque",
+        "designer|userClassName": "winRemolque",
+        "height": "",
+        "id": "winRemolque",
+        "itemId": "winRemolque",
+        "modal": true,
+        "title": "Remolque",
+        "width": 1000,
+        "y": 20
+    },
+    "configAlternates": {
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto",
+        "y": "number"
+    },
+    "name": "MyWindow",
+    "designerId": "fb83d39d-4806-4685-af62-da05377f2c59",
+    "viewControllerInstanceId": "e2956457-4a9a-4fdf-bab2-98b3085625ee",
+    "viewModelInstanceId": "caad590b-1261-4449-a8a8-7a0f97842abc",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyCls": [
+                    "formBackground"
+                ],
+                "bodyPadding": 10,
+                "id": "formRemolque",
+                "indicadorRemolque": "NINGUNO",
+                "itemId": "formRemolque",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyCls": "typedarray",
+                "bodyPadding": "auto",
+                "id": "string",
+                "itemId": "string",
+                "title": "string",
+                "indicadorRemolque": "string"
+            },
+            "name": "MyForm1",
+            "designerId": "45326636-a2e0-42ab-ac38-f5f3f0dc7bcd",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "indicadorRemolque",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "confirmarRegistro",
+                        "implHandler": [
+                            "if(Ext.getCmp('formRemolque').isValid()){",
+                            "    var formRegistro  = 'formRemolque';",
+                            "    var apiController = 'apiUnidadUsada';",
+                            "    var apiMethod     = 'grabaRemolque';",
+                            "",
+                            "    var objJsonRequest = new Object();",
+                            "    objJsonRequest.apiController = apiController;",
+                            "    objJsonRequest.apiMethod     = apiMethod;",
+                            "    objJsonRequest.apiData       = elf.prepareFormFields(formRegistro);",
+                            "",
+                            "    var functionSuccess = function(){",
+                            "        var jsonData = elf.getInfoDataBridge(apiMethod);",
+                            "",
+                            "        elf.showInfo(jsonData, 'information');",
+                            "",
+                            "        elf.closeWindow('winRemolque');",
+                            "    };",
+                            "",
+                            "    var functionFailure = function(){",
+                            "        var jsonData = elf.getInfoDataBridge(apiMethod);",
+                            "        elf.showInfo(jsonData, 'error', 'tfSerie');",
+                            "    };",
+                            "",
+                            "    elf.doDataBridge(objJsonRequest,",
+                            "                      functionSuccess,",
+                            "                      null,",
+                            "                      functionFailure,",
+                            "                      null);",
+                            "} //Formulario Valido",
+                            "else{",
+                            "    elf.message('error',",
+                            "                 'Formulario Incompleto',",
+                            "                 'Debe de llenar los Campos Requeridos');",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "confirmarRegistro",
+                    "designerId": "cbbf2d51-a04b-4b18-a804-0e0b3f9fede4"
+                },
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "pFuncionAdicional"
+                        ],
+                        "fn": "cargaOpciones",
+                        "implHandler": [
+                            "var arrayCombos = new Array();",
+                            "arrayCombos.push('VolqueteComposicion');",
+                            "arrayCombos.push('VolqueteFormaAlzaBalde');",
+                            "arrayCombos.push('VolqueteCubiertaCabina');",
+                            "arrayCombos.push('VolqueteSistemaCarpa');",
+                            "arrayCombos.push('VolqueteEstructuraInferior');",
+                            "arrayCombos.push('VolquetePuerta');",
+                            "arrayCombos.push('VolqueteCalefaccionBalde');",
+                            "arrayCombos.push('VolquetePinCuernoRemolque');",
+                            "arrayCombos.push('VolqueteConexionElectricidadAire');",
+                            "arrayCombos.push('CajonTipo');",
+                            "arrayCombos.push('CajonConstruccion');",
+                            "arrayCombos.push('CajonPuertaPosterior');",
+                            "arrayCombos.push('CajonLadoDerecho');",
+                            "arrayCombos.push('CajonLadoIzquierdo');",
+                            "arrayCombos.push('CajonTipoPiso');",
+                            "arrayCombos.push('CajonSistemaCarga');",
+                            "arrayCombos.push('CajonLogistica');",
+                            "arrayCombos.push('CajonInsulacion');",
+                            "arrayCombos.push('CajonPlacaAntirresbalante');",
+                            "arrayCombos.push('CajonParedesCubierta');",
+                            "arrayCombos.push('CajonTechoTraslucido');",
+                            "arrayCombos.push('CajonCapacidadMontacarga');",
+                            "arrayCombos.push('CajonSistemaDescanso');",
+                            "arrayCombos.push('CajonGuardachoquePosterior');",
+                            "arrayCombos.push('CajonDormitorio');",
+                            "arrayCombos.push('RefrigeracionMarca');",
+                            "arrayCombos.push('RefrigeracionTipo');",
+                            "arrayCombos.push('RefrigeracionSistemaElectrico');",
+                            "arrayCombos.forEach(Ext.getCmp('formAplicacion').cargaCombo);",
+                            "",
+                            "if(pFuncionAdicional){",
+                            "    pFuncionAdicional();",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "cargaOpciones",
+                    "designerId": "a77b6653-2a9f-4124-9467-4c22eb8a4e6d"
+                },
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "hojaEspecificacionesRemolque",
+                        "implHandler": [
+                            "var apiController = 'apiUnidadUsada';",
+                            "var apiMethod     = 'generaHojaEspecificacionesRemolque';",
+                            "var objJsonData   = new Object();",
+                            "objJsonData.vin   = elf.readElement('tfVinPrincipal');",
+                            "",
+                            "var objJsonRequest = new Object();",
+                            "objJsonRequest.apiController = apiController;",
+                            "objJsonRequest.apiMethod     = apiMethod;",
+                            "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                            "",
+                            "var functionSuccess = function(){",
+                            "    var jsonData = elf.getInfoDataBridge('generaHojaEspecificacionesRemolque');",
+                            "",
+                            "    console.warn(jsonData);",
+                            "",
+                            "    var archivoGenerado = elf.getGeneratedFile(jsonData.archivoGenerado.nombre);",
+                            "    window.open(archivoGenerado);",
+                            "};",
+                            "",
+                            "var functionFailure = function(){",
+                            "    var jsonData = elf.getInfoDataBridge('generaHojaEspecificacionesRemolque');",
+                            "    elf.showInfo(jsonData,'error');",
+                            "};",
+                            "",
+                            "",
+                            "elf.doDataBridge(objJsonRequest,",
+                            "                 functionSuccess,",
+                            "                 null,",
+                            "                 functionFailure,",
+                            "                 null);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "hojaEspecificacionesRemolque",
+                    "designerId": "c0670648-51d5-467a-b993-d12f33dc3199"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetRemolqueUnidadPrincipal",
+                        "itemId": "fieldsetRemolqueUnidadPrincipal",
+                        "layout": "column",
+                        "title": "<b>Unidad Principal</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet15",
+                    "designerId": "5b4a13c7-8f6a-46e4-bf0c-25d5aca18737",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Vin",
+                                "id": "tfVinPrincipal",
+                                "itemId": "tfVinPrincipal",
+                                "layout|columnWidth": 0.32,
+                                "margin": "0 0 5 10"
+                            },
+                            "configAlternates": {
+                                "disabled": "boolean",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField71",
+                            "designerId": "4876240e-3b94-4c64-933b-b739f22c6ece",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTfVinPrincipalFocus",
+                                        "implHandler": [
+                                            "elf.disableElement('tfVinPrincipal');"
+                                        ],
+                                        "name": "focus",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onTfVinPrincipalFocus",
+                                    "designerId": "3e57c3f0-ab4c-47fd-8ff5-88838a39d820"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "id": "tabPanelRemolque",
+                        "itemId": "tabPanelRemolque"
+                    },
+                    "configAlternates": {
+                        "activeTab": "auto",
+                        "id": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyTabPanel2",
+                    "designerId": "bc50b594-21fd-4b27-8fad-cf514fcbb073",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "id": "tabCarroceriaVolquete",
+                                "itemId": "tabCarroceriaVolquete",
+                                "title": "Carrocería Volquete"
+                            },
+                            "configAlternates": {
+                                "bodyCls": "typedarray",
+                                "id": "string",
+                                "itemId": "string",
+                                "title": "string"
+                            },
+                            "name": "MyPanel9",
+                            "designerId": "12d5ec38-cc67-44d3-b2ab-71948db3ae73",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "tabConfigCarroceriaVolquete",
+                                        "itemId": "tabConfigCarroceriaVolquete"
+                                    },
+                                    "configAlternates": {
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "TabConfig7",
+                                    "designerId": "dc372f4b-3d08-4f3e-b4fc-118c7adbfe31"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Incluir Volquete",
+                                        "fieldLabel": null,
+                                        "id": "indIncluirVolquete",
+                                        "itemId": "indIncluirVolquete"
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyCheckbox",
+                                    "designerId": "a64bfae1-57f5-4dd6-bacc-dffdd5bb4011",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onIndIncluirVolqueteChange",
+                                                "implHandler": [
+                                                    "if(newValue){",
+                                                    "    elf.showElement('fieldsetRemolqueVolquete');",
+                                                    "    elf.enableElement('fieldsetRemolqueVolquete');",
+                                                    "}",
+                                                    "else{",
+                                                    "    elf.disableElement('fieldsetRemolqueVolquete');",
+                                                    "    elf.hideElement('fieldsetRemolqueVolquete');",
+                                                    "}",
+                                                    ""
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onIndIncluirVolqueteChange",
+                                            "designerId": "fd70046c-aa0f-4b0c-a544-69d3ef71994b"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "checkboxToggle": null,
+                                        "height": 315,
+                                        "hidden": true,
+                                        "id": "fieldsetRemolqueVolquete",
+                                        "itemId": "fieldsetRemolqueVolquete",
+                                        "layout": "column",
+                                        "title": "<b>Información</b>"
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string",
+                                        "checkboxToggle": "boolean",
+                                        "hidden": "boolean"
+                                    },
+                                    "name": "MyFieldSet29",
+                                    "designerId": "8defc24e-6c3d-4d31-af28-1de1ec34ab7c",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Marca",
+                                                "id": "tfVolqueteMarca",
+                                                "itemId": "tfVolqueteMarca",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField3",
+                                            "designerId": "5ae5f615-6ca3-4798-bfc7-1824149a0d08"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Año",
+                                                "id": "tfVolqueteAnn",
+                                                "itemId": "tfVolqueteAnn",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField7",
+                                            "designerId": "83b58267-60e7-414e-ba0f-040803623b7f"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Composición",
+                                                "id": "cbxVolqueteComposicion",
+                                                "itemId": "cbxVolqueteComposicion",
+                                                "labelAlign": null,
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeVolqueteComposicion",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelAlign": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox55",
+                                            "designerId": "aef1453f-039d-43fa-8d60-7e93aba1a905"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Largo",
+                                                "id": "tfVolqueteLargo",
+                                                "itemId": "tfVolqueteLargo",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField18",
+                                            "designerId": "3ec5772c-ac41-4987-9a74-726e7558a20c"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Capacidad (Yardas)",
+                                                "id": "tfVolqueteCapacidad",
+                                                "itemId": "tfVolqueteCapacidad",
+                                                "labelAlign": null,
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelAlign": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField19",
+                                            "designerId": "f2fb345e-3b19-402c-8bef-bfeecf7b3b9c"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Alto",
+                                                "id": "tfVolqueteAlto",
+                                                "itemId": "tfVolqueteAlto",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField22",
+                                            "designerId": "b98d2f07-a085-40d5-8b77-6ba81091fa1a"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Alto Panel Lateral",
+                                                "id": "tfVolqueteAltoPanelesLaterales",
+                                                "itemId": "tfVolqueteAltoPanelesLaterales",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField30",
+                                            "designerId": "4be35f69-d806-4bc6-9215-72d1ada1c543"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Alza de Valde",
+                                                "id": "cbxVolqueteFormaAlzaBalde",
+                                                "itemId": "cbxVolqueteFormaAlzaBalde",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeVolqueteFormaAlzaBalde",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox56",
+                                            "designerId": "889caf7c-13ef-4c2b-9d07-d2d3aace1c7d"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Cubierta Cabina",
+                                                "id": "cbxVolqueteCubiertaCabina",
+                                                "itemId": "cbxVolqueteCubiertaCabina",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeVolqueteCubiertaCabina",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox57",
+                                            "designerId": "0e4b528f-d5a3-44c2-b8c9-c7044e002add"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Sistema Carpa",
+                                                "id": "cbxVolqueteSistemaCarpa",
+                                                "itemId": "cbxVolqueteSistemaCarpa",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeVolqueteSistemaCarpa",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox58",
+                                            "designerId": "f38b0056-c284-499e-adfb-d8ac2bb510b6"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Estructura Inferior",
+                                                "id": "cbxVolqueteEstructuraInferior",
+                                                "itemId": "cbxVolqueteEstructuraInferior",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeVolqueteEstructuraInferior",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox59",
+                                            "designerId": "df4b1e69-2bf7-4a4b-9306-e9720bee02b2"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Num. Panel Puerta",
+                                                "id": "tfVolqueteNumPanelesPuerta",
+                                                "itemId": "tfVolqueteNumPanelesPuerta",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField36",
+                                            "designerId": "aa03e89b-748c-45c2-bba5-039fc1019c50"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Rampa Regado",
+                                                "id": "tfVolqueteRampaRegado",
+                                                "itemId": "tfVolqueteRampaRegado",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField37",
+                                            "designerId": "c299b0d9-4dc0-43d3-acb2-ffbc1b07bbb3"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Puerta",
+                                                "id": "cbxVolquetePuerta",
+                                                "itemId": "cbxVolquetePuerta",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeVolquetePuerta",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox60",
+                                            "designerId": "20e06dc3-1063-41f8-9b15-91705b916fa2"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Calefacción Balde",
+                                                "id": "cbxVolqueteCalefaccionBalde",
+                                                "itemId": "cbxVolqueteCalefaccionBalde",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeVolqueteCalefaccionBalde",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox61",
+                                            "designerId": "ca52c7e0-3a8b-4aad-9179-a41f9c38a998"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Cuerno Remolque",
+                                                "id": "cbxVolquetePinCuernoRemolque",
+                                                "itemId": "cbxVolquetePinCuernoRemolque",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeVolquetePinCuernoRemolque",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox62",
+                                            "designerId": "aacea518-d711-4667-a4ad-67268b608c96"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Electricidad y Aire",
+                                                "id": "cbxVolqueteConexionElectricidadAire",
+                                                "itemId": "cbxVolqueteConexionElectricidadAire",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.3,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeVolqueteConexionElectricidadAire",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox63",
+                                            "designerId": "0427e9fa-3939-4668-9f17-993b44690ca2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "id": "tabCarroceriaCajon",
+                                "itemId": "tabCarroceriaCajon",
+                                "title": "Carrocería Cajón"
+                            },
+                            "configAlternates": {
+                                "bodyCls": "typedarray",
+                                "id": "string",
+                                "itemId": "string",
+                                "title": "string"
+                            },
+                            "name": "MyPanel10",
+                            "designerId": "46b83d66-f9ef-4e52-b410-ff30ceb83e71",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "tabConfigCarroceriaCajon",
+                                        "itemId": "tabConfigCarroceriaCajon"
+                                    },
+                                    "configAlternates": {
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "TabConfig8",
+                                    "designerId": "97c4b578-f12c-49a7-bfdb-6426e2dc5bb0"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Incluir Cajón",
+                                        "fieldLabel": null,
+                                        "id": "indIncluirCajon",
+                                        "itemId": "indIncluirCajon"
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyCheckbox1",
+                                    "designerId": "24d5941d-08f2-4f5e-82f3-2f3b494b24f9",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onIndIncluirCajonChange",
+                                                "implHandler": [
+                                                    "if(newValue){",
+                                                    "    elf.enableElement('fieldsetRemolqueCajon');",
+                                                    "    elf.showElement('fieldsetRemolqueCajon');",
+                                                    "}",
+                                                    "else{",
+                                                    "    elf.disableElement('fieldsetRemolqueCajon');",
+                                                    "    elf.hideElement('fieldsetRemolqueCajon');",
+                                                    "}"
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onIndIncluirCajonChange",
+                                            "designerId": "4b52e60f-eeeb-4caa-a868-ccdac1d96978"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "disabledCls": "disabledField",
+                                        "height": 315,
+                                        "hidden": true,
+                                        "id": "fieldsetRemolqueCajon",
+                                        "itemId": "fieldsetRemolqueCajon",
+                                        "layout": "column",
+                                        "title": "<b>Información</b>"
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string",
+                                        "disabled": "boolean",
+                                        "disabledCls": "string",
+                                        "hidden": "boolean"
+                                    },
+                                    "name": "MyFieldSet30",
+                                    "designerId": "a2fdda7e-f607-416a-a45d-d12b3f279d5b",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Modelo",
+                                                "id": "tfCajonModelo",
+                                                "itemId": "tfCajonModelo",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField8",
+                                            "designerId": "086f8665-b733-4991-9b7b-81a23cafe73a"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Año",
+                                                "id": "tfCajonAnn",
+                                                "itemId": "tfCajonAnn",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField31",
+                                            "designerId": "a54606c9-57ec-4049-9779-08f21f2c1f76"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Peso Máx. (GVW)",
+                                                "id": "tfCajonPesoMaximo",
+                                                "itemId": "tfCajonPesoMaximo",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField32",
+                                            "designerId": "4d66cb90-5a10-4b24-85f7-9558c6b88b53"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Tipo",
+                                                "id": "cbxCajonTipo",
+                                                "itemId": "cbxCajonTipo",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonTipo",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox64",
+                                            "designerId": "cf09e6a6-dcc7-456e-8f00-9e0a3ca2a819"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Construcción",
+                                                "id": "cbxCajonConstruccion",
+                                                "itemId": "cbxCajonConstruccion",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonConstruccion",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox65",
+                                            "designerId": "a123b09a-30b9-4538-849c-dcfab4997db9"
+                                        },
+                                        {
+                                            "type": "Ext.resizer.Splitter",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "height": 0,
+                                                "id": "splitterRemolqueCajon1",
+                                                "itemId": "splitterRemolqueCajon1",
+                                                "layout|columnWidth": 1
+                                            },
+                                            "configAlternates": {
+                                                "height": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto"
+                                            },
+                                            "name": "MySplitter4",
+                                            "designerId": "880062b9-9195-49e7-92a8-18157bf45559"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Largo (DI)",
+                                                "id": "tfCajonLargo",
+                                                "itemId": "tfCajonLargo",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField38",
+                                            "designerId": "508b32dd-6af0-47c0-8838-d391a4132eda"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Ancho (DI)",
+                                                "id": "tfCajonAncho",
+                                                "itemId": "tfCajonAncho",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField39",
+                                            "designerId": "ecdd2892-e6d4-4a04-a091-03bc97d3f65a"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Alto (DI)",
+                                                "id": "tfCajonAlto",
+                                                "itemId": "tfCajonAlto",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField40",
+                                            "designerId": "d114dd70-d288-46ba-8787-dec210bc0b99"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Puerta Posterior",
+                                                "id": "cbxCajonPuertaPosterior",
+                                                "itemId": "cbxCajonPuertaPosterior",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "store": "storeCajonPuertaPosterior",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox66",
+                                            "designerId": "3560c304-ab0c-4b0d-99f4-8150ce29e63f"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Lado Derecho",
+                                                "id": "cbxCajonLadoDerecho",
+                                                "itemId": "cbxCajonLadoDerecho",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonLadoDerecho",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox67",
+                                            "designerId": "d09b4cbb-1a4c-4b2a-8853-b4f1583fc293"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Lado Izquierdo",
+                                                "id": "cbxCajonLadoIzquierdo",
+                                                "itemId": "cbxCajonLadoIzquierdo",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonLadoIzquierdo",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox68",
+                                            "designerId": "9b2c42ed-0596-4c50-ac06-ee4d9b88d8eb"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Tipo de Piso",
+                                                "id": "cbxCajonTipoPiso",
+                                                "itemId": "cbxCajonTipoPiso",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonTipoPiso",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox69",
+                                            "designerId": "66a3dea7-a906-442d-85fe-7703e87d10e3"
+                                        },
+                                        {
+                                            "type": "Ext.resizer.Splitter",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "height": 0,
+                                                "id": "splitterRemolqueCajon2",
+                                                "itemId": "splitterRemolqueCajon2",
+                                                "layout|columnWidth": 1
+                                            },
+                                            "configAlternates": {
+                                                "height": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto"
+                                            },
+                                            "name": "MySplitter5",
+                                            "designerId": "48e83600-4dd7-4c36-adaf-d5fcdbcef719"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Sist. Levanta Carga",
+                                                "id": "cbxCajonSistemaCarga",
+                                                "itemId": "cbxCajonSistemaCarga",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonSistemaCarga",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox70",
+                                            "designerId": "1edf2847-5d13-46f1-8d65-512a2845ca75"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Sist. Carga Capac.",
+                                                "id": "tfCajonSistemaCargaCapacidad",
+                                                "itemId": "tfCajonSistemaCargaCapacidad",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField49",
+                                            "designerId": "e2e4abc9-9617-4d16-aa02-c2cc8818f6d4"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Logística",
+                                                "id": "cbxCajonLogistica",
+                                                "itemId": "cbxCajonLogistica",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonLogistica",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox71",
+                                            "designerId": "60f01e12-6fcf-4678-bb9f-0a9c8edc2a38"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Insulación",
+                                                "id": "cbxCajonInsulacion",
+                                                "itemId": "cbxCajonInsulacion",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonInsulacion",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox72",
+                                            "designerId": "8bbe2215-ae4a-445f-bf7a-a36bfb76f1bf"
+                                        },
+                                        {
+                                            "type": "Ext.resizer.Splitter",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "height": 0,
+                                                "id": "splitterRemolqueCajon3",
+                                                "itemId": "splitterRemolqueCajon3",
+                                                "layout|columnWidth": 1
+                                            },
+                                            "configAlternates": {
+                                                "height": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto"
+                                            },
+                                            "name": "MySplitter6",
+                                            "designerId": "41a71b70-7fc6-482b-bb21-48316f410316"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Placa Antirresbale",
+                                                "id": "cbxCajonPlacaAntirresbalante",
+                                                "itemId": "cbxCajonPlacaAntirresbalante",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonPlacaAntirresbalante",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox73",
+                                            "designerId": "8c637576-7a9f-4d14-a319-8a4944b56954"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Paredes Cubiertas",
+                                                "id": "cbxCajonParedesCubierta",
+                                                "itemId": "cbxCajonParedesCubierta",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeModeloMotor",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox74",
+                                            "designerId": "cdc1d7be-35de-4a90-b23d-2304911666d9"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Techo Translúcido",
+                                                "id": "cbxCajonTechoTraslucido",
+                                                "itemId": "cbxCajonTechoTraslucido",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonTechoTraslucido",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox75",
+                                            "designerId": "088a53da-fcaa-4ddc-bc11-b1dd0ec69369"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Capac. Montacarga",
+                                                "id": "cbxCajonCapacidadMontacarga",
+                                                "itemId": "cbxCajonCapacidadMontacarga",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonCapacidadMontacarga",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "labelWidth": "number",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox78",
+                                            "designerId": "e6f29006-a94b-437c-b3c9-ded48c0c3b3a"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Sistema Descanso",
+                                                "id": "cbxCajonSistemaDescanso",
+                                                "itemId": "cbxCajonSistemaDescanso",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonSistemaDescanso",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox77",
+                                            "designerId": "1bf5bed3-dc6f-46ca-a34f-483ba1cb3df0"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Guardachoque Post.",
+                                                "id": "cbxCajonGuardachoquePosterior",
+                                                "itemId": "cbxCajonGuardachoquePosterior",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonGuardachoquePosterior",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox79",
+                                            "designerId": "ee52eab3-9db5-4e78-a4c0-cfc1ebef6fba"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Dormitorio Cajón",
+                                                "id": "cbxCajonDormitorio",
+                                                "itemId": "cbxCajonDormitorio",
+                                                "labelWidth": 115,
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeCajonDormitorio",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "labelWidth": "number",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox80",
+                                            "designerId": "8dbc096d-146e-4da5-8fb6-ed49f145a8fa"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "id": "tabCarroceriaRefrigeracion",
+                                "itemId": "tabCarroceriaRefrigeracion",
+                                "title": "Unidad Refrigeración"
+                            },
+                            "configAlternates": {
+                                "bodyCls": "typedarray",
+                                "id": "string",
+                                "itemId": "string",
+                                "title": "string"
+                            },
+                            "name": "MyPanel11",
+                            "designerId": "9d0804c3-13cb-4c5f-8f44-6ec660f6f093",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "tabConfigCarroceriaRefrigeracion",
+                                        "itemId": "tabConfigCarroceriaRefrigeracion"
+                                    },
+                                    "configAlternates": {
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "TabConfig9",
+                                    "designerId": "31f5fe0d-7376-4e74-86bb-ad95bedde25d"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Incluir Refrigeración",
+                                        "fieldLabel": null,
+                                        "id": "indIncluirRefrigeracion",
+                                        "itemId": "indIncluirRefrigeracion"
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "itemId": "string"
+                                    },
+                                    "name": "MyCheckbox2",
+                                    "designerId": "b3f259fc-0426-4280-a463-bdaff3e858c7",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onIndIncluirRefrigeracionChange",
+                                                "implHandler": [
+                                                    "if(newValue){",
+                                                    "    elf.enableElement('fieldsetRemolqueRefrigeracion');",
+                                                    "    elf.showElement('fieldsetRemolqueRefrigeracion');",
+                                                    "}",
+                                                    "else{",
+                                                    "    //elf.disableElement('fieldsetRemolqueRefrigeracion');",
+                                                    "    elf.hideElement('fieldsetRemolqueRefrigeracion');",
+                                                    "}"
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onIndIncluirRefrigeracionChange",
+                                            "designerId": "a6a46581-5996-4e59-8630-9eddafc04543"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 315,
+                                        "hidden": true,
+                                        "id": "fieldsetRemolqueRefrigeracion",
+                                        "itemId": "fieldsetRemolqueRefrigeracion",
+                                        "layout": "column",
+                                        "title": "<b>Información</b>"
+                                    },
+                                    "configAlternates": {
+                                        "height": "auto",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string",
+                                        "hidden": "boolean"
+                                    },
+                                    "name": "MyFieldSet31",
+                                    "designerId": "f39b01d5-8471-4028-bbfd-0a6f969fe7dd",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Marca",
+                                                "id": "cbxRefrigeracionMarca",
+                                                "itemId": "cbxRefrigeracionMarca",
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeRefrigeracionMarca",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox81",
+                                            "designerId": "94d410a9-5113-4a84-8d6f-ba8c39393894"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Modelo",
+                                                "id": "tfRefrigeracionModelo",
+                                                "itemId": "tfRefrigeracionModelo",
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField73",
+                                            "designerId": "4fd0d964-8202-4263-8b8a-5054d0859d4f"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Horas",
+                                                "id": "tfRefrigeracionHoras",
+                                                "itemId": "tfRefrigeracionHoras",
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField75",
+                                            "designerId": "59f48f04-3223-4c83-9ee8-a7d383495819"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Año",
+                                                "id": "tfRefrigeracionAnn",
+                                                "itemId": "tfRefrigeracionAnn",
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyTextField76",
+                                            "designerId": "7ccb9c68-36df-430a-8a36-1d247780e723"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Tipo",
+                                                "id": "cbxRefrigeracionTipo",
+                                                "itemId": "cbxRefrigeracionTipo",
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeRefrigeracionTipo",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox83",
+                                            "designerId": "9fe99f54-c4cf-4b77-867d-fe6b9e869383"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Sistema Eléctrico",
+                                                "id": "cbxRefrigeracionSistemaElectrico",
+                                                "itemId": "cbxRefrigeracionSistemaElectrico",
+                                                "layout|columnWidth": 0.33,
+                                                "margin": "0 0 5 10",
+                                                "queryMode": "local",
+                                                "store": "storeRefrigeracionSistemaElectrico",
+                                                "valueField": "descripcion"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield",
+                                                "disabledCls": "string"
+                                            },
+                                            "name": "MyComboBox84",
+                                            "designerId": "0d0eb49e-e2f1-4160-982d-913a254529dd"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetRemolqueObservaciones",
+                        "itemId": "fieldsetRemolqueObservaciones",
+                        "title": "<b>Observaciones</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet32",
+                    "designerId": "1e4e4e89-a318-404a-a549-872382ec351d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "id": "tfObservaciones",
+                                "itemId": "tfObservaciones",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|anchor": "string"
+                            },
+                            "name": "MyTextArea",
+                            "designerId": "1544ce67-dd6b-4f93-bf93-c3e8766ed1f8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "id": "toolbarWinRemolque",
+                "itemId": "toolbarWinRemolque"
+            },
+            "configAlternates": {
+                "dock": "string",
+                "id": "string",
+                "itemId": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "a1d807d8-be46-4deb-91e3-0dfa0cb7027e",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnConfirmarRemolque",
+                        "iconCls": "fa fa-check-square icon16 iconColorGreen",
+                        "id": "btnConfirmarRemolque",
+                        "itemId": "btnConfirmarRemolque",
+                        "layout|flex": null,
+                        "text": "Confirmar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "width": "auto",
+                        "iconCls": "string",
+                        "textAlign": "string",
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "d27deb46-23ef-47c5-a2cb-6020c667920e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnbtnConfirmarRemolqueClick",
+                                "implHandler": [
+                                    "Ext.getCmp('formRemolque').confirmarRegistro();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnbtnConfirmarRemolqueClick",
+                            "designerId": "85b6d4d0-4ee3-484d-829e-999f5479e4b1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill",
+                    "designerId": "ad75999f-d7dc-425e-8a5e-1a0a031dbd8a"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnRemolqueEspecificaciones",
+                        "iconCls": "fa fa-file-text icon16 iconColorGreen",
+                        "id": "btnRemolqueEspecificaciones",
+                        "itemId": "btnRemolqueEspecificaciones",
+                        "layout|flex": null,
+                        "text": "Especificaciones",
+                        "textAlign": "left",
+                        "width": 140
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "width": "auto",
+                        "iconCls": "string",
+                        "textAlign": "string",
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "66b57801-8ad7-4a88-baa7-bd0c29a4ff4a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnRemolqueEspecificaciones",
+                                "implHandler": [
+                                    "Ext.getCmp('formRemolque').hojaEspecificacionesRemolque();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnRemolqueEspecificaciones",
+                            "designerId": "b9963411-772b-4140-b5a3-7eeaf3d3b71e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "cls": null,
+                        "componentCls": null,
+                        "designer|displayName": "btnCerrarRemolque",
+                        "disabledCls": null,
+                        "focusCls": null,
+                        "iconCls": "fa fa-window-close icon16 iconColorRed",
+                        "id": "btnCerrarRemolque",
+                        "itemId": "btnCerrarRemolque",
+                        "layout|flex": null,
+                        "overCls": null,
+                        "text": "Cerrar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "width": "auto",
+                        "baseCls": "string",
+                        "cls": "string",
+                        "componentCls": "string",
+                        "disabledCls": "string",
+                        "focusCls": "string",
+                        "iconCls": "string",
+                        "overCls": "string",
+                        "textAlign": "string",
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "07cbc0ad-ca55-444c-a776-1b3e8f57568e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnCerrarRemolqueClick",
+                                "implHandler": [
+                                    "elf.closeWindow('winRemolque');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnCerrarRemolqueClick",
+                            "designerId": "c09fc5ab-8fea-4e85-b573-9d2959bbcaee"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

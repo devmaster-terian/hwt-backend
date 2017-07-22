@@ -1,0 +1,42 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "name": "hwtAcceso",
+        "views": [
+            "formAcceso"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "elf.defaultDataApp();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "launch",
+            "designerId": "b51f77f0-e6a5-46c2-93d2-cae320109b07"
+        }
+    ]
+}

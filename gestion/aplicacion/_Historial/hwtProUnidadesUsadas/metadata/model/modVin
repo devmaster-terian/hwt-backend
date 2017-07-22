@@ -1,0 +1,34 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modVin"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyModel",
+    "designerId": "d6949fee-1d99-4cdc-a35a-83a1841121d6",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "numeroVin"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField39",
+            "designerId": "1f677647-f911-49a4-bdee-bfbdb312c248"
+        }
+    ]
+}

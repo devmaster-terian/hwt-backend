@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modDistanciaEjes"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "modColor5",
+    "designerId": "6fe402e5-b41b-4891-b44f-c90a7bfde168",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField29",
+            "designerId": "b4300672-1ba9-47ef-a93e-d508313ac05a"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField30",
+            "designerId": "c81ad790-b579-4172-a254-fa58a4e4e52a"
+        }
+    ]
+}

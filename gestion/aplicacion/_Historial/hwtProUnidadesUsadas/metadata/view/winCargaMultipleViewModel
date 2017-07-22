@@ -1,0 +1,49 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wincargamultiple",
+        "designer|userClassName": "winCargaMultipleViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "01da5767-7395-439f-82c2-eb273fc03309",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "modArchivoCarga",
+                "name": "modArchivoCargas"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "modArchivoCargas",
+            "designerId": "19f3fd54-52d0-49d3-b8b9-9ba688b0f3cc",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Memory",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyMemoryProxy",
+                    "designerId": "f7620188-eb97-442a-ab09-ac337e65f77b"
+                }
+            ]
+        }
+    ]
+}

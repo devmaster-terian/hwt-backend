@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCajonPuertaPosterior",
+        "model": "modCajonPuertaPosterior",
+        "storeId": "storeCajonPuertaPosterior"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor12",
+    "designerId": "02e66dfd-df9d-4c79-883b-aee6068364c3"
+}

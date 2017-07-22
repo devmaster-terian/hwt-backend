@@ -1,0 +1,17 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wincotizacionunidad",
+        "designer|userClassName": "winCotizacionUnidadViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "83f6b621-fd3b-495d-86a9-1ebf323fbbf5"
+}

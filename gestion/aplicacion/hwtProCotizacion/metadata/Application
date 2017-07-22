@@ -1,0 +1,97 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "modCotizacion",
+            "modCotizacionUnidad",
+            "modBuscaCliente",
+            "modelFiltroMarca",
+            "modelFiltroModelo",
+            "modelBuscaVin"
+        ],
+        "name": "hwtProCotizacion",
+        "stores": [
+            "storeCotizacion",
+            "storeCotizacionUnidad",
+            "storeBuscaCliente",
+            "storeFiltroMarca",
+            "storeFiltroModelo",
+            "storeBuscaVin"
+        ],
+        "views": [
+            "formAplicacion",
+            "winCotizacionUnidad",
+            "winBuscaCliente",
+            "winBuscaVin"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray",
+        "models": "typedarray",
+        "stores": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "elf.defaultDataApp();",
+                    "",
+                    "appLocal = this.getApplication();",
+                    "Ext.EventManager.onWindowResize(function(w, h){",
+                    "    appLocal.ajustarVentana();",
+                    "});",
+                    "",
+                    "appLocal.ajustarVentana();",
+                    "Ext.getCmp('formAplicacion').extraeOpcionesUnidad();",
+                    "",
+                    "elf.refreshGrid('gridCotizacion');",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "launch",
+            "designerId": "b51f77f0-e6a5-46c2-93d2-cae320109b07"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ajustarVentana",
+                "implHandler": [
+                    "elf.renderInterface(",
+                    "    'formAplicacion',",
+                    "    'gridCotizacion',",
+                    "    58);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "ajustarVentana",
+            "designerId": "dc07c58e-fb5a-4d04-ab2b-4520aad65084"
+        }
+    ]
+}

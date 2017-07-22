@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCopeteDeflector",
+        "model": "modCopeteDeflector",
+        "storeId": "storeCopeteDeflector"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor15",
+    "designerId": "c7aa3c3d-7faf-436f-99ad-4cea788cd117"
+}

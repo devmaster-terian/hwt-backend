@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeMarca",
+        "model": "modMarca",
+        "storeId": "storeMarca"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeEstadoUnidad3",
+    "designerId": "c303f63c-507b-43dd-afe3-65926cc534c5"
+}

@@ -1,0 +1,17 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winbuscaunidadusada",
+        "designer|userClassName": "winBuscaUnidadUsadaViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "d7928cf4-2944-4da6-944e-dd5f1676c942"
+}

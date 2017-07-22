@@ -1,0 +1,17 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winpedidoventa",
+        "designer|userClassName": "winPedidoVentaViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "534bd693-85ec-4e50-bca3-e3008ffea769"
+}

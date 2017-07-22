@@ -1,0 +1,79 @@
+{
+    "name": "hwtProOportunidadVenta",
+    "settings": {
+        "cmd": {},
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost/",
+        "exportPath": "",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Medium",
+                "builtIn": true,
+                "height": 768,
+                "width": 1024
+            }
+        }
+    },
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "95ee7afd-84f0-400c-b062-d9a1dbc32b71",
+            "1674dbfe-a753-405c-8f5a-2eeb9998276a",
+            "414f9793-6243-4d58-ae6f-fd8e88eff76e",
+            "b4f2a612-78e3-40f0-8917-e897ff2b5929",
+            "d41b64ad-07b4-4328-b64d-5042f3494f3f",
+            "e7a73f26-aeb8-4c5f-861e-2033e44eb3eb"
+        ],
+        "store": [
+            "ab7984ae-2e18-484f-ba8f-fed11cf4975f",
+            "693498d2-6e26-48a7-8c7b-bca2b6b27c96",
+            "3d610efd-7a57-4e2c-89e9-171d818c532a",
+            "8a7fa1a1-67ca-4fbc-8f2f-3cefd6b65eb4",
+            "aa0413da-a044-406a-bb4f-4a1caf918313",
+            "5710eb9f-5c31-46e8-aba5-f111e1b56a1a",
+            "f5277d4e-db13-48f1-b5d4-a25ea44c9b43",
+            "a042cba4-0552-4ee9-bf33-bbbcca536d06",
+            "8d17bb3b-cd53-4efa-81b5-bf0bf54f18e5",
+            "f03580f0-82b7-44e2-a40c-01959af3fe4e",
+            "a04c9172-0633-405f-a878-d3e3cd0fa616",
+            "3e48c64b-3a9e-4466-8e49-d08c88463fd5"
+        ],
+        "controller": [],
+        "model": [
+            "303e5c19-03ce-45a1-ae94-21aa71953006",
+            "b0ff2850-03cb-4c6b-bdd0-095cfa7ebb6d",
+            "0f4c92c5-742c-4017-b35d-c0fcf380db4e",
+            "0392caab-392d-42a7-b592-577371b220d9",
+            "8d141e3e-7c28-43e4-8ccd-9548f8c99b77",
+            "af3df3f3-415f-4d97-a3c9-4e003c094059",
+            "94000536-517a-4541-87a8-697cbb8e12f9",
+            "ff369049-f719-4d59-96ba-ca79acc79caa",
+            "3d26ab86-6446-4be2-aa2b-c1f1e07fdcf3",
+            "7f276d7b-32a0-43ec-9fe0-f38dbd9b7147",
+            "975540ab-4e72-4917-8f3d-fe53aca9d3d8",
+            "df3baf34-1f01-4279-b3a0-410d8be721a9"
+        ],
+        "resource": [
+            "74d82992-1ba7-4dc2-a877-d37915010199",
+            "bb60d1cb-bdec-46ed-8aa7-b6c1aa62d202",
+            "7316009e-ad2a-48b1-8850-e227b7714f06",
+            "42d405a7-03a5-4ac3-bdd5-781ad1783990",
+            "0081f1d5-2aa5-4a36-a9e0-cff45a201ea6",
+            "7216ada7-a592-4451-baf9-ff5ace8f9cd4"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

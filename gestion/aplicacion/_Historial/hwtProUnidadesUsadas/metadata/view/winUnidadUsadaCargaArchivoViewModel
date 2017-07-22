@@ -1,0 +1,17 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winunidadusadacargaarchivo",
+        "designer|userClassName": "winUnidadUsadaCargaArchivoViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "9071b807-6a24-4158-93c2-a1593619ce90"
+}

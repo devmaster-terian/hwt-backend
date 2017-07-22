@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storePotenciaMotor",
+        "model": "modColor",
+        "storeId": "storePotenciaMotor"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor3",
+    "designerId": "70ea72b7-0a4c-4b62-b83f-cda5b72a0344"
+}

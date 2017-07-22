@@ -1,0 +1,228 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>[$tituloHTML]</title>
+	<style type="text/css">
+
+	p.corto {
+    	line-height: 1.0;
+	}
+
+	.celdaTituloTabla{
+		font-family: Segoe UI Semibold, Arial, Helvetica;
+		font-size: 12px;
+		color: #FFFFFF !important;
+		background-color: #143157;
+		border-top-right-radius: 5px;    
+    	border-bottom-right-radius: 5px; 
+    	padding-top: 3px;
+    	padding-right: 3px;
+    	padding-bottom: 3px;
+    	padding-left: 3px;
+    	margin-top: 3px;
+    	margin-right: 3px;
+    	margin-bottom: 3px;
+    	margin-left: 3px;
+	}
+
+	.celdaTabla{
+		font-family: Segoe UI Semibold, Arial, Helvetica;
+		font-size: 12px;
+		border-top:1px solid #143157;
+		border-top-right-radius: 15px;    
+    	border-bottom-right-radius: 15px; 
+    	margin-top: 3px;
+    	margin-right: 3px;
+    	margin-bottom: 3px;
+    	margin-left: 3px;    	
+	}
+
+	.celdaTablaNumero{
+		font-family: Segoe UI Semibold, Arial, Helvetica;
+		font-size: 12px;
+		border-top:1px solid #143157;
+		border-top-right-radius: 15px;    
+    	border-bottom-right-radius: 15px; 
+    	margin-top: 3px;
+    	margin-right: 3px;
+    	margin-bottom: 3px;
+    	margin-left: 3px;    	
+    	text-align: right;
+	}	
+	.celdaDatosCorreo{
+		border-top:1px solid #143157;
+		background-color: #143157;
+		border-top-right-radius: 15px;    
+    	border-bottom-right-radius: 15px; 
+    	margin-top: 3px;
+    	margin-right: 3px;
+    	margin-bottom: 3px;
+    	margin-left: 3px;    	
+	}
+	.tituloEmpresa{
+		font-family: Segoe UI Semibold, Arial, Helvetica;
+		font-size: 16px;
+		font-weight: 350;
+		color: #C3DFEC;
+		padding-left: 15px;
+	}
+	.tituloCorreo{
+		font-family: Segoe UI Semibold, Arial, Helvetica;
+		font-size: 18px;
+		font-weight: 550;
+		color: #FFFFFF;
+		padding-right: 15px;
+	}
+	.remitente{
+		font-family: Segoe UI, Arial, Helvetica;
+		font-size: 12px;
+		color: #FFFFFF;
+		padding-right: 15px;
+	}
+	.fechaHora{
+		font-family: Segoe UI, Arial, Helvetica;
+		font-size: 10px;
+		color: #FFFFFF;
+		padding-right: 15px;
+		padding-bottom: 5px;
+	}
+	.celdaCuerpoHTML{
+		font-size: 12px;
+		vertical-align: top;  
+		text-align: left;
+		padding: 15px;
+		height: 270px;
+    	margin-top: 3px;
+    	margin-right: 3px;
+    	margin-bottom: 3px;
+    	margin-left: 3px;		
+	}
+	.cuerpoHTML{
+		font-family: Segoe UI, Arial, Helvetica;
+		font-size: 15px;
+	}	
+
+	.celdaLogotipo{
+		min-width: 100px;
+		display: none;
+    	margin-top: 3px;
+    	margin-right: 3px;
+    	margin-bottom: 3px;
+    	margin-left: 3px;		
+	}
+
+	.contenedor{
+		max-width: 100px;
+		max-height: 100px;
+	}
+
+	.contenedor img{
+		width: 100%;
+		height: auto;
+	}
+
+	.notasAdicionales{
+		background-color:  #0573B8;
+		font-family: Segoe UI, Arial, Helvetica;
+		font-size: 13px;
+		color: #FFFFFF;
+		text-align: center;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		border-top-right-radius: 10px;    
+    	border-top-left-radius: 10px; 
+	}
+
+	.piePagina{
+		background-color: #001C32;
+		font-family: Segoe UI, Arial, Helvetica;
+		font-size: 11px;
+		color: #C3DFEC;
+		text-align: center;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		border-bottom-right-radius: 10px;    
+    	border-bottom-left-radius: 10px; 
+	}	
+
+	.tabla{
+		min-width:320px;
+		max-width:900px;
+		width:100%;
+		height:100%;
+		border-collapse:collapse;
+		border:none;
+	}
+
+	.tablaTotales{
+		min-width:160px;
+		max-width:450px;
+		width: 100%;
+		height:100%;
+		border-collapse:collapse;
+		border:none;
+		margin-right: 0px !important;
+		margin-left: auto !important;	 	
+	}
+
+	.filaMitad{
+		width: 300px !important;
+	}
+
+	@media (min-width: 350px){
+		.celdaLogotipo{
+			display: inline;
+		}
+	}
+
+	</style>
+</head>
+<body>
+	<table >
+		<tr rowspan="2">
+			<td  class="celdaLogotipo">
+				<div class="contenedor">
+					<img src="[$logotipo]">
+				</div>
+			</td>
+
+			<td width="85%" class="celdaDatosCorreo">
+				<div align="left" class="tituloEmpresa">
+					[$empresa]
+				</div>
+				<div align="right" class="tituloCorreo">
+					[$tituloCorreo]
+				</div>		
+				<div align="right" class="remitente">
+					[$remitente]
+				</div>		
+				<div align="right" class="fechaHora">
+					[$fechaHora]
+				</div>		
+			</td>
+		</tr>
+		<tr >
+			<td colspan="2" height="300px" class="celdaCuerpoHTML">
+				<div class="cuerpoHTML">
+				[$cuerpoHTML]
+
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" max-height="80px" class="notasAdicionales">
+				<div class="notasAdicionales">
+				[$notasAdicionales]
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" max-height="40px" class="piePagina">
+				<div class="piePagina">
+				[$piePagina]
+			</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

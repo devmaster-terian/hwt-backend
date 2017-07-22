@@ -1,0 +1,73 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "modelOportunidadVenta",
+            "modelCodigoGerenteRegional",
+            "modelCodigoVendedor",
+            "modelCodigoConsecionario",
+            "modelTipoSolicitante",
+            "modelTipoEmpresa",
+            "modelMarca",
+            "modelModelo",
+            "modelSolicitudPais",
+            "modelSolicitudEstado",
+            "modelSolicitudMunicipio",
+            "modelSolicitudCiudad"
+        ],
+        "name": "hwtProOportunidadVenta",
+        "stores": [
+            "storeOportunidadVenta",
+            "storeCodigoGerenteRegional",
+            "storeCodigoVendedor",
+            "storeCodigoConsecionario",
+            "storeTipoSolicitante",
+            "storeTipoEmpresa",
+            "storeMarca",
+            "storeModelo",
+            "storePais",
+            "storeEstado",
+            "storeCiudad",
+            "storeMunicipio"
+        ],
+        "views": [
+            "formAplicacion",
+            "winOportunidadVenta"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray",
+        "models": "typedarray",
+        "stores": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "elf.defaultDataApp();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "launch",
+            "designerId": "b51f77f0-e6a5-46c2-93d2-cae320109b07"
+        }
+    ]
+}

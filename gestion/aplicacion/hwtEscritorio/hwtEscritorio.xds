@@ -1,0 +1,59 @@
+{
+    "name": "hwtEscritorio",
+    "settings": {
+        "cmd": {
+            "license": "",
+            "cmdVersion": "",
+            "frameworkVersion": ""
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost/workplace/",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "projectHasEnabledWebServer": true,
+        "lockUrlPrefix": true,
+        "installStatus": "Not Installed",
+        "urlPrefixTemplate": "http://localhost:{port}/{path}"
+    },
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "b2211294-cf51-4972-b132-d451e20778fc",
+            "5ec3312b-0fc0-4c13-9660-aa4d8c3ccd86",
+            "9aa4ed4c-53e6-4312-83a1-20133c3d3917"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "d3cbc22d-5dc7-4314-a5c6-51bfe23ba9e7",
+            "2cb09ecf-835a-4083-b8a2-3525b796ce26",
+            "25627977-1df1-46a1-8400-f04a79f26d12",
+            "a1701513-f092-4059-9e8c-6c3e763f915e",
+            "57003838-c1cd-4e2e-8177-e2ed27d63d9b",
+            "1e6c4aa5-39a0-459d-a40d-2867d64926be",
+            "5645def3-1f97-4c7c-9b89-f8b2b2aedbad",
+            "e7f3be7d-0315-4a05-926e-5d8cc28f9ffb"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

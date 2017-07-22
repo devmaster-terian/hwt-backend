@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modTanque3Capacidad"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "modTanque2Capacidad1",
+    "designerId": "6c6e2f1b-f2b1-4ffe-8063-4df6d468b6f0",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField29",
+            "designerId": "4d4f5349-27f4-428d-ad42-c91b352a0574"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField30",
+            "designerId": "181a80a2-ca6f-4020-b87b-bcd2155a0d70"
+        }
+    ]
+}

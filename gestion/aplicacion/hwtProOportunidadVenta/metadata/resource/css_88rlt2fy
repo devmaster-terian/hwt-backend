@@ -1,0 +1,20 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_88rlt2fy",
+        "id": "pixieDesign",
+        "url": "../../recurso/estilo/pixieDesign.css"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "id": "string",
+        "url": "uri"
+    },
+    "name": "css1",
+    "designerId": "bb60d1cb-bdec-46ed-8aa7-b6c1aa62d202"
+}

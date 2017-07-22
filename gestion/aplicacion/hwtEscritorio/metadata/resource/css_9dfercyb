@@ -1,0 +1,20 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_9dfercyb",
+        "id": "hwtPersonalizacion",
+        "url": "../../recurso/estilo/hwt_personalizado.css"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "id": "string",
+        "url": "uri"
+    },
+    "name": "css1",
+    "designerId": "57003838-c1cd-4e2e-8177-e2ed27d63d9b"
+}

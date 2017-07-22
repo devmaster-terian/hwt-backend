@@ -1,0 +1,24 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defer": false,
+        "designer|userClassName": "js_x9qul8yv",
+        "id": "elf",
+        "url": "../../recurso/complemento/elf.js",
+        "x-compile": true
+    },
+    "configAlternates": {
+        "defer": "boolean",
+        "designer|userClassName": "string",
+        "id": "string",
+        "url": "uri",
+        "x-compile": "boolean"
+    },
+    "name": "js",
+    "designerId": "42d405a7-03a5-4ac3-bdd5-781ad1783990"
+}

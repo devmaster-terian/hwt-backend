@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winbuscavin",
+        "designer|userClassName": "winBuscaVinViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyWindowViewController",
+    "designerId": "3af7db5a-c1e0-459f-99dc-9da35937f933"
+}

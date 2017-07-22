@@ -1,0 +1,101 @@
+{
+    "name": "hwtProPedidoVentas",
+    "settings": {
+        "cmd": {},
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost/",
+        "exportPath": "",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        }
+    },
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "95ee7afd-84f0-400c-b062-d9a1dbc32b71",
+            "1674dbfe-a753-405c-8f5a-2eeb9998276a",
+            "414f9793-6243-4d58-ae6f-fd8e88eff76e",
+            "13500438-890d-44d8-8199-c9b1de3b349f",
+            "1e184d0e-3365-4992-8f9e-d16f45e337e1",
+            "534bd693-85ec-4e50-bca3-e3008ffea769",
+            "652b79cf-7b01-416b-884c-a58dc9c5c353",
+            "491ce837-c346-4000-bdea-0c37a0b78511",
+            "419e6bbf-28f4-4bca-81da-21832abd4a5e",
+            "a4ea12d3-feb9-41f3-9dd0-9dedb65820ed",
+            "3af7db5a-c1e0-459f-99dc-9da35937f933",
+            "08da1ecd-f49c-4086-8631-713265f319b9",
+            "57f19c36-5f69-4c83-9983-16db6be3238c",
+            "a4556adb-07dd-4a92-a7aa-4cbb53857ca9",
+            "b7385cee-e70e-40aa-99ff-0c990f6c9a51",
+            "f7d657eb-32df-45aa-91d9-d9476dfa728b",
+            "f1da6691-14ed-4d4e-894a-8aa99bbfee24",
+            "33c16cd3-52c2-406f-9609-5c62345b4e50"
+        ],
+        "store": [
+            "9791c5f3-d738-4081-baca-e95e033a4c22",
+            "70fc34ce-226c-4732-9f9e-27c567c4b3de",
+            "63af0b3f-07b1-45e7-9eb1-aa0a92777cc4",
+            "9451910c-ceba-4ace-a564-503cdc59bab9",
+            "ad527aa0-b1e4-4736-88da-3ecd321e275a",
+            "9ddf938c-467d-4090-85bc-304f9ccb9edf",
+            "9741ab13-7d2a-4520-a95b-bd4acbb936f6",
+            "0825f7ca-24e8-46b6-9a4a-7ccfe9ca3964",
+            "d53079be-2d4c-4d21-9458-07e0f1a27b1f",
+            "7c30f255-89ea-4999-b340-8169e9139ae0",
+            "8a62ea8a-28b6-4ba3-a9c4-3322c6b1e057",
+            "933af95b-9431-488c-8759-e903ab05482f",
+            "7266ff7c-ed95-4362-84ea-4ab2e6845dfd",
+            "878b31cf-3585-4edc-a9bb-6ed38436e6bd",
+            "02631e64-0a68-4a96-af6d-c279b6595bcf",
+            "f6f004c1-dd53-4e9c-b958-a5c0453627af",
+            "9774b119-397c-4ed0-9e4b-3061c28972b2"
+        ],
+        "controller": [],
+        "model": [
+            "3b9ca3bd-b7e9-40a4-838c-29ec5012ce65",
+            "68fab48f-745f-4ec7-91c0-d212afb29b6c",
+            "36b5e719-7a5d-471c-82ea-221c1149a231",
+            "fa3c35c8-362d-4f59-abbb-12354befd234",
+            "04d10ca4-43b2-43ef-a0e0-72f8b4ba5466",
+            "29aeef49-79b8-4886-82e6-447915b96079",
+            "66fd5d28-9417-4360-bd84-b1c74442c9c7",
+            "789623a9-dbd8-4996-ac74-56ab6b7d720d",
+            "cc596a11-e3cf-4a38-9756-d0f295018c5e",
+            "d2f8c812-c0c7-4b5b-91c6-2b80fe1b554e",
+            "489f2e36-bcbd-41ff-af05-403f1ecf1a09",
+            "b37ba479-e746-43ef-9920-e5dace373b3d",
+            "569dba1b-0a15-4b4a-b773-6efe54174c1e",
+            "b3603e1b-37ec-4eaf-af8d-a74caf4e9baa",
+            "6d92b238-c1ca-4bc0-a301-04aa9d5902cc",
+            "6e02a9dc-df70-4197-885b-14f26472a385",
+            "76670393-b53a-4241-bdb1-79a88de880ba"
+        ],
+        "resource": [
+            "74d82992-1ba7-4dc2-a877-d37915010199",
+            "bb60d1cb-bdec-46ed-8aa7-b6c1aa62d202",
+            "7316009e-ad2a-48b1-8850-e227b7714f06",
+            "42d405a7-03a5-4ac3-bdd5-781ad1783990",
+            "0081f1d5-2aa5-4a36-a9e0-cff45a201ea6",
+            "7216ada7-a592-4451-baf9-ff5ace8f9cd4"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

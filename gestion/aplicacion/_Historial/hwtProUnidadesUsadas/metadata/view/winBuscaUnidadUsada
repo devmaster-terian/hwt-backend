@@ -1,0 +1,254 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": false,
+        "designer|userAlias": "winBuscaUnidadUsada",
+        "designer|userClassName": "winBuscaUnidadUsada",
+        "height": null,
+        "id": "winBuscaUnidadUsada",
+        "itemId": "winBuscaUnidadUsada",
+        "modal": true,
+        "title": "Buscar Unidad Usada",
+        "width": 400
+    },
+    "configAlternates": {
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "736dfee8-a7ea-48f4-a8d5-356780a1da1a",
+    "viewControllerInstanceId": "d7928cf4-2944-4da6-944e-dd5f1676c942",
+    "viewModelInstanceId": "4a7f91cc-71b6-4654-9322-62e535573a20",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "toolbarBackground"
+                ],
+                "designer|displayName": "toolbarBuscaUnidadUsada",
+                "dock": "bottom"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "dock": "string",
+                "cls": "typedarray"
+            },
+            "name": "MyToolbar2",
+            "designerId": "8939ed3e-db5f-44a3-8d8b-b2706458c887",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnConfirmaBuscaUnidadUsada",
+                        "iconCls": "fa fa-check-square icon16 iconColorGreen",
+                        "id": "btnConfirmaBuscaUnidadUsada",
+                        "itemId": "btnConfirmaBuscaUnidadUsada",
+                        "layout|flex": null,
+                        "text": "Confirmar",
+                        "textAlign": "left",
+                        "width": 135
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton10",
+                    "designerId": "722fd6a6-af0e-4124-9137-e9c8131111e9",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnConfirmaUnidadUsadaClick",
+                                "implHandler": [
+                                    "var btnBuscarRegistro = Ext.getCmp('btnBuscarRegistro');",
+                                    "",
+                                    "btnBuscarRegistro.modoBusqueda = true;",
+                                    "btnBuscarRegistro.formatoBoton();",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnConfirmaUnidadUsadaClick",
+                            "designerId": "d13a2508-7633-4355-9cba-d8be518d4243"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": null,
+                        "id": null,
+                        "itemId": null,
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill2",
+                    "designerId": "6b6290ea-01cd-4afe-98ab-5db28c966a5f"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnCerrarBuscaUnidadUsada",
+                        "iconCls": "fa fa-window-close icon16 iconColorRed",
+                        "id": "btnCerrarBuscaUnidadUsada",
+                        "itemId": "btnCerrarBuscaUnidadUsada",
+                        "layout|flex": null,
+                        "text": "Cerrar",
+                        "textAlign": "left",
+                        "width": 135
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton11",
+                    "designerId": "33c6c865-2c9a-4c73-8225-19143711ff0f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnCerrarBuscaUnidadUsadaClick",
+                                "implHandler": [
+                                    "elf.closeWindow('winBuscaUnidadUsada');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnCerrarBuscaUnidadUsadaClick",
+                            "designerId": "0fb89e0a-e875-4afc-8ad3-a43b4fa2812a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyCls": [
+                    "formBackground"
+                ],
+                "bodyPadding": 10,
+                "designer|displayName": "formBuscaUnidadUsada",
+                "id": "formBuscaUnidadUsada",
+                "itemId": "formBuscaUnidadUsada",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyCls": "typedarray",
+                "bodyPadding": "auto",
+                "designer|displayName": "string",
+                "id": "string",
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "MyForm1",
+            "designerId": "aa173943-35a4-4b45-aa60-1e9c09065f9a",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tfBuscaCodigoUnidad",
+                        "fieldLabel": "Código de Unidad",
+                        "id": "tfBuscaCodigoUnidad",
+                        "itemId": "tfBuscaCodigoUnidad",
+                        "labelWidth": 120,
+                        "width": 220
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "labelWidth": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField66",
+                    "designerId": "a4a27607-e822-4e23-afb1-6d3b637c740a"
+                }
+            ]
+        }
+    ]
+}

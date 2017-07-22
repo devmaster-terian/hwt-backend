@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCabinaColorInterior",
+        "model": "modCabinaColorInterior",
+        "storeId": "storeCabinaColorInterior"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor25",
+    "designerId": "2a15fab0-2a24-489c-87a0-472a44673d26"
+}

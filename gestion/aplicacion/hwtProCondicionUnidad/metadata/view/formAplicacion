@@ -1,0 +1,1173 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyCls": [
+            "formBackground"
+        ],
+        "bodyPadding": 10,
+        "designer|initialView": true,
+        "designer|userAlias": "formAplicacion",
+        "designer|userClassName": "formAplicacion",
+        "height": null,
+        "id": "formAplicacion",
+        "itemId": "formAplicacion",
+        "title": null,
+        "width": null
+    },
+    "configAlternates": {
+        "bodyCls": "typedarray",
+        "bodyPadding": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto",
+        "designer|initialView": "boolean"
+    },
+    "name": "MyForm",
+    "designerId": "95ee7afd-84f0-400c-b062-d9a1dbc32b71",
+    "viewControllerInstanceId": "414f9793-6243-4d58-ae6f-fd8e88eff76e",
+    "viewModelInstanceId": "1674dbfe-a753-405c-8f5a-2eeb9998276a",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "extraeOpcionesCondicion",
+                "implHandler": [
+                    "var apiController = 'apiCondicionUnidad';",
+                    "var apiMethod     = 'datosOpcionesCondicion';",
+                    "var objJsonData = new Object();",
+                    "objJsonData.codigoUnidad    = Ext.getCmp('formAplicacion').codigoUnidad;",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = apiController;",
+                    "objJsonRequest.apiMethod     = apiMethod;",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "var functionSuccess = function(){",
+                    "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                    "",
+                    "    /*Ext.getCmp('formAplicacion').filtrosDefecto();*/",
+                    "",
+                    "    elf.refreshGrid('gridReporteCondicion');",
+                    "};",
+                    "",
+                    "var functionFailure = function(){",
+                    "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                    "    console.warn('datosOpcionesCondicion:');",
+                    "    console.warn(jsonData);",
+                    "};",
+                    "",
+                    "elf.doDataBridge(objJsonRequest,",
+                    "                 functionSuccess,",
+                    "                 null,",
+                    "                 functionFailure,",
+                    "                 null);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "extraeOpcionesCondicion",
+            "designerId": "71b73c3c-8bef-4cd8-b89a-ca8345decd00"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "extraeOpcionesUnidad",
+                "implHandler": [
+                    "var apiController = 'apiUnidadUsada';",
+                    "var apiMethod     = 'datosOpciones';",
+                    "var objJsonData = new Object();",
+                    "objJsonData.codigoUnidad    = Ext.getCmp('formAplicacion').codigoUnidad;",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = apiController;",
+                    "objJsonRequest.apiMethod     = apiMethod;",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "var functionSuccess = function(){",
+                    "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                    "",
+                    "    Ext.getCmp('formAplicacion').filtrosDefecto();",
+                    "    elf.refreshGrid('gridUnidadUsada');",
+                    "",
+                    "};",
+                    "",
+                    "var functionFailure = function(){",
+                    "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                    "    console.warn('datosOpciones:');",
+                    "    console.warn(jsonData);",
+                    "};",
+                    "",
+                    "elf.doDataBridge(objJsonRequest,",
+                    "                 functionSuccess,",
+                    "                 null,",
+                    "                 functionFailure,",
+                    "                 null);",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "extraeOpcionesUnidad",
+            "designerId": "5f4346e0-2c2d-4e82-b393-1f2a1cf4acef"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "element",
+                    "index",
+                    "array"
+                ],
+                "fn": "cargaCombo",
+                "implHandler": [
+                    "var jsonData = elf.getInfoDataBridge('datosOpciones');",
+                    "var idCombo    = 'cbx' + element;",
+                    "var listaCombo = 'opciones' + element;",
+                    "",
+                    "if(Ext.getCmp(idCombo) !== undefined){",
+                    "    elf.setComboBox(idCombo,",
+                    "                    jsonData,",
+                    "                    listaCombo,",
+                    "                    'descripcion',",
+                    "                    'descripcion');",
+                    "}",
+                    "else{",
+                    "    console.warn('cargaOpciones: - No se encontro el ComboBox: ' + idCombo);",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "cargaCombo",
+            "designerId": "a385c86c-aa35-4046-bcea-949b52bfb79b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "element",
+                    "index",
+                    "array"
+                ],
+                "fn": "cargaComboComplejo",
+                "implHandler": [
+                    "var jsonData = elf.getInfoDataBridge('datosOpcionesCondicion');",
+                    "var idCombo    = 'cbx' + element;",
+                    "var listaCombo = 'opciones' + element;",
+                    "",
+                    "console.info(jsonData);",
+                    "",
+                    "if(Ext.getCmp(idCombo) !== undefined){",
+                    "    elf.setComboBox(idCombo,",
+                    "                    jsonData,",
+                    "                    listaCombo,",
+                    "                    'codigo',",
+                    "                    'descripcion');",
+                    "}",
+                    "else{",
+                    "    console.warn('cargaOpciones: - No se encontro el ComboBox: ' + idCombo);",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "cargaComboComplejo",
+            "designerId": "6c5af6bf-42a9-4e77-8f80-9817557e33ae"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "pEstado"
+                ],
+                "fn": "presentaRegistro",
+                "implHandler": [
+                    "var reporteCondicion = Ext.getCmp('gridReporteCondicion').recordActivo;",
+                    "",
+                    "console.warn(reporteCondicion);",
+                    "",
+                    "var apiController = 'apiCondicionUnidad';",
+                    "var apiMethod     = 'datosReporteCondicion';",
+                    "var objJsonData   = new Object();",
+                    "objJsonData.numReporte = reporteCondicion.num_reporte;",
+                    "",
+                    "var objJsonRequest           = new Object();",
+                    "objJsonRequest.apiController = apiController;",
+                    "objJsonRequest.apiMethod     = apiMethod;",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "var functionSuccess = function(){",
+                    "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                    "",
+                    "    var pModo = '';",
+                    "    if(pEstado === 'editar'){",
+                    "        pModo = 'edit';",
+                    "    }",
+                    "",
+                    "    elf.openWindow('winReporteCondicion');",
+                    "    var arrayCombos = new Array();",
+                    "    arrayCombos.push('OpcionSeccion');",
+                    "    arrayCombos.forEach(Ext.getCmp('formAplicacion').cargaComboComplejo);",
+                    "",
+                    "    var jsonData = elf.getInfoDataBridge('datosReporteCondicion');",
+                    "    elf.showRecord(jsonData,'hwtReporteCondicion',pModo);",
+                    "    elf.refreshGrid('gridReporteCondicionLinea');",
+                    "    ",
+                    "    var obj = Ext.getCmp('tfPrecioTotalEstimado');",
+                    "    console.warn('tfPrecioTotalEstimado');",
+                    "    console.warn(obj);",
+                    "};",
+                    "",
+                    "var functionFailure = function(){",
+                    "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                    "    elf.showInfo(jsonData,",
+                    "                 'error');",
+                    "};",
+                    "",
+                    "elf.doDataBridge(objJsonRequest,",
+                    "                 functionSuccess,",
+                    "                 null,",
+                    "                 functionFailure,",
+                    "                 null);"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "presentaRegistro",
+            "designerId": "f9502ffe-adee-4c31-8560-cb4439248dfc"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "eliminaCondicionUnidad",
+                "implHandler": [
+                    "var recordReporteCondicion = Ext.getCmp('gridReporteCondicion').recordActivo;",
+                    "",
+                    "if(recordReporteCondicion === undefined){",
+                    "    msgTipo      = 'error';",
+                    "    msgTitulo    = 'Eliminar Condiciones de la Unidad (Registro)';",
+                    "    msgContenido = 'Debe seleccionar un registro válido para realizar ésta operación';",
+                    "    elf.message(msgTipo,msgTitulo,msgContenido);",
+                    "    return;",
+                    "}",
+                    "",
+                    "var msgFuncion = function(){",
+                    "    var recordReporteCondicion = Ext.getCmp('gridReporteCondicion').recordActivo;",
+                    "",
+                    "    var apiController = 'apiCondicionUnidad';",
+                    "    var apiMethod     = 'eliminaCondicionUnidad';",
+                    "    var objJsonData   = new Object();",
+                    "    objJsonData.rowidCondicionUnidad    = recordReporteCondicion.rowid;",
+                    "",
+                    "    var objJsonRequest = new Object();",
+                    "    objJsonRequest.apiController = apiController;",
+                    "    objJsonRequest.apiMethod     = apiMethod;",
+                    "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "    var functionSuccess = function(){",
+                    "        var jsonData = elf.getInfoDataBridge('eliminaCondicionUnidad');",
+                    "        elf.showInfo(jsonData,'information');",
+                    "        elf.refreshGrid('gridReporteCondicion');",
+                    "    };",
+                    "",
+                    "    var functionFailure = function(){",
+                    "        var jsonData = elf.getInfoDataBridge('eliminaCondicionUnidad');",
+                    "",
+                    "        elf.showInfo(jsonData,'error');",
+                    "    };",
+                    "",
+                    "",
+                    "    elf.doDataBridge(objJsonRequest,",
+                    "                     functionSuccess,",
+                    "                     null,",
+                    "                     functionFailure,",
+                    "                     null);",
+                    "",
+                    "};",
+                    "",
+                    "console.warn('recordReporteCondicion');",
+                    "console.warn(recordReporteCondicion);",
+                    "",
+                    "msgTipo      = 'question';",
+                    "msgTitulo    = 'Eliminar Condiciones de la Unidad (Registro)';",
+                    "msgContenido = 'Desea eliminar el registro de Condiciónes de la Unidad: ' + recordReporteCondicion.vin + '?';",
+                    "",
+                    "elf.message(msgTipo,msgTitulo,msgContenido,msgFuncion);",
+                    "",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "eliminaCondicionUnidad",
+            "designerId": "4d15f3aa-2e5b-4a40-9b95-7923183c1536"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "reporteCondicionUnidad",
+                "implHandler": [
+                    "var recordReporteCondicion = Ext.getCmp('gridReporteCondicion').recordActivo;",
+                    "",
+                    "if(recordReporteCondicion === undefined){",
+                    "    msgTipo      = 'error';",
+                    "    msgTitulo    = 'Reporte de Condiciones de la Unidad (Registro)';",
+                    "    msgContenido = 'Debe seleccionar un registro válido para realizar ésta operación';",
+                    "    elf.message(msgTipo,msgTitulo,msgContenido);",
+                    "    return;",
+                    "}",
+                    "",
+                    "var apiController = 'apiCondicionUnidad';",
+                    "var apiMethod     = 'reporteCondicionUnidad';",
+                    "var objJsonData   = new Object();",
+                    "objJsonData.rowidCondicionUnidad = recordReporteCondicion.rowid;",
+                    "objJsonData.vinUnidad            = recordReporteCondicion.vin;",
+                    "objJsonData.numReporte           = recordReporteCondicion.num_reporte;",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = apiController;",
+                    "objJsonRequest.apiMethod     = apiMethod;",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "var functionSuccess = function(){",
+                    "    var jsonData = elf.getInfoDataBridge('reporteCondicionUnidad');",
+                    "    var archivoGenerado = elf.getGeneratedFile(jsonData.archivoGenerado.nombre);",
+                    "    window.open(archivoGenerado);",
+                    "};",
+                    "",
+                    "var functionFailure = function(){",
+                    "    var jsonData = elf.getInfoDataBridge('reporteCondicionUnidad');",
+                    "",
+                    "    elf.showInfo(jsonData,'error');",
+                    "};",
+                    "",
+                    "",
+                    "elf.doDataBridge(objJsonRequest,",
+                    "                 functionSuccess,",
+                    "                 null,",
+                    "                 functionFailure,",
+                    "                 null);",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "reporteCondicionUnidad",
+            "designerId": "818b8840-97eb-4eda-a987-25fc07c6f366"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "toolbarBackground"
+                ],
+                "designer|displayName": "toolbarPrincipal",
+                "dock": "top",
+                "id": "toolbarPrincipal",
+                "itemId": "toolbarPrincipal"
+            },
+            "configAlternates": {
+                "cls": "typedarray",
+                "dock": "string",
+                "designer|displayName": "string",
+                "id": "string",
+                "itemId": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "1247afd3-14ad-486b-8558-8f32efffd335",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnVisualizar",
+                        "iconCls": "fa fa-eye icon16 iconColorDarkBlue",
+                        "id": "btnVisualizar",
+                        "itemId": "btnVisualizar",
+                        "layout|flex": null,
+                        "text": "Visualizar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton",
+                    "designerId": "cacc3e5b-d503-44a9-9114-359963f232c3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClickVisualizar",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClickVisualizar",
+                            "designerId": "2d648ad3-eb96-4311-89ce-f75f34b231a1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnBuscar",
+                        "iconCls": "fa fa-search icon16 iconColorDarkBlue",
+                        "id": "btnBuscar",
+                        "itemId": "btnBuscar",
+                        "layout|flex": null,
+                        "text": "Buscar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "56b9f8cd-03a5-4617-b036-a179cfcea091",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClickBuscar",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClickBuscar",
+                            "designerId": "ef05fff7-5aad-4139-9b21-dcc6d9b25768"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "separatorToolbarA",
+                        "layout|flex": null,
+                        "width": 50
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "layout|flex": "number",
+                        "width": "auto"
+                    },
+                    "name": "MySeparator",
+                    "designerId": "2f320896-fde2-4a40-91c9-d7b0cdc3ec58"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnCrear",
+                        "iconCls": "fa fa-plus-square icon16 iconColorGreen",
+                        "id": "btnCrear",
+                        "itemId": "btnCrear",
+                        "layout|flex": null,
+                        "text": "Crear",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "71da30fb-10a1-4078-a715-05f877ce963f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClickCrear",
+                                "implHandler": [
+                                    "elf.openWindow('winReporteCondicion');",
+                                    "var arrayCombos = new Array();",
+                                    "arrayCombos.push('OpcionSeccion');",
+                                    "arrayCombos.forEach(Ext.getCmp('formAplicacion').cargaComboComplejo);",
+                                    "console.warn(elf.getSessionData('user_id'));",
+                                    "elf.writeElement('tfUsuario',elf.getSessionData('user_id'));",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onButtonClickCrear",
+                            "designerId": "cbbfdc56-a323-4544-b382-c856bc9224f5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnActualizar",
+                        "iconCls": "fa fa-pencil-square icon16 iconColorGreen",
+                        "id": "btnActualizar",
+                        "itemId": "btnActualizar",
+                        "layout|flex": null,
+                        "text": "Actualizar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "14dac54d-d3e5-4909-a59d-c3100b656cd2",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClickActualizar",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClickActualizar",
+                            "designerId": "7b65d251-b95d-4080-8d5e-3b2d95833092"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "separatorToolbarA",
+                        "layout|flex": null,
+                        "width": 50
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "layout|flex": "number",
+                        "width": "auto"
+                    },
+                    "name": "MySeparator1",
+                    "designerId": "097489d6-7e1e-4c47-a6ed-f116a9316638"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnEliminar",
+                        "iconCls": "fa fa-trash icon16 iconColorDarkRed",
+                        "id": "btnEliminar",
+                        "itemId": "btnEliminar",
+                        "layout|flex": null,
+                        "text": "Eliminar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "a2416e00-4043-4b33-8c46-7e49695d0ad6",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClickEliminar",
+                                "implHandler": [
+                                    "Ext.getCmp('formAplicacion').eliminaCondicionUnidad();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onButtonClickEliminar",
+                            "designerId": "3ab6fb9b-0cdd-43b3-a713-a1c33a84e050"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnReporte",
+                        "iconCls": "fa fa-th  icon16 iconColorDarkBlue",
+                        "id": "btnReporte",
+                        "itemId": "btnReporte",
+                        "layout|flex": null,
+                        "text": "Reporte",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton5",
+                    "designerId": "6cf89bfb-315a-4703-b14d-464a2a1c8d9b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClickReporte",
+                                "implHandler": [
+                                    "Ext.getCmp('formAplicacion').reporteCondicionUnidad();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onButtonClickReporte",
+                            "designerId": "3c5160bf-3c71-4c3f-aa8a-ddc13db983e1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill",
+                    "designerId": "3db20ea7-cf2f-4236-8fbd-8628cdf9eb0c"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnSalir",
+                        "iconCls": "fa fa-external-link-square  icon16 iconColorRed",
+                        "id": "btnSalir",
+                        "itemId": "btnSalir",
+                        "layout|flex": null,
+                        "text": "Salir",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton6",
+                    "designerId": "4a2b4a5f-78b9-4456-8939-8713c96e8f0e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClickSalir",
+                                "implHandler": [
+                                    "elf.stopApp('hwtProCondicionUnidad');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onButtonClickSalir",
+                            "designerId": "d01b1a95-cc2c-47b7-8a40-4bc0000c7168"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "gridReporteCondicion",
+                "id": "gridReporteCondicion",
+                "itemId": "gridReporteCondicion",
+                "store": "storeReporteCondicion",
+                "title": "Reportes de Condición"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "id": "string",
+                "itemId": "string",
+                "store": "store",
+                "title": "string",
+                "recordActivo": "object"
+            },
+            "name": "MyGridPanel",
+            "designerId": "055c72aa-045b-4b7a-acf0-62c48a43d9b9",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "recordActivo",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable",
+                    "designerId": "d0a5831a-ddfd-4223-ab87-2e757825a1f6"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "storeReporteCondicion",
+                        "width": 360
+                    },
+                    "configAlternates": {
+                        "displayInfo": "boolean",
+                        "dock": "string",
+                        "store": "store",
+                        "width": "auto"
+                    },
+                    "name": "MyPagingToolbar",
+                    "designerId": "9a2eab6c-e796-4a82-add6-22382d39f046"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "num_reporte",
+                        "id": "num_reporte",
+                        "itemId": "num_reporte",
+                        "text": "Numero</br>Reporte"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "id": "string",
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn1",
+                    "designerId": "72eff697-1afd-4986-8599-e404c6a852b2"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "vin",
+                        "id": "vin",
+                        "itemId": "vin",
+                        "text": "Vin",
+                        "width": 150
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "id": "string",
+                        "itemId": "string",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "f0fae2db-1264-442c-a66a-4b1e2df553db"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "fecha_reporte",
+                        "id": "fecha_reporte",
+                        "itemId": "fecha_reporte",
+                        "text": "Fecha</br>Reporte"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "id": "string",
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "49f4e7ea-e04c-4b33-95f8-cd61cec51347"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "num_reparaciones",
+                        "id": "num_reparaciones",
+                        "itemId": "num_reparaciones",
+                        "text": "Numero</br>Reparaciones"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "id": "string",
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn5",
+                    "designerId": "3c1c7962-2103-48cf-8319-1c4137e700fa"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "dataIndex": "precio_total_estimado",
+                        "id": "precio_total_estimado",
+                        "itemId": "precio_total_estimado",
+                        "text": "Precio Total</br>Estimado"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "id": "string",
+                        "itemId": "string",
+                        "text": "string",
+                        "align": "string"
+                    },
+                    "name": "MyColumn6",
+                    "designerId": "c26781ad-8556-4fe5-9964-fc5ee7c59582",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "var valorRetorno = Ext.util.Format.number(value, '0,000.00');",
+                                    "return valorRetorno;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "renderer",
+                            "designerId": "c4f7bdac-b9b6-47b8-ad13-fd9a00bb2410"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "usuario",
+                        "id": "usuario",
+                        "itemId": "usuario",
+                        "text": "Usuario"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "id": "string",
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn4",
+                    "designerId": "79055961-ec3c-43bd-a701-dbb55ac37f06"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridReporteCondicionItemClick",
+                        "implHandler": [
+                            "Ext.getCmp('gridReporteCondicion').recordActivo = record.data;"
+                        ],
+                        "name": "itemclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridReporteCondicionItemClick",
+                    "designerId": "59a19717-f9db-45ed-9470-bee951292a87"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridReporteCondicionItemDblClick",
+                        "implHandler": [
+                            "Ext.getCmp('formAplicacion').presentaRegistro();"
+                        ],
+                        "name": "itemdblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridReporteCondicionItemDblClick",
+                    "designerId": "e79b6be8-31ca-4334-9665-4b94a6724cdc"
+                }
+            ]
+        }
+    ]
+}

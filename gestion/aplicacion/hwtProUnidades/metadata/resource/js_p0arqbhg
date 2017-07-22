@@ -1,0 +1,24 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defer": false,
+        "designer|userClassName": "js_p0arqbhg",
+        "id": "envConfig",
+        "url": "../../recurso/complemento/envConfig.js",
+        "x-compile": true
+    },
+    "configAlternates": {
+        "defer": "boolean",
+        "designer|userClassName": "string",
+        "id": "string",
+        "url": "uri",
+        "x-compile": "boolean"
+    },
+    "name": "js1",
+    "designerId": "c4af45c7-b32d-4ff1-afd7-ea68aa4f1070"
+}

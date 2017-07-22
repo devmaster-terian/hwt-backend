@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeLlantasDelanterasMedidas",
+        "model": "modLlantasDelanterasMedidas",
+        "storeId": "storeLlantasDelanterasMedidas"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor20",
+    "designerId": "bd9defa9-5e29-400b-aca0-24cfe3b75d41"
+}

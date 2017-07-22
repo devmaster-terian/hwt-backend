@@ -1,0 +1,20 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_5x9hs1ji",
+        "id": "UbuntuFont",
+        "url": "https://fonts.googleapis.com/css?family=Ubuntu&subset=latin,latin-ext"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "id": "string",
+        "url": "uri"
+    },
+    "name": "css2",
+    "designerId": "d3cbc22d-5dc7-4314-a5c6-51bfe23ba9e7"
+}

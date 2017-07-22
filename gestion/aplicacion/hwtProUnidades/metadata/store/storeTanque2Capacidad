@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeTanque2Capacidad",
+        "model": "modTanque2Capacidad",
+        "storeId": "storeTanque2Capacidad"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeTanque1Capacidad1",
+    "designerId": "0e401c73-ecdd-41bb-9fba-dfedd000ac32"
+}

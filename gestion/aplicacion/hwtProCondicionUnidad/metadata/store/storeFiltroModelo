@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeFiltroModelo",
+        "model": "modelFiltroModelo",
+        "storeId": "storeFiltroModelo"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "c1ae6bd5-8e98-48d9-886a-f39dad4868ce"
+}

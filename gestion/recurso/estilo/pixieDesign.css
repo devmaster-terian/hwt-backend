@@ -1,0 +1,383 @@
+.basura16{
+    background-image: url(../../recurso/imagen/web/basura16.png) !important;
+    width           : 16px!important;
+    height          : 16px!important;
+    margin-right    : auto !important;
+    margin-left     : auto !important;
+}
+
+.archivo16{
+    background-image: url(../../recurso/imagen/web/archivo16.png) !important;
+    width           : 16px!important;
+    height          : 16px!important;
+    margin-right    : auto !important;
+    margin-left     : auto !important;
+}
+
+.upload16{
+    background-image: url(../../recurso/imagen/web/upload16.png) !important;
+    width           : 16px!important;
+    height          : 16px!important;
+    margin-right    : auto !important;
+    margin-left     : auto !important;
+}
+
+.photo16{
+    background-image: url(../../recurso/imagen/web/photo16.png) !important;
+    width           : 16px!important;
+    height          : 16px!important;
+    margin-right    : auto !important;
+    margin-left     : auto !important;
+}
+
+.inspeccion16{
+    background-image: url(../../recurso/imagen/web/inspeccion16.png) !important;
+    width           : 16px!important;
+    height          : 16px!important;
+    margin-right    : auto !important;
+    margin-left     : auto !important;
+}
+
+.verificado16{
+    background-image: url(../../recurso/imagen/web/verificado16.png) !important;
+    width           : 16px!important;
+    height          : 16px!important;
+    margin-right    : auto !important;
+    margin-left     : auto !important;
+}
+
+
+
+.reparar16{
+    background-image: url(../../recurso/imagen/web/reparar16.png) !important;
+    width           : 16px!important;
+    height          : 16px!important;
+    margin-right    : auto !important;
+    margin-left     : auto !important;
+}
+
+.reparado16{
+    background-image: url(../../recurso/imagen/web/reparado16.png) !important;
+    width           : 16px!important;
+    height          : 16px!important;
+    margin-right    : auto !important;
+    margin-left     : auto !important;
+}
+
+
+.problema16{
+    background-image: url(../../recurso/imagen/web/problema16.png) !important;
+    width           : 16px!important;
+    height          : 16px!important;
+    margin-right    : auto !important;
+    margin-left     : auto !important;
+}
+
+
+.formatInteger{
+    text-align   : right !important;
+    number-format: "###,##0" !important;
+}
+
+.formatDecimal{
+    text-align   : right !important;
+    number-format: "###,##0.00" !important;
+}
+
+.iconColorWhite{
+    color: white !important;
+}
+
+.iconColorDarkRed{
+    color: darkred !important;
+}
+
+.iconColorRed{
+    color: red !important;
+}
+
+.iconColorGreen{
+    color: green !important;
+}
+
+.iconColorDarkBlue{
+    color: darkblue !important;
+}
+
+.iconColorBlue{
+    color: blue !important;
+}
+
+.iconColorOrange{
+    color: orange !important;
+}
+
+.formBackground{
+    background-color: #EBF0F2 !important;
+}
+
+.toolbarBackground{
+    background-color: #bdceda !important;
+}
+
+.fontBigTitle {
+    font-weight: bold !important;
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 250% !important;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+    -moz-text-shadow: 0 0 2px #000;
+    -webkit-text-shadow: 0 0 2px #000;
+}
+
+.fontMediumTitle {
+    font-weight: bold !important;
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 160% !important;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+    -moz-text-shadow: 0 0 2px #000;
+    -webkit-text-shadow: 0 0 2px #000;
+}
+
+.fontNormalTitleRight {
+    font-weight: bold !important;
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 130% !important;
+    color: rgb(255, 255, 255) !important;
+    text-shadow: 0 0 2px #000 !important; /* horizontal-offset vertical-offset 'blur' colour */
+    -moz-text-shadow: 0 0 2px #000 !important;
+    -webkit-text-shadow: 0 0 2px #000 !important;
+    text-align: right !important;
+}
+
+.fontBigTitleRight {
+    font-weight: bold !important;
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 200% !important;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+    -moz-text-shadow: 0 0 2px #000;
+    -webkit-text-shadow: 0 0 2px #000;
+    text-align: right !important;
+}
+
+.fontMediumTitleRight {
+    font-weight: bold !important;
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 160% !important;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 2px #000 !important;
+    -moz-text-shadow: 0 0 2px #000 !important;
+    -webkit-text-shadow: 0 0 2px #000 !important;
+    text-align: right !important;
+}
+
+.fontNormalTitle {
+    font-weight: bold !important;
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 130% !important;
+    color: rgb(255, 255, 255) !important;
+    text-shadow: 0 0 2px #000 !important;
+    -moz-text-shadow: 0 0 2px #000 !important;
+    -webkit-text-shadow: 0 0 2px #000 !important;
+}
+
+.requiredField {
+    font-weight: bold !important;
+    color: #054F7D !important;
+}
+
+.disabledField {
+    font-weight: bold !important;
+    color: #B22222 !important;
+}
+
+.disabledRadio {
+    font-weight: normal !important;
+    color: #000000 !important;
+}
+
+.imagenAmbiente {
+    background-image: url('../environment/Portal_Ambiente.png') !important;
+    background-color: #FFFFFF !important;
+}
+
+.imagenAmbienteMenu {
+    background-image: url('../../recurso/imagen/portalMenu.png') !important;
+    background-color: #FFFFFF !important;
+}
+
+.large-green {
+    font-size: 32px;
+    color: green
+}
+
+.icon16 {
+    font-size: 16px;
+}
+
+.icon24 {
+    font-size: 24px;
+    margin-top: -8px !important;
+    margin-right: 15px !important;
+}
+
+.icon32 {
+    font-size: 32px;
+}
+
+.icon16red {
+    font-size: 16px;
+    color: red;
+    margin-top: -0px !important;
+    text-align: left !important;
+
+}
+
+.icon32red {
+    font-size: 32px;
+    color: red;
+    margin-top: -8px !important;
+
+}
+
+.botonZoom {
+    color: #FFFFFF !important;
+    background-image: none !important;
+    border: 1px solid #040203 !important;
+    background-color: #161C28 !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#404C53), to(#161C28)) !important;
+    background-image: -webkit-linear-gradient(top, #404C53, #161C28) !important;
+    background-image: -moz-linear-gradient(top, #404C53, #161C28) !important;
+    background-image: -ms-linear-gradient(top, #404C53, #161C28) !important;
+    background-image: -o-linear-gradient(top, #404C53, #161C28) !important;
+    background-image: linear-gradient(to bottom, #404C53, #161C28) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#404C53, endColorstr=#161C28) !important;
+}
+
+.botonZoom:hover {
+    color: #FFFFFF !important;
+    background-image: none !important;
+    border: 1px solid #8aabc5 !important;
+    background-color: #596a72 !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#596a72), to(#596a72)) !important;
+    background-image: -webkit-linear-gradient(top, #596a72, #596a72) !important;
+    background-image: -moz-linear-gradient(top, #596a72, #596a72) !important;
+    background-image: -ms-linear-gradient(top, #596a72, #596a72) !important;
+    background-image: -o-linear-gradient(top, #596a72, #596a72) !important;
+    background-image: linear-gradient(to bottom, #596a72, #596a72) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#596a72, endColorstr=#596a72) !important;
+}
+
+.botonZoom:active {
+    position: relative !important;
+}
+
+
+.botonZoomToolbar {
+    color: #FFFFFF !important;
+    background-image: none !important;
+    border: 1px solid #d4dee5 !important;
+    background-color: #d4dee5 !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e1e8ec), to(#d4dee5)) !important;
+    background-image: -webkit-linear-gradient(top, #e1e8ec, #d4dee5) !important;
+    background-image: -moz-linear-gradient(top, #e1e8ec, #d4dee5) !important;
+    background-image: -ms-linear-gradient(top, #e1e8ec, #d4dee5) !important;
+    background-image: -o-linear-gradient(top, #e1e8ec, #d4dee5) !important;
+    background-image: linear-gradient(to bottom, #e1e8ec, #d4dee5) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#e1e8ec, endColorstr=#d4dee5) !important;
+}
+
+.botonZoomToolbar:hover {
+    color: #FFFFFF !important;
+    background-image: none !important;
+    border: 1px solid #537d97 !important;
+    background-color: #eef0f0 !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f5f7), to(#eef0f0)) !important;
+    background-image: -webkit-linear-gradient(top, #f2f5f7, #eef0f0) !important;
+    background-image: -moz-linear-gradient(top, #f2f5f7, #eef0f0) !important;
+    background-image: -ms-linear-gradient(top, #f2f5f7, #eef0f0) !important;
+    background-image: -o-linear-gradient(top, #f2f5f7, #eef0f0) !important;
+    background-image: linear-gradient(to bottom, #f2f5f7, #eef0f0) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#f2f5f7, endColorstr=#eef0f0) !important;
+}
+
+.botonZoomToolbar:active {
+    position: relative !important;
+}
+
+
+.botonZoomWindow {
+    color: #FFFFFF !important;
+    background-image: none !important;
+    border: 1px solid #295d7d !important;
+    background-color: #295d7d !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#698da4), to(#295d7d)) !important;
+    background-image: -webkit-linear-gradient(top, #698da4, #295d7d) !important;
+    background-image: -moz-linear-gradient(top, #698da4, #295d7d) !important;
+    background-image: -ms-linear-gradient(top, #698da4, #295d7d) !important;
+    background-image: -o-linear-gradient(top, #698da4, #295d7d) !important;
+    background-image: linear-gradient(to bottom, #698da4, #295d7d) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#698da4, endColorstr=#295d7d) !important;
+}
+
+.botonZoomWindow:hover {
+    color: #FFFFFF !important;
+    background-image: none !important;
+    border: 1px solid #537d97 !important;
+    background-color: #596a72 !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#7e9db1), to(#596a72)) !important;
+    background-image: -webkit-linear-gradient(top, #7e9db1, #596a72) !important;
+    background-image: -moz-linear-gradient(top, #7e9db1, #596a72) !important;
+    background-image: -ms-linear-gradient(top, #7e9db1, #596a72) !important;
+    background-image: -o-linear-gradient(top, #7e9db1, #596a72) !important;
+    background-image: linear-gradient(to bottom, #7e9db1, #596a72) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#7e9db1, endColorstr=#596a72) !important;
+}
+
+.botonZoomWindow:active {
+    position: relative !important;
+}
+
+
+.btnDarkBlue {
+	-moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+	background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+	background-color:#007dc1;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+    text-align: !important;
+}
+.btnDarkBlue:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+	background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+	background-color:#0061a7;
+}
+.btnDarkBlue:active {
+	position:relative;
+	top:1px;
+}

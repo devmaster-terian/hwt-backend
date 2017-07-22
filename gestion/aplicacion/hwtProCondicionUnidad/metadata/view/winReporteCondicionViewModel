@@ -1,0 +1,17 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winreportecondicion",
+        "designer|userClassName": "winReporteCondicionViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "4a23cc60-9a4d-47b4-b89c-4219e74060e5"
+}

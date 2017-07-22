@@ -1,0 +1,20 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_uv1mdcy6",
+        "id": "Ionicons",
+        "url": "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "id": "string",
+        "url": "uri"
+    },
+    "name": "css",
+    "designerId": "34f68534-74b0-4d74-964a-c32a8e8c29ab"
+}

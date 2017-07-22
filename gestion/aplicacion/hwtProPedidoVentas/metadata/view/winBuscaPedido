@@ -1,0 +1,927 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": false,
+        "designer|userAlias": "winBuscaPedido",
+        "designer|userClassName": "winBuscaPedido",
+        "height": null,
+        "id": "winBuscaPedido",
+        "itemId": "winBuscaPedido",
+        "modal": true,
+        "title": "Busqueda de Pedidos",
+        "width": 600
+    },
+    "configAlternates": {
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "f7d657eb-32df-45aa-91d9-d9476dfa728b",
+    "viewControllerInstanceId": "33c16cd3-52c2-406f-9609-5c62345b4e50",
+    "viewModelInstanceId": "f1da6691-14ed-4d4e-894a-8aa99bbfee24",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "toolbarBackground"
+                ],
+                "dock": "bottom",
+                "id": "toolbarBuscaPedido",
+                "itemId": "toolbarBuscaPedido"
+            },
+            "configAlternates": {
+                "cls": "typedarray",
+                "dock": "string",
+                "id": "string",
+                "itemId": "string"
+            },
+            "name": "MyToolbar4",
+            "designerId": "59718e33-c392-4358-921d-62147e9714a4",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-search icon16 iconColorGreen",
+                        "id": "btnConfirmarBusqueda",
+                        "itemId": "btnConfirmarBusqueda",
+                        "layout|flex": null,
+                        "text": "Buscar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton26",
+                    "designerId": "e440d5f4-59d4-4c4e-8836-5e39135f669d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnConfirmarBusquedaClick",
+                                "implHandler": [
+                                    "var arrayBusqueda = new Array();",
+                                    "arrayBusqueda.push('cbxBuscaGerenteRegional');",
+                                    "arrayBusqueda.push('cbxBuscaVendedor');",
+                                    "arrayBusqueda.push('cbxBuscaConsecionario');",
+                                    "arrayBusqueda.push('tfBuscaCliente');",
+                                    "arrayBusqueda.push('tfBuscaUnidad');",
+                                    "arrayBusqueda.push('dtBuscaFechaInicial');",
+                                    "arrayBusqueda.push('dtBuscaFechaFinal');",
+                                    "arrayBusqueda.push('cbxBuscaSituacionInicial');",
+                                    "arrayBusqueda.push('cbxBuscaSituacionFinal');",
+                                    "",
+                                    "Ext.getStore('storePedidoVenta').arrayBusqueda = arrayBusqueda;",
+                                    "elf.refreshGrid('gridPedidoVenta');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnConfirmarBusquedaClick",
+                            "designerId": "79c3ab0d-a678-4688-a5b9-80ba137af0be"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fillBusca",
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill3",
+                    "designerId": "394dd4de-8949-4722-9eef-1a56d796f0ee"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-window-close icon16 iconColorRed",
+                        "id": "btnCerrarBusqueda",
+                        "itemId": "btnCerrarBusqueda",
+                        "layout|flex": null,
+                        "text": "Cerrar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton27",
+                    "designerId": "b70b2d13-bacf-4995-9297-0b8c1f4119fa",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnCerrarBusquedaClick",
+                                "implHandler": [
+                                    "Ext.getStore('storePedidoVenta').arrayBusqueda = undefined;",
+                                    "elf.closeWindow('winBuscaPedido');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnCerrarBusquedaClick",
+                            "designerId": "c911c4d5-8f10-457c-bb85-32c0aa618c90"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyCls": [
+                    "formBackground"
+                ],
+                "bodyPadding": 10,
+                "id": "formBuscaPedido",
+                "itemId": "formBuscaPedido",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyCls": "typedarray",
+                "bodyPadding": "auto",
+                "id": "string",
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "MyForm3",
+            "designerId": "3159e940-91d8-49d0-8d79-422166f4ca96",
+            "cn": [
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "preparaInterfaz",
+                        "implHandler": [
+                            "var arrayCombos = new Array();",
+                            "",
+                            "var objConfig   = new Object();",
+                            "objConfig.idComboBox   = 'cbxBuscaGerenteRegional';",
+                            "objConfig.idDataBridge = 'datosOpciones';",
+                            "objConfig.id           = 'opcionesBuscaGerenteRegional';",
+                            "objConfig.fieldValue   = 'usuario';",
+                            "objConfig.fieldDisplay = 'nombre';",
+                            "objConfig.filterDefault  = 'todo';",
+                            "arrayCombos.push(objConfig);",
+                            "",
+                            "var objConfig   = new Object();",
+                            "objConfig.idComboBox   = 'cbxBuscaVendedor';",
+                            "objConfig.idDataBridge = 'datosOpciones';",
+                            "objConfig.id           = 'opcionesBuscaVendedor';",
+                            "objConfig.fieldValue   = 'usuario';",
+                            "objConfig.fieldDisplay = 'nombre';",
+                            "objConfig.filterDefault  = 'todo';",
+                            "arrayCombos.push(objConfig);",
+                            "",
+                            "var objConfig   = new Object();",
+                            "objConfig.idComboBox   = 'cbxBuscaConsecionario';",
+                            "objConfig.idDataBridge = 'datosOpciones';",
+                            "objConfig.id           = 'opcionesBuscaConsecionario';",
+                            "objConfig.fieldValue   = 'codigo_consecionario';",
+                            "objConfig.fieldDisplay = 'descripcion';",
+                            "objConfig.filterDefault  = 'todo';",
+                            "arrayCombos.push(objConfig);",
+                            "",
+                            "arrayCombos.forEach(Ext.getCmp('formAplicacion').cargaCombosConfig);",
+                            "",
+                            "dtFechaInicio = new Date(new Date().getFullYear(), 0, 1);",
+                            "dtFechaFinal = new Date();",
+                            "",
+                            "elf.writeElement('dtBuscaFechaInicial',dtFechaInicio);",
+                            "elf.writeElement('dtBuscaFechaFinal',dtFechaFinal);",
+                            "",
+                            "",
+                            "var arrayCombos = new Array();",
+                            "",
+                            "var objConfig   = new Object();",
+                            "objConfig.idComboBox   = 'cbxBuscaSituacionInicial';",
+                            "objConfig.idDataBridge = 'datosOpciones';",
+                            "objConfig.id           = 'opcionesBuscaSituacionPedido';",
+                            "objConfig.fieldValue   = 'codigo';",
+                            "objConfig.fieldDisplay = 'descripcion';",
+                            "objConfig.filterValue  = undefined;",
+                            "arrayCombos.push(objConfig);",
+                            "",
+                            "var objConfig   = new Object();",
+                            "objConfig.idComboBox   = 'cbxBuscaSituacionFinal';",
+                            "objConfig.idDataBridge = 'datosOpciones';",
+                            "objConfig.id           = 'opcionesBuscaSituacionPedido';",
+                            "objConfig.fieldValue   = 'codigo';",
+                            "objConfig.fieldDisplay = 'descripcion';",
+                            "objConfig.filterValue  = '6';",
+                            "objConfig.filterDefault  = '6';",
+                            "arrayCombos.push(objConfig);",
+                            "arrayCombos.forEach(Ext.getCmp('formAplicacion').cargaCombosConfig);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "preparaInterfaz",
+                    "designerId": "86b55bab-3139-428c-b62a-8d011220d02e"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetFiltroVentas",
+                        "itemId": "fieldsetFiltroVentas",
+                        "layout": "column",
+                        "title": "<b>Filtro de Ventas</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet21",
+                    "designerId": "c147e909-0894-430a-80ca-ef3bb443c571",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "nombre",
+                                "editable": false,
+                                "fieldLabel": "Gerente",
+                                "id": "cbxBuscaGerenteRegional",
+                                "itemId": "cbxBuscaGerenteRegional",
+                                "labelWidth": 90,
+                                "layout|columnWidth": 1,
+                                "margin": "0 3 3 0",
+                                "maxWidth": 450,
+                                "queryMode": "local",
+                                "store": "storeBuscaGerenteRegional",
+                                "valueField": "usuario"
+                            },
+                            "configAlternates": {
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "maxWidth": "number",
+                                "queryMode": "string",
+                                "store": "store",
+                                "valueField": "datafield"
+                            },
+                            "name": "MyComboBox11",
+                            "designerId": "bfc9908e-021f-4959-90b6-dc5aa50866e4"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "editable": false,
+                                "fieldLabel": "Vendedor",
+                                "id": "cbxBuscaVendedor",
+                                "itemId": "cbxBuscaVendedor",
+                                "labelWidth": 90,
+                                "layout|columnWidth": 1,
+                                "margin": "0 3 3 0",
+                                "maxWidth": 450
+                            },
+                            "configAlternates": {
+                                "editable": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "maxWidth": "number"
+                            },
+                            "name": "MyComboBox12",
+                            "designerId": "fc096c8d-8994-4640-a9c4-6141e6f4c416"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetConsecionario",
+                        "itemId": "fieldsetConsecionario",
+                        "layout": "column",
+                        "title": "<b>Filtro de Consecionario</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet22",
+                    "designerId": "d41b02ca-2dac-43a7-a853-694a5f49c9cf",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "editable": false,
+                                "fieldLabel": "Consecionario",
+                                "id": "cbxBuscaConsecionario",
+                                "itemId": "cbxBuscaConsecionario",
+                                "labelWidth": 90,
+                                "layout|columnWidth": 1,
+                                "margin": "0 3 3 0",
+                                "maxWidth": 450
+                            },
+                            "configAlternates": {
+                                "editable": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "maxWidth": "number"
+                            },
+                            "name": "MyComboBox13",
+                            "designerId": "93172307-9e84-4b75-988b-ed4502b7f394"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetEspecificos",
+                        "itemId": "fieldsetEspecificos",
+                        "layout": "column",
+                        "title": "<b>Filtros Específicos</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet23",
+                    "designerId": "696e99fe-d7ec-4996-9511-4c02e64eb0f3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Cliente",
+                                "id": "tfBuscaCliente",
+                                "labelWidth": 90,
+                                "layout|columnWidth": 0.4,
+                                "margin": "0 0 3 0"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField32",
+                            "designerId": "adc3cb95-2e2a-4114-bde1-a4d12d0bfdce"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoomWindow",
+                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                "id": "btnZoomBuscaCliente",
+                                "itemId": "btnZoomBuscaCliente",
+                                "layout|columnWidth": 0.05,
+                                "margin": "0 0 3 0",
+                                "text": null
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton28",
+                            "designerId": "8b400b63-272b-4cc6-92bf-9338fff56040",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnZoomBuscaClienteClick",
+                                        "implHandler": [
+                                            "var arrayCamposDespliegue = new Array();",
+                                            "",
+                                            "var objCampo = new Object();",
+                                            "objCampo.campoForm = 'tfBuscaCliente';",
+                                            "objCampo.campoDato = 'codigo_cliente';",
+                                            "arrayCamposDespliegue.push(objCampo);",
+                                            "",
+                                            "var objCampo = new Object();",
+                                            "objCampo.campoForm = 'tfBuscaClienteDescripcion';",
+                                            "objCampo.campoDato = 'razon_social';",
+                                            "arrayCamposDespliegue.push(objCampo);",
+                                            "",
+                                            "elf.openWindow('winBuscaCliente');",
+                                            "",
+                                            "Ext.getCmp('formBuscaCliente').arrayCamposDespliegue = arrayCamposDespliegue;",
+                                            "",
+                                            "elf.refreshGrid('gridBuscaCliente');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnZoomBuscaClienteClick",
+                                    "designerId": "5c96ef12-36ee-4ebc-a751-8f5ebc7b315b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": null,
+                                "id": "tfBuscaClienteDescripcion",
+                                "itemId": "tfBuscaClienteDescripcion",
+                                "layout|columnWidth": 0.55,
+                                "margin": "0 0 3 0"
+                            },
+                            "configAlternates": {
+                                "disabled": "boolean",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField35",
+                            "designerId": "c6521fbf-4f3f-4df8-aec2-b2ad73f9d3ce"
+                        },
+                        {
+                            "type": "Ext.resizer.Splitter",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 0,
+                                "id": "splitterBusca",
+                                "layout|columnWidth": 1
+                            },
+                            "configAlternates": {
+                                "height": "auto",
+                                "id": "string",
+                                "layout|columnWidth": "auto"
+                            },
+                            "name": "MySplitter6",
+                            "designerId": "770f8a34-c593-413f-b747-3ae7b73908bf"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Unidad",
+                                "id": "tfBuscaUnidad",
+                                "itemId": "tfBuscaUnidad",
+                                "labelWidth": 90,
+                                "layout|columnWidth": 0.4,
+                                "margin": "0 0 3 0"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField37",
+                            "designerId": "566cf7d8-9b5a-44e5-9100-a54dcb8676f6"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoomWindow",
+                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                "id": "btnZoomBuscaUnidad",
+                                "itemId": "btnZoomBuscaUnidad",
+                                "layout|columnWidth": 0.05,
+                                "margin": "0 0 3 0",
+                                "text": null
+                            },
+                            "configAlternates": {
+                                "layout|columnWidth": "auto",
+                                "text": "string",
+                                "cls": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "margin": "auto"
+                            },
+                            "name": "MyButton29",
+                            "designerId": "329ac42b-458b-41fa-969b-d1b7d2e110a3",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnZoomBuscaUnidadClick",
+                                        "implHandler": [
+                                            "var arrayCamposDespliegue = new Array();",
+                                            "",
+                                            "var objCampo = new Object();",
+                                            "objCampo.campoForm = 'tfBuscaUnidad';",
+                                            "objCampo.campoDato = 'codigo';",
+                                            "arrayCamposDespliegue.push(objCampo);",
+                                            "",
+                                            "var objCampo = new Object();",
+                                            "objCampo.campoForm = 'tfBuscaUnidadDescripcion';",
+                                            "objCampo.campoDato = 'modelo';",
+                                            "arrayCamposDespliegue.push(objCampo);",
+                                            "",
+                                            "elf.openWindow('winBuscaVin');",
+                                            "var arrayCombos = new Array();",
+                                            "arrayCombos.push('FiltroModelo');",
+                                            "arrayCombos.push('FiltroMarca');",
+                                            "arrayCombos.forEach(elf.loadCombos);",
+                                            "",
+                                            "Ext.getCmp('formBuscaVin').arrayCamposDespliegue = arrayCamposDespliegue;",
+                                            "",
+                                            "Ext.getStore('storeBuscaVin').filtroEstado = 'todo';",
+                                            "elf.refreshGrid('gridBuscaVin');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnZoomBuscaUnidadClick",
+                                    "designerId": "9b783a20-0cdd-4139-a995-36ffc56bae45"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": null,
+                                "id": "tfBuscaUnidadDescripcion",
+                                "itemId": "tfBuscaUnidadDescripcion",
+                                "layout|columnWidth": 0.55,
+                                "margin": "0 0 3 0"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "disabled": "boolean",
+                                "disabledCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField38",
+                            "designerId": "ec8305d6-9093-4c89-bb2c-41eeaf5b1a1b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetFiltroPedido",
+                        "itemId": "fieldsetFiltroPedido",
+                        "title": "<b>Filtro de Pedido</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet25",
+                    "designerId": "bfe6a0dd-9501-423b-b33b-95d5978b739d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Pedido",
+                                "id": "tfBuscaPedido",
+                                "itemId": "tfBuscaPedido",
+                                "labelWidth": 90,
+                                "margin": "0 3 3 0"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField36",
+                            "designerId": "3983326a-a065-4b71-bb72-83819cf56fd1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetRangoBusqueda",
+                        "itemId": "fieldsetRangoBusqueda",
+                        "layout": "column",
+                        "title": "<b>Rango de Búsqueda</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet24",
+                    "designerId": "4fd09c1c-5bbf-4da4-8301-8aea906b5f35",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Fecha Inicial",
+                                "id": "dtBuscaFechaInicial",
+                                "itemId": "dtBuscaFechaInicial",
+                                "labelWidth": 90,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 3 3 0"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "margin": "auto"
+                            },
+                            "name": "MyDateField5",
+                            "designerId": "27460e73-356d-42f5-ba3b-46540496e954"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Fecha Final",
+                                "id": "dtBuscaFechaFinal",
+                                "itemId": "dtBuscaFechaFinal",
+                                "labelWidth": 90,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 3 3 0"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "margin": "auto"
+                            },
+                            "name": "MyDateField6",
+                            "designerId": "4dad5016-9014-4efd-bcba-4392cddbbf23"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "editable": false,
+                                "fieldLabel": "Situación Inicial",
+                                "id": "cbxBuscaSituacionInicial",
+                                "itemId": "cbxBuscaSituacionInicial",
+                                "labelWidth": 90,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 3 3 0"
+                            },
+                            "configAlternates": {
+                                "editable": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyComboBox17",
+                            "designerId": "b7645b5c-961f-442b-bb4c-d0b906bf1424"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "editable": false,
+                                "fieldLabel": "Situación Final",
+                                "id": "cbxBuscaSituacionFinal",
+                                "itemId": "cbxBuscaSituacionFinal",
+                                "labelWidth": 90,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 3 3 0"
+                            },
+                            "configAlternates": {
+                                "editable": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyComboBox18",
+                            "designerId": "b18575ae-2636-4a20-927c-e48242901f92"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

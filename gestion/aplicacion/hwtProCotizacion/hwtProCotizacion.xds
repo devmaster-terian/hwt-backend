@@ -1,0 +1,73 @@
+{
+    "name": "hwtProCotizacion",
+    "settings": {
+        "cmd": {},
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost/",
+        "exportPath": "",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Medium",
+                "builtIn": true,
+                "height": 768,
+                "width": 1024
+            }
+        }
+    },
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "95ee7afd-84f0-400c-b062-d9a1dbc32b71",
+            "1674dbfe-a753-405c-8f5a-2eeb9998276a",
+            "414f9793-6243-4d58-ae6f-fd8e88eff76e",
+            "75ae52d0-5cc8-4a9b-8e25-81c60a4b161c",
+            "83f6b621-fd3b-495d-86a9-1ebf323fbbf5",
+            "b3be2697-9786-4cfa-9a2a-0107a6d6b91a",
+            "0e52a3f5-1aa6-4cb2-8c8a-c9114dcd9159",
+            "75e6484e-93d6-4c30-b383-a69ec0374dcd",
+            "c85bffac-f4cd-43c0-97f6-66f72536037a",
+            "3ca07861-51af-4eef-b658-440b5baca712",
+            "3de0087b-800c-402c-9a2a-8bce9e0040a4",
+            "d71a24fc-00e4-40c1-b3c7-cc80711ee788"
+        ],
+        "store": [
+            "2d87dc6b-831d-4e7c-9110-b35bc8dd1924",
+            "5d7cfd6f-676d-4ded-983b-2c1c773aef08",
+            "b28bdb47-b161-4612-9e11-44425d2c98e9",
+            "8da1cd91-ef92-4570-8b4c-f006a5fe9405",
+            "3763ee2f-5c01-4abb-872d-e811195e73f1",
+            "b86d4d98-bd1e-4af8-ab0f-8f5a86a7684e"
+        ],
+        "controller": [],
+        "model": [
+            "49a0df32-f045-49d2-b06f-1e8b943c1042",
+            "fa131891-f649-4e15-b3e6-f29079dc1be8",
+            "71655b53-47ac-4277-8019-58aaf19460fb",
+            "11c0fbad-0f13-4ba6-9e9c-5966112075d1",
+            "d6bc961b-031e-45c4-a693-5b2b9628b833",
+            "94dedfef-9b91-49c1-8e3b-fbfdb4a067cc"
+        ],
+        "resource": [
+            "74d82992-1ba7-4dc2-a877-d37915010199",
+            "bb60d1cb-bdec-46ed-8aa7-b6c1aa62d202",
+            "7316009e-ad2a-48b1-8850-e227b7714f06",
+            "42d405a7-03a5-4ac3-bdd5-781ad1783990",
+            "0081f1d5-2aa5-4a36-a9e0-cff45a201ea6",
+            "7216ada7-a592-4451-baf9-ff5ace8f9cd4"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

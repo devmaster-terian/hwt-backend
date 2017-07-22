@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeRinesTraseros",
+        "model": "modRinesTraseros",
+        "storeId": "storeRinesTraseros"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeChasis6",
+    "designerId": "a0937d13-6455-461a-833e-3ce5c954d48a"
+}

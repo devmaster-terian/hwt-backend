@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modelFiltroMarca"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "modelFiltroModelo1",
+    "designerId": "ed7d0f08-940e-4438-badb-6cd66d16ea84",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField4",
+            "designerId": "201609f6-2812-49f7-b983-95e3e3e1a616"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField5",
+            "designerId": "16cf8a17-2008-4840-a0a9-d7fb6960f016"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeMotorFreno",
+        "model": "modMotorFreno",
+        "storeId": "storeMotorFreno"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor11",
+    "designerId": "77898945-95c7-4b7f-829b-cb32f3f816d5"
+}

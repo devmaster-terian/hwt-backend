@@ -1,0 +1,98 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modBuscaCliente"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyModel",
+    "designerId": "36b5e719-7a5d-471c-82ea-221c1149a231",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo_cliente"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField15",
+            "designerId": "afd608c6-f773-4eb5-95eb-9fa09b3bf855"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre_corto"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField16",
+            "designerId": "b800ed9a-84a9-4f90-b0dc-04f3b729d2c3"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "razon_social"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField17",
+            "designerId": "ab2fe06a-57c1-4daa-8d2f-492c55000be5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rfc"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField18",
+            "designerId": "228e6f5b-1e12-442b-a6fb-d533d4c2bee6"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "contacto_cliente"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField28",
+            "designerId": "d7464217-c809-477c-bb7e-7a4639a5c9ac"
+        }
+    ]
+}

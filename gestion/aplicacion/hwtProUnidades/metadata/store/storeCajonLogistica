@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCajonLogistica",
+        "model": "modCajonLogistica",
+        "storeId": "storeCajonLogistica"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor17",
+    "designerId": "ea2ac118-6466-40e0-ab7d-22c1ea7981b6"
+}

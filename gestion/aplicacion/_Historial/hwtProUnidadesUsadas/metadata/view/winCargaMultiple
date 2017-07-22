@@ -1,0 +1,477 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyCls": [
+            "formBackground"
+        ],
+        "closable": false,
+        "designer|userAlias": "winCargaMultiple",
+        "designer|userClassName": "winCargaMultiple",
+        "height": null,
+        "id": "winCargaMultiple",
+        "itemId": "winCargaMultiple",
+        "title": "Carga Múltiple de Archivos",
+        "width": 700
+    },
+    "configAlternates": {
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "title": "string",
+        "width": "auto",
+        "bodyCls": "typedarray"
+    },
+    "name": "MyWindow",
+    "designerId": "dea41b6b-d5be-4dac-84ff-37bcd271d064",
+    "viewControllerInstanceId": "71cf9a41-cce1-45eb-b72d-a09101795f1c",
+    "viewModelInstanceId": "01da5767-7395-439f-82c2-eb273fc03309",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": "toolbarBackground",
+                "designer|displayName": "toolbarCargaMultiple",
+                "dock": "top",
+                "id": "toolbarCargaMultiple",
+                "itemId": "toolbarCargaMultiple"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "dock": "string",
+                "id": "string",
+                "itemId": "string",
+                "baseCls": "string"
+            },
+            "name": "MyToolbar3",
+            "designerId": "a35783e6-a78d-4352-a69d-cb0ab9f89efe",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-cloud-upload icon16 iconColorBlue",
+                        "layout|flex": null,
+                        "text": "Cargar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton13",
+                    "designerId": "52be39d1-acfc-4edd-8bdb-46c15f79bcd3"
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MySeparator3",
+                    "designerId": "a25fcef9-29ee-45eb-a184-998e89261414"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-trash icon16 iconColorRed",
+                        "layout|flex": null,
+                        "text": "Borrar Todo",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton16",
+                    "designerId": "f5443e91-d728-4419-94d2-228f478342d5"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-trash-o icon16 iconColorDarkRed",
+                        "layout|flex": null,
+                        "text": "Borra Selección",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton18",
+                    "designerId": "10ec6ce4-6039-48b4-9909-3c204c2f2c78"
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill3",
+                    "designerId": "4d55cc5e-2150-4017-ba6a-f86a5ec298d0"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-window-close icon16 iconColorRed",
+                        "layout|flex": null,
+                        "text": "Cerrar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton15",
+                    "designerId": "2021de0d-03ef-452e-8b7c-e02afd09dd62"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "fieldsetCargaRegistroUnidad",
+                "layout": "column",
+                "margin": "0 5 5 5",
+                "title": "<b>Registro de Unidad</b>"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "layout": "string",
+                "margin": "auto",
+                "title": "string"
+            },
+            "name": "MyFieldSet25",
+            "designerId": "ae74ba1e-733d-43bd-9825-20979bc870cf",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tfCargaTipoUnidad",
+                        "disabled": true,
+                        "disabledCls": "disabledField",
+                        "fieldLabel": "Tipo",
+                        "id": "tfCargaTipoUnidad",
+                        "itemId": "tfCargaTipoUnidad",
+                        "layout|columnWidth": 0.5,
+                        "margin": "0 5 5 5"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "disabled": "boolean",
+                        "disabledCls": "string",
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|columnWidth": "auto",
+                        "margin": "auto"
+                    },
+                    "name": "MyTextField67",
+                    "designerId": "c6f958f9-bd5f-4279-b73a-6684adc20135"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tfCargaCodigoUnidad",
+                        "disabled": true,
+                        "disabledCls": "disabledField",
+                        "fieldLabel": "Código",
+                        "id": "tfCargaCodigoUnidad",
+                        "itemId": "tfCargaCodigoUnidad",
+                        "layout|columnWidth": 0.5,
+                        "margin": "0 5 5 5"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "designer|displayName": "string",
+                        "disabled": "boolean",
+                        "disabledCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|columnWidth": "auto",
+                        "margin": "auto"
+                    },
+                    "name": "MyTextField68",
+                    "designerId": "0e6a507f-3e68-4022-b4bb-ae7216b0921c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "gridArchivoCarga",
+                "height": 400,
+                "id": "gridArchivoCarga",
+                "itemId": "gridArchivoCarga",
+                "store": "storeArchivoCarga",
+                "title": "Archivos para Carga"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "height": "auto",
+                "id": "string",
+                "itemId": "string",
+                "store": "store",
+                "title": "string"
+            },
+            "name": "MyGridPanel1",
+            "designerId": "807f78a4-8bcf-4963-87b4-e8155f083aff",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "name",
+                        "text": "Nombre"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn1",
+                    "designerId": "8b7fc3c5-92cf-429e-89d1-8b0090386673"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "size",
+                        "text": "Tamaño"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn30",
+                    "designerId": "1088d985-7e19-4c3c-8df6-f6a4d18e1639"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "file",
+                        "text": "Archivo"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn31",
+                    "designerId": "1dd19d3b-067a-450d-b443-8eebf394782d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "status",
+                        "text": "Status"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn32",
+                    "designerId": "b0f4cc3a-41c2-428d-bb61-731c551b09a4"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "alias",
+                        "text": "Alias"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn33",
+                    "designerId": "6027ba1c-1f6a-464e-a785-7c0619478ad9"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "storeArchivoCarga",
+                        "width": 360
+                    },
+                    "configAlternates": {
+                        "displayInfo": "boolean",
+                        "dock": "string",
+                        "store": "store",
+                        "width": "auto"
+                    },
+                    "name": "MyPagingToolbar1",
+                    "designerId": "76f641ef-a45f-48a5-b9cf-b1616a87c46e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "containerDrag",
+                "height": 80,
+                "id": "containerDrag",
+                "itemId": "containerDrag",
+                "layout": "column",
+                "liveDrag": true
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "height": "auto",
+                "id": "string",
+                "itemId": "string",
+                "layout": "string",
+                "liveDrag": "boolean"
+            },
+            "name": "MyContainer",
+            "designerId": "0fe5b08f-6d10-44ae-83d2-cc6573399c8e",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "fontAreaDragDrop"
+                        ],
+                        "designer|displayName": "lblCargaArchivos",
+                        "height": null,
+                        "id": "lblCargaArchivos",
+                        "itemId": "lblCargaArchivos",
+                        "layout|columnWidth": 1,
+                        "margin": "30 100 0 100",
+                        "text": "Arrastre los Archivos a ésta Area"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "designer|displayName": "string",
+                        "height": "auto",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|columnWidth": "auto",
+                        "margin": "auto",
+                        "text": "string"
+                    },
+                    "name": "MyLabel",
+                    "designerId": "f0afe8f1-ccda-4aa2-96f7-66194759ee21"
+                }
+            ]
+        }
+    ]
+}

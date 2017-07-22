@@ -1,0 +1,782 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": false,
+        "designer|userAlias": "winReporteCondicionLinea",
+        "designer|userClassName": "winReporteCondicionLinea",
+        "height": null,
+        "id": "winReporteCondicionLinea",
+        "itemId": "winReporteCondicionLinea",
+        "modal": true,
+        "title": "Reporte de Condición (Línea)",
+        "width": 600
+    },
+    "configAlternates": {
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "256eb7d0-f4a7-4aa4-a81f-be8af56eb690",
+    "viewControllerInstanceId": "2f26dd72-e700-46ed-a2ed-26eff63fab65",
+    "viewModelInstanceId": "7d41c849-e8fb-4df3-847b-9644bea947b1",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": "formBackground",
+                "bodyPadding": 10,
+                "designer|displayName": "formReporteCondicionLinea",
+                "id": "formReporteCondicionLinea",
+                "itemId": "formReporteCondicionLinea",
+                "title": null
+            },
+            "configAlternates": {
+                "baseCls": "string",
+                "bodyPadding": "auto",
+                "designer|displayName": "string",
+                "id": "string",
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "56be979c-0a3a-4efb-ad63-f52b9fbb6a03",
+            "cn": [
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "grabarReporteCondicionLinea",
+                        "implHandler": [
+                            "var apiController          = 'apiCondicionUnidad';",
+                            "var apiMethod              = 'grabaCondicionLinea';",
+                            "",
+                            "var functionSuccess = function(){",
+                            "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                            "",
+                            "    //ECRC: Actualizando el Grid con los Datos Actualizados",
+                            "    if(Ext.getCmp('gridReporteCondicionLinea').recordActivo !== undefined){",
+                            "        hwtRecordCondicionUnidadLinea = Ext.getCmp('gridReporteCondicionLinea').recordActivo;",
+                            "        hwtRecordCondicionUnidadLinea.data.valor_referencia         = elf.readElement('tfLineaValorReferencia');",
+                            "        hwtRecordCondicionUnidadLinea.data.observaciones            = elf.readElement('tfLineaObservaciones');",
+                            "        hwtRecordCondicionUnidadLinea.data.precio_unitario_estimado = elf.readElement('tflineaPrecioUnitarioEstimado');",
+                            "",
+                            "        Ext.getCmp('gridReporteCondicionLinea').getView().refreshNode(hwtRecordCondicionUnidadLinea);",
+                            "    }",
+                            "    else{",
+                            "        elf.refreshGrid('gridReporteCondicionLinea');",
+                            "    }",
+                            "",
+                            "    elf.closeWindow('winReporteCondicionLinea');",
+                            "",
+                            "    //ECRC: Actualizando los Totales de la Reparacion",
+                            "    elf.writeElement('tfNumReparaciones'     ,jsonData.totalReparaciones.num_reparaciones);",
+                            "    elf.writeElement('tfPrecioTotalEstimado' ,jsonData.totalReparaciones.precio_total_estimado);",
+                            "};",
+                            "",
+                            "var functionFailure = function(){",
+                            "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                            "    elf.closeWindow('winReporteCondicionLinea');",
+                            "};",
+                            "",
+                            "var objJsonData            = new Object();",
+                            "objJsonData.tfLineaNumReporte             = elf.readElement('tfLineaNumReporte');",
+                            "objJsonData.tfLineaNumSequencia           = elf.readElement('tfLineaNumSequencia');",
+                            "objJsonData.tfLineaCodSeccion             = elf.readElement('tfLineaCodSeccion');",
+                            "objJsonData.tfLineaCodCaracteristica      = elf.readElement('tfLineaCodCaracteristica');",
+                            "objJsonData.tfLineaDescCaracteristica     = elf.readElement('tfLineaDescCaracteristica');",
+                            "objJsonData.cbxLineaEstado                = elf.readElement('cbxLineaEstado');",
+                            "objJsonData.tfLineaValorReferencia        = elf.readElement('tfLineaValorReferencia');",
+                            "objJsonData.tfLineaObservaciones          = elf.readElement('tfLineaObservaciones');",
+                            "objJsonData.tflineaPrecioUnitarioEstimado = elf.readElement('tflineaPrecioUnitarioEstimado','number');",
+                            "",
+                            "var objJsonRequest = new Object();",
+                            "objJsonRequest.apiController = apiController;",
+                            "objJsonRequest.apiMethod     = apiMethod;",
+                            "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                            "objJsonRequest.noMessage     = true;",
+                            "",
+                            "elf.doDataBridge(objJsonRequest,",
+                            "                 functionSuccess,",
+                            "                 null,",
+                            "                 functionFailure,",
+                            "                 null);",
+                            ""
+                        ]
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "grabarReporteCondicionLinea",
+                    "designerId": "5a938db1-96ce-4ff1-a249-793fb937db10"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "fieldsetLineaReporteCondicionEvaluacion",
+                        "id": "fieldsetLineaReporteCondicionEvaluacion",
+                        "itemId": "fieldsetLineaReporteCondicionEvaluacion",
+                        "layout": "column",
+                        "title": "<b>Reporte de Condición (Evaluación)</b>"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet9",
+                    "designerId": "47d85094-804d-4122-94e0-42b4781f7aaa",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfLineaNumReporte",
+                                "fieldLabel": "Num. Reporte",
+                                "id": "tfLineaNumReporte",
+                                "itemId": "tfLineaNumReporte",
+                                "layout|columnWidth": 0.4,
+                                "margin": "0 5 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyDisplayField1",
+                            "designerId": "c8c1d4da-b4ba-4d49-9626-7e6ce3a946f7"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfLineaNumSequencia",
+                                "fieldLabel": "Secuencia",
+                                "id": "tfLineaNumSequencia",
+                                "itemId": "tfLineaNumSequencia",
+                                "layout|columnWidth": 0.4,
+                                "margin": "0 5 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyDisplayField",
+                            "designerId": "e2118442-b1e5-496e-9ce9-2989929e9c10"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfLineaCodSeccion",
+                                "fieldLabel": "Seccion",
+                                "id": "tfLineaCodSeccion",
+                                "itemId": "tfLineaCodSeccion",
+                                "layout|columnWidth": 0.4,
+                                "margin": "0 5 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyDisplayField3",
+                            "designerId": "2df6dd9f-a688-408a-b013-4bb1019e494b"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfLineaCodCaracteristica",
+                                "fieldLabel": "Caracteristica",
+                                "id": "tfLineaCodCaracteristica",
+                                "itemId": "tfLineaCodCaracteristica",
+                                "layout|columnWidth": 0.4,
+                                "margin": "0 5 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyDisplayField2",
+                            "designerId": "21479c2c-c347-45ec-85db-bdb37463cf98"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfLineaDescCaracteristica",
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Condición",
+                                "id": "tfLineaDescCaracteristica",
+                                "itemId": "tfLineaDescCaracteristica",
+                                "layout|columnWidth": 1,
+                                "margin": "0 5 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "disabled": "boolean",
+                                "disabledCls": "string"
+                            },
+                            "name": "MyTextField10",
+                            "designerId": "f1313a46-b7a1-45fb-8e64-ddf12d6ff9f7"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "cbxLineaEstado",
+                                "displayField": "descripcion",
+                                "editable": false,
+                                "fieldLabel": "Estado",
+                                "id": "cbxLineaEstado",
+                                "itemId": "cbxLineaEstado",
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 5 5 0",
+                                "queryMode": "local",
+                                "store": "storeLineaEstado",
+                                "valueField": "descripcion"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "designer|displayName": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "margin": "auto",
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "queryMode": "string",
+                                "store": "store",
+                                "valueField": "datafield"
+                            },
+                            "name": "MyComboBox4",
+                            "designerId": "08d473fd-7ad1-49c5-878b-956a7eb8039a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "fieldsetLineaInformacion",
+                        "id": "fieldsetLineaInformacion",
+                        "itemId": "fieldsetLineaInformacion",
+                        "layout": "column",
+                        "title": "<b>Información</b>"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet10",
+                    "designerId": "361c03a4-eabb-4977-b6ff-10de54f010df",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfLineaValorReferencia",
+                                "fieldLabel": "Valor Referencia",
+                                "id": "tfLineaValorReferencia",
+                                "itemId": "tfLineaValorReferencia",
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 5 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField11",
+                            "designerId": "5911a9a4-fcf5-45de-9c34-c2c7fe07921b"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfLineaObservaciones",
+                                "fieldLabel": "Observaciones",
+                                "id": "tfLineaObservaciones",
+                                "itemId": "tfLineaObservaciones",
+                                "layout|columnWidth": 1,
+                                "margin": "0 5 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField12",
+                            "designerId": "03d1e097-9dbe-4026-a149-c370622fb938"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tflineaPrecioUnitarioEstimado",
+                                "fieldLabel": "Precio Estimado",
+                                "id": "tflineaPrecioUnitarioEstimado",
+                                "itemId": "tflineaPrecioUnitarioEstimado",
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 5 5 0",
+                                "maskRe": "/[0-9]/"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "maskRe": "regex"
+                            },
+                            "name": "MyTextField13",
+                            "designerId": "30e2232f-1fb7-4c20-9864-d9a535d022b6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "fieldsetLineaImagenes",
+                        "id": "fieldsetLineaImagenes",
+                        "itemId": "fieldsetLineaImagenes",
+                        "layout": "column",
+                        "title": "<b>Imagenes</b>"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet11",
+                    "designerId": "34a9c920-df62-4064-89ce-e496bdc2f90a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.File",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "buttonText": "...",
+                                "designer|displayName": "tfLineaFotografia",
+                                "fieldLabel": "Fotografía",
+                                "id": "tfLineaFotografia",
+                                "itemId": "tfLineaFotografia",
+                                "layout|columnWidth": 0.75,
+                                "margin": "0 5 5 0",
+                                "maxWidth": 450,
+                                "width": null
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "maxWidth": "number",
+                                "designer|displayName": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "margin": "auto",
+                                "buttonText": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyFileUpload",
+                            "designerId": "437d8953-84c3-4375-8cdd-d09f341fffd7",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.FileButton",
+                                    "reference": {
+                                        "name": "buttonConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "botonZoomWindow",
+                                        "iconCls": "fa fa-folder icon16 iconColorWhite",
+                                        "text": null
+                                    },
+                                    "configAlternates": {
+                                        "cls": "string",
+                                        "iconCls": "string",
+                                        "text": "string"
+                                    },
+                                    "name": "MyFileButton",
+                                    "designerId": "e1da34a8-f5f5-49d0-bf30-b936acffbd86"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoomWindow",
+                                "designer|displayName": "btnLineaCargarImagen",
+                                "iconCls": "fa fa-cloud-upload icon16 iconColorWhite",
+                                "id": "btnLineaCargarImagen",
+                                "itemId": "btnLineaCargarImagen",
+                                "layout|columnWidth": 0.1,
+                                "margin": "0 5 5 0",
+                                "maxWidth": 130,
+                                "minWidth": 130,
+                                "text": "Subir Imagen",
+                                "width": 130
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "minWidth": "number",
+                                "text": "string",
+                                "iconCls": "string",
+                                "maxWidth": "number",
+                                "width": "auto",
+                                "cls": "string"
+                            },
+                            "name": "MyButton14",
+                            "designerId": "acbb9311-bae0-4b92-97d7-09d2fec693bd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnLineaCargarImagenClick",
+                                        "implHandler": [
+                                            "var apiController = 'apiCondicionUnidad';",
+                                            "var apiMethod     = 'cargaImagenCondicionLinea';",
+                                            "",
+                                            "var objParamsEnvio = new Object();",
+                                            "objParamsEnvio.windowUpload  = 'winReporteCondicionLinea';",
+                                            "objParamsEnvio.fieldFileLoad = 'tfLineaFotografia';",
+                                            "objParamsEnvio.apiController = apiController;",
+                                            "objParamsEnvio.apiMethod     = apiMethod;",
+                                            "objParamsEnvio.functionUpload = function(){",
+                                            "    console.warn('Se supone que ya se actualizo la imagen, verifica ya!');",
+                                            "    var jsonData = elf.getInfoDataBridge('cargaImagenCondicionLinea');",
+                                            "",
+                                            "    console.warn('jsonData');",
+                                            "    console.warn(jsonData);",
+                                            "",
+                                            "    //ECRC: Actualizando el Grid con los Datos Actualizados",
+                                            "    hwtRecordCondicionUnidadLinea = Ext.getCmp('gridReporteCondicionLinea').recordActivo;",
+                                            "    hwtRecordCondicionUnidadLinea.data.valor_referencia         = elf.readElement('tfLineaValorReferencia');",
+                                            "    hwtRecordCondicionUnidadLinea.data.observaciones            = elf.readElement('tfLineaObservaciones');",
+                                            "    hwtRecordCondicionUnidadLinea.data.precio_unitario_estimado = elf.readElement('tflineaPrecioUnitarioEstimado');",
+                                            "    hwtRecordCondicionUnidadLinea.data.fotografia               = jsonData.objImagen.file;",
+                                            "    Ext.getCmp('gridReporteCondicionLinea').getView().refreshNode(hwtRecordCondicionUnidadLinea);",
+                                            "",
+                                            "    elf.writeElement('tfNumReparaciones'     ,jsonData.objResultReparaciones.totalReparaciones.num_reparaciones);",
+                                            "    elf.writeElement('tfPrecioTotalEstimado' ,jsonData.objResultReparaciones.totalReparaciones.precio_total_estimado);",
+                                            "    console.warn('grid Actualizado');",
+                                            "    ",
+                                            "};",
+                                            "",
+                                            "//ECRC: Parámetros de Validación del Registro",
+                                            "objParamsEnvio.numReporte        = elf.readElement('tfLineaNumReporte');",
+                                            "objParamsEnvio.numSequencia      = elf.readElement('tfLineaNumSequencia');",
+                                            "objParamsEnvio.codSeccion        = elf.readElement('tfLineaCodSeccion');",
+                                            "objParamsEnvio.codCaracteristica = elf.readElement('tfLineaCodCaracteristica');",
+                                            "",
+                                            "objParamsEnvio.estado          = elf.readElement('cbxLineaEstado');",
+                                            "objParamsEnvio.valorReferencia = elf.readElement('tfLineaValorReferencia');",
+                                            "objParamsEnvio.observaciones   = elf.readElement('tfLineaObservaciones');",
+                                            "objParamsEnvio.precioEstimado  = elf.readElement('tflineaPrecioUnitarioEstimado');",
+                                            "",
+                                            "//ECRC: Información de Identificación de la Imagen",
+                                            "var imagenIdentificador = elf.readElement('tfLineaNumReporte')   + '_' +",
+                                            "    elf.readElement('tfLineaNumSequencia') + '_' +",
+                                            "    elf.readElement('tfLineaCodSeccion')   + '_' +",
+                                            "    elf.readElement('tfLineaCodCaracteristica');",
+                                            "",
+                                            "objParamsEnvio.imagenOrigen        = 'condicionUnidadLinea';",
+                                            "objParamsEnvio.imagenDocumento     = 'reporte_' + elf.readElement('tfLineaNumReporte');",
+                                            "objParamsEnvio.imagenIdentificador = imagenIdentificador;",
+                                            "",
+                                            "elf.sendFile('formReporteCondicionLinea',objParamsEnvio);",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "onBtnLineaCargarImagenClick",
+                                    "designerId": "7b77bf22-46ce-4688-ad78-b267613448c2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "toolbarBackground"
+                ],
+                "dock": "bottom"
+            },
+            "configAlternates": {
+                "cls": "typedarray",
+                "dock": "string"
+            },
+            "name": "MyToolbar2",
+            "designerId": "222c0a5e-394f-4232-9a85-aa167514215a",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnLineaConfirmar",
+                        "iconCls": "fa fa-check-square icon16 iconColorGreen",
+                        "id": "btnLineaConfirmar",
+                        "itemId": "btnLineaConfirmar",
+                        "layout|flex": null,
+                        "text": "Confirmar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton8",
+                    "designerId": "9c498708-e010-4560-980c-57ba8c09ef12",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnLineaConfirmarClick",
+                                "implHandler": [
+                                    "Ext.getCmp('formReporteCondicionLinea').grabarReporteCondicionLinea();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnLineaConfirmarClick",
+                            "designerId": "7610b3eb-69b5-4f9b-8fc0-eced405882d2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill2",
+                    "designerId": "1817d3cd-e569-49e4-8ad8-1d6e2e275cf1"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnLineaCerrar",
+                        "iconCls": "fa fa-window-close icon16 iconColorRed",
+                        "id": "btnLineaCerrar",
+                        "itemId": "btnLineaCerrar",
+                        "layout|flex": null,
+                        "text": "Cerrar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton13",
+                    "designerId": "a711fa9b-23ac-49cd-95a5-f12c6efbba7a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnLineaCerrarClick",
+                                "implHandler": [
+                                    "elf.closeWindow('winReporteCondicionLinea');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnLineaCerrarClick",
+                            "designerId": "f0faecae-7084-49af-93f3-0c1cf2a42cf3"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modCabinaTipoAsientoCopiloto"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "modChasis4",
+    "designerId": "d90aaa90-1462-4f41-b3ce-47b535e557cf",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField29",
+            "designerId": "35a2e01b-fa4a-40ce-80a8-ab36d660b6ac"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField30",
+            "designerId": "ce2a5947-7548-4b5b-aa78-d33342e25954"
+        }
+    ]
+}

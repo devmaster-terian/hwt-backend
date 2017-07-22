@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeVolqueteConexionElectricidadAire",
+        "model": "modVolqueteConexionElectricidadAire",
+        "storeId": "storeVolqueteConexionElectricidadAire"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor9",
+    "designerId": "2a6b8c4f-034b-4751-96f0-e0e09f55ef34"
+}

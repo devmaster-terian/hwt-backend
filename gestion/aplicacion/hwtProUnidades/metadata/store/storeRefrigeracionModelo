@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeRefrigeracionModelo",
+        "model": "modRefrigeracionModelo",
+        "storeId": "storeRefrigeracionModelo"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor27",
+    "designerId": "8282e0ec-33d8-4ae0-85d2-bb6bef3c5d63"
+}

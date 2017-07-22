@@ -1,0 +1,32 @@
+{
+    "name": "sencha-soap",
+    "type": "code",
+    "creator": "Sencha",
+    "summary": "SOAP Data Support",
+    "detailedDescription": "This package provides SOAP support for the Data package",
+    "version": "5.0.0",
+    "compatVersion": "5.0.0",
+    "format": "1",
+    "output": "${package.dir}/build",
+    "local": true,
+    "framework": "ext",
+
+    "architect": {
+        "compatFrameworks": [
+            "ext42","ext50","ext51"
+        ],
+        "classes": [{
+            "definition": "SoapProxy.Definition.js",
+            "className": "Ext.data.soap.Proxy",
+            "js": [
+                "data/soap/Proxy.js"
+            ]
+        },{
+            "definition": "SoapReader.Definition.js",
+            "className": "Ext.data.soap.Reader",
+            "js": [
+                "data/soap/Reader.js"
+            ]
+        }]
+    }
+}

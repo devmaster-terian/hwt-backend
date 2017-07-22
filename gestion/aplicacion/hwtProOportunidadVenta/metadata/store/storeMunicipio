@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeMunicipio",
+        "model": "modelSolicitudMunicipio",
+        "storeId": "storeMunicipio"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "storeId": "string",
+        "model": "model"
+    },
+    "name": "MyStore3",
+    "designerId": "3e48c64b-3a9e-4466-8e49-d08c88463fd5"
+}

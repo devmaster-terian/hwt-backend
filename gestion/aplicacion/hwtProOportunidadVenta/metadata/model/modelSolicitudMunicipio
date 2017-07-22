@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modelSolicitudMunicipio"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "modelSolicitudEstado1",
+    "designerId": "975540ab-4e72-4917-8f3d-fe53aca9d3d8",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField32",
+            "designerId": "33a111ba-61be-49d8-b88b-3d55a63941f0"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField33",
+            "designerId": "8d9ebe73-390d-45ce-bed4-26b05e8bebf5"
+        }
+    ]
+}

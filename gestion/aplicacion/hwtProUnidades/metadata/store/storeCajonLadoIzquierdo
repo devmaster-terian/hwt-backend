@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCajonLadoIzquierdo",
+        "model": "modCajonLadoIzquierdo",
+        "storeId": "storeCajonLadoIzquierdo"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor14",
+    "designerId": "e1d004f6-95e9-435e-8318-6cf8805031fb"
+}

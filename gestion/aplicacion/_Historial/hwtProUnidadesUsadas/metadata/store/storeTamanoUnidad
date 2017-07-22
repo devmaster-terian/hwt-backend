@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeTamanoUnidad",
+        "model": "modTamanoUnidad",
+        "storeId": "storeTamanoUnidad"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor1",
+    "designerId": "40c74e38-f3c5-4caf-ba0d-6d89c467a2c3"
+}

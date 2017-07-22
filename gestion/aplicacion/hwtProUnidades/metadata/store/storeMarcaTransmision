@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeMarcaTransmision",
+        "model": "modMarcaTransmision",
+        "storeId": "storeMarcaTransmision"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor1",
+    "designerId": "1a88249e-6ceb-42ad-b55d-a0cb7b3b07eb"
+}

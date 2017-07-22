@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCajonCapacidadMontacarga",
+        "model": "modCajonCapacidadMontacarga",
+        "storeId": "storeCajonCapacidadMontacarga"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor22",
+    "designerId": "62a93a3e-3ee3-4726-999e-4eb121bd21bc"
+}

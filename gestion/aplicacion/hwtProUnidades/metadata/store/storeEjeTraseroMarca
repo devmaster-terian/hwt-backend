@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeEjeTraseroMarca",
+        "model": "modEjeTraseroMarca",
+        "storeId": "storeEjeTraseroMarca"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor7",
+    "designerId": "12e73d15-8a38-47e4-836e-fcd21e1cb347"
+}

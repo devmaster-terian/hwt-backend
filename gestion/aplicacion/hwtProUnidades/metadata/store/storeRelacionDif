@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeRelacionDif",
+        "model": "modRelacionDif",
+        "storeId": "storeRelacionDif"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor9",
+    "designerId": "12f73c6f-1bc3-40a0-8990-c16b6181244c"
+}

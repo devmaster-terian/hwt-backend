@@ -1,0 +1,98 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modelBuscaVin"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyModel",
+    "designerId": "94dedfef-9b91-49c1-8e3b-fbfdb4a067cc",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modelo"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField",
+            "designerId": "f2b9b89e-9da0-4493-99a4-c5e9c0a3b3fa"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "marca"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField1",
+            "designerId": "b9268733-6ec6-45e2-a7bb-56d5a743e54e"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ann_unidad"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField2",
+            "designerId": "635ff751-703b-4868-9132-b15a421403bb"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "vin"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField3",
+            "designerId": "72b333be-878b-4658-919f-f03154758cde"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField6",
+            "designerId": "a3470c9b-2eb6-4e45-a7df-caf8d0951ab5"
+        }
+    ]
+}

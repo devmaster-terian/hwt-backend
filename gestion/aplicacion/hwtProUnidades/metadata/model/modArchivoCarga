@@ -1,0 +1,98 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modArchivoCarga"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyModel",
+    "designerId": "0b5bc345-a21b-4d58-82d0-7e7c45331cdd",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField31",
+            "designerId": "b7f19497-282b-4ca6-8b0d-d53b10be0d38"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "size"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField32",
+            "designerId": "994776e7-b2a1-4afa-b99b-f863cbb2a29a"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "file"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField33",
+            "designerId": "6085887c-6596-4a00-a987-ec0a3fcb822f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "status"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField34",
+            "designerId": "40de0de5-c04d-4099-b579-62050425ae2f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "alias"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField35",
+            "designerId": "2476c933-1a78-4e01-9644-2670b1d659ba"
+        }
+    ]
+}

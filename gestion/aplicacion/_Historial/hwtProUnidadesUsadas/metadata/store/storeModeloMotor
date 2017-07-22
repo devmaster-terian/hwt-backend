@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeModeloMotor",
+        "model": "modModeloMotor",
+        "storeId": "storeModeloMotor"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor2",
+    "designerId": "fbfcbec7-17d1-4324-a92e-dc735e19b434"
+}
