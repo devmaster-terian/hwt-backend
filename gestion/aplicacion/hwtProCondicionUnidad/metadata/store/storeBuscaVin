@@ -1,0 +1,129 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeBuscaVin",
+        "model": "modelBuscaVin",
+        "pageSize": 250,
+        "storeId": "storeBuscaVin"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "pageSize": "number",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "b7e3cc01-14cd-49ac-90fd-935f9f56f9d8",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "restProxyBuscaVin"
+            },
+            "configAlternates": {
+                "designer|displayName": "string"
+            },
+            "name": "MyRestProxy2",
+            "designerId": "032fe417-b6d9-4235-9501-1130d68fbcf0",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "jsonReaderBuscaVin"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "function",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "573e7dac-b998-4661-9826-4ae328a2a5de",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "rootProperty",
+                                "implHandler": [
+                                    "var storeBuscaVin = Ext.getStore('storeBuscaVin');",
+                                    "var rawData = storeBuscaVin.getProxy().getReader().rawData;",
+                                    "return rawData.hwtUnidadUsada;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "rootProperty",
+                            "designerId": "fbe0d3bf-c484-46b1-9049-e354973e4988"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreBeforeLoad",
+                "implHandler": [
+                    "var objJsonData = new Object();",
+                    "objJsonData.page            = store.currentPage;",
+                    "objJsonData.start           = (store.currentPage - 1) * store.pageSize;",
+                    "objJsonData.limit           = store.pageSize;",
+                    "objJsonData.cbxFiltroMarca  = elf.readElement('cbxFiltroMarca');",
+                    "objJsonData.cbxFiltroModelo = elf.readElement('cbxFiltroModelo');",
+                    "objJsonData.tfBuscaVin      = elf.readElement('tfBuscaVin');",
+                    "objJsonData.busquedaVin     = 'Si';",
+                    "",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = 'apiUnidadUsada';",
+                    "objJsonRequest.apiMethod     = 'listaUnidadUsada';",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "var proxyUnidadUsada         = store.getProxy();",
+                    "proxyUnidadUsada.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                    "proxyUnidadUsada.extraParams = objJsonRequest;",
+                    ""
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onStoreBeforeLoad",
+            "designerId": "24945a98-f7c3-423b-ac9e-63d0ba2e4cf0"
+        }
+    ]
+}

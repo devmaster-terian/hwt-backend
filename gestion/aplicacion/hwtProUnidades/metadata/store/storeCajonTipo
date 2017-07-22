@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCajonTipo",
+        "model": "modCajonTipo",
+        "storeId": "storeCajonTipo"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor10",
+    "designerId": "56f5865b-7eab-43c7-9808-0555734c24e9"
+}

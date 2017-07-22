@@ -1,0 +1,25 @@
+s2017-07-18 19:23:46 T 1500423826.2766 [Receiver::getApiParameter] Inicia proceos de validacion
+2017-07-18 19:23:46 T 0.0523 [findFirst] SELECT * FROM hwt_pedido_venta_linea WHERE codigo = "833710" LIMIT 1
+2017-07-18 19:23:46 T 0.0641 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-18 19:23:46 T 0.0431 [findFirst] SELECT * FROM hwt_pedido_venta WHERE num_pedido = "1000015" AND situacion_pedido <= "6" LIMIT 1
+2017-07-18 19:23:46 T 0.0734 [*Process not defined!] false
+2017-07-18 19:32:08 T 1500424328.7131 [Receiver::getApiParameter] Inicia proceos de validacion
+2017-07-18 19:32:08 T 0.0350 [findFirst] SELECT * FROM hwt_pedido_venta_linea WHERE codigo = "833710" LIMIT 1
+2017-07-18 19:32:08 T 0.0596 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-18 19:32:08 T 0.0411 [findFirst] SELECT * FROM hwt_pedido_venta WHERE num_pedido = "1000015" AND situacion_pedido <= "6" LIMIT 1
+2017-07-18 19:32:08 T 0.0748 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-18 19:32:34 T 1500424354.1467 [Receiver::getApiParameter] Inicia proceos de validacion
+2017-07-18 19:32:34 T 0.0427 [findFirst] SELECT * FROM hwt_pedido_venta_linea WHERE codigo = "833710" LIMIT 1
+2017-07-18 19:32:34 T 0.0657 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-18 19:32:34 T 0.0426 [findFirst] SELECT * FROM hwt_pedido_venta WHERE num_pedido = "1000015" AND situacion_pedido <= "6" LIMIT 1
+2017-07-18 19:32:34 T 0.0711 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-18 19:32:50 T 1500424370.8428 [Receiver::getApiParameter] Inicia proceos de validacion
+2017-07-18 19:32:50 T 0.0394 [findFirst] SELECT * FROM hwt_pedido_venta_linea WHERE codigo = "833710" LIMIT 1
+2017-07-18 19:32:50 T 0.0665 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-18 19:32:51 T 0.0415 [findFirst] SELECT * FROM hwt_pedido_venta WHERE num_pedido = "1000015" AND situacion_pedido <= "6" LIMIT 1
+2017-07-18 19:32:51 T 0.0750 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-18 19:35:35 T 1500424535.6561 [Receiver::getApiParameter] Inicia proceos de validacion
+2017-07-18 19:35:35 T 0.0394 [findFirst] SELECT * FROM hwt_pedido_venta_linea WHERE codigo = "833710" LIMIT 1
+2017-07-18 19:35:35 T 0.0660 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-18 19:35:35 T 0.0436 [findFirst] SELECT * FROM hwt_pedido_venta WHERE num_pedido = "1000015" AND situacion_pedido <= "6" LIMIT 1
+2017-07-18 19:35:35 T 0.0744 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}

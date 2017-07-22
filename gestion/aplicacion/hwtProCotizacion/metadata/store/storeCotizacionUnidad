@@ -1,0 +1,125 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCotizacionUnidad",
+        "model": "modCotizacionUnidad",
+        "storeId": "storeCotizacionUnidad"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "5d7cfd6f-676d-4ded-983b-2c1c773aef08",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "restProxyCotizacionUnidad"
+            },
+            "configAlternates": {
+                "designer|displayName": "string"
+            },
+            "name": "MyRestProxy",
+            "designerId": "475602ab-8f0b-4a1a-b1e0-740796fa7c77",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "jsonReaderCotizacionUnidad"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "function",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "94b8b834-b9f1-4454-8d2b-d210cbabfd74",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "rootProperty",
+                                "implHandler": [
+                                    "var storeCotizacionUnidad = Ext.getStore('storeCotizacionUnidad');",
+                                    "var rawData = storeCotizacionUnidad.getProxy().getReader().rawData;",
+                                    "return rawData.hwtCotizacionUnidad;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "rootProperty",
+                            "designerId": "3596aecc-6189-4cd4-86be-35760aea4145"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreBeforeLoad",
+                "implHandler": [
+                    "var storeCotizacionUnidad = Ext.getStore('storeCotizacionUnidad');",
+                    "var proxyCliente = storeCotizacionUnidad.getProxy();",
+                    "",
+                    "var objJsonData = new Object();",
+                    "objJsonData.page  = storeCotizacionUnidad.currentPage;",
+                    "objJsonData.start = (storeCotizacionUnidad.currentPage - 1) * storeCotizacionUnidad.pageSize;",
+                    "objJsonData.limit = storeCotizacionUnidad.pageSize;",
+                    "objJsonData.tfNumCotizacion     = elf.readElement('tfNoCotizacion');",
+                    "",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = 'apiCotizacion';",
+                    "objJsonRequest.apiMethod     = 'listaUnidadCotizacion';",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "proxyCliente.api.read        = elf.setApiDataBridge(objJsonRequest.apiController);",
+                    "proxyCliente.extraParams     = objJsonRequest;"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onStoreBeforeLoad",
+            "designerId": "eae2ea3a-eafc-4729-b8eb-f3d478ed2430"
+        }
+    ]
+}

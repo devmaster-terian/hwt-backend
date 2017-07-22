@@ -1,0 +1,20 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_50j4e4i1",
+        "id": "fontWebSymbols",
+        "url": "../../recurso/webfonts/websymbols/websymbols.css"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "id": "string",
+        "url": "uri"
+    },
+    "name": "css2",
+    "designerId": "f3fa6c40-502b-40c5-8388-13ad0d0a6f52"
+}

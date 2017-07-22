@@ -1,0 +1,65 @@
+{
+    "name": "hwtCatCliente",
+    "settings": {
+        "cmd": {},
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost/",
+        "exportPath": "",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Medium",
+                "builtIn": true,
+                "height": 768,
+                "width": 1024
+            }
+        }
+    },
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "95ee7afd-84f0-400c-b062-d9a1dbc32b71",
+            "1674dbfe-a753-405c-8f5a-2eeb9998276a",
+            "414f9793-6243-4d58-ae6f-fd8e88eff76e",
+            "45b47e25-fc52-49ca-aba8-24b7a9238ff2",
+            "3ee48383-06e9-4894-b57f-01294e0aad79",
+            "8245785e-f799-45fc-ab72-39a8643b85c3",
+            "df21914b-a280-4e88-94b6-3c4344a09a43",
+            "b4dac564-0ec1-4132-9b92-c8e5b46e32b6",
+            "d92e5ae7-69d9-4985-a7d0-9d27f37b0650"
+        ],
+        "store": [
+            "06bc0601-c042-4f54-9a7d-b41e2650c5a7",
+            "14116ead-4aaa-4f45-979b-334f50db0d3e",
+            "7abd33c5-cae4-45c7-99b3-907e57a0cb0e"
+        ],
+        "controller": [],
+        "model": [
+            "e6b58bd6-7603-4182-a6db-0de64a3a5522",
+            "5baef40f-6c6c-4e43-9f5e-82c052eef6ee",
+            "4f2f1614-166d-41c0-9009-1e7166aab175"
+        ],
+        "resource": [
+            "74d82992-1ba7-4dc2-a877-d37915010199",
+            "f3fa6c40-502b-40c5-8388-13ad0d0a6f52",
+            "bb60d1cb-bdec-46ed-8aa7-b6c1aa62d202",
+            "7316009e-ad2a-48b1-8850-e227b7714f06",
+            "42d405a7-03a5-4ac3-bdd5-781ad1783990",
+            "0081f1d5-2aa5-4a36-a9e0-cff45a201ea6",
+            "7216ada7-a592-4451-baf9-ff5ace8f9cd4"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

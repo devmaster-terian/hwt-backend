@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modBuscaGerenteRegional"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "modCodigoGerenteRegional1",
+    "designerId": "d2f8c812-c0c7-4b5b-91c6-2b80fe1b554e",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "usuario"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField29",
+            "designerId": "9fd331b7-3a44-48a2-86f3-649a204b8bf1"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField30",
+            "designerId": "96a65b65-095f-4cc8-baf4-695addab0475"
+        }
+    ]
+}

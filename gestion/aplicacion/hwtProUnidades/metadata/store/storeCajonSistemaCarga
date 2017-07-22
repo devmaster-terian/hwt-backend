@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCajonSistemaCarga",
+        "model": "modCajonSistemaCarga",
+        "storeId": "storeCajonSistemaCarga"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor16",
+    "designerId": "91a07c7b-8fd4-44c4-9485-54bd9f101ef4"
+}

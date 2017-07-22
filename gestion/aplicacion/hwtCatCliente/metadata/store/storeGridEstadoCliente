@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeGridEstadoCliente",
+        "model": "modelGridEstadoCliente",
+        "storeId": "storeGridEstadoCliente"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeEstadoCliente1",
+    "designerId": "7abd33c5-cae4-45c7-99b3-907e57a0cb0e"
+}

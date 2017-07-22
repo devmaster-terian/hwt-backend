@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeExtensionesLaterales",
+        "model": "modExtensionesLaterales",
+        "storeId": "storeExtensionesLaterales"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor16",
+    "designerId": "7f759b9f-e2b2-4bb7-b6b9-254a9b22d0dc"
+}

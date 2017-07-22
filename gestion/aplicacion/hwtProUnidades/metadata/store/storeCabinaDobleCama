@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCabinaDobleCama",
+        "model": "modCabinaDobleCama",
+        "storeId": "storeCabinaDobleCama"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeCabinaTipoVestidura1",
+    "designerId": "f1818562-5a84-4476-9d78-42a56cbc43b6"
+}

@@ -1,0 +1,1723 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "designer|initialView": true,
+        "designer|userAlias": "winWorkplace",
+        "designer|userClassName": "winWorkplace",
+        "height": null,
+        "id": "winWorkplace",
+        "itemId": "winWorkplace",
+        "width": null
+    },
+    "configAlternates": {
+        "autoShow": "boolean",
+        "closable": "boolean",
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "maximized": "boolean",
+        "title": "string",
+        "titleCollapse": "boolean",
+        "width": "auto"
+    },
+    "designerId": "b2211294-cf51-4972-b132-d451e20778fc",
+    "viewControllerInstanceId": "9aa4ed4c-53e6-4312-83a1-20133c3d3917",
+    "viewModelInstanceId": "5ec3312b-0fc0-4c13-9660-aa4d8c3ccd86",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "height": null,
+                "id": "formWorkplace",
+                "itemId": "formWorkplace",
+                "layout": "fit",
+                "manageHeight": false,
+                "title": null,
+                "width": null
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "height": "auto",
+                "id": "string",
+                "itemId": "string",
+                "layout": "string",
+                "manageHeight": "boolean",
+                "title": "string",
+                "width": "auto"
+            },
+            "name": "MyForm",
+            "designerId": "5c2bf61e-97f6-4bdc-afcc-2033f4af19e2",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "toolbarBackground"
+                        ],
+                        "designer|displayName": "toolbarWorkplace",
+                        "dock": "top",
+                        "id": "toolbarWorkplace",
+                        "itemId": "toolbarWorkplace"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "dock": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "cls": "typedarray"
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "7ac38c56-6f6e-4974-93d9-2c650af60b54",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "filWorkplace",
+                                "itemId": "filWorkplace",
+                                "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|flex": "number"
+                            },
+                            "name": "MyFill",
+                            "designerId": "abdcd2f4-42ed-4bd8-995b-25e0f5809d89"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "btnExitWorkspace",
+                                "height": 24,
+                                "iconAlign": null,
+                                "iconCls": "ion-power icon16red",
+                                "id": "btnExitWorkspace",
+                                "itemId": "btnExitWorkspace",
+                                "layout|flex": null,
+                                "text": "Cerrar Sesión",
+                                "textAlign": "left",
+                                "width": 130
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "height": "auto",
+                                "iconAlign": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "textAlign": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyButton",
+                            "designerId": "7f14ce37-90bc-4f82-97f6-a96deb381e9f",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnExitWorkspaceClick",
+                                        "implHandler": [
+                                            "sessionStorage.clear();",
+                                            "self.location=\"../hwtAcceso/index.html\";"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnExitWorkspaceClick",
+                                    "designerId": "2b085175-35e6-4ee3-8693-a74ea0508be3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyCls": [
+                            "imagenAmbienteMenu"
+                        ],
+                        "bodyPadding": null,
+                        "border": false,
+                        "designer|displayName": "formHeader",
+                        "height": 140,
+                        "id": "formHeader",
+                        "itemId": "formHeader",
+                        "layout": "column",
+                        "maxHeight": 140,
+                        "title": null
+                    },
+                    "configAlternates": {
+                        "bodyCls": "typedarray",
+                        "bodyPadding": "auto",
+                        "border": "boolean",
+                        "designer|displayName": "string",
+                        "height": "auto",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "maxHeight": "number",
+                        "title": "string"
+                    },
+                    "name": "MyForm1",
+                    "designerId": "d3488e1d-5217-4de3-a221-f13960af39ad",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "imgLogoCompany",
+                                "height": 130,
+                                "id": "imgLogoCompany",
+                                "itemId": "imgLogoCompany",
+                                "layout|columnWidth": 0.2,
+                                "margin": "5 0 0 60",
+                                "maxHeight": 130,
+                                "maxWidth": 130,
+                                "shrinkWrap": 0,
+                                "src": "../../recurso/imagen/hwt_logo_gestion.png",
+                                "width": 130
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "height": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "maxHeight": "number",
+                                "maxWidth": "number",
+                                "shrinkWrap": "number",
+                                "src": "uri",
+                                "width": "auto"
+                            },
+                            "name": "MyImg",
+                            "designerId": "bb4397a3-8fca-45d0-9cd5-e13825400f7f"
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 0,
+                                "designer|displayName": "fieldsetSessionData",
+                                "id": "fieldsetSessionData",
+                                "itemId": "fieldsetSessionData",
+                                "layout": "column",
+                                "layout|columnWidth": 0.8,
+                                "margin": "20 0 0 30",
+                                "title": null
+                            },
+                            "configAlternates": {
+                                "border": "auto",
+                                "designer|displayName": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout": "string",
+                                "layout|columnWidth": "auto",
+                                "title": "string",
+                                "margin": "auto"
+                            },
+                            "name": "MyFieldSet3",
+                            "designerId": "21bea324-3c3b-4d26-9479-3888fecabeb3",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": null,
+                                        "cls": [
+                                            "fontBigTitle"
+                                        ],
+                                        "componentCls": null,
+                                        "designer|displayName": "lblCompany",
+                                        "id": "lblCompany",
+                                        "itemId": "lblCompany",
+                                        "layout|columnWidth": 1,
+                                        "margin": "0 0 20 0",
+                                        "padding": "10 0 10 45",
+                                        "text": "Company"
+                                    },
+                                    "configAlternates": {
+                                        "baseCls": "string",
+                                        "cls": "typedarray",
+                                        "componentCls": "string",
+                                        "designer|displayName": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout|columnWidth": "auto",
+                                        "padding": "auto",
+                                        "text": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyLabel",
+                                    "designerId": "949b9cf5-f970-4365-9775-20b4ee30a27f"
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "fontMediumTitle"
+                                        ],
+                                        "designer|displayName": "lblUserName",
+                                        "focusOnToFront": false,
+                                        "id": "lblUserName",
+                                        "itemId": "lblUserName",
+                                        "layout|columnWidth": 0.5,
+                                        "margin": null,
+                                        "maxWidth": null,
+                                        "padding": "7 0 5 45",
+                                        "text": "User Name"
+                                    },
+                                    "configAlternates": {
+                                        "cls": "typedarray",
+                                        "designer|displayName": "string",
+                                        "focusOnToFront": "boolean",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout|columnWidth": "auto",
+                                        "maxWidth": "number",
+                                        "padding": "auto",
+                                        "text": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyLabel1",
+                                    "designerId": "682c7494-9da7-41c9-b062-df5370588269"
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "fontMediumTitleRight"
+                                        ],
+                                        "designer|displayName": "lblSystemName",
+                                        "focusOnToFront": false,
+                                        "id": "lblSystemName",
+                                        "itemId": "lblSystemName",
+                                        "layout|columnWidth": 0.5,
+                                        "maxWidth": null,
+                                        "padding": "7 0 5 0",
+                                        "text": "System Name"
+                                    },
+                                    "configAlternates": {
+                                        "cls": "typedarray",
+                                        "designer|displayName": "string",
+                                        "focusOnToFront": "boolean",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout|columnWidth": "auto",
+                                        "maxWidth": "number",
+                                        "padding": "auto",
+                                        "text": "string"
+                                    },
+                                    "name": "MyLabel2",
+                                    "designerId": "c208a9a8-42ba-4b06-950d-6d1004c91b43"
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "fontNormalTitle"
+                                        ],
+                                        "designer|displayName": "lblProfile",
+                                        "focusOnToFront": false,
+                                        "id": "lblProfile",
+                                        "itemId": "lblProfile",
+                                        "layout|columnWidth": 0.5,
+                                        "maxWidth": null,
+                                        "padding": "0 0 5 45",
+                                        "text": "Profile"
+                                    },
+                                    "configAlternates": {
+                                        "cls": "typedarray",
+                                        "designer|displayName": "string",
+                                        "focusOnToFront": "boolean",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout|columnWidth": "auto",
+                                        "maxWidth": "number",
+                                        "padding": "auto",
+                                        "text": "string"
+                                    },
+                                    "name": "MyLabel3",
+                                    "designerId": "2869c875-ec75-4d52-9de1-2b61f2e95b44"
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "fontNormalTitleRight"
+                                        ],
+                                        "designer|displayName": "lblVersion",
+                                        "focusOnToFront": false,
+                                        "id": "lblVersion",
+                                        "itemId": "lblVersion",
+                                        "layout|columnWidth": 0.5,
+                                        "maxWidth": null,
+                                        "padding": "0 0 5 0",
+                                        "text": "Version"
+                                    },
+                                    "configAlternates": {
+                                        "cls": "typedarray",
+                                        "designer|displayName": "string",
+                                        "focusOnToFront": "boolean",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout|columnWidth": "auto",
+                                        "maxWidth": "number",
+                                        "padding": "auto",
+                                        "text": "string"
+                                    },
+                                    "name": "MyLabel4",
+                                    "designerId": "22c45354-84b0-4ae8-b47c-6e7ae9f18607"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tabPanelWorkplace",
+                        "id": "tabPanelWorkplace",
+                        "itemId": "tabPanelWorkplace",
+                        "maxHeight": null
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "maxHeight": "number"
+                    },
+                    "name": "MyTabPanel",
+                    "designerId": "977ff016-a8c9-4bf2-baa2-70eed0899a1a",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "designer|displayName": "tabTasks",
+                                "height": null,
+                                "id": "tabTasks",
+                                "itemId": "tabTasks",
+                                "title": "Procesos"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "title": "string",
+                                "bodyCls": "typedarray",
+                                "height": "auto"
+                            },
+                            "name": "MyPanel",
+                            "designerId": "c05433d9-236e-4ed2-93cf-a5c05e4d8937",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "tabConfigTasks",
+                                        "height": null,
+                                        "iconCls": "ion-briefcase icon24",
+                                        "id": "tabConfigTasks",
+                                        "itemId": "tabConfigTasks",
+                                        "textAlign": "left",
+                                        "width": 120
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "height": "auto",
+                                        "iconCls": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "textAlign": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "TabConfig",
+                                    "designerId": "dd596301-6fd9-429a-9048-75c01f69bb04"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "fieldsetModuleProcess",
+                                        "id": "fieldsetModuleProcess",
+                                        "itemId": "fieldsetModuleProcess",
+                                        "layout": "column",
+                                        "margin": "5 20 10 20",
+                                        "title": "<b>Gestión</b>"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyFieldSet2",
+                                    "designerId": "cbd4f108-ee2c-4db3-9118-fafa1e8cffd9",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "designer|displayName": "btnProManUnidadesUsadas",
+                                                "height": 45,
+                                                "iconCls": "fa fa-truck fa-lg icono-blanco icon24",
+                                                "id": "btnProManUnidadesUsadas",
+                                                "itemId": "btnProManUnidadesUsadas",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "Unidades</br>Usadas",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto"
+                                            },
+                                            "name": "MyButton6",
+                                            "designerId": "bd118e64-2c2f-40f3-aab9-4e50527daf6b",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnProUnidadesUsadasClick",
+                                                        "implHandler": [
+                                                            "elf.showAppWindow('hwtProUnidades','Mantenimiento a Unidades', true);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnProUnidadesUsadasClick",
+                                                    "designerId": "48ee57e2-8c51-4bb5-84a0-458a2bde65b4"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "arrowCls": null,
+                                                "baseCls": null,
+                                                "cls": "botonZoom",
+                                                "componentCls": null,
+                                                "designer|displayName": "btnProCondicionUnidad",
+                                                "height": 45,
+                                                "iconCls": "fa fa-tachometer fa-lg icono-blanco icon24",
+                                                "id": "btnProCondicionUnidad",
+                                                "itemId": "btnProCondicionUnidad",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "Condición de la</br>Unidad",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto",
+                                                "arrowCls": "string",
+                                                "baseCls": "string",
+                                                "componentCls": "string"
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "64057ea3-4e52-4e42-9719-8fd3b6179d0c",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnCondicionUnidadClick",
+                                                        "implHandler": [
+                                                            "elf.showAppWindow('hwtProCondicionUnidad','Condición de Unidades', true);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnCondicionUnidadClick",
+                                                    "designerId": "f14d00fa-99ab-43d0-bd93-0caafd8c00db"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "fieldsetModuleSales",
+                                        "id": "fieldsetModuleSales",
+                                        "itemId": "fieldsetModuleSales",
+                                        "layout": "column",
+                                        "margin": "5 20 10 20",
+                                        "title": "<b>Ventas</b>"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyFieldSet4",
+                                    "designerId": "9a9e2bca-c28a-4e14-aaa0-435dd403e35d",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "designer|displayName": "btnProManCotizaciones",
+                                                "height": 45,
+                                                "iconCls": "fa fa-wpforms fa-lg icono-blanco icon24",
+                                                "id": "btnProManCotizaciones",
+                                                "itemId": "btnProManCotizaciones",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "Cotización</br>Seminuevos",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto"
+                                            },
+                                            "name": "MyButton6",
+                                            "designerId": "3cb1a89d-4f9c-4f3f-8002-6932a7335ddc",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnProManCotizacionesClick",
+                                                        "implHandler": [
+                                                            "elf.showAppWindow('hwtProCotizacion','Cotizacion de Unidades', true);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnProManCotizacionesClick",
+                                                    "designerId": "ed0078a8-8b8e-4ea8-b313-276f2e32f88b"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "arrowCls": null,
+                                                "baseCls": null,
+                                                "cls": "botonZoom",
+                                                "componentCls": null,
+                                                "designer|displayName": "btnProPedidoVentas",
+                                                "height": 45,
+                                                "iconCls": "fa fa-usd fa-lg icono-blanco icon24",
+                                                "id": "btnProPedidoVentas",
+                                                "itemId": "btnProPedidoVentas",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "Pedido de Venta</br>de Unidades",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto",
+                                                "arrowCls": "string",
+                                                "baseCls": "string",
+                                                "componentCls": "string"
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "74f09b46-db7f-4551-80be-8dd61e43eb55",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnProPedidoVentasClick",
+                                                        "implHandler": [
+                                                            " elf.showAppWindow('hwtProPedidoVentas','Pedidos de Venta', true);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnProPedidoVentasClick",
+                                                    "designerId": "98b69d29-3fc8-409a-a6b9-ce261d916562"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "fieldsetModuleProspect",
+                                        "id": "fieldsetModuleProspect",
+                                        "itemId": "fieldsetModuleProspect",
+                                        "layout": "column",
+                                        "margin": "5 20 10 20",
+                                        "title": "<b>Prospectos</b>"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyFieldSet7",
+                                    "designerId": "5506a0e2-d4ff-4f2c-b1b6-b0fbaaead3c9",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "arrowCls": null,
+                                                "baseCls": null,
+                                                "cls": "botonZoom",
+                                                "componentCls": null,
+                                                "designer|displayName": "btnProOportunidadVenta",
+                                                "height": 45,
+                                                "iconCls": "fa fa-briefcase fa-lg icono-blanco icon24",
+                                                "id": "btnProOportunidadVenta",
+                                                "itemId": "btnProOportunidadVenta",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "Oportunidad</br>de Venta",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto",
+                                                "arrowCls": "string",
+                                                "baseCls": "string",
+                                                "componentCls": "string"
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "294c6a6d-1d6a-4a8e-8359-ffeb12ed3f16",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnProOportunidadVentaClick",
+                                                        "implHandler": [
+                                                            "elf.showAppWindow('hwtProOportunidadVenta','Oportunidades de Venta', true);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnProOportunidadVentaClick",
+                                                    "designerId": "8779c922-48fa-48b3-ac59-a406eeb98963"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "fieldsetModuleSales",
+                                        "id": "fieldsetModuleSales1",
+                                        "itemId": "fieldsetModuleSales1",
+                                        "layout": "column",
+                                        "margin": "5 20 10 20",
+                                        "title": "<b>Compras</b>"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyFieldSet6",
+                                    "designerId": "ffd86a9d-b200-4f22-ba34-9ed26d54806b",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "arrowCls": null,
+                                                "baseCls": null,
+                                                "cls": "botonZoom",
+                                                "componentCls": null,
+                                                "designer|displayName": "btnProPedidoVentas",
+                                                "height": 45,
+                                                "iconCls": "fa fa-check-square-o fa-lg icono-blanco icon24",
+                                                "id": "btnProPedidoVentas1",
+                                                "itemId": "btnProPedidoVentas",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "Solicitud de Toma</br>de Unidades",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto",
+                                                "arrowCls": "string",
+                                                "baseCls": "string",
+                                                "componentCls": "string"
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "a861aae9-e97f-4886-a6c6-06ed51eed6a4",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnProPedidoVentasClick1",
+                                                        "implHandler": [
+                                                            "var msgTipo = 'information';",
+                                                            "var msgTitulo = 'Proceso de Pedidos de Venta';",
+                                                            "var msgContenido = 'Ésta funcionalidad está en Fase de Desarrollo.';",
+                                                            "var msgFuncion = undefined;",
+                                                            "var msgFormato = undefined;",
+                                                            "elf.message(msgTipo,",
+                                                            "            msgTitulo,",
+                                                            "            msgContenido,",
+                                                            "            msgFuncion,",
+                                                            "            msgFormato",
+                                                            "           );"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnProPedidoVentasClick1",
+                                                    "designerId": "4d772e20-7721-4b48-bc01-1b7c798354d5"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "designer|displayName": "tabCatalogs",
+                                "height": null,
+                                "id": "tabCatalogs",
+                                "itemId": "tabCatalogs",
+                                "layout": "column",
+                                "title": "Catalogos"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "height": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout": "string",
+                                "title": "string",
+                                "bodyCls": "typedarray"
+                            },
+                            "name": "MyPanel3",
+                            "designerId": "08d400db-3069-4045-ab95-efdaba8c818d",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "tabConfigCatalogs",
+                                        "height": null,
+                                        "iconCls": "ion-ios-folder icon24",
+                                        "id": "tabConfigCatalogs",
+                                        "itemId": "tabConfigCatalogs",
+                                        "textAlign": "left",
+                                        "width": 120
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "height": "auto",
+                                        "iconCls": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "textAlign": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "TabConfig2",
+                                    "designerId": "f12badd8-f51a-4eb2-acbd-df84429e5b69"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "fieldsetMainCatalogs",
+                                        "id": "fieldsetMainCatalogs",
+                                        "itemId": "fieldsetMainCatalogs",
+                                        "layout": "column",
+                                        "layout|columnWidth": 1,
+                                        "margin": "5 20 10 20",
+                                        "title": "<b>Principales</b>"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "layout|columnWidth": "auto",
+                                        "title": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyFieldSet1",
+                                    "designerId": "fb22f15a-486b-4f4e-b51f-1ab5e0a6e9f4",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "designer|displayName": "btnCatCliente",
+                                                "height": 45,
+                                                "iconCls": "fa fa-handshake-o fa-lg icono-blanco icon24",
+                                                "id": "btnCatCliente",
+                                                "itemId": "btnCatCliente",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "&nbspClientes",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto"
+                                            },
+                                            "name": "MyButton1",
+                                            "designerId": "a02f8961-7939-41b3-ac8b-14cf0792ab46",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnCatClienteClick",
+                                                        "implHandler": [
+                                                            "elf.showAppWindow('hwtCatCliente','Catálogo de Clientes', true);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnCatClienteClick",
+                                                    "designerId": "b48b4e9d-1a91-45b4-b3d1-24b52db9033b"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "designer|displayName": "btnCatProveedor",
+                                                "height": 45,
+                                                "iconCls": "fa fa-id-card-o fa-lg icono-blanco icon24",
+                                                "id": "btnCatProveedor",
+                                                "itemId": "btnCatProveedor",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "&nbspProveedores",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto"
+                                            },
+                                            "name": "MyButton4",
+                                            "designerId": "0d316f6e-4b3a-43a6-88ac-16a170433934",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnCatProveedorClick",
+                                                        "implHandler": [
+                                                            "elf.showAppWindow('hwtCatProveedor','Catálogo de Proveedores', true);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnCatProveedorClick",
+                                                    "designerId": "ee820fed-0b92-4576-b0f5-cdd50a4f4412"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "designer|displayName": "tabQueries",
+                                "id": "tabQueries",
+                                "itemId": "tabQueries",
+                                "title": "Consultas"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "title": "string",
+                                "bodyCls": "typedarray"
+                            },
+                            "name": "MyPanel1",
+                            "designerId": "c751e164-69d1-4482-8c67-d78c0f6f5cd9",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "tabConfigQueries",
+                                        "height": null,
+                                        "iconCls": "ion-ios-paper icon24",
+                                        "id": "tabConfigQueries",
+                                        "itemId": "tabConfigQueries",
+                                        "textAlign": "left",
+                                        "width": 120
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "height": "auto",
+                                        "iconCls": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "textAlign": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "TabConfig1",
+                                    "designerId": "8246b3a8-dc83-4584-838c-1bbe7cb3194b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "designer|displayName": "tabReports",
+                                "height": 500,
+                                "id": "tabReports",
+                                "itemId": "tabReports",
+                                "title": "Reportes"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "height": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "title": "string",
+                                "bodyCls": "typedarray"
+                            },
+                            "name": "MyPanel2",
+                            "designerId": "d649d9c1-46b0-429a-9a2e-a5cfa04b1eea",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "tabConfigReports",
+                                        "height": null,
+                                        "iconCls": "ion-printer icon24",
+                                        "id": "tabConfigReports",
+                                        "itemId": "tabConfigReports",
+                                        "textAlign": "left",
+                                        "width": 120
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "height": "auto",
+                                        "iconCls": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "textAlign": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "TabConfig2",
+                                    "designerId": "ef9ee069-ae91-4240-8180-abcd4b7c0dc2"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "fieldsetReports",
+                                        "id": "fieldsetReports",
+                                        "itemId": "fieldsetReports",
+                                        "layout": "column",
+                                        "margin": "5 20 10 20",
+                                        "title": "<b>Ventas</b>"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "layout|columnWidth": "auto",
+                                        "title": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "265739d7-8d34-42ef-8ffa-f2a009f1d1a6",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "designer|displayName": "btnRepVentas",
+                                                "height": 45,
+                                                "iconCls": "fa fa-file-excel-o fa-lg icono-blanco icon24",
+                                                "id": "btnRepVentas",
+                                                "itemId": "btnRepVentas",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "Reporte de</br>Ventas",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto"
+                                            },
+                                            "name": "MyButton2",
+                                            "designerId": "2f9fcaef-7a3f-4b97-b9f8-03551b3f759e",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnCatClienteClick12",
+                                                        "implHandler": [
+                                                            "var msgTipo = 'information';",
+                                                            "var msgTitulo = 'Catálogo de Cliente';",
+                                                            "var msgContenido = 'Ésta funcionalidad está en Fase de Desarrollo.';",
+                                                            "var msgFuncion = undefined;",
+                                                            "var msgFormato = undefined;",
+                                                            "elf.message(msgTipo,",
+                                                            "            msgTitulo,",
+                                                            "            msgContenido,",
+                                                            "            msgFuncion,",
+                                                            "            msgFormato",
+                                                            "           );"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnCatClienteClick12",
+                                                    "designerId": "aeb4943a-6885-4ec9-aad8-d96f4fd935db"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "designer|displayName": "tabSystem",
+                                "height": 500,
+                                "id": "tabSystem",
+                                "itemId": "tabSystem",
+                                "title": "Sistema"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "height": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "title": "string",
+                                "bodyCls": "typedarray"
+                            },
+                            "name": "MyPanel4",
+                            "designerId": "f8f8b5c1-806d-4bb1-a36d-eeeebde993be",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "tabConfigSystem",
+                                        "height": null,
+                                        "iconCls": "ion-social-buffer icon24",
+                                        "id": "tabConfigSystem",
+                                        "itemId": "tabConfigSystem",
+                                        "textAlign": "left",
+                                        "width": 120
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "height": "auto",
+                                        "iconCls": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "textAlign": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "TabConfig2",
+                                    "designerId": "66cd8af7-29fd-4f12-8ba7-41ceafac8350"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "fieldsetSystemCatalogs",
+                                        "id": "fieldsetSystemCatalogs",
+                                        "itemId": "fieldsetSystemCatalogs",
+                                        "layout": "column",
+                                        "margin": "5 20 10 20",
+                                        "title": "<b>Sistema</b>"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "layout|columnWidth": "auto",
+                                        "title": "string",
+                                        "margin": "auto"
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "b19751b9-7557-4ffc-90a5-033a518570b4",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "designer|displayName": "btnSysLimpiarCache",
+                                                "height": 45,
+                                                "iconCls": "fa fa-database fa-lg icono-blanco icon24",
+                                                "id": "btnSysLimpiarCache",
+                                                "itemId": "btnSysLimpiarCache",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "Limpiar Cache",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto"
+                                            },
+                                            "name": "MyButton2",
+                                            "designerId": "d686f5af-e664-4c70-802b-c9862f917e17",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnSysLimpiarCacheClick",
+                                                        "implHandler": [
+                                                            "var msgFuncion = function(){",
+                                                            "    var apiController = 'sysApiCache';",
+                                                            "    var apiMethod     = 'limpiaCache';",
+                                                            "    var objJsonData    = new Object();",
+                                                            "    objJsonData.accion = 'limpiaCache';",
+                                                            "",
+                                                            "    var objJsonRequest = new Object();",
+                                                            "    objJsonRequest.apiController = apiController;",
+                                                            "    objJsonRequest.apiMethod     = apiMethod;",
+                                                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                                            "",
+                                                            "    var functionSuccess = function(){",
+                                                            "        var jsonData = elf.getInfoDataBridge('limpiaCache');",
+                                                            "        elf.showInfo(jsonData,'information');",
+                                                            "    };",
+                                                            "",
+                                                            "    var functionFailure = function(){",
+                                                            "        var jsonData = elf.getInfoDataBridge('limpiaCache');",
+                                                            "        elf.showInfo(jsonData,'error');",
+                                                            "    };",
+                                                            "",
+                                                            "",
+                                                            "    elf.doDataBridge(objJsonRequest,",
+                                                            "                     functionSuccess,",
+                                                            "                     null,",
+                                                            "                     functionFailure,",
+                                                            "                     null);",
+                                                            "",
+                                                            "};",
+                                                            "msgTipo      = 'question';",
+                                                            "msgTitulo    = 'Cache de la Aplicación';",
+                                                            "msgContenido = 'Desea limpiar el Cache de la Aplicación (Flush)?';",
+                                                            "",
+                                                            "elf.message(msgTipo,msgTitulo,msgContenido,msgFuncion);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnSysLimpiarCacheClick",
+                                                    "designerId": "0119b5cd-da6f-4a81-bc67-0999a8ac07f1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFormWorkplaceResize",
+                        "implHandler": [
+                            "if (typeof appLocal !== 'undefined') {",
+                            "    appLocal.renderInterface(); ",
+                            "}",
+                            ""
+                        ],
+                        "name": "resize",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onFormWorkplaceResize",
+                    "designerId": "2670ffe4-bb91-4c91-8fd9-a31028c89b4c"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWinWorkplaceResize",
+                "implHandler": [
+                    "console.log('ventana resizadsa');",
+                    "if (typeof appLocal !== 'undefined') {",
+                    "    appLocal.renderInterface();",
+                    "}"
+                ],
+                "name": "resize",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onWinWorkplaceResize",
+            "designerId": "8372ef19-8d3c-4953-a973-5f0de6bd1179"
+        }
+    ]
+}

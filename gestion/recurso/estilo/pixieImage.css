@@ -1,0 +1,19 @@
+.large-green {
+    font-size: 32px;
+    color: green
+}
+
+.icon16red {
+    font-size: 16px;
+    color: red;
+    margin-top: -0px !important;
+    text-align: left !important;
+
+}
+
+.icon32red {
+    font-size: 32px;
+    color: red;
+    margin-top: -8px !important;
+
+}

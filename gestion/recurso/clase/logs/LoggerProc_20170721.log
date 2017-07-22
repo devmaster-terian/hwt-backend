@@ -1,0 +1,150 @@
+2017-07-21 09:20:58 T 1500646858.0107 [getRecords] situacion_pedido ->  = "1"
+2017-07-21 09:20:58 T 0.0001 [getRecords] SELECT * FROM hwt_pedido_venta WHERE situacion_pedido = "1" 
+2017-07-21 09:20:58 T 0.0792 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:20:58 T 0.0451 [*Process not defined!] Buscando Parametro: combos_pedido.situacion_pedido
+2017-07-21 09:21:27 T 1500646887.3479 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:27 T 0.0824 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:27 T 0.0946 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:31 T 1500646891.8210 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:31 T 0.0877 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:32 T 0.0907 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:33 T 1500646893.8968 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:33 T 0.0804 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:34 T 0.0863 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:58 T 1500646918.3827 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:58 T 0.0924 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:21:58 T 0.0936 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:22:16 T 1500646936.6320 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:22:16 T 0.0810 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:22:16 T 0.0937 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:23:24 T 1500647004.4199 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:23:24 T 0.0837 [*Process not defined!] false
+2017-07-21 09:23:24 T 0.0996 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:03 T 1500647043.8838 [Receiver::getApiParameter] SELECT * FROM sys_usuario WHERE usuario = '' or 1=1 '' AND acceso = '" or ""="'
+2017-07-21 09:24:03 T 0.0694 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:04 T 0.0791 [*Process not defined!] false
+2017-07-21 09:24:04 T 0.0920 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:13 T 1500647053.8927 [Receiver::getApiParameter] SELECT * FROM sys_usuario WHERE usuario = '' or 1=1 '' AND acceso = '" or ""="'
+2017-07-21 09:24:13 T 0.0716 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:14 T 0.0854 [*Process not defined!] false
+2017-07-21 09:24:14 T 0.0933 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:30 T 1500647070.9882 [Receiver::getApiParameter] SELECT * FROM sys_usuario WHERE usuario = '' or 1=1 '' AND acceso = '' or 1=1 ''
+2017-07-21 09:24:31 T 0.0687 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:31 T 0.0831 [*Process not defined!] false
+2017-07-21 09:24:31 T 0.0865 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:59 T 1500647099.3143 [Receiver::getApiParameter] SELECT * FROM sys_usuario WHERE usuario = 'erickroco' AND acceso = 'chiquita'
+2017-07-21 09:24:59 T 0.0692 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:59 T 0.0851 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:59 T 0.0914 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:59 T 0.0003 [findFirst] SELECT * FROM sys_usuario_perfil WHERE usuario = "erickroco" AND principal = 1 LIMIT 1
+2017-07-21 09:24:59 T 0.0992 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 09:24:59 T 0.0002 [findFirst] SELECT * FROM sys_perfil WHERE codigo_perfil = "admin" LIMIT 1
+2017-07-21 09:24:59 T 0.1018 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:38 T 1500669338.7309 [Receiver::getApiParameter] Buscando: tffiltroEstado
+2017-07-21 15:35:38 T 1500669338.7676 [apiPedidoVenta::datosOpciones] Buscando Parametro: combos_pedido.situacion_pedido
+2017-07-21 15:35:38 T 0.0721 [Receiver::getApiParameter] Buscando: dtfiltroEstado
+2017-07-21 15:35:38 T 1500669338.8161 [Receiver::getApiParameter] Buscando: tffiltroEstado
+2017-07-21 15:35:38 T 0.0867 [apiPedidoVenta::datosOpciones] Buscando Parametro: combos_pedido.tipo_entrega
+2017-07-21 15:35:38 T 0.0625 [Receiver::getApiParameter] Buscando: dffiltroEstado
+2017-07-21 15:35:38 T 0.0584 [Receiver::getApiParameter] Buscando: dtfiltroEstado
+2017-07-21 15:35:38 T 0.0605 [Receiver::getApiParameter] Buscando: cbxfiltroEstado
+2017-07-21 15:35:38 T 0.0602 [Receiver::getApiParameter] Buscando: dffiltroEstado
+2017-07-21 15:35:38 T 0.0830 [apiPedidoVenta::datosOpciones] Buscando Parametro: combos_unidades.modelo
+2017-07-21 15:35:38 T 0.0520 [Receiver::getApiParameter] Buscando: chkfiltroEstado
+2017-07-21 15:35:39 T 0.0549 [Receiver::getApiParameter] Buscando: cbxfiltroEstado
+2017-07-21 15:35:39 T 0.0692 [apiPedidoVenta::datosOpciones] Buscando Parametro: combos_unidades.marca
+2017-07-21 15:35:39 T 0.0550 [Receiver::getApiParameter] Buscando: fifiltroEstado
+2017-07-21 15:35:39 T 0.0520 [Receiver::getApiParameter] Buscando: chkfiltroEstado
+2017-07-21 15:35:39 T 0.0554 [Receiver::getApiParameter] Buscando: fifiltroEstado
+2017-07-21 15:35:39 T 0.0588 [Receiver::getApiParameter] Buscando: chfiltroEstado
+2017-07-21 15:35:39 T 0.0524 [Receiver::getApiParameter] Buscando: chfiltroEstado
+2017-07-21 15:35:39 T 0.0555 [Receiver::getApiParameter] Buscando: cbfiltroEstado
+2017-07-21 15:35:39 T 0.0615 [Receiver::getApiParameter] Buscando: cbfiltroEstado
+2017-07-21 15:35:39 T 0.0612 [Receiver::getApiParameter] Buscando: indfiltroEstado
+2017-07-21 15:35:39 T 0.0608 [Receiver::getApiParameter] Buscando: indfiltroEstado
+2017-07-21 15:35:39 T 0.2780 [apiPedidoVenta::datosOpciones] Obteniendo el Listado de los Gerentes Regionales
+2017-07-21 15:35:39 T 0.0611 [Receiver::getApiParameter] Buscando: tafiltroEstado
+2017-07-21 15:35:39 T 0.0001 [getRecords] codigo_perfil ->  = "gerente"
+2017-07-21 15:35:39 T 0.0000 [getRecords] SELECT * FROM sys_usuario_perfil WHERE codigo_perfil = "gerente" 
+2017-07-21 15:35:39 T 0.0496 [Receiver::getApiParameter] Buscando: tafiltroEstado
+2017-07-21 15:35:39 T 0.0495 [Receiver::getApiParameter] Buscando: rgfiltroEstado
+2017-07-21 15:35:39 T 0.0701 [Receiver::getApiParameter] Buscando: rgfiltroEstado
+2017-07-21 15:35:39 T 0.0741 [Receiver::getApiParameter] Buscando: rbfiltroEstado
+2017-07-21 15:35:39 T 0.1849 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:39 T 0.0725 [Receiver::getApiParameter] Buscando: rbfiltroEstado
+2017-07-21 15:35:39 T 0.0001 [getRecords] situacion_pedido ->  = ""
+2017-07-21 15:35:39 T 0.0004 [findFirst] SELECT * FROM sys_usuario WHERE usuario = "jamos" LIMIT 1
+2017-07-21 15:35:39 T 0.0000 [getRecords] SELECT * FROM hwt_pedido_venta WHERE situacion_pedido = "" 
+2017-07-21 15:35:39 T 0.1376 [Receiver::getApiParameter] Buscando: tfparamCodigo
+2017-07-21 15:35:39 T 0.0866 [Receiver::getApiParameter] Buscando: dtparamCodigo
+2017-07-21 15:35:39 T 0.2364 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:39 T 0.0005 [findFirst] SELECT * FROM sys_usuario WHERE usuario = "santirv" LIMIT 1
+2017-07-21 15:35:39 T 0.2394 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:39 T 0.1099 [Receiver::getApiParameter] Buscando: dfparamCodigo
+2017-07-21 15:35:39 T 0.0988 [Receiver::getApiParameter] Buscando: cbxparamCodigo
+2017-07-21 15:35:39 T 0.1296 [*Process not defined!] Buscando Parametro: combos_pedido.situacion_pedido
+2017-07-21 15:35:39 T 0.0627 [Receiver::getApiParameter] Buscando: chkparamCodigo
+2017-07-21 15:35:39 T 0.2133 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:39 T 0.0003 [*Process not defined!] Obteniendo el Listado de los Gerentes Regionales
+2017-07-21 15:35:39 T 0.0001 [getRecords] codigo_perfil ->  = "vendedor"
+2017-07-21 15:35:39 T 0.0001 [getRecords] SELECT * FROM sys_usuario_perfil WHERE codigo_perfil = "vendedor" 
+2017-07-21 15:35:40 T 0.0505 [Receiver::getApiParameter] Buscando: fiparamCodigo
+2017-07-21 15:35:40 T 0.0667 [Receiver::getApiParameter] Buscando: chparamCodigo
+2017-07-21 15:35:40 T 0.0538 [Receiver::getApiParameter] Buscando: cbparamCodigo
+2017-07-21 15:35:40 T 0.1593 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:40 T 0.0003 [findFirst] SELECT * FROM sys_usuario WHERE usuario = "lolmos" LIMIT 1
+2017-07-21 15:35:40 T 0.0630 [Receiver::getApiParameter] Buscando: indparamCodigo
+2017-07-21 15:35:40 T 0.0617 [Receiver::getApiParameter] Buscando: taparamCodigo
+2017-07-21 15:35:40 T 0.0560 [Receiver::getApiParameter] Buscando: rgparamCodigo
+2017-07-21 15:35:40 T 0.1708 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:40 T 0.0004 [findFirst] SELECT * FROM sys_usuario WHERE usuario = "anvargas" LIMIT 1
+2017-07-21 15:35:40 T 0.0653 [Receiver::getApiParameter] Buscando: rbparamCodigo
+2017-07-21 15:35:40 T 0.2371 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:40 T 0.0005 [findFirst] SELECT * FROM sys_usuario WHERE usuario = "gagarcia" LIMIT 1
+2017-07-21 15:35:40 T 0.1945 [Receiver::getApiParameter] Buscando: tfparamNombreCorto
+2017-07-21 15:35:40 T 0.0932 [Receiver::getApiParameter] Buscando: dtparamNombreCorto
+2017-07-21 15:35:40 T 0.0684 [Receiver::getApiParameter] Buscando: dfparamNombreCorto
+2017-07-21 15:35:40 T 0.2156 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:40 T 0.0004 [getRecords] SELECT * FROM hwt_consecionario 
+2017-07-21 15:35:40 T 0.0607 [Receiver::getApiParameter] Buscando: cbxparamNombreCorto
+2017-07-21 15:35:40 T 0.0641 [Receiver::getApiParameter] Buscando: chkparamNombreCorto
+2017-07-21 15:35:40 T 0.0666 [Receiver::getApiParameter] Buscando: fiparamNombreCorto
+2017-07-21 15:35:41 T 0.1871 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:41 T 0.0620 [Receiver::getApiParameter] Buscando: chparamNombreCorto
+2017-07-21 15:35:41 T 0.0634 [Receiver::getApiParameter] Buscando: cbparamNombreCorto
+2017-07-21 15:35:41 T 0.1171 [getRecords] SELECT * FROM hwt_consecionario_sucursal 
+2017-07-21 15:35:41 T 0.0601 [Receiver::getApiParameter] Buscando: indparamNombreCorto
+2017-07-21 15:35:41 T 0.0633 [Receiver::getApiParameter] Buscando: taparamNombreCorto
+2017-07-21 15:35:41 T 0.1581 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:41 T 0.0652 [Receiver::getApiParameter] Buscando: rgparamNombreCorto
+2017-07-21 15:35:41 T 0.0585 [Receiver::getApiParameter] Buscando: rbparamNombreCorto
+2017-07-21 15:35:41 T 1500669341.4668 [getRecords] situacion_pedido ->  = "1"
+2017-07-21 15:35:41 T 0.0001 [getRecords] SELECT * FROM hwt_pedido_venta WHERE situacion_pedido = "1" 
+2017-07-21 15:35:41 T 0.1371 [Receiver::getApiParameter] Buscando: tfparamRazonSocial
+2017-07-21 15:35:41 T 0.0762 [Receiver::getApiParameter] Buscando: dtparamRazonSocial
+2017-07-21 15:35:41 T 0.1664 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}
+2017-07-21 15:35:41 T 0.0559 [Receiver::getApiParameter] Buscando: dfparamRazonSocial
+2017-07-21 15:35:41 T 0.0533 [Receiver::getApiParameter] Buscando: cbxparamRazonSocial
+2017-07-21 15:35:41 T 0.0797 [*Process not defined!] Buscando Parametro: combos_pedido.situacion_pedido
+2017-07-21 15:35:41 T 0.0303 [Receiver::getApiParameter] Buscando: chkparamRazonSocial
+2017-07-21 15:35:41 T 0.0269 [Receiver::getApiParameter] Buscando: fiparamRazonSocial
+2017-07-21 15:35:41 T 0.0212 [Receiver::getApiParameter] Buscando: chparamRazonSocial
+2017-07-21 15:35:41 T 0.0254 [Receiver::getApiParameter] Buscando: cbparamRazonSocial
+2017-07-21 15:35:41 T 0.0248 [Receiver::getApiParameter] Buscando: indparamRazonSocial
+2017-07-21 15:35:41 T 0.0221 [Receiver::getApiParameter] Buscando: taparamRazonSocial
+2017-07-21 15:35:41 T 0.0203 [Receiver::getApiParameter] Buscando: rgparamRazonSocial
+2017-07-21 15:35:41 T 0.0230 [Receiver::getApiParameter] Buscando: rbparamRazonSocial
+2017-07-21 15:35:42 T 0.0434 [Receiver::getApiParameter] Buscando: tfparamRFC
+2017-07-21 15:35:42 T 0.0199 [Receiver::getApiParameter] Buscando: dtparamRFC
+2017-07-21 15:35:42 T 0.0207 [Receiver::getApiParameter] Buscando: dfparamRFC
+2017-07-21 15:35:42 T 0.0201 [Receiver::getApiParameter] Buscando: cbxparamRFC
+2017-07-21 15:35:42 T 0.0237 [Receiver::getApiParameter] Buscando: chkparamRFC
+2017-07-21 15:35:42 T 0.0229 [Receiver::getApiParameter] Buscando: fiparamRFC
+2017-07-21 15:35:42 T 0.0210 [Receiver::getApiParameter] Buscando: chparamRFC
+2017-07-21 15:35:42 T 0.0211 [Receiver::getApiParameter] Buscando: cbparamRFC
+2017-07-21 15:35:42 T 0.0234 [Receiver::getApiParameter] Buscando: indparamRFC
+2017-07-21 15:35:42 T 0.0220 [Receiver::getApiParameter] Buscando: taparamRFC
+2017-07-21 15:35:42 T 0.0227 [Receiver::getApiParameter] Buscando: rgparamRFC
+2017-07-21 15:35:42 T 0.0198 [Receiver::getApiParameter] Buscando: rbparamRFC
+2017-07-21 15:35:42 T 0.0280 [Receiver::getApiParameter] SELECT * FROM hwt_proveedor  WHERE estado_proveedor = 'ACTIVO'
+2017-07-21 15:35:42 T 0.0596 [*Process not defined!] {"current_field":null,"field_count":null,"lengths":null,"num_rows":null,"type":null}

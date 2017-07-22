@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeQuintaRueda",
+        "model": "modQuintaRueda",
+        "storeId": "storeQuintaRueda"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor19",
+    "designerId": "4bb07b0c-80f1-4453-93c6-790f9898a040"
+}

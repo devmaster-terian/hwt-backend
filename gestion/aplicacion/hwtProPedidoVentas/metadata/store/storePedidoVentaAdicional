@@ -1,0 +1,124 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storePedidoVentaAdicional",
+        "model": "modPedidoVentaAdicional",
+        "storeId": "storePedidoVentaAdicional"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "9774b119-397c-4ed0-9e4b-3061c28972b2",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "restProxyPedidoVentaAdicional"
+            },
+            "configAlternates": {
+                "designer|displayName": "string"
+            },
+            "name": "MyRestProxy3",
+            "designerId": "29de97d5-ec2d-4cf1-8572-738e600ea2b2",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "jsonReaderAdicional"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "function",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "8775704c-bdc6-45b8-9f75-af1b8d9b2979",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "rootProperty",
+                                "implHandler": [
+                                    "var storePedidoVentaAdicional = Ext.getStore('storePedidoVentaAdicional');",
+                                    "var rawData = storePedidoVentaAdicional.getProxy().getReader().rawData;",
+                                    "return rawData.hwtPedidoVentaAdicional;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "rootProperty",
+                            "designerId": "e90fcf7d-0753-4793-9e8f-fd4b573c66a6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreBeforeLoad",
+                "implHandler": [
+                    "var storePedidoVentaAdicional = Ext.getStore('storePedidoVentaAdicional');",
+                    "var proxyCliente = storePedidoVentaAdicional.getProxy();",
+                    "",
+                    "var objJsonData = new Object();",
+                    "objJsonData.page        = storePedidoVentaAdicional.currentPage;",
+                    "objJsonData.start       = (storePedidoVentaAdicional.currentPage - 1) * storePedidoVentaAdicional.pageSize;",
+                    "objJsonData.limit       = storePedidoVentaAdicional.pageSize;",
+                    "objJsonData.tfNumPedido = elf.readElement('tfNumPedido');",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = 'apiPedidoVenta';",
+                    "objJsonRequest.apiMethod     = 'listaPedidoVentaAdicional';",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "proxyCliente.api.read        = elf.setApiDataBridge(objJsonRequest.apiController);",
+                    "proxyCliente.extraParams     = objJsonRequest;"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onStoreBeforeLoad",
+            "designerId": "f62a699a-9590-485d-85ae-110a25e13bcb"
+        }
+    ]
+}

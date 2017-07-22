@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeLineaEstado",
+        "model": "modelLineaEstado",
+        "storeId": "storeLineaEstado"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeOpcionEstadoCaracteristica1",
+    "designerId": "18558068-af7d-4187-b643-9c0b9ca67217"
+}

@@ -1,0 +1,18 @@
+{
+    "type": "libraryresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Library",
+        "theme": "hwtTemaAplicacion"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "theme": "string"
+    },
+    "name": "Library",
+    "designerId": "7316009e-ad2a-48b1-8850-e227b7714f06"
+}

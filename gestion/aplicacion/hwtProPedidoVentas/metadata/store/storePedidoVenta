@@ -1,0 +1,158 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storePedidoVenta",
+        "model": "modPedidoVenta",
+        "pageSize": 100,
+        "storeId": "storePedidoVenta"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string",
+        "pageSize": "number",
+        "arrayBusqueda": "array"
+    },
+    "name": "MyStore",
+    "designerId": "9791c5f3-d738-4081-baca-e95e033a4c22",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "arrayBusqueda",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreBeforeLoad",
+                "implHandler": [
+                    "var storePedidoVenta = Ext.getStore('storePedidoVenta');",
+                    "var proxyPedidoVenta = storePedidoVenta.getProxy();",
+                    "",
+                    "var objJsonData = new Object();",
+                    "objJsonData.page  = storePedidoVenta.currentPage;",
+                    "objJsonData.start = (storePedidoVenta.currentPage - 1) * storePedidoVenta.pageSize;",
+                    "objJsonData.limit = storePedidoVenta.pageSize;",
+                    "objJsonData.filtroEstado = elf.readElement('cbxFiltroSituacionPedido');",
+                    "",
+                    "var objBuscaPedidoVenta = Ext.getCmp('formAplicacion').objBuscaPedidoVenta;",
+                    "",
+                    "if(objBuscaPedidoVenta !== undefined){",
+                    "    objJsonData.codigoBusca = objBuscaPedidoVenta.codigo;",
+                    "",
+                    "}",
+                    "",
+                    "if(store.arrayBusqueda !== undefined){",
+                    "    objJsonData.filtroEstado = 'BUSQUEDA';",
+                    "    arrayBusqueda = store.arrayBusqueda;",
+                    "    arrayBusqueda.forEach(function(element,index){",
+                    "        objJsonData[element] = elf.readElement(element);",
+                    "    });",
+                    "",
+                    "    elf.hideElement('cbxFiltroSituacionPedido');",
+                    "    elf.showElement('btnLimpiaBusqueda');",
+                    "    ",
+                    "}",
+                    "else{",
+                    "    elf.showElement('cbxFiltroSituacionPedido');",
+                    "    elf.hideElement('btnLimpiaBusqueda');",
+                    "}",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = 'apiPedidoVenta';",
+                    "objJsonRequest.apiMethod     = 'listaPedidoVenta';",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "proxyPedidoVenta.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                    "proxyPedidoVenta.extraParams = objJsonRequest;",
+                    ""
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onStoreBeforeLoad",
+            "designerId": "40e6483c-4bc7-42e5-a4e4-3ebc43680f72"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "restProxyPedidoVenta"
+            },
+            "configAlternates": {
+                "designer|displayName": "string"
+            },
+            "name": "MyRestProxy",
+            "designerId": "ffb4c9fa-6417-4700-b707-7f3c925e3afa",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "jsonReaderPedidoVenta"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "function",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "1736f3c6-def0-4ad7-bd36-6f7fc23bb269",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "rootProperty",
+                                "implHandler": [
+                                    "var storePedidoVenta = Ext.getStore('storePedidoVenta');",
+                                    "var rawData = storePedidoVenta.getProxy().getReader().rawData;",
+                                    "return rawData.hwtPedidoVenta;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "rootProperty",
+                            "designerId": "4d94d23a-b672-4a40-97e4-a25973f8864b"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

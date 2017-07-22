@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeSistemaEscape",
+        "model": "modSistemaEscape",
+        "storeId": "storeSistemaEscape"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor26",
+    "designerId": "fe2b3b81-f7c0-464d-997c-14b85e00df0b"
+}

@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeVolqueteComposicion",
+        "model": "modVolqueteComposicion",
+        "storeId": "storeVolqueteComposicion"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor1",
+    "designerId": "5883ccd2-715c-439c-8303-f707cd7fcbac"
+}

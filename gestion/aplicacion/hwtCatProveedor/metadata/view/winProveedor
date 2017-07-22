@@ -1,0 +1,979 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": false,
+        "designer|userAlias": "winProveedor",
+        "designer|userClassName": "winProveedor",
+        "height": null,
+        "id": "winProveedor",
+        "itemId": "winProveedor",
+        "modal": true,
+        "title": "Proveedor",
+        "width": 830
+    },
+    "configAlternates": {
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "45b47e25-fc52-49ca-aba8-24b7a9238ff2",
+    "viewControllerInstanceId": "8245785e-f799-45fc-ab72-39a8643b85c3",
+    "viewModelInstanceId": "3ee48383-06e9-4894-b57f-01294e0aad79",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyCls": [
+                    "formBackground"
+                ],
+                "bodyPadding": 10,
+                "id": "formProveedor",
+                "itemId": "formProveedor",
+                "layout": "column",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyCls": "typedarray",
+                "bodyPadding": "auto",
+                "id": "string",
+                "itemId": "string",
+                "layout": "string",
+                "title": "string"
+            },
+            "name": "MyForm",
+            "designerId": "a9ed01ab-c359-49b8-bd73-48c523ebf600",
+            "cn": [
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "confirmarRegistro",
+                        "implHandler": [
+                            "if(Ext.getCmp('formProveedor').isValid()){",
+                            "    var formRegistro  = 'formProveedor';",
+                            "    var apiController = 'apiProveedor';",
+                            "    var apiMethod     = 'grabaProveedor';",
+                            "",
+                            "    var objJsonRequest = new Object();",
+                            "    objJsonRequest.apiController = apiController;",
+                            "    objJsonRequest.apiMethod     = apiMethod;",
+                            "    objJsonRequest.apiData       = elf.prepareFormFields(formRegistro);",
+                            "",
+                            "    var functionSuccess = function(){",
+                            "        var jsonData = elf.getInfoDataBridge(apiMethod);",
+                            "",
+                            "        elf.showInfo(jsonData, 'information');",
+                            "",
+                            "        elf.closeWindow('winProveedor');",
+                            "        elf.refreshGrid('gridProveedor');",
+                            "    };",
+                            "",
+                            "    var functionFailure = function(){",
+                            "        var jsonData = elf.getInfoDataBridge(apiMethod);",
+                            "        elf.showInfo(jsonData, 'error', 'tfNombreCorto');",
+                            "    };",
+                            "",
+                            "    elf.doDataBridge(objJsonRequest,",
+                            "                      functionSuccess,",
+                            "                      null,",
+                            "                      functionFailure,",
+                            "                      null);",
+                            "} //Formulario Valido",
+                            "else{",
+                            "    elf.message('error',",
+                            "                 'Formulario Incompleto',",
+                            "                 'Debe de llenar los Campos Requeridos');",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "confirmarRegistro",
+                    "designerId": "4a9313fe-53c7-4135-9381-61b879c3e8ad"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "toolbarBackground"
+                        ],
+                        "designer|displayName": "toolbarWinProveedor",
+                        "dock": "bottom"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "designer|displayName": "string",
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar1",
+                    "designerId": "c63b0a37-7352-4a41-8fa5-ae37ddb118a7",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "btnProveedorConfirmar",
+                                "iconCls": "fa fa-check-square icon16 iconColorGreen",
+                                "id": "btnProveedorConfirmar",
+                                "itemId": "btnProveedorConfirmar",
+                                "layout|flex": null,
+                                "text": "Confirmar",
+                                "textAlign": "left",
+                                "width": 130
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "textAlign": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyButton7",
+                            "designerId": "211d071a-c7d7-49d0-ad11-01530f2f6ad5",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnProveedorConfirmarClick",
+                                        "implHandler": [
+                                            "Ext.getCmp('formProveedor').confirmarRegistro();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnProveedorConfirmarClick",
+                                    "designerId": "fc81f7b3-da0c-493f-8639-890ff9394da4"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
+                            },
+                            "name": "MyFill1",
+                            "designerId": "fdf53682-b249-4224-857f-ca8a9dadeaab"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "btnProveedorCerrar",
+                                "iconCls": "fa fa-window-close icon16 iconColorRed",
+                                "id": "btnProveedorCerrar",
+                                "itemId": "btnProveedorCerrar",
+                                "layout|flex": null,
+                                "text": "Cerrar",
+                                "textAlign": "left",
+                                "width": 130
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "textAlign": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "dcde4f25-e571-4760-8a1a-aa01b34d92ed",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnProveedorCerrarClick",
+                                        "implHandler": [
+                                            "elf.closeWindow('winProveedor');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnProveedorCerrarClick",
+                                    "designerId": "81fa99a7-5ab7-4ba0-900b-c6c3ded36c66"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "fieldsetProveedorDatosFiscales",
+                        "id": "fieldsetProveedorDatosFiscales",
+                        "itemId": "fieldsetProveedorDatosFiscales",
+                        "layout": "column",
+                        "layout|columnWidth": 1,
+                        "title": "<b>Datos Fiscales</b>"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "layout|columnWidth": "auto",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet",
+                    "designerId": "dac750fc-97a6-46ca-bf43-e05f8d2be838",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfCodigoProveedor",
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Codigo",
+                                "id": "tfCodigoProveedor",
+                                "itemId": "tfCodigoProveedor",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.3,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "disabled": "boolean"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "2e590534-c1b8-4483-b1e0-602754f3798d"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "designer|displayName": "tfNombreCorto",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Nombre Corto",
+                                "id": "tfNombreCorto",
+                                "itemId": "tfNombreCorto",
+                                "labelWidth": 90,
+                                "layout|columnWidth": 0.35,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "allowBlank": "boolean",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField1",
+                            "designerId": "48c4699c-e7d6-4dca-a824-8486bd18116b"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "designer|displayName": "tfRfc",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "RFC",
+                                "id": "tfRfc",
+                                "itemId": "tfRfc",
+                                "labelWidth": 50,
+                                "layout|columnWidth": 0.35,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "allowBlank": "boolean",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField3",
+                            "designerId": "58b42f03-86e2-4731-be6f-c6e32f93bd1c"
+                        },
+                        {
+                            "type": "Ext.resizer.Splitter",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": null,
+                                "height": 0,
+                                "layout|columnWidth": 1
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "height": "auto",
+                                "layout|columnWidth": "auto"
+                            },
+                            "name": "MySplitter",
+                            "designerId": "62f9694d-4fdf-471c-a137-feff6167edc6"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "designer|displayName": "tfRazonSocial",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Razon Social",
+                                "id": "tfRazonSocial",
+                                "itemId": "tfRazonSocial",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 1,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "allowBlank": "boolean",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "b9217be3-a353-4eee-9189-5285f32f895b"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "designer|displayName": "tfRepresentanteLegal",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Representante Legal",
+                                "id": "tfRepresentanteLegal",
+                                "itemId": "tfRepresentanteLegal",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "allowBlank": "boolean",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField4",
+                            "designerId": "1ada5747-0391-428f-8b58-86bf5a98c55f"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "designer|displayName": "tfFacturacionEmail",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Correo Facturacion",
+                                "id": "tfFacturacionEmail",
+                                "itemId": "tfFacturacionEmail",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0",
+                                "width": null
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "allowBlank": "boolean",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "width": "auto"
+                            },
+                            "name": "MyTextField5",
+                            "designerId": "2e1ba68b-5cfb-4acd-ba95-710c2d604141"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "designer|displayName": "cbxEstadoProveedor",
+                                "displayField": "descripcion",
+                                "editable": false,
+                                "fieldLabel": "Estatus Proveedor",
+                                "id": "cbxEstadoProveedor",
+                                "itemId": "cbxEstadoProveedor",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.4,
+                                "margin": "0 20 5 0",
+                                "queryMode": "local",
+                                "requiredCls": "requiredField",
+                                "store": "storeEstadoProveedor",
+                                "valueField": "descripcion"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "allowBlank": "boolean",
+                                "displayField": "datafield",
+                                "queryMode": "string",
+                                "requiredCls": "string",
+                                "store": "store",
+                                "valueField": "datafield",
+                                "editable": "boolean"
+                            },
+                            "name": "MyComboBox1",
+                            "designerId": "60ccfb85-4e26-4bc1-88ef-e74cb5c2513f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "fieldsetProveedorContacto",
+                        "id": "fieldsetProveedorContacto",
+                        "itemId": "fieldsetProveedorContacto",
+                        "layout": "column",
+                        "layout|columnWidth": 1,
+                        "title": "<b>Contacto</b>"
+                    },
+                    "configAlternates": {
+                        "layout": "string",
+                        "title": "string",
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|columnWidth": "auto"
+                    },
+                    "name": "MyFieldSet2",
+                    "designerId": "cb9423e8-acb8-4edc-8865-564da267c4b6",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfContactoNombre",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Nombre",
+                                "id": "tfContactoNombre",
+                                "itemId": "tfContactoNombre",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField14",
+                            "designerId": "1c6ab743-145c-435f-8dca-b9a14a3cafd5"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfContactoTelefono",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Teléfono",
+                                "id": "tfContactoTelefono",
+                                "itemId": "tfContactoTelefono",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField16",
+                            "designerId": "3563ea11-424b-49dc-890d-983bdfa5dd55"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfContactoEmail",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Correo Contacto",
+                                "id": "tfContactoEmail",
+                                "itemId": "tfContactoEmail",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField17",
+                            "designerId": "8f3378b9-057f-4723-b98a-8870765a6567"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfContactoMovil",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Teléfono Móvil",
+                                "id": "tfContactoMovil",
+                                "itemId": "tfContactoMovil",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField15",
+                            "designerId": "53ceac41-c5f4-4640-9409-717c73988a2e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "fieldsetProveedorDireccion",
+                        "id": "fieldsetProveedorDireccion",
+                        "itemId": "fieldsetProveedorDireccion",
+                        "layout": "column",
+                        "layout|columnWidth": 1,
+                        "title": "<b>Direccion</b>"
+                    },
+                    "configAlternates": {
+                        "layout": "string",
+                        "title": "string",
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|columnWidth": "auto"
+                    },
+                    "name": "MyFieldSet1",
+                    "designerId": "14c16f6e-ea1e-42d4-a398-50d6eba7fce1",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfDirCalle",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Calle",
+                                "id": "tfDirCalle",
+                                "itemId": "tfDirCalle",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "allowBlank": "boolean"
+                            },
+                            "name": "MyTextField6",
+                            "designerId": "bd59d580-28c1-4f80-ad11-61d83a1f1af1"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfDirNumExterior",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "No. Exterior",
+                                "id": "tfDirNumExterior",
+                                "itemId": "tfDirNumExterior",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.25,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField8",
+                            "designerId": "45969438-700c-4fed-b97b-5ebcf28ce78c"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfDirNumInterior",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "No. Interior",
+                                "id": "tfDirNumInterior",
+                                "itemId": "tfDirNumInterior",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.25,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField7",
+                            "designerId": "63d59588-8688-449b-8edc-4b384976f160"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfDirColonia",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Colonia",
+                                "id": "tfDirColonia",
+                                "itemId": "tfDirColonia",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "allowBlank": "boolean"
+                            },
+                            "name": "MyTextField9",
+                            "designerId": "b6cb8a2a-6584-4e98-866a-6ed521ee0e98"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfCodigoPostal",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Codigo Postal",
+                                "id": "tfCodigoPostal",
+                                "itemId": "tfCodigoPostal",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "allowBlank": "boolean"
+                            },
+                            "name": "MyTextField13",
+                            "designerId": "c53117c8-750a-4298-a455-85e178b101ed"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfDirPais",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Pais",
+                                "id": "tfDirPais",
+                                "itemId": "tfDirPais",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "allowBlank": "boolean"
+                            },
+                            "name": "MyTextField12",
+                            "designerId": "d35b3789-a4f6-49b2-af23-87ec4671c649"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfDirEstado",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Entidad",
+                                "id": "tfDirEstado",
+                                "itemId": "tfDirEstado",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "allowBlank": "boolean"
+                            },
+                            "name": "MyTextField11",
+                            "designerId": "0c234c96-da5c-4993-9070-d0c2dd93267d"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfDirMunicipio",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Municipio",
+                                "id": "tfDirMunicipio",
+                                "itemId": "tfDirMunicipio",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "allowBlank": "boolean"
+                            },
+                            "name": "MyTextField10",
+                            "designerId": "9d526f7b-c9ce-46a0-87de-398143b232aa"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

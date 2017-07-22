@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeOpcionSeccion",
+        "model": "modelOpcionSeccion",
+        "storeId": "storeOpcionSeccion"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "b0e93c29-a349-4224-91a7-e86a0f9e98c1"
+}

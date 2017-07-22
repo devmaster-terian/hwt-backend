@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeVolqueteEstructuraInferior",
+        "model": "modVolqueteEstructuraInferior",
+        "storeId": "storeVolqueteEstructuraInferior"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor5",
+    "designerId": "72e0d5a0-8251-4620-99e0-85b9b3cbdaa6"
+}

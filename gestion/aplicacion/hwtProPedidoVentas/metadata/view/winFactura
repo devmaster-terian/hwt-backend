@@ -1,0 +1,473 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyCls": [
+            "formBackground"
+        ],
+        "closable": false,
+        "designer|userAlias": "winFactura",
+        "designer|userClassName": "winFactura",
+        "height": null,
+        "id": "winFactura",
+        "itemId": "winFactura",
+        "modal": true,
+        "title": "Factura Generada",
+        "width": 300
+    },
+    "configAlternates": {
+        "bodyCls": "typedarray",
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "57f19c36-5f69-4c83-9983-16db6be3238c",
+    "viewControllerInstanceId": "b7385cee-e70e-40aa-99ff-0c990f6c9a51",
+    "viewModelInstanceId": "a4556adb-07dd-4a92-a7aa-4cbb53857ca9",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyCls": [
+                    "formBackground"
+                ],
+                "bodyPadding": 10,
+                "designer|displayName": "formFactura",
+                "id": "formFactura",
+                "itemId": "formFactura",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyCls": "typedarray",
+                "bodyPadding": "auto",
+                "designer|displayName": "string",
+                "id": "string",
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "88ba7a4b-4b03-49c5-b7a8-be86b9401252",
+            "cn": [
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "grabaIntegracionFactura",
+                        "implHandler": [
+                            "if(Ext.getCmp('formFactura').isValid()){",
+                            "    var formRegistro  = 'formFactura';",
+                            "    var apiController = 'apiPedidoVenta';",
+                            "    var apiMethod     = 'grabaIntegracionFactura';",
+                            "",
+                            "    var objJsonRequest = new Object();",
+                            "    objJsonRequest.apiController = apiController;",
+                            "    objJsonRequest.apiMethod     = apiMethod;",
+                            "    objJsonRequest.apiData       = elf.prepareFormFields(formRegistro);",
+                            "",
+                            "    var functionSuccess = function(){",
+                            "        var jsonData = elf.getInfoDataBridge(apiMethod);",
+                            "",
+                            "        elf.showInfo(jsonData, 'information');",
+                            "",
+                            "        Ext.getCmp('tabPanelPedidoVenta').setActiveTab(0);",
+                            "",
+                            "        elf.showRecord(jsonData,'hwtPedidoVenta','edit');",
+                            "",
+                            "        elf.writeElement('tfSituacionPedido' ,",
+                            "                         jsonData.hwtPedidoVenta.situacion_pedido);",
+                            "",
+                            "        elf.writeElement('tfSituacionPedidoDescripcion',",
+                            "                         jsonData.hwtPedidoVenta.situacion_pedido_descripcion);",
+                            "",
+                            "        elf.hideElement('btnFacturarPedidoVenta');",
+                            "        elf.hideElement('btnDesasignarPedidoVenta');",
+                            "        elf.showElement('btnDesligarPedidoVenta');",
+                            "        elf.closeWindow('winFactura');",
+                            "    };",
+                            "",
+                            "    var functionFailure = function(){",
+                            "        var jsonData = elf.getInfoDataBridge(apiMethod);",
+                            "        elf.showInfo(jsonData, 'error', 'tfCodigoCliente');",
+                            "    };",
+                            "",
+                            "    elf.doDataBridge(objJsonRequest,",
+                            "                     functionSuccess,",
+                            "                     null,",
+                            "                     functionFailure,",
+                            "                     null);",
+                            "} //Formulario Valido",
+                            "else{",
+                            "    elf.message('error',",
+                            "                'Formulario Incompleto',",
+                            "                'Debe de llenar los Campos Requeridos');",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "grabaIntegracionFactura",
+                    "designerId": "26a17f09-2e28-4fe1-b626-07c734c41570"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "fieldsetPedido",
+                        "title": "<b>Pedido</b>"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet16",
+                    "designerId": "61613be2-d9ca-42fd-b8a5-4dc79ca95a37",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Número",
+                                "id": "tfNumPedidoIntegra",
+                                "itemId": "tfNumPedidoIntegra",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|anchor": "string",
+                                "disabled": "boolean",
+                                "disabledCls": "string"
+                            },
+                            "name": "MyTextField19",
+                            "designerId": "0d848e9e-cbc5-4d82-8d64-fe8e205ccc18"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "fieldsetPedido",
+                        "title": "<b>Pedido en ERP</b>"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet17",
+                    "designerId": "2de36830-4b2b-4fc0-84a7-77c70ba1f8eb",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Número",
+                                "id": "tfIntegraNumPedidoErp",
+                                "itemId": "tfIntegraNumPedidoErp",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|anchor": "string",
+                                "allowBlank": "boolean"
+                            },
+                            "name": "MyTextField19",
+                            "designerId": "a49e629c-cd6d-4ac3-9c78-d36ce3b5ea20"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetFactura",
+                        "itemId": "fieldsetFactura",
+                        "title": "<b>Factura generada en ERP</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet15",
+                    "designerId": "285abbed-839f-4ddc-b650-4a1df892972e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Fecha",
+                                "id": "dfIntegraFacturaFecha",
+                                "itemId": "dfIntegraFacturaFecha",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|anchor": "string",
+                                "allowBlank": "boolean",
+                                "id": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyDateField4",
+                            "designerId": "afdf42fc-a1e8-4412-89d4-12be9bc17118"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Serie",
+                                "id": "tfIntegraFacturaSerie",
+                                "itemId": "tfIntegraFacturaSerie",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|anchor": "string"
+                            },
+                            "name": "MyTextField20",
+                            "designerId": "15b58bc6-1cb1-46a3-ae39-a3406ff3c897"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Folio",
+                                "id": "tfIntegraFacturaFolio",
+                                "itemId": "tfIntegraFacturaFolio",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|anchor": "string"
+                            },
+                            "name": "MyTextField29",
+                            "designerId": "48fcfdd2-607a-485e-a403-496312434b4c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "toolbarBackground"
+                ],
+                "designer|displayName": "toolbarFactura",
+                "dock": "bottom"
+            },
+            "configAlternates": {
+                "cls": "typedarray",
+                "designer|displayName": "string",
+                "dock": "string"
+            },
+            "name": "MyToolbar3",
+            "designerId": "4f0c12d5-2faa-41ef-bd4f-0a8f00281afa",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnConfirmarFactura",
+                        "iconCls": "fa fa-check-square icon16 icon16 iconColorGreen",
+                        "id": "btnConfirmarFactura",
+                        "itemId": "btnConfirmarFactura",
+                        "layout|flex": null,
+                        "text": "Confirmar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton21",
+                    "designerId": "c6f2cf11-6fe6-41fa-ae57-64ca2232a984",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnConfirmarFacturaClick",
+                                "implHandler": [
+                                    "Ext.getCmp('formFactura').grabaIntegracionFactura();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnConfirmarFacturaClick",
+                            "designerId": "8eb4b8a9-17c5-45e5-b6d7-8a23ba650c33"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill2",
+                    "designerId": "f71d65b7-dca9-4428-9e5d-31036efb4160"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnCerrarFactura",
+                        "iconCls": "fa fa-window-close icon16 iconColorRed",
+                        "id": "btnCerrarFactura",
+                        "itemId": "btnCerrarFactura",
+                        "layout|flex": null,
+                        "text": "Cerrar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton22",
+                    "designerId": "af5b7731-f11a-4fa9-8346-147d24cab8fa",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnCerrarFacturaClick",
+                                "implHandler": [
+                                    "elf.closeWindow('winFactura');",
+                                    "elf.refreshGrid('gridPedidoVenta');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnCerrarFacturaClick",
+                            "designerId": "dc53128e-89eb-468f-a24f-c0ec84f0cf69"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

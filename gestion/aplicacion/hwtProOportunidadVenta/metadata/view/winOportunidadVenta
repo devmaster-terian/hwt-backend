@@ -1,0 +1,1222 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyCls": [
+            "formBackground"
+        ],
+        "closable": false,
+        "designer|userAlias": "winOportunidadVenta",
+        "designer|userClassName": "winOportunidadVenta",
+        "height": null,
+        "id": "winOportunidadVenta",
+        "itemId": "winOportunidadVenta",
+        "modal": true,
+        "title": "Oportunidad de Venta",
+        "width": 550
+    },
+    "configAlternates": {
+        "bodyCls": "typedarray",
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "b4f2a612-78e3-40f0-8917-e897ff2b5929",
+    "viewControllerInstanceId": "e7a73f26-aeb8-4c5f-861e-2033e44eb3eb",
+    "viewModelInstanceId": "d41b64ad-07b4-4328-b64d-5042f3494f3f",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "toolbarBackground"
+                ],
+                "dock": "bottom",
+                "id": "toolbarOportunidadVenta",
+                "itemId": "toolbarOportunidadVenta"
+            },
+            "configAlternates": {
+                "cls": "typedarray",
+                "dock": "string",
+                "id": "string",
+                "itemId": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "d9383bcb-f10c-4b40-8780-d635d33b2030",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-check-square icon16 iconColorGreen",
+                        "id": "btnConfirmarOportunidad",
+                        "itemId": "btnConfirmarOportunidad",
+                        "layout|flex": null,
+                        "text": "Confirmar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton7",
+                    "designerId": "40ec1fa9-1681-4ca0-961d-6b9909eda9a8"
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill1",
+                    "designerId": "1fbec3a2-de80-41d9-b069-1ebc954a9204"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-window-close icon16 iconColorRed",
+                        "id": "btnCerrarOportunidad",
+                        "itemId": "btnCerrarOportunidad",
+                        "layout|flex": null,
+                        "text": "Cerrar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton8",
+                    "designerId": "8404e6a4-c1f9-4bcc-825c-41a936f163eb"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyCls": [
+                    "formBackground"
+                ],
+                "bodyPadding": 10,
+                "id": "formOportunidadVenta",
+                "itemId": "formOportunidadVenta",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyCls": "typedarray",
+                "bodyPadding": "auto",
+                "id": "string",
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "MyForm",
+            "designerId": "3cfed2f4-c55a-4dd1-ae3d-8008d8d0860b",
+            "cn": [
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "bodyCls": [
+                            "formBackground"
+                        ],
+                        "id": "tabPanelOportunidadVenta",
+                        "itemId": "tabPanelOportunidadVenta"
+                    },
+                    "configAlternates": {
+                        "activeTab": "auto",
+                        "bodyCls": "typedarray",
+                        "id": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyTabPanel",
+                    "designerId": "27b50b51-e558-435a-acad-800da162d08c",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "height": 410,
+                                "id": "tabGeneral",
+                                "itemId": "tabGeneral",
+                                "title": "General"
+                            },
+                            "configAlternates": {
+                                "bodyCls": "typedarray",
+                                "height": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "title": "string"
+                            },
+                            "name": "MyPanel",
+                            "designerId": "904657ad-0336-4a59-b5f5-7da69d9546c9",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": 130
+                                    },
+                                    "configAlternates": {
+                                        "width": "auto"
+                                    },
+                                    "name": "TabConfig",
+                                    "designerId": "d039576a-082f-46d5-b324-37333a625ddb"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "fieldsetInformacionVisita",
+                                        "itemId": "fieldsetInformacionVisita",
+                                        "layout": "column",
+                                        "title": "<b>Información de Oportunidad</b>"
+                                    },
+                                    "configAlternates": {
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string"
+                                    },
+                                    "name": "MyFieldSet1",
+                                    "designerId": "b0dfc8b3-4223-4837-9b37-ccb27446a9a3",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Número",
+                                                "id": "tfNumOportunidad",
+                                                "itemId": "tfNumOportunidad",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField12",
+                                            "designerId": "e5a04af1-ef54-4b95-921c-0633da1aebd5"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Situación",
+                                                "id": "tfSituacionOportunidad",
+                                                "itemId": "tfSituacionOportunidad",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "disabled": "boolean",
+                                                "disabledCls": "string",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField11",
+                                            "designerId": "710f172a-7313-44f1-a7d8-1c3a4c249955"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Fecha",
+                                                "id": "dtVisitaFecha",
+                                                "itemId": "dtVisitaFecha",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "layout|columnWidth": "auto",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyDateField",
+                                            "designerId": "9695113b-7451-41d5-8f6a-7a454c2781f0"
+                                        },
+                                        {
+                                            "type": "Ext.resizer.Splitter",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "height": 0,
+                                                "layout|columnWidth": 1,
+                                                "margin": null
+                                            },
+                                            "configAlternates": {
+                                                "height": "auto",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MySplitter",
+                                            "designerId": "0ad4238d-8a29-48c3-a70f-4dfe84e1f04c"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Año",
+                                                "id": "tfVisitaAnn",
+                                                "itemId": "tfVisitaAnn",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "disabledCls": "string",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField1",
+                                            "designerId": "8c25f89d-48fa-44e7-b034-781528386d64"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": "Semana",
+                                                "id": "tfVisitaSemana",
+                                                "itemId": "tfVisitaSemana",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "disabledCls": "string",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField2",
+                                            "designerId": "cca59cb2-98b7-457c-9000-83e27155cc68"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "fieldsetInformacionSolicitante",
+                                        "itemId": "fieldsetInformacionSolicitante",
+                                        "layout": "column",
+                                        "title": "<b>Información del Solicitante</b>"
+                                    },
+                                    "configAlternates": {
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string"
+                                    },
+                                    "name": "MyFieldSet2",
+                                    "designerId": "33585930-3464-4520-9e2c-a70685afd7ef",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Tipo Solicitante",
+                                                "id": "cbxTipoSolicitante",
+                                                "itemId": "cbxTipoSolicitante",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0",
+                                                "queryMode": "local",
+                                                "store": "storeTipoSolicitante",
+                                                "valueField": "codigo"
+                                            },
+                                            "configAlternates": {
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield"
+                                            },
+                                            "name": "MyComboBox3",
+                                            "designerId": "93009ea1-07d3-41b6-bd5a-48193b68cb8d"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Tipo Empresa",
+                                                "id": "cbxTipoEmpresa",
+                                                "itemId": "cbxTipoEmpresa",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0",
+                                                "queryMode": "local",
+                                                "store": "storeTipoEmpresa",
+                                                "valueField": "codigo"
+                                            },
+                                            "configAlternates": {
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield"
+                                            },
+                                            "name": "MyComboBox4",
+                                            "designerId": "85bb76fe-bead-4cf8-a8c4-372597656c91"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Cliente",
+                                                "id": "tfCodigoCliente",
+                                                "itemId": "tfCodigoCliente",
+                                                "layout|columnWidth": 0.4,
+                                                "margin": "0 0 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField",
+                                            "designerId": "0901ec28-002d-4341-b02e-d905a2d7d6db"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoomWindow",
+                                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                                "id": "btnZoomCliente",
+                                                "itemId": "btnZoomCliente",
+                                                "margin": "0 3 3 0",
+                                                "minWidth": 0.05,
+                                                "text": null,
+                                                "width": 30
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "margin": "auto",
+                                                "minWidth": "number",
+                                                "text": "string",
+                                                "width": "auto"
+                                            },
+                                            "name": "MyButton9",
+                                            "designerId": "3a2c50c3-5b43-4d6e-87aa-c34d09c167d5"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "disabledCls": "disabledField",
+                                                "fieldLabel": null,
+                                                "id": "tfRazonSocial",
+                                                "itemId": "tfRazonSocial",
+                                                "layout|columnWidth": 0.53,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "disabled": "boolean",
+                                                "disabledCls": "string",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField3",
+                                            "designerId": "c963645c-ddc9-4d50-bc3c-683e70a5c5cd"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "fieldsetNecesidadUnidades",
+                                        "itemId": "fieldsetNecesidadUnidades",
+                                        "layout": "column",
+                                        "title": "<b>Necesidad de Unidades</b>"
+                                    },
+                                    "configAlternates": {
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string"
+                                    },
+                                    "name": "MyFieldSet3",
+                                    "designerId": "d0cf3042-72a1-43c9-aeb6-e531b028540e",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Marca",
+                                                "id": "cbxMarca",
+                                                "itemId": "cbxMarca",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0",
+                                                "queryMode": "local",
+                                                "store": "storeMarca",
+                                                "valueField": "codigo"
+                                            },
+                                            "configAlternates": {
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield"
+                                            },
+                                            "name": "MyComboBox5",
+                                            "designerId": "c4ee1e6d-87e6-473d-a30c-4d33645e7064"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Modelo",
+                                                "id": "cbxModelo",
+                                                "itemId": "cbxModelo",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0",
+                                                "queryMode": "local",
+                                                "store": "storeModelo",
+                                                "valueField": "codigo"
+                                            },
+                                            "configAlternates": {
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield"
+                                            },
+                                            "name": "MyComboBox6",
+                                            "designerId": "787cbf6f-af96-4762-bf8b-3a7c41946467"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Cantidad",
+                                                "id": "tfCantidad",
+                                                "itemId": "tfCantidad",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField4",
+                                            "designerId": "cd4d020d-44ea-4f39-be89-5843379afe48"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.TextArea",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Observaciones",
+                                                "id": "tfObservaciones",
+                                                "itemId": "tfObservaciones",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextArea",
+                                            "designerId": "24f0e821-cbd7-467c-82d8-85ff7e9f2671"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "height": 410,
+                                "id": "tabContacto",
+                                "itemId": "tabContacto",
+                                "title": "Contacto"
+                            },
+                            "configAlternates": {
+                                "bodyCls": "typedarray",
+                                "height": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "title": "string"
+                            },
+                            "name": "MyPanel1",
+                            "designerId": "4faf37a7-c2bd-4726-bbdf-69f70eb22552",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": 130
+                                    },
+                                    "configAlternates": {
+                                        "width": "auto"
+                                    },
+                                    "name": "TabConfig1",
+                                    "designerId": "2bd073e5-f5ab-46fb-a2da-eea355df9b33"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "fieldsetInformacionVentas",
+                                        "itemId": "fieldsetInformacionVentas",
+                                        "layout": "column",
+                                        "title": "<b>Información de Ventas</b>"
+                                    },
+                                    "configAlternates": {
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string",
+                                        "title": "string"
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "72fac4db-38cb-4131-8dba-b682c4ccb655",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "displayField": "nombre",
+                                                "fieldLabel": "Gerente Regional",
+                                                "id": "cbxCodigoGerenteRegional",
+                                                "itemId": "cbxCodigoGerenteRegional",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0",
+                                                "queryMode": "local",
+                                                "store": "storeCodigoGerenteRegional",
+                                                "valueField": "usuario"
+                                            },
+                                            "configAlternates": {
+                                                "displayField": "datafield",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield"
+                                            },
+                                            "name": "MyComboBox",
+                                            "designerId": "c32ff8f1-ca5f-46eb-8b3d-0c63ef394c77"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "displayField": "nombre",
+                                                "editable": false,
+                                                "fieldLabel": "Vendedor",
+                                                "id": "cbxCodigoVendedor",
+                                                "itemId": "cbxCodigoVendedor",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0",
+                                                "queryMode": "local",
+                                                "store": "storeCodigoVendedor",
+                                                "valueField": "usuario"
+                                            },
+                                            "configAlternates": {
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield"
+                                            },
+                                            "name": "MyComboBox1",
+                                            "designerId": "90488c29-ef2d-4882-8d0f-9cc180c13e4c"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "displayField": "descripcion",
+                                                "editable": false,
+                                                "fieldLabel": "Consecionario",
+                                                "id": "cbxCodigoConsecionario",
+                                                "itemId": "cbxCodigoConsecionario",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0",
+                                                "queryMode": "local",
+                                                "store": "storeCodigoConsecionario",
+                                                "valueField": "codigo_consecionario"
+                                            },
+                                            "configAlternates": {
+                                                "displayField": "datafield",
+                                                "editable": "boolean",
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "queryMode": "string",
+                                                "store": "store",
+                                                "valueField": "datafield"
+                                            },
+                                            "name": "MyComboBox2",
+                                            "designerId": "38036d4a-93d7-4cbd-ad78-f1bf75722178"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "fieldsetDatosContacto",
+                                        "itemId": "fieldsetDatosContacto",
+                                        "layout": "column",
+                                        "title": "<b>Datos Contacto</b>"
+                                    },
+                                    "configAlternates": {
+                                        "title": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string"
+                                    },
+                                    "name": "MyFieldSet4",
+                                    "designerId": "529de643-e1d7-4115-bb55-f60fddcd3da4",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Nombre",
+                                                "id": "tfContactoNombre",
+                                                "itemId": "tfContactoNombre",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField5",
+                                            "designerId": "f51e3ee4-92f4-4421-bd9f-00f7b139f813"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Cargo",
+                                                "id": "tfContactoCargo",
+                                                "itemId": "tfContactoCargo",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField6",
+                                            "designerId": "6cad8afc-88b6-4a26-9a09-0fc0b678a6d2"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Teléfono",
+                                                "id": "tfContactoTelefono",
+                                                "itemId": "tfContactoTelefono",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField7",
+                                            "designerId": "989505c8-2dc8-4b9f-8766-c8a402a2e05e"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Móvil",
+                                                "id": "tfContactoMovil",
+                                                "itemId": "tfContactoMovil",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField8",
+                                            "designerId": "0c0ba598-2acc-49c9-b4ea-fdee4c3f8a04"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Correo",
+                                                "id": "tfContactoEmail",
+                                                "itemId": "tfContactoEmail",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField9",
+                                            "designerId": "7ea62353-600d-4ff1-a736-26a73e85ca4a"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "fieldsetDatosUbicacion",
+                                        "itemId": "fieldsetDatosUbicacion",
+                                        "layout": "column",
+                                        "title": "<b>Ubicación</b>"
+                                    },
+                                    "configAlternates": {
+                                        "title": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout": "string"
+                                    },
+                                    "name": "MyFieldSet5",
+                                    "designerId": "507ee7b4-06aa-4900-b80e-e87cf727d5cd",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "País",
+                                                "id": "cbxSolicitudPais",
+                                                "itemId": "cbxSolicitudPais",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyComboBox7",
+                                            "designerId": "62a07ab2-b671-4d78-b149-b15e48d08d68"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Estado",
+                                                "id": "cbxSolicitudEstado",
+                                                "itemId": "cbxSolicitudEstado",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyComboBox8",
+                                            "designerId": "6066cf51-9315-48b6-8872-4272f214338f"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Municipio",
+                                                "id": "cbxSolicitudMunicipio",
+                                                "itemId": "cbxSolicitudMunicipio",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyComboBox9",
+                                            "designerId": "c351a45a-9739-4841-a081-7aad17d68d4e"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Ciudad",
+                                                "id": "cbxSolicitudCiudad",
+                                                "itemId": "cbxSolicitudCiudad",
+                                                "layout|columnWidth": 1,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyComboBox10",
+                                            "designerId": "47b29966-695b-442f-b905-b87e9b500309"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Codigo Postal",
+                                                "id": "tfSolicitudCp",
+                                                "itemId": "tfSolicitudCp",
+                                                "layout|columnWidth": 0.5,
+                                                "margin": "0 3 3 0"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto"
+                                            },
+                                            "name": "MyTextField10",
+                                            "designerId": "a2584070-e282-4406-87b2-63359dc06bab"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyCls": [
+                                    "formBackground"
+                                ],
+                                "height": 410,
+                                "id": "tabCotizaciones",
+                                "itemId": "tabCotizaciones",
+                                "title": "Cotizaciones"
+                            },
+                            "configAlternates": {
+                                "bodyCls": "typedarray",
+                                "height": "auto",
+                                "title": "string",
+                                "id": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyPanel2",
+                            "designerId": "e7a47aca-5629-4b3e-af42-daa52ae0634a",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": 130
+                                    },
+                                    "configAlternates": {
+                                        "width": "auto"
+                                    },
+                                    "name": "TabConfig1",
+                                    "designerId": "40500ec5-8f0a-4a58-9f37-6e8bc3e2d9c8"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

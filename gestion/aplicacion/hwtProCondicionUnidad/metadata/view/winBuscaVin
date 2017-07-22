@@ -1,0 +1,697 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": false,
+        "designer|userAlias": "winBuscaVin",
+        "designer|userClassName": "winBuscaVin",
+        "height": 500,
+        "id": "winBuscaVin",
+        "itemId": "winBuscaVin",
+        "layout": "column",
+        "modal": true,
+        "title": "Busca Unidades (VIN)",
+        "width": 600
+    },
+    "configAlternates": {
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "layout": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "78ff7728-1975-401d-a35b-189cea5bc861",
+    "viewControllerInstanceId": "aeaefeda-1efa-47d1-a9e0-0350bfb7ae66",
+    "viewModelInstanceId": "c39f1459-a1cf-4c9a-94af-3d9fe18d237e",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyCls": [
+                    "formBackground"
+                ],
+                "bodyPadding": 10,
+                "designer|displayName": "formBuscaVin",
+                "id": "formBuscaVin",
+                "itemId": "formBuscaVin",
+                "layout": "column",
+                "layout|columnWidth": 1,
+                "title": null,
+                "width": null
+            },
+            "configAlternates": {
+                "bodyCls": "typedarray",
+                "bodyPadding": "auto",
+                "designer|displayName": "string",
+                "id": "string",
+                "itemId": "string",
+                "layout": "string",
+                "layout|columnWidth": "auto",
+                "title": "string",
+                "width": "auto"
+            },
+            "name": "MyForm1",
+            "designerId": "7541e1eb-4fb9-4880-8e6b-1377e0d80e15",
+            "cn": [
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "seleccionaRegistro",
+                        "implHandler": [
+                            "registroVin = Ext.getCmp('gridBuscaVin').recordActivo;",
+                            "console.warn(registroVin);",
+                            "",
+                            "elf.writeElement('tfVin',registroVin.vin);",
+                            "elf.closeWindow('winBuscaVin');",
+                            ""
+                        ]
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "seleccionaRegistro",
+                    "designerId": "e77ddde2-d7b6-49de-887f-c443308679cc"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": 0,
+                        "designer|displayName": "fieldsetGrupoBuscaVin",
+                        "layout": "column",
+                        "layout|columnWidth": 1,
+                        "title": null,
+                        "width": null
+                    },
+                    "configAlternates": {
+                        "border": "auto",
+                        "designer|displayName": "string",
+                        "layout": "string",
+                        "layout|columnWidth": "auto",
+                        "title": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyFieldSet7",
+                    "designerId": "da08274c-8e60-48a0-9e88-75beceac6e1e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "fieldsetParametrosBusqueda",
+                                "layout|columnWidth": 0.7,
+                                "title": "<b>Parametros de Búsqueda</b>"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "layout|columnWidth": "auto",
+                                "title": "string"
+                            },
+                            "name": "MyFieldSet6",
+                            "designerId": "1eb57a55-94f8-4188-ab00-47b7f1a53d7d",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "cbxFiltroMarca",
+                                        "displayField": "descripcion",
+                                        "editable": false,
+                                        "fieldLabel": "Marca",
+                                        "id": "cbxFiltroMarca",
+                                        "itemId": "cbxFiltroMarca",
+                                        "layout|anchor": "100%",
+                                        "queryMode": "local",
+                                        "store": "storeFiltroMarca",
+                                        "valueField": "descripcion"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "displayField": "datafield",
+                                        "editable": "boolean",
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout|anchor": "string",
+                                        "queryMode": "string",
+                                        "store": "store",
+                                        "valueField": "datafield"
+                                    },
+                                    "name": "MyComboBox2",
+                                    "designerId": "88a1481f-d127-4029-932b-7f65704b609b"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "cbxFiltroModelo",
+                                        "displayField": "descripcion",
+                                        "editable": false,
+                                        "fieldLabel": "Modelo",
+                                        "id": "cbxFiltroModelo",
+                                        "itemId": "cbxFiltroModelo",
+                                        "layout|anchor": "100%",
+                                        "queryMode": "local",
+                                        "store": "storeFiltroModelo",
+                                        "valueField": "descripcion"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "displayField": "datafield",
+                                        "editable": "boolean",
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout|anchor": "string",
+                                        "queryMode": "string",
+                                        "store": "store",
+                                        "valueField": "datafield"
+                                    },
+                                    "name": "MyComboBox3",
+                                    "designerId": "a600d0fa-d479-41ce-844c-d8aa71f28b23"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "tfBuscaVin",
+                                        "fieldLabel": "VIN",
+                                        "id": "tfBuscaVin",
+                                        "itemId": "tfBuscaVin",
+                                        "layout|anchor": "100%"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout|anchor": "string"
+                                    },
+                                    "name": "MyTextField4",
+                                    "designerId": "1387b4eb-4c47-405c-8b5d-1f7f0a3224a5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "fieldsetBotonesBusqueda",
+                                "layout": "column",
+                                "layout|columnWidth": 0.3,
+                                "margin": "9 0 0 5",
+                                "title": null
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "layout": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "title": "string"
+                            },
+                            "name": "MyFieldSet8",
+                            "designerId": "953f5238-232d-454c-a53a-668d7e97a3ac",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "botonZoom",
+                                        "designer|displayName": "btnBuscarUnidades",
+                                        "height": null,
+                                        "iconCls": "fa fa-search icon16 iconColorWhite",
+                                        "id": "btnBuscarUnidades",
+                                        "itemId": "btnBuscarUnidades",
+                                        "layout|columnWidth": 1,
+                                        "margin": "9 0 63",
+                                        "maxWidth": 150,
+                                        "text": "Buscar Unidades",
+                                        "textAlign": "left"
+                                    },
+                                    "configAlternates": {
+                                        "cls": "string",
+                                        "designer|displayName": "string",
+                                        "height": "auto",
+                                        "iconCls": "string",
+                                        "id": "string",
+                                        "itemId": "string",
+                                        "layout|columnWidth": "auto",
+                                        "margin": "auto",
+                                        "maxWidth": "number",
+                                        "text": "string",
+                                        "textAlign": "string"
+                                    },
+                                    "name": "MyButton2",
+                                    "designerId": "8b893594-1773-4eeb-ac59-a4867ce3c15d",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBtnBuscarUnidadesClick",
+                                                "implHandler": [
+                                                    "elf.refreshGrid('gridBuscaVin');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onBtnBuscarUnidadesClick",
+                                            "designerId": "1d2762da-08dc-4628-9a2b-11c0dbe0c79d"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "forceFit": true,
+                        "height": 285,
+                        "id": "gridBuscaVin",
+                        "itemId": "gridBuscaVin",
+                        "layout|columnWidth": 1,
+                        "margin": "-10 0 0 0",
+                        "store": "storeBuscaVin",
+                        "title": "Unidades",
+                        "width": null
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|columnWidth": "auto",
+                        "margin": "auto",
+                        "store": "store",
+                        "title": "string",
+                        "width": "auto",
+                        "recordActivo": "object",
+                        "forceFit": "boolean"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "c7402975-c344-4ced-9db9-bab89579d9e9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "recordActivo",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTable",
+                            "designerId": "3baba14e-97fa-4aeb-bcc3-42c783190560"
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayInfo": true,
+                                "dock": "bottom",
+                                "store": "storeBuscaVin",
+                                "width": 360
+                            },
+                            "configAlternates": {
+                                "displayInfo": "boolean",
+                                "dock": "string",
+                                "store": "store",
+                                "width": "auto"
+                            },
+                            "name": "MyPagingToolbar",
+                            "designerId": "aeec53df-d10e-4141-9e28-85502b9fa31e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "vin",
+                                "id": "idxvin",
+                                "itemId": "idxvin",
+                                "text": "Vin",
+                                "width": 140
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "id": "string",
+                                "itemId": "string",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn7",
+                            "designerId": "5f62f584-09fb-4374-9dda-e6975a8d2410"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "marca",
+                                "id": "marca",
+                                "itemId": "marca",
+                                "text": "Marca",
+                                "width": 120
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "id": "string",
+                                "itemId": "string",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn5",
+                            "designerId": "b593af68-9352-492e-b984-17902a59ed29"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "modelo",
+                                "id": "modelo",
+                                "itemId": "modelo",
+                                "text": "Modelo",
+                                "width": 80
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "id": "string",
+                                "itemId": "string",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn",
+                            "designerId": "21c87f8d-9daa-4d8a-955d-ec03cd5942d7"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ann_unidad",
+                                "id": "ann_unidad",
+                                "itemId": "ann_unidad",
+                                "text": "Año",
+                                "width": 80
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "id": "string",
+                                "itemId": "string",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn6",
+                            "designerId": "8b23baef-f88c-431b-b755-c9068df3d6f4"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridBuscaVinItemClick",
+                                "implHandler": [
+                                    "Ext.getCmp('gridBuscaVin').recordActivo = record.data;"
+                                ],
+                                "name": "itemclick",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onGridBuscaVinItemClick",
+                            "designerId": "186684aa-e5d4-4fa0-8dce-68d60688fda9"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridBuscaVinItemDblClick",
+                                "implHandler": [
+                                    "Ext.getCmp('formBuscaVin').seleccionaRegistro();"
+                                ],
+                                "name": "itemdblclick",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onGridBuscaVinItemDblClick",
+                            "designerId": "5d633bf0-16bf-491e-8869-174e508d0f29"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "toolbarBackground"
+                ],
+                "dock": "bottom"
+            },
+            "configAlternates": {
+                "cls": "typedarray",
+                "dock": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "7b6ff2cb-fae9-49f3-a9e9-ba444d16fe5a",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnBuscaVinConfirmar",
+                        "iconCls": "fa fa-check-square icon16 iconColorGreen",
+                        "id": "btnBuscaVinConfirmar",
+                        "itemId": "btnBuscaVinConfirmar",
+                        "layout|flex": null,
+                        "text": "Confirmar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto",
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "4656da07-6a84-4873-aadc-39e185b89b04",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnBuscaVinConfirmarClick",
+                                "implHandler": [
+                                    "Ext.getCmp('formBuscaVin').seleccionaRegistro();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnBuscaVinConfirmarClick",
+                            "designerId": "c9ee07e8-8a41-4ea5-82fb-bfae98ba8d51"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill",
+                    "designerId": "6a80f1b9-6f39-4b5b-98ed-1f41c688299d"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "btnBuscaVinCerrar",
+                        "iconCls": "fa fa-window-close icon16 iconColorRed",
+                        "id": "btnBuscaVinCerrar",
+                        "itemId": "btnBuscaVinCerrar",
+                        "layout|flex": null,
+                        "text": "Cerrar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto",
+                        "designer|displayName": "string",
+                        "id": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "c3b160a3-a308-4aee-b567-e94d9678631a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnBuscaVinCerrarClick",
+                                "implHandler": [
+                                    "elf.closeWindow('winBuscaVin');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnBuscaVinCerrarClick",
+                            "designerId": "67900f75-e78f-431b-b959-d1a3a909d18b"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

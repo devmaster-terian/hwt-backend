@@ -1,0 +1,20 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_gnhjp4a2",
+        "id": "fontawesome",
+        "url": "../../recurso/libreria/font-awesome-4.7.0/css/font-awesome.min.css"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "id": "string",
+        "url": "uri"
+    },
+    "name": "css",
+    "designerId": "74d82992-1ba7-4dc2-a877-d37915010199"
+}

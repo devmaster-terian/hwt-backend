@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeEspejos",
+        "model": "modEspejos",
+        "storeId": "storeEspejos"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeChasis8",
+    "designerId": "47f04abf-44ec-49cb-b4fd-a6f8a1f4a8aa"
+}

@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeEjeDelanteroMarca",
+        "model": "modEjeDelanteroMarca",
+        "storeId": "storeEjeDelanteroMarca"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor6",
+    "designerId": "beff656a-48be-490b-a4bd-c9c2632b0524"
+}

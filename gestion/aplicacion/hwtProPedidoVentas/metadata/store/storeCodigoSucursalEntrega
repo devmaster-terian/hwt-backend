@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCodigoSucursalEntrega",
+        "model": "modCodigoSucursalEntrega",
+        "storeId": "storeCodigoSucursalEntrega"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeCodigoSucursal1",
+    "designerId": "02631e64-0a68-4a96-af6d-c279b6595bcf"
+}

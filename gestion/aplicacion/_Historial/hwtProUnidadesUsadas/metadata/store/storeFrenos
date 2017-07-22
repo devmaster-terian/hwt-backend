@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeFrenos",
+        "model": "modFrenos",
+        "storeId": "storeFrenos"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeEspejos1",
+    "designerId": "98b41237-c70f-415a-9ff6-b516fc4956bd"
+}

@@ -1,0 +1,124 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storePedidoVentaLinea",
+        "model": "modPedidoVentaLinea",
+        "storeId": "storePedidoVentaLinea"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "70fc34ce-226c-4732-9f9e-27c567c4b3de",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "restProxyPedidoVentaLinea"
+            },
+            "configAlternates": {
+                "designer|displayName": "string"
+            },
+            "name": "MyRestProxy1",
+            "designerId": "f1193b88-4d9d-4dbb-9a75-2c60b2f0a564",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "jsonReaderPedidoVentaLinea"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "function",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "9498f909-92d4-4323-b847-a484a148de17",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "rootProperty",
+                                "implHandler": [
+                                    "var storePedidoVentaLinea = Ext.getStore('storePedidoVentaLinea');",
+                                    "var rawData = storePedidoVentaLinea.getProxy().getReader().rawData;",
+                                    "return rawData.hwtPedidoVentaLinea;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "rootProperty",
+                            "designerId": "39d4629e-8423-440d-8743-1071a836f173"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreBeforeLoad",
+                "implHandler": [
+                    "var storePedidoVentaLinea = Ext.getStore('storePedidoVentaLinea');",
+                    "var proxyCliente = storePedidoVentaLinea.getProxy();",
+                    "",
+                    "var objJsonData = new Object();",
+                    "objJsonData.page        = storePedidoVentaLinea.currentPage;",
+                    "objJsonData.start       = (storePedidoVentaLinea.currentPage - 1) * storePedidoVentaLinea.pageSize;",
+                    "objJsonData.limit       = storePedidoVentaLinea.pageSize;",
+                    "objJsonData.tfNumPedido = elf.readElement('tfNumPedido');",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = 'apiPedidoVenta';",
+                    "objJsonRequest.apiMethod     = 'listaPedidoVentaLinea';",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "proxyCliente.api.read        = elf.setApiDataBridge(objJsonRequest.apiController);",
+                    "proxyCliente.extraParams     = objJsonRequest;"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onStoreBeforeLoad",
+            "designerId": "9172ae2d-321e-409b-a0d4-00240c18e645"
+        }
+    ]
+}

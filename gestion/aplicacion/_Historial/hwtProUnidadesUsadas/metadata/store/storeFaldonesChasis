@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeFaldonesChasis",
+        "model": "modFaldonesChasis",
+        "storeId": "storeFaldonesChasis"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor14",
+    "designerId": "6a2ae375-bacc-4fdd-8a08-0d6001f407c5"
+}

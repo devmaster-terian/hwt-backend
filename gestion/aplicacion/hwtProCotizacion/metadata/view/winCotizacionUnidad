@@ -1,0 +1,1595 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": false,
+        "designer|userAlias": "winCotizacionUnidad",
+        "designer|userClassName": "winCotizacionUnidad",
+        "height": null,
+        "id": "winCotizacionUnidad",
+        "itemId": "winCotizacionUnidad",
+        "modal": true,
+        "title": "Cotización de Unidades",
+        "width": 1000
+    },
+    "configAlternates": {
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "75ae52d0-5cc8-4a9b-8e25-81c60a4b161c",
+    "viewControllerInstanceId": "b3be2697-9786-4cfa-9a2a-0107a6d6b91a",
+    "viewModelInstanceId": "83f6b621-fd3b-495d-86a9-1ebf323fbbf5",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "toolbarBackground"
+                ],
+                "dock": "bottom",
+                "id": "toolbarCotizacionUnidad"
+            },
+            "configAlternates": {
+                "cls": "typedarray",
+                "dock": "string",
+                "id": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "863580a4-daf7-4ebe-9d6e-8b5dcdb9ed4d",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-check-square icon16 iconColorGreen",
+                        "id": "btnConfirmarCotizacionUnidad",
+                        "itemId": "btnConfirmarCotizacionUnidad",
+                        "layout|flex": null,
+                        "text": "Confirmar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton7",
+                    "designerId": "8920d6b5-c2b5-44d1-8a92-e415cd18bcfa"
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MySeparator2",
+                    "designerId": "91fca929-d739-480e-ad72-fd2d45f18a7b"
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill",
+                    "designerId": "355bff5c-238f-41aa-9838-897b4561cb5f"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-window-close icon16 iconColorRed",
+                        "id": "btnCerrarCotizacionUnidad",
+                        "itemId": "btnCerrarCotizacionUnidad",
+                        "layout|flex": null,
+                        "text": "Cerrar",
+                        "textAlign": "left",
+                        "width": 130
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton8",
+                    "designerId": "6992047b-2859-459b-8240-9af21f73d7c8",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnCerrarCotizacionUnidadClick",
+                                "implHandler": [
+                                    "elf.refreshGrid('gridCotizacion');",
+                                    "elf.closeWindow('winCotizacionUnidad');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnCerrarCotizacionUnidadClick",
+                            "designerId": "202867f6-0b60-43dc-bb63-2e72e60fe437"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyCls": [
+                    "formBackground"
+                ],
+                "bodyPadding": 10,
+                "id": "formCotizacionUnidad",
+                "itemId": "formCotizacionUnidad",
+                "layout": "column",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyCls": "typedarray",
+                "bodyPadding": "auto",
+                "id": "string",
+                "itemId": "string",
+                "layout": "string",
+                "title": "string"
+            },
+            "name": "MyForm",
+            "designerId": "cda1bb72-2982-4491-b5d6-06af3746997b",
+            "cn": [
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "eliminarUnidadCotizacion",
+                        "implHandler": [
+                            "var gridCotizacionUnidad = Ext.getCmp('gridCotizacionUnidad');",
+                            "var recordUnidadCotizacion = gridCotizacionUnidad.recordActivo;",
+                            "",
+                            "if(recordUnidadCotizacion === undefined){",
+                            "    msgTipo      = 'error';",
+                            "    msgTitulo    = 'Eliminar Cotización';",
+                            "    msgContenido = 'Debe seleccionar un registro válido para realizar ésta operación';",
+                            "    elf.message(msgTipo,msgTitulo,msgContenido);",
+                            "    return;",
+                            "}",
+                            "",
+                            "var msgFuncion = function(){",
+                            "    var gridCotizacionUnidad = Ext.getCmp('gridCotizacionUnidad');",
+                            "    var recordUnidadCotizacion = gridCotizacionUnidad.recordActivo;    ",
+                            "    var apiController = 'apiCotizacion';",
+                            "    var apiMethod     = 'eliminarUnidadCotizacion';",
+                            "    var objJsonData   = new Object();",
+                            "    objJsonData.rowidUnidadCotizacion = recordUnidadCotizacion.rowid;",
+                            "    objJsonData.numCotizacion         = recordUnidadCotizacion.num_cotizacion;",
+                            "",
+                            "    var objJsonRequest = new Object();",
+                            "    objJsonRequest.apiController = apiController;",
+                            "    objJsonRequest.apiMethod     = apiMethod;",
+                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                            "",
+                            "    var functionSuccess = function(){",
+                            "        var jsonData = elf.getInfoDataBridge('eliminarUnidadCotizacion');",
+                            "",
+                            "        elf.showInfo(jsonData,'information');",
+                            "",
+                            "        var valor_subtotal = jsonData.hwtCotizacion[0].valor_subtotal;",
+                            "        var valor_impuesto = jsonData.hwtCotizacion[0].valor_impuesto;",
+                            "        var valor_total    = jsonData.hwtCotizacion[0].valor_total;",
+                            "",
+                            "        elf.writeElement('tfValSubtotal'     ,Ext.util.Format.number(valor_subtotal , '0,000.00'));",
+                            "        elf.writeElement('tfValImpuestos'    ,Ext.util.Format.number(valor_impuesto , '0,000.00'));",
+                            "        elf.writeElement('tfValTotal'        ,Ext.util.Format.number(valor_total    , '0,000.00'));",
+                            "",
+                            "        elf.refreshGrid('gridCotizacionUnidad');",
+                            "    };",
+                            "",
+                            "    var functionFailure = function(){",
+                            "        var jsonData = elf.getInfoDataBridge('eliminarUnidadCotizacion');",
+                            "        console.warn(jsonData);",
+                            "",
+                            "        elf.showInfo(jsonData,'error');",
+                            "    };",
+                            "",
+                            "",
+                            "    elf.doDataBridge(objJsonRequest,",
+                            "                     functionSuccess,",
+                            "                     null,",
+                            "                     functionFailure,",
+                            "                     null);",
+                            "}; //msgFuncion",
+                            "",
+                            "",
+                            "msgTipo      = 'question';",
+                            "msgTitulo    = 'Eliminar Unidad de la Cotización';",
+                            "msgContenido = 'Eliminar la Unidad de ' + recordUnidadCotizacion.codigo + ' ' + ",
+                            "               'de la Cotizacion ' + recordUnidadCotizacion.num_cotizacion + '?';",
+                            "",
+                            "elf.message(msgTipo,msgTitulo,msgContenido,msgFuncion);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "eliminarUnidadCotizacion",
+                    "designerId": "de4f25f9-61dd-4fd9-ba23-3bcfe4af71ac"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetDocCotizacion",
+                        "itemId": "fieldsetDocCotizacion",
+                        "layout": "column",
+                        "layout|columnWidth": 0.8,
+                        "title": "<b>Documento</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "layout|columnWidth": "auto",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet",
+                    "designerId": "df4f7c45-136c-418b-9272-838272a39776",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Cliente",
+                                "id": "tfCodigoCliente",
+                                "itemId": "tfCodigoCliente",
+                                "layout|columnWidth": 0.25,
+                                "margin": "0 0 5 10"
+                            },
+                            "configAlternates": {
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "disabled": "boolean"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "f9c16dce-0ffb-4ebb-a4d4-bf513b9d2897"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoomWindow",
+                                "disabled": true,
+                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                "id": "btnZoomBuscaCliente",
+                                "itemId": "btnZoomBuscaCliente",
+                                "text": null,
+                                "width": 32
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "text": "string",
+                                "width": "auto",
+                                "disabled": "boolean"
+                            },
+                            "name": "MyButton9",
+                            "designerId": "caac93b0-8143-45c7-86c8-d140036d7f59",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnZoomBuscaClienteClick",
+                                        "implHandler": [
+                                            "elf.openWindow('winBuscaCliente');",
+                                            "elf.refreshGrid('gridBuscaCliente');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnZoomBuscaClienteClick",
+                                    "designerId": "407dfadb-5261-4f16-92fe-912b6474b8d0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": null,
+                                "id": "tfNombreCliente",
+                                "itemId": "tfNombreCliente",
+                                "layout|columnWidth": 0.4,
+                                "margin": "0 5 5 5"
+                            },
+                            "configAlternates": {
+                                "disabled": "boolean",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField1",
+                            "designerId": "21a2efaf-3dbe-4e0d-a4c1-c7ae917b28d7"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Fecha",
+                                "id": "tfFechaCotizacion",
+                                "itemId": "tfFechaCotizacion",
+                                "layout|columnWidth": 0.25,
+                                "margin": "0 5 5 10",
+                                "minWidth": 220
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "disabledCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "minWidth": "number",
+                                "disabled": "boolean"
+                            },
+                            "name": "MyDateField",
+                            "designerId": "18105a8f-f05a-4363-b186-1e7c2199b82f"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "No. Cotizacion",
+                                "id": "tfNoCotizacion",
+                                "itemId": "tfNoCotizacion",
+                                "layout|columnWidth": 0.25,
+                                "margin": "0 5 5 10"
+                            },
+                            "configAlternates": {
+                                "disabled": "boolean",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField3",
+                            "designerId": "64d84e43-9b61-496a-bed6-aedab0a35e16"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Usuario",
+                                "id": "tfUsuario",
+                                "itemId": "tfUsuario",
+                                "layout|columnWidth": 0.2,
+                                "margin": "0 5 5 330",
+                                "minWidth": 220
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "disabled": "boolean",
+                                "disabledCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "minWidth": "number"
+                            },
+                            "name": "MyTextField5",
+                            "designerId": "cf2b99b3-8d00-4976-b014-6f4f79d0eadb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetAcciones",
+                        "itemId": "fieldsetAcciones",
+                        "layout": "column",
+                        "layout|columnWidth": 0.2,
+                        "margin": "0 0 5 5",
+                        "title": "<b>Acciones</b>"
+                    },
+                    "configAlternates": {
+                        "layout": "string",
+                        "layout|columnWidth": "auto",
+                        "margin": "auto",
+                        "title": "string",
+                        "id": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyFieldSet5",
+                    "designerId": "894c757b-d61c-40fa-80fb-0d4c97aa7b84",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoomWindow",
+                                "iconCls": "fa fa-usd icon16 iconColorDarkWhite",
+                                "id": "btnIniciarCotizacion",
+                                "itemId": "btnIniciarCotizacion",
+                                "layout|columnWidth": 1,
+                                "margin": "0 0 5 0",
+                                "maxWidth": 150,
+                                "text": "Iniciar Cotización",
+                                "textAlign": "left"
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "maxWidth": "number",
+                                "text": "string",
+                                "textAlign": "string"
+                            },
+                            "name": "MyButton15",
+                            "designerId": "9231ea5d-bcce-42bb-ba99-52f0ae84a14e",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnIniciarCotizacionClick",
+                                        "implHandler": [
+                                            "if(elf.readElement('tfCodigoCliente') === ''){",
+                                            "    msgTipo      = 'error';",
+                                            "    msgTitulo    = 'Cliente no informado';",
+                                            "    msgContenido = 'Debe informar un Cliente válido para iniciar la generación de la Cotización.';",
+                                            "    elf.message(msgTipo,msgTitulo,msgContenido);",
+                                            "    return;",
+                                            "}",
+                                            "",
+                                            "var apiController          = 'apiCotizacion';",
+                                            "var apiMethod              = 'grabaCotizacion';",
+                                            "var objJsonData            = new Object();",
+                                            "objJsonData.tfCodigoCliente   = elf.readElement('tfCodigoCliente');",
+                                            "objJsonData.tfFechaCotizacion = elf.readElement('tfFechaCotizacion');",
+                                            "objJsonData.tfNoCotizacion    = elf.readElement('tfNoCotizacion');",
+                                            "objJsonData.tfUsuario         = elf.readElement('tfUsuario');",
+                                            "",
+                                            "var objJsonRequest = new Object();",
+                                            "objJsonRequest.apiController = apiController;",
+                                            "objJsonRequest.apiMethod     = apiMethod;",
+                                            "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                            "",
+                                            "var functionSuccess = function(){",
+                                            "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                                            "    console.warn('Success::grabaCotizacion:');",
+                                            "    console.warn(jsonData);",
+                                            "",
+                                            "    elf.writeElement('tfNoCotizacion',jsonData.camposRegistro.num_cotizacion);",
+                                            "",
+                                            "    elf.hideElement('btnIniciarCotizacion');",
+                                            "    elf.focusElement('tfInsertarCodigo');",
+                                            "",
+                                            "};",
+                                            "",
+                                            "var functionFailure = function(){",
+                                            "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                                            "    console.warn('Success::grabaCotizacion:');",
+                                            "    console.warn(jsonData);",
+                                            "};",
+                                            "",
+                                            "elf.doDataBridge(objJsonRequest,",
+                                            "                 functionSuccess,",
+                                            "                 null,",
+                                            "                 functionFailure,",
+                                            "                 null);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnIniciarCotizacionClick",
+                                    "designerId": "659c52d3-e8d2-446e-b524-f1dff6c90cbb"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoomWindow",
+                                "iconCls": "fa fa-file-text icon16 iconColorDarkWhite",
+                                "id": "btnImprimirCotizacion",
+                                "itemId": "btnImprimirCotizacion",
+                                "layout|columnWidth": 1,
+                                "margin": "0 0 5 0",
+                                "maxWidth": 150,
+                                "text": "Imprimir",
+                                "textAlign": "left",
+                                "width": null
+                            },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "textAlign": "string",
+                                "width": "auto",
+                                "cls": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "maxWidth": "number"
+                            },
+                            "name": "MyButton11",
+                            "designerId": "14a55b02-f4e9-408d-8714-790cbd2b4ce7",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnImprimirCotizacionClick",
+                                        "implHandler": [
+                                            "var apiController = 'apiCotizacion';",
+                                            "var apiMethod     = 'formatoCotizacion';",
+                                            "var objJsonData   = new Object();",
+                                            "objJsonData.numCotizacion = elf.readElement('tfNoCotizacion');",
+                                            "",
+                                            "var objJsonRequest = new Object();",
+                                            "objJsonRequest.apiController = apiController;",
+                                            "objJsonRequest.apiMethod     = apiMethod;",
+                                            "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                            "",
+                                            "var functionSuccess = function(){",
+                                            "    var jsonData = elf.getInfoDataBridge('formatoCotizacion');",
+                                            "    var archivoGenerado = elf.getGeneratedFile(jsonData.archivoGenerado.nombre);",
+                                            "    window.open(archivoGenerado);",
+                                            "};",
+                                            "",
+                                            "var functionFailure = function(){",
+                                            "    var jsonData = elf.getInfoDataBridge('formatoCotizacion');",
+                                            "",
+                                            "    elf.showInfo(jsonData,'error');",
+                                            "};",
+                                            "",
+                                            "",
+                                            "elf.doDataBridge(objJsonRequest,",
+                                            "                 functionSuccess,",
+                                            "                 null,",
+                                            "                 functionFailure,",
+                                            "                 null);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnImprimirCotizacionClick",
+                                    "designerId": "e93f4a1e-a2d4-4961-ba27-f05cdc1548b5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoomWindow",
+                                "iconCls": "fa fa-envelope icon16 iconColorDarkWhite",
+                                "id": "btnEnviarCotizacion",
+                                "itemId": "btnEnviarCotizacion",
+                                "layout|columnWidth": 1,
+                                "margin": "0 0 5 0",
+                                "maxWidth": 150,
+                                "text": "Enviar por Correo",
+                                "textAlign": "left",
+                                "width": null
+                            },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "textAlign": "string",
+                                "width": "auto",
+                                "cls": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "maxWidth": "number"
+                            },
+                            "name": "MyButton12",
+                            "designerId": "c67afb12-0488-4de4-a8cd-736f6ff3f348",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnEnviarCotizacionClick",
+                                        "implHandler": [
+                                            "if(elf.readElement('tfNoCotizacion') === ''){",
+                                            "    msgTipo      = 'error';",
+                                            "    msgTitulo    = 'Cotización no Valida';",
+                                            "    msgContenido = 'Debe seleccionar una Cotización Válida para realizar ésta operación.';",
+                                            "    elf.message(msgTipo,msgTitulo,msgContenido);",
+                                            "    return;",
+                                            "}",
+                                            "",
+                                            "var apiController          = 'apiCotizacion';",
+                                            "var apiMethod              = 'enviarCotizacion';",
+                                            "var objJsonData            = new Object();",
+                                            "objJsonData.tfNoCotizacion    = elf.readElement('tfNoCotizacion');",
+                                            "",
+                                            "var objJsonRequest = new Object();",
+                                            "objJsonRequest.apiController = apiController;",
+                                            "objJsonRequest.apiMethod     = apiMethod;",
+                                            "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                            "",
+                                            "var functionSuccess = function(){",
+                                            "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                                            "    console.warn('Success::enviarCotizacion:');",
+                                            "    console.warn(jsonData);",
+                                            "};",
+                                            "",
+                                            "var functionFailure = function(){",
+                                            "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                                            "    console.warn('Success::enviarCotizacion:');",
+                                            "    console.warn(jsonData);",
+                                            "};",
+                                            "",
+                                            "elf.doDataBridge(objJsonRequest,",
+                                            "                 functionSuccess,",
+                                            "                 null,",
+                                            "                 functionFailure,",
+                                            "                 null);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnEnviarCotizacionClick",
+                                    "designerId": "9ca2d32b-fa69-4426-a1e4-1e6e4800883c"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "forceFit": true,
+                        "height": 300,
+                        "id": "gridCotizacionUnidad",
+                        "itemId": "gridCotizacionUnidad",
+                        "layout|columnWidth": 1,
+                        "reference": "gridCotizacionUnidad",
+                        "store": "storeCotizacionUnidad",
+                        "title": "Unidades"
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "layout|columnWidth": "auto",
+                        "reference": "string",
+                        "store": "store",
+                        "title": "string",
+                        "forceFit": "boolean",
+                        "id": "string",
+                        "itemId": "string",
+                        "recordActivo": "object"
+                    },
+                    "name": "MyGridPanel1",
+                    "designerId": "58129418-77f9-4d08-bb39-31847ba5996a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "recordActivo",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "viewTableCotizacionUnidad"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string"
+                            },
+                            "name": "MyTable1",
+                            "designerId": "517a36da-4081-434c-a895-cf0dbb3e93d0"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "colEliminarUnidad",
+                                "itemId": "colEliminarUnidad",
+                                "width": 24
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "itemId": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyActionColumn",
+                            "designerId": "4e749085-5c37-4b9f-ba79-64c63aa2cddd",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "actionColumnEliminarUnidad"
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string"
+                                    },
+                                    "name": "MyActionColumnItem",
+                                    "designerId": "13ab3952-2f3e-4c42-bb9e-c8bcd93fb548",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "v",
+                                                    "metadata",
+                                                    "r",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "store"
+                                                ],
+                                                "fn": "getClass",
+                                                "implHandler": [
+                                                    "var iconClsRetorno = 'basura16';",
+                                                    "return iconClsRetorno;"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "getClass",
+                                            "designerId": "0d87e09e-9c42-4724-975a-5bd37a7b80f7"
+                                        },
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var gridCotizacionUnidad = Ext.getCmp('gridCotizacionUnidad');",
+                                                    "gridCotizacionUnidad.recordActivo = record.data;",
+                                                    "Ext.getCmp('formCotizacionUnidad').eliminarUnidadCotizacion();"
+                                                ]
+                                            },
+                                            "configAlternates": {
+                                                "designer|params": "typedarray",
+                                                "fn": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "handler",
+                                            "designerId": "235604e7-d273-414b-a160-20ca06b73458"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "codigo",
+                                "text": "Codigo"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn8",
+                            "designerId": "cf107b41-a07e-41d1-ba85-2bce14600691"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "vin",
+                                "text": "Vin",
+                                "width": 200
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn9",
+                            "designerId": "ae95d345-0fe3-4586-bcb2-54a3325c82fe"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "modelo",
+                                "text": "Modelo"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn10",
+                            "designerId": "f55afbf6-3751-4c43-b439-07441b1ce2a7"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "marca",
+                                "text": "Marca",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn11",
+                            "designerId": "032f4270-5a55-4db4-8b17-d6cea0a19021"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ann_unidad",
+                                "text": "Año"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn12",
+                            "designerId": "00abe40d-5a7c-4188-8f03-d7586e7c6e30"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "dataIndex": "precio_sin_iva",
+                                "text": "Precio Unitario"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "align": "string"
+                            },
+                            "name": "MyColumn13",
+                            "designerId": "776e04cf-68cc-41e2-ab51-c77d0fcf186e",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "var valorRetorno = Ext.util.Format.number(value, '0,000.00');",
+                                            "return valorRetorno;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "b566a624-739a-4783-b3d6-2302755619f6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayInfo": true,
+                                "dock": "bottom",
+                                "id": "pagingToolbarGridCotizacionUnidad",
+                                "itemId": "pagingToolbarGridCotizacionUnidad",
+                                "store": "storeCotizacionUnidad",
+                                "width": 360
+                            },
+                            "configAlternates": {
+                                "displayInfo": "boolean",
+                                "dock": "string",
+                                "store": "store",
+                                "width": "auto",
+                                "id": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyPagingToolbar1",
+                            "designerId": "94c99220-0044-4671-9d90-e28c8d6e8454"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridCotizacionUnidadItemClick",
+                                "implHandler": [
+                                    "var gridCotizacionUnidad = Ext.getCmp('gridCotizacionUnidad');",
+                                    "gridCotizacionUnidad.recordActivo = record.data;"
+                                ],
+                                "name": "itemclick",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onGridCotizacionUnidadItemClick",
+                            "designerId": "6fb9ec7d-dba6-451e-b74e-92ae06ec69dd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": null,
+                        "id": "fieldsetAgregarUnidades",
+                        "itemId": "fieldsetAgregarUnidades",
+                        "layout": "column",
+                        "layout|columnWidth": 0.65,
+                        "title": "<b>Agregar Unidades</b>"
+                    },
+                    "configAlternates": {
+                        "border": "auto",
+                        "layout": "string",
+                        "layout|columnWidth": "auto",
+                        "title": "string",
+                        "id": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyFieldSet2",
+                    "designerId": "0cc95316-c7ab-4493-9ea1-25e7afdc279c",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Codigo",
+                                "id": "tfInsertarCodigo",
+                                "itemId": "tfInsertarCodigo",
+                                "margin": "0 0 5 0"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "1c131e12-7103-414f-a5ec-7405a370099a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTfInsertarCodigoBlur",
+                                        "name": "blur",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onTfInsertarCodigoBlur",
+                                    "designerId": "c39b2666-b1c5-443c-b28d-44dad231f02d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoomWindow",
+                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                "id": "btnZoomBuscaVin",
+                                "itemId": "btnZoomBuscaVin",
+                                "text": null,
+                                "width": 32
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "iconCls": "string",
+                                "text": "string",
+                                "width": "auto",
+                                "id": "string",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton10",
+                            "designerId": "09a385ed-79eb-4c94-b1d3-1f456fd34302",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnZoomBuscaVinClick",
+                                        "implHandler": [
+                                            "elf.openWindow('winBuscaVin');",
+                                            "",
+                                            "var arrayCombos = new Array();",
+                                            "arrayCombos.push('FiltroModelo');",
+                                            "arrayCombos.push('FiltroMarca');",
+                                            "arrayCombos.forEach(elf.loadCombos);",
+                                            "elf.refreshGrid('gridBuscaVin');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnZoomBuscaVinClick",
+                                    "designerId": "95d0d4cb-d1da-4d0c-92b0-36ea012cfb74"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoomWindow",
+                                "iconCls": "fa fa-plus icon16 iconColorWhite",
+                                "id": "btnAgregarUnidad",
+                                "itemId": "btnAgregarUnidad",
+                                "margin": "0 0 5 5",
+                                "text": "Agregar",
+                                "textAlign": "left",
+                                "width": 130
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "iconCls": "string",
+                                "text": "string",
+                                "width": "auto",
+                                "id": "string",
+                                "itemId": "string",
+                                "margin": "auto",
+                                "textAlign": "string"
+                            },
+                            "name": "MyButton16",
+                            "designerId": "f9a1190e-c51b-4133-b994-2e3195df176d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnAgregarUnidadClick",
+                                        "implHandler": [
+                                            "if(elf.readElement('tfInsertarCodigo') === ''){",
+                                            "    msgTipo      = 'error';",
+                                            "    msgTitulo    = 'Codigo de Unidad no informado';",
+                                            "    msgContenido = 'Debe informar un Código de Unidad válido para agregarlo a la Cotización.';",
+                                            "    elf.message(msgTipo,msgTitulo,msgContenido);",
+                                            "    return;",
+                                            "}",
+                                            "",
+                                            "var apiController          = 'apiCotizacion';",
+                                            "var apiMethod              = 'grabaUnidadCotizacion';",
+                                            "var objJsonData            = new Object();",
+                                            "objJsonData.tfNoCotizacion = elf.readElement('tfNoCotizacion');",
+                                            "objJsonData.tfCodigoUnidad = elf.readElement('tfInsertarCodigo');",
+                                            "",
+                                            "var objJsonRequest = new Object();",
+                                            "objJsonRequest.apiController = apiController;",
+                                            "objJsonRequest.apiMethod     = apiMethod;",
+                                            "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                            "",
+                                            "var functionSuccess = function(){",
+                                            "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                                            "    ",
+                                            "    console.log(jsonData);",
+                                            "",
+                                            "    var valor_subtotal = jsonData.hwtCotizacion[0].valor_subtotal;",
+                                            "    var valor_impuesto = jsonData.hwtCotizacion[0].valor_impuesto;",
+                                            "    var valor_total    = jsonData.hwtCotizacion[0].valor_total;",
+                                            "",
+                                            "    elf.writeElement('tfValSubtotal'     ,Ext.util.Format.number(valor_subtotal , '0,000.00'));",
+                                            "    elf.writeElement('tfValImpuestos'    ,Ext.util.Format.number(valor_impuesto , '0,000.00'));",
+                                            "    elf.writeElement('tfValTotal'        ,Ext.util.Format.number(valor_total    , '0,000.00'));",
+                                            "    ",
+                                            "    elf.refreshGrid('gridCotizacionUnidad');",
+                                            "    elf.writeElement('tfInsertarCodigo','');",
+                                            "};",
+                                            "",
+                                            "var functionFailure = function(){",
+                                            "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                                            "    console.warn('Success::grabaCotizacion:');",
+                                            "    console.warn(jsonData);",
+                                            "};",
+                                            "",
+                                            "elf.doDataBridge(objJsonRequest,",
+                                            "                 functionSuccess,",
+                                            "                 null,",
+                                            "                 functionFailure,",
+                                            "                 null);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnAgregarUnidadClick",
+                                    "designerId": "b8a7181d-1140-4d32-be47-632630961ec8"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoomWindow",
+                                "iconCls": "fa fa-trash icon16 iconColorWhite",
+                                "id": "btnEliminarUnidad",
+                                "itemId": "btnEliminarUnidad",
+                                "margin": "0 0 0 5",
+                                "text": "Eliminar",
+                                "textAlign": "left",
+                                "width": 130
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "margin": "auto",
+                                "text": "string",
+                                "textAlign": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyButton",
+                            "designerId": "89d233ff-14fc-4a0a-9201-0c03a80f7c1d",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "Ext.getCmp('formCotizacionUnidad').eliminarUnidadCotizacion();"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "handler",
+                                    "designerId": "09eaa055-9e4e-470a-9741-e27c35d8f6fc"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": null,
+                        "id": "fieldsetTotales",
+                        "itemId": "fieldsetTotales",
+                        "layout|columnWidth": 0.3,
+                        "margin": "0 0 0 40",
+                        "minWidth": 300,
+                        "title": "<b>Totales</b>"
+                    },
+                    "configAlternates": {
+                        "border": "auto",
+                        "layout|columnWidth": "auto",
+                        "margin": "auto",
+                        "minWidth": "number",
+                        "title": "string",
+                        "id": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyFieldSet3",
+                    "designerId": "eb4d4c17-4341-4393-bafd-0a2c50f8d7dc",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": null,
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldCls": "formatDecimal",
+                                "fieldLabel": "Subtotal",
+                                "id": "tfValSubtotal",
+                                "itemId": "tfValSubtotal",
+                                "labelAlign": "right",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|anchor": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "baseCls": "string",
+                                "disabled": "boolean",
+                                "disabledCls": "string",
+                                "fieldCls": "string",
+                                "labelAlign": "string"
+                            },
+                            "name": "MyTextField6",
+                            "designerId": "c0ef4375-8b34-454c-81ad-9622e54d65e9"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": null,
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldCls": "formatDecimal",
+                                "fieldLabel": "Impuestos",
+                                "id": "tfValImpuestos",
+                                "itemId": "tfValImpuestos",
+                                "labelAlign": "right",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|anchor": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "baseCls": "string",
+                                "disabled": "boolean",
+                                "disabledCls": "string",
+                                "fieldCls": "string",
+                                "labelAlign": "string"
+                            },
+                            "name": "MyTextField7",
+                            "designerId": "f4e1513f-a67b-4e22-ad7e-f6f04416299e"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": null,
+                                "disabled": true,
+                                "disabledCls": "disabledField",
+                                "fieldCls": "formatDecimal",
+                                "fieldLabel": "Total",
+                                "id": "tfValTotal",
+                                "itemId": "tfValTotal",
+                                "labelAlign": "right",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "layout|anchor": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "baseCls": "string",
+                                "disabled": "boolean",
+                                "disabledCls": "string",
+                                "fieldCls": "string",
+                                "labelAlign": "string"
+                            },
+                            "name": "MyTextField8",
+                            "designerId": "ce97bf75-09b4-49fe-919e-dc51a77e52c1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

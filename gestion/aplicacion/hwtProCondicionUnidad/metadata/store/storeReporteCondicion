@@ -1,0 +1,137 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeReporteCondicion",
+        "model": "modelReporteCondicion",
+        "pageSize": 250,
+        "storeId": "storeReporteCondicion"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "pageSize": "number",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "c17538d2-50cf-4f74-aa33-b682370e1d61",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "restProxyReporteCondicion"
+            },
+            "configAlternates": {
+                "designer|displayName": "string"
+            },
+            "name": "MyRestProxy1",
+            "designerId": "7c3a319a-a975-422a-a406-1c328ec7a07d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "jsonReaderReporteCondicion"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "function",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "cfb0f0c4-336c-471e-82b3-9ed8c4c9a113",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "rootProperty",
+                                "implHandler": [
+                                    "var storeReporteCondicion = Ext.getStore('storeReporteCondicion');",
+                                    "var rawData = storeReporteCondicion.getProxy().getReader().rawData;",
+                                    "return rawData.hwtReporteCondicion;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "rootProperty",
+                            "designerId": "a7345e52-2c6a-4ab2-acc5-6c6e4dbba7fd"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreBeforeLoad",
+                "implHandler": [
+                    "var storeReporteCondicion = Ext.getStore('storeReporteCondicion');",
+                    "var proxyReporteCondicion = storeReporteCondicion.getProxy();",
+                    "",
+                    "var objJsonData = new Object();",
+                    "objJsonData.page  = storeReporteCondicion.currentPage;",
+                    "objJsonData.start = (storeReporteCondicion.currentPage - 1) * storeReporteCondicion.pageSize;",
+                    "objJsonData.limit = storeReporteCondicion.pageSize;",
+                    "",
+                    "/*",
+                    "var formParametrosBusqueda = Ext.getCmp('formParametrosBusqueda');",
+                    "",
+                    "if(formParametrosBusqueda !== undefined){",
+                    "    objJsonData.paramCodigo      = elf.readElement('fiParamCodigo');",
+                    "    objJsonData.paramNombreCorto = elf.readElement('fiParamNombreCorto');",
+                    "    objJsonData.paramRazonSocial = elf.readElement('fiParamRazonSocial');",
+                    "    objJsonData.paramRFC         = elf.readElement('fiParamRFC');",
+                    "}",
+                    "*/",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = 'apiCondicionUnidad';",
+                    "objJsonRequest.apiMethod     = 'listaReporteCondicion';",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "proxyReporteCondicion.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                    "proxyReporteCondicion.extraParams = objJsonRequest;",
+                    ""
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onStoreBeforeLoad",
+            "designerId": "1a90bcc3-6b90-451d-ba3b-3b484c32c7aa"
+        }
+    ]
+}

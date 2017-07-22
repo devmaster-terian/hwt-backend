@@ -1,0 +1,66 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modCodigoSucursalEntrega"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "modCodigoSucursal1",
+    "designerId": "6d92b238-c1ca-4bc0-a301-04aa9d5902cc",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo_consecionario"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField35",
+            "designerId": "b4e0c9e0-1504-4817-a46f-8132a6f83aee"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo_sucursal"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField36",
+            "designerId": "e3985560-a100-44da-9868-0fa74477534e"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField37",
+            "designerId": "f73611c1-66e1-4373-8f14-740a8d6a951d"
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "modelReporteCondicion",
+            "modelReporteCondicionLinea",
+            "modelOpcionEstadoCaracteristica",
+            "modelOpcionSeccion",
+            "modelBuscaVin",
+            "modelFiltroModelo",
+            "modelFiltroMarca",
+            "modelLineaEstado"
+        ],
+        "name": "hwtProCondicionUnidad",
+        "stores": [
+            "storeReporteCondicion",
+            "storeReporteCondicionLinea",
+            "storeOpcionEstadoCaracteristica",
+            "storeOpcionSeccion",
+            "storeBuscaVin",
+            "storeFiltroModelo",
+            "storeFiltroMarca",
+            "storeLineaEstado"
+        ],
+        "views": [
+            "formAplicacion",
+            "winReporteCondicion",
+            "winBuscaVin",
+            "winReporteCondicionLinea"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray",
+        "models": "typedarray",
+        "stores": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "elf.defaultDataApp();",
+                    "",
+                    "appLocal = this.getApplication();",
+                    "Ext.EventManager.onWindowResize(function(w, h){",
+                    "    appLocal.ajustarVentana();",
+                    "});",
+                    "",
+                    "appLocal.ajustarVentana();",
+                    "Ext.getCmp('formAplicacion').extraeOpcionesUnidad();",
+                    "Ext.getCmp('formAplicacion').extraeOpcionesCondicion();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "launch",
+            "designerId": "b51f77f0-e6a5-46c2-93d2-cae320109b07"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ajustarVentana",
+                "implHandler": [
+                    "elf.renderInterface(",
+                    "    'formAplicacion',",
+                    "    'gridReporteCondicion',",
+                    "    58);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "ajustarVentana",
+            "designerId": "53c11b2f-24be-4e84-a87c-2f66948ec6a4"
+        }
+    ]
+}

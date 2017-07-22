@@ -1,0 +1,517 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": false,
+        "designer|userAlias": "winParametrosBusqueda",
+        "designer|userClassName": "winParametrosBusqueda",
+        "height": null,
+        "id": "winParametrosBusqueda",
+        "itemId": "winParametrosBusqueda",
+        "modal": true,
+        "title": "Búsqueda de Proveedors",
+        "width": 500
+    },
+    "configAlternates": {
+        "closable": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "itemId": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "df21914b-a280-4e88-94b6-3c4344a09a43",
+    "viewControllerInstanceId": "d92e5ae7-69d9-4985-a7d0-9d27f37b0650",
+    "viewModelInstanceId": "b4dac564-0ec1-4132-9b92-c8e5b46e32b6",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": "formBackground",
+                "bodyPadding": 10,
+                "id": "formParametrosBusqueda",
+                "itemId": "formParametrosBusqueda",
+                "layout": "column",
+                "title": null
+            },
+            "configAlternates": {
+                "baseCls": "string",
+                "bodyPadding": "auto",
+                "id": "string",
+                "itemId": "string",
+                "layout": "string",
+                "title": "string"
+            },
+            "name": "MyForm1",
+            "designerId": "38a69860-a87e-47ed-b8cc-145480d40cb2",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetParametrosBusqueda",
+                        "itemId": "fieldsetParametrosBusqueda",
+                        "layout": "column",
+                        "layout|columnWidth": 1,
+                        "title": "<b>Parámetros de Búsqueda</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "layout": "string",
+                        "layout|columnWidth": "auto",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet3",
+                    "designerId": "4778252a-ca2b-431b-ba88-abcba96622c7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enableKeyEvents": true,
+                                "fieldLabel": "Código",
+                                "id": "fiParamCodigo",
+                                "itemId": "fiParamCodigo",
+                                "layout|columnWidth": 0.7,
+                                "margin": "0 5 5 0",
+                                "maskRe": "/[0-9.-]/"
+                            },
+                            "configAlternates": {
+                                "enableKeyEvents": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "maskRe": "regex"
+                            },
+                            "name": "MyTextField18",
+                            "designerId": "194f1475-c781-4f52-85fd-699e8455f85c",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onFiParamCodigoKeydown",
+                                        "implHandler": [
+                                            "if(e.getCharCode() == Ext.EventObject.ENTER){",
+                                            "    elf.refreshGrid('gridProveedor');",
+                                            "}"
+                                        ],
+                                        "name": "keydown",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onFiParamCodigoKeydown",
+                                    "designerId": "3cbd0051-ec7f-413f-82ca-67f5ddd1f847"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enableKeyEvents": true,
+                                "fieldLabel": "Nombre Corto",
+                                "id": "fiParamNombreCorto",
+                                "itemId": "fiParamNombreCorto",
+                                "layout|columnWidth": 0.7,
+                                "margin": "0 5 5 0"
+                            },
+                            "configAlternates": {
+                                "enableKeyEvents": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField20",
+                            "designerId": "bbc405d2-a2e7-4d6d-8965-a7bf806c2959",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onFiParamNombreCortoKeydown",
+                                        "implHandler": [
+                                            "if(e.getCharCode() == Ext.EventObject.ENTER){",
+                                            "    elf.refreshGrid('gridProveedor');",
+                                            "}"
+                                        ],
+                                        "name": "keydown",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onFiParamNombreCortoKeydown",
+                                    "designerId": "75260982-3f11-44b9-82f5-83bc226ffa9a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enableKeyEvents": true,
+                                "fieldLabel": "Razón Social",
+                                "id": "fiParamRazonSocial",
+                                "itemId": "fiParamRazonSocial",
+                                "layout|columnWidth": 1,
+                                "margin": "0 5 5 0"
+                            },
+                            "configAlternates": {
+                                "enableKeyEvents": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField22",
+                            "designerId": "7937ee8c-f7a8-44a3-904f-89b929d2802c",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onFiParamRazonSocialKeydown",
+                                        "implHandler": [
+                                            "if(e.getCharCode() == Ext.EventObject.ENTER){",
+                                            "    elf.refreshGrid('gridProveedor');",
+                                            "}"
+                                        ],
+                                        "name": "keydown",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onFiParamRazonSocialKeydown",
+                                    "designerId": "e94b5dc0-02ba-4cec-9ec8-92b81fe6f050"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enableKeyEvents": true,
+                                "fieldLabel": "RFC",
+                                "id": "fiParamRFC",
+                                "itemId": "fiParamRFC",
+                                "layout|columnWidth": 1,
+                                "margin": "0 5 5 0"
+                            },
+                            "configAlternates": {
+                                "enableKeyEvents": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField24",
+                            "designerId": "9e73484f-b497-41ff-857f-d8bd8acc4cea",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onFiParamRFCKeydown",
+                                        "implHandler": [
+                                            "if(e.getCharCode() == Ext.EventObject.ENTER){",
+                                            "    elf.refreshGrid('gridProveedor');",
+                                            "}"
+                                        ],
+                                        "name": "keydown",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onFiParamRFCKeydown",
+                                    "designerId": "f6008ba1-b321-4738-b0bd-66e2c6b5a107"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "toolbarBackground"
+                ],
+                "dock": "bottom",
+                "id": "toolbarBusquedaProveedors",
+                "itemId": "toolbarBusquedaProveedors"
+            },
+            "configAlternates": {
+                "cls": "typedarray",
+                "dock": "string",
+                "id": "string",
+                "itemId": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "c12297f7-9778-4e51-8d64-80fade96710c",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-search icon16 iconColorGreen",
+                        "id": "btnEjecutaBusqueda",
+                        "itemId": "btnEjecutaBusqueda",
+                        "layout|flex": null,
+                        "text": "Buscar",
+                        "textAlign": "left",
+                        "width": 135
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton",
+                    "designerId": "7b77a0f1-e7b3-4b71-b09f-85dd99b680ce",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnEjecutaBusquedaClick",
+                                "implHandler": [
+                                    "elf.refreshGrid('gridProveedor');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnEjecutaBusquedaClick",
+                            "designerId": "1909ba5c-9a1a-458c-af49-310df7f1c44f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-refresh icon16 iconColorDarkBlue",
+                        "id": "btnLimpiarBusqueda",
+                        "itemId": "btnLimpiarBusqueda",
+                        "layout|flex": null,
+                        "text": "Limpiar",
+                        "textAlign": "left",
+                        "width": 135
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton9",
+                    "designerId": "6b3e932c-35f6-45a5-ae55-2370b61cec34",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnLimpiarBusquedaClick",
+                                "implHandler": [
+                                    "elf.writeElement('fiParamCodigo','');",
+                                    "elf.writeElement('fiParamNombreCorto','');",
+                                    "elf.writeElement('fiParamRazonSocial','');",
+                                    "elf.writeElement('fiParamRFC','');",
+                                    "",
+                                    "elf.refreshGrid('gridProveedor');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnLimpiarBusquedaClick",
+                            "designerId": "f489c9e4-7af0-4cba-8758-8b09ff604f03"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill",
+                    "designerId": "131da86d-cbef-4f1d-97e1-6b3039233f45"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "fa fa-window-close icon16 iconColorRed",
+                        "id": "btnCierraBusqueda",
+                        "itemId": "btnCierraBusqueda",
+                        "layout|flex": null,
+                        "text": "Cerrar",
+                        "textAlign": "left",
+                        "width": 135
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "id": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "textAlign": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "1053b495-22b0-4b1f-8be2-f87d3d91f0c2",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnCierraBusquedaClick",
+                                "implHandler": [
+                                    "elf.closeWindow('winParametrosBusqueda');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnCierraBusquedaClick",
+                            "designerId": "5e7b1e2e-b312-432a-a465-691587fce304"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

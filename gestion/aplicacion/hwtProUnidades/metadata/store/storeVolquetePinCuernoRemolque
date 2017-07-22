@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeVolquetePinCuernoRemolque",
+        "model": "modVolquetePinCuernoRemolque",
+        "storeId": "storeVolquetePinCuernoRemolque"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor8",
+    "designerId": "42d73d62-34bb-4ac3-965d-716a13153b63"
+}

@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeEjeDelanteroCapacidad",
+        "model": "modEjeDelanteroCapacidad",
+        "storeId": "storeEjeDelanteroCapacidad"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeEjeDelanteroMarca1",
+    "designerId": "7a972545-6b2c-450d-b3f9-b1aabfbd9d7c"
+}

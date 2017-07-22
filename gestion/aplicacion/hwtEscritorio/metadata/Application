@@ -1,0 +1,109 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "name": "hwtEsritorio",
+        "views": [
+            "winWorkplace"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadCompanyData",
+                "implHandler": [
+                    "    elf.writeElement('lblCompany'    ,elf.getSessionData('company_name'));",
+                    "    elf.writeElement('lblUserName'   ,elf.getSessionData('user_name'));",
+                    "    elf.writeElement('lblSystemName' ,elf.getSessionData('system_name'));",
+                    "    elf.writeElement('lblProfile'    ,elf.getSessionData('user_profile'));",
+                    "    elf.writeElement('lblVersion'    ,elf.getSessionData('system_version'));",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "loadCompanyData",
+            "designerId": "f4e99112-8d5e-427e-af84-55b9730bc7ea"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "elf.defaultDataApp();",
+                    "",
+                    "appLocal = this.getApplication();",
+                    "appLocal.loadCompanyData();",
+                    "appLocal.renderInterface();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "launch",
+            "designerId": "46b4fb32-4449-44f3-8338-f1a125dcfa8b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "renderInterface",
+                "implHandler": [
+                    "Ext.getCmp('formWorkplace').doLayout();",
+                    "var heightWindow = Ext.getBody().getViewSize().height;",
+                    "var widthWindow  = Ext.getBody().getViewSize().width;",
+                    "console.log('Dimensiones: ');",
+                    "console.log(heightWindow);",
+                    "console.log(widthWindow);",
+                    "Ext.getCmp('formWorkplace').setHeight(heightWindow);",
+                    "",
+                    "",
+                    "",
+                    "elf.renderInterface(",
+                    "    'formWorkplace',",
+                    "    'tabTasks',",
+                    "    58);",
+                    "",
+                    "var heightTab = heightWindow - 10;",
+                    "Ext.getCmp('tabTasks').setHeight(heightWindow);",
+                    "",
+                    "//Ext.getCmp('gridPedidoVenta').setHeight(alturaGrid);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "renderInterface",
+            "designerId": "54d37114-89da-4312-8680-b252392c54c5"
+        }
+    ]
+}

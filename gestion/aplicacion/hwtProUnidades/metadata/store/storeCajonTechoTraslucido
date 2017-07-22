@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCajonTechoTraslucido",
+        "model": "modCajonTechoTraslucido",
+        "storeId": "storeCajonTechoTraslucido"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor21",
+    "designerId": "de26e200-fc5f-46c7-b174-63e126fb9883"
+}

@@ -1,0 +1,20 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_m6iguic1",
+        "id": "unineue-light-webfont",
+        "url": "../../recurso/webfonts/unineue_light/unineue-light-webfont.css"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "id": "string",
+        "url": "uri"
+    },
+    "name": "css1",
+    "designerId": "6bd11995-f4ea-4edc-9a18-c9ba8033596d"
+}

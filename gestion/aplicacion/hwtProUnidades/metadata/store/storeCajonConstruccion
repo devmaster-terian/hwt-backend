@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeCajonConstruccion",
+        "model": "modCajonConstruccion",
+        "storeId": "storeCajonConstruccion"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor11",
+    "designerId": "86dae82a-e95e-42a9-bf53-6cb68037b86c"
+}

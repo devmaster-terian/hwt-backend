@@ -1,0 +1,20 @@
+{
+    "type": "libraryresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "basePath": "../../recurso/framework/ext-5.1.3/build/",
+        "designer|userClassName": "Library",
+        "theme": "hwtTemaAplicacion"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "theme": "string",
+        "basePath": "uri"
+    },
+    "name": "Library",
+    "designerId": "524ee29f-e094-4255-b3af-d26e99c17370"
+}

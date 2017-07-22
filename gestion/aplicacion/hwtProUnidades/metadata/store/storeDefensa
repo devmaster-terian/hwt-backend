@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeDefensa",
+        "model": "modDefensa",
+        "storeId": "storeDefensa"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeColor24",
+    "designerId": "df6711d0-b63a-4d83-aaba-39a62228506d"
+}

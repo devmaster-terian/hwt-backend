@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storeTomaFuerza",
+        "model": "modTomaFuerza",
+        "storeId": "storeTomaFuerza"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "storeChasis7",
+    "designerId": "f4d7a46f-404e-4eda-abaa-0f1b553a6ee2"
+}
