@@ -1,0 +1,17 @@
+[22-Nov-2016 04:12:12 UTC] PHP Notice:  Undefined variable: query in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_filtro_query.php on line 29
+[22-Nov-2016 04:12:12 UTC] PHP Fatal error:  Call to a member function select() on null in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_filtro_query.php on line 29
+[22-Nov-2016 04:13:04 UTC] PHP Notice:  Undefined variable: query in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_filtro_query.php on line 29
+[22-Nov-2016 04:13:04 UTC] PHP Fatal error:  Call to a member function select() on null in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_filtro_query.php on line 29
+[23-Nov-2016 01:48:05 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 01:48:05 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 02:04:05 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 02:04:06 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 02:04:06 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 02:04:06 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 02:04:11 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 02:04:12 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 02:04:18 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 02:04:19 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 02:04:24 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 02:04:25 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
+[23-Nov-2016 05:22:28 UTC] PHP Fatal error:  Class 'JFactory' not found in /home/terianco/hwt.terian.com.mx/hwt-usados/modulos/mod_usados_producto.php on line 2
