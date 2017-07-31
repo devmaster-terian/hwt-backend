@@ -22,6 +22,15 @@ Ext.define('hwtProOportunidadVenta.model.modelOportunidadVenta', {
 
     fields: [
         {
+            name: 'num_oportunidad'
+        },
+        {
+            name: 'situacion_oportunidad'
+        },
+        {
+            name: 'situacion_oportunidad_descripcion'
+        },
+        {
             name: 'codigo_gerente_regional'
         },
         {
@@ -43,7 +52,13 @@ Ext.define('hwtProOportunidadVenta.model.modelOportunidadVenta', {
             name: 'tipo_solicitante'
         },
         {
+            name: 'tipo_solicitante_descripcion'
+        },
+        {
             name: 'tipo_empresa'
+        },
+        {
+            name: 'tipo_empresa_descripcion'
         },
         {
             name: 'contacto_nombre'
@@ -64,16 +79,25 @@ Ext.define('hwtProOportunidadVenta.model.modelOportunidadVenta', {
             name: 'codigo_consecionario'
         },
         {
-            name: 'consecionario_descripcion'
+            name: 'concesionario_descripcion'
         },
         {
             name: 'solicitud_pais'
         },
         {
+            name: 'solicitud_pais_descripcion'
+        },
+        {
             name: 'solicitud_estado'
         },
         {
+            name: 'solicitud_estado_descripcion'
+        },
+        {
             name: 'solicitud_municipio'
+        },
+        {
+            name: 'solicitud_municipio_descripcion'
         },
         {
             name: 'solicitud_ciudad'
@@ -82,7 +106,13 @@ Ext.define('hwtProOportunidadVenta.model.modelOportunidadVenta', {
             name: 'solicitud_cp'
         },
         {
-            name: 'cantidad'
+            name: 'cantidad_solicitada'
+        },
+        {
+            name: 'cantidad_atendida'
+        },
+        {
+            name: 'cantidad_saldo'
         },
         {
             name: 'marca'
@@ -92,6 +122,12 @@ Ext.define('hwtProOportunidadVenta.model.modelOportunidadVenta', {
         },
         {
             name: 'observaciones'
+        },
+        {
+            name: 'codigo_cliente'
+        },
+        {
+            name: 'razon_social'
         }
     ]
 });

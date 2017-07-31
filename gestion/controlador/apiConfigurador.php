@@ -67,7 +67,8 @@ function conjuntoParametros($pCodeConfig){
     return $objReturnValue;
 }
 
-function listaParametro($pCodeConfig, $pCodeParam){
+function listaParametro($pCodeConfig, $pCodeParam, $pConfig = null)
+{
     Mnemea::wakeUp();
     $keyParametro = $pCodeConfig.'.'.$pCodeParam;
     $keyExist = Mnemea::checkKey($keyParametro);
@@ -82,6 +83,7 @@ function listaParametro($pCodeConfig, $pCodeParam){
 
         $resultWorkConfigParam = Dataworker::executeQuery($SqlParametro);
 
+        $arrayListValue = null;
         if($resultWorkConfigParam->numRecords > 0){
             foreach ($resultWorkConfigParam->data as $configParameter){
                 $recordString = json_encode($configParameter);
@@ -93,10 +95,17 @@ function listaParametro($pCodeConfig, $pCodeParam){
         $arrayValue = array();
         foreach ($arrayListValue as $comboValue){
             $numLoop = $numLoop + 1;
-            $objValue = (object) [
-                codigo      => $numLoop,
-                descripcion => strtoupper($comboValue),
-            ];
+            if ($pConfig !== null and $pConfig->decode) {
+                $objValue = (object)[
+                    codigo => substr($comboValue, 0, 1),
+                    descripcion => substr(strtoupper($comboValue), 2),
+                ];
+            } else {
+                $objValue = (object)[
+                    codigo => $numLoop,
+                    descripcion => strtoupper($comboValue),
+                ];
+            }
 
             array_push($arrayValue,$objValue);
         }

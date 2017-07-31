@@ -37,6 +37,64 @@
     "viewModelInstanceId": "1674dbfe-a753-405c-8f5a-2eeb9998276a",
     "cn": [
         {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "extraeOpcionesOportunidad",
+                "implHandler": [
+                    "var apiController = 'apiOportunidadVenta';",
+                    "var apiMethod     = 'datosOpciones';",
+                    "var objJsonData = new Object();",
+                    "objJsonData.tipo    = 'OpcionesOportunidadVenta';",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = apiController;",
+                    "objJsonRequest.apiMethod     = apiMethod;",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "var functionSuccess = function(){",
+                    "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                    "",
+                    "    var arrayCombos = new Array();",
+                    "    var objConfig   = new Object();",
+                    "",
+                    "    objConfig.idComboBox   = 'cbxSituacionOportunidad';",
+                    "    objConfig.idDataBridge = 'datosOpciones';",
+                    "    objConfig.id           = 'opcionesSituacionOportunidad';",
+                    "    objConfig.fieldValue   = 'codigo';",
+                    "    objConfig.fieldDisplay = 'descripcion';",
+                    "    objConfig.filterValue  = undefined;",
+                    "",
+                    "    arrayCombos.push(objConfig);",
+                    "    arrayCombos.forEach(elf.loadComboBoxConfig);",
+                    "    ",
+                    "    elf.refreshGrid('gridOportunidadVenta');    ",
+                    "};",
+                    "",
+                    "var functionFailure = function(){",
+                    "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                    "};",
+                    "",
+                    "elf.doDataBridge(objJsonRequest,",
+                    "                 functionSuccess,",
+                    "                 null,",
+                    "                 functionFailure,",
+                    "                 null);",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "extraeOpcionesOportunidad",
+            "designerId": "a6c11f64-6742-4582-ab15-6df1d19f5e20"
+        },
+        {
             "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
@@ -153,13 +211,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fn": "onButtonClickBuscar",
+                                "implHandler": [
+                                    "elf.openWindow('winBuscaOportunidad');",
+                                    "Ext.getCmp('formBuscaOportunidad').preparaInterfaz();",
+                                    ""
+                                ],
                                 "name": "click",
                                 "scope": "me"
                             },
                             "configAlternates": {
                                 "fn": "string",
                                 "name": "string",
-                                "scope": "string"
+                                "scope": "string",
+                                "implHandler": "code"
                             },
                             "name": "onButtonClickBuscar",
                             "designerId": "ef05fff7-5aad-4139-9b21-dcc6d9b25768"
@@ -226,7 +290,9 @@
                             "userConfig": {
                                 "fn": "onButtonClickCrear",
                                 "implHandler": [
-                                    "elf.openWindow('winOportunidadVenta');"
+                                    "elf.openWindow('winOportunidadVenta');",
+                                    "Ext.getCmp('formOportunidadVenta').operacionOportunidadVenta = 'crear';",
+                                    "Ext.getCmp('formOportunidadVenta').preparaInterfaz();"
                                 ],
                                 "name": "click",
                                 "scope": "me"
@@ -506,7 +572,7 @@
                 "itemId": "gridOportunidadVenta",
                 "reference": "gridOportunidadVenta",
                 "store": "storeOportunidadVenta",
-                "title": "gridOportunidadVenta"
+                "title": "Oportunidad de Venta"
             },
             "configAlternates": {
                 "id": "string",
@@ -538,15 +604,119 @@
                     "userConfig": {
                         "displayInfo": true,
                         "dock": "bottom",
+                        "store": "storeOportunidadVenta",
                         "width": 360
                     },
                     "configAlternates": {
                         "displayInfo": "boolean",
                         "dock": "string",
-                        "width": "auto"
+                        "width": "auto",
+                        "store": "store"
                     },
                     "name": "MyPagingToolbar",
-                    "designerId": "0f18758b-fd18-4f8c-9ad9-8919dbfc7735"
+                    "designerId": "0f18758b-fd18-4f8c-9ad9-8919dbfc7735",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "cbxSituacionOportunidad",
+                                "displayField": "descripcion",
+                                "editable": false,
+                                "fieldLabel": "Situación",
+                                "id": "cbxSituacionOportunidad",
+                                "itemId": "cbxSituacionOportunidad",
+                                "layout|flex": null,
+                                "queryMode": "local",
+                                "store": "storeSituacionOportunidad",
+                                "valueField": "codigo"
+                            },
+                            "configAlternates": {
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "queryMode": "string",
+                                "store": "store",
+                                "valueField": "datafield",
+                                "designer|displayName": "string"
+                            },
+                            "name": "MyComboBox11",
+                            "designerId": "b981ec23-7e40-4c0f-8f24-5ae41a62f2fc",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCbxSituacionOportunidadChange",
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onCbxSituacionOportunidadChange",
+                                    "designerId": "3d2658fe-f2f0-4640-9c5b-74309f5c18e7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "btnLimpiaBusqueda",
+                                "itemId": "btnLimpiaBusqueda",
+                                "layout|flex": null,
+                                "text": "MyButton"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton10",
+                            "designerId": "bb3800bf-ce54-4faa-acad-507b97f42f0d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnLimpiaBusquedaClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnLimpiaBusquedaClick",
+                                    "designerId": "9e382085-1c10-4bc5-8002-6a83547cc8ff"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -556,15 +726,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "gerente_regional_nombre",
-                        "text": "Gerente Regional Nombre"
+                        "dataIndex": "num_oportunidad",
+                        "locked": true,
+                        "text": "Oportunidad",
+                        "width": 90
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "locked": "boolean",
+                        "text": "string",
+                        "width": "auto"
                     },
-                    "name": "MyColumn1",
-                    "designerId": "e1dd6dd7-5454-4775-b30c-068782d4e2ef"
+                    "name": "MyColumn20",
+                    "designerId": "48fca4c6-c816-4904-bb0d-34c1bd25cd1b"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -574,15 +748,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "vendedor_nombre",
-                        "text": "Vendedor Nombre"
+                        "dataIndex": "situacion_oportunidad_descripcion",
+                        "locked": true,
+                        "text": "Situación"
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
+                        "locked": "boolean",
                         "text": "string"
                     },
-                    "name": "MyColumn2",
-                    "designerId": "9be117e8-01e0-4460-9252-59697f180038"
+                    "name": "MyColumn21",
+                    "designerId": "587537e6-55fe-4f8e-a687-b479d8efa620"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -592,44 +768,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "visita_fecha",
-                        "text": "Visita Fecha"
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string"
-                    },
-                    "name": "MyColumn3",
-                    "designerId": "951aa36a-8253-41d7-b0e1-936cac6fe307"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "visita_semana",
-                        "text": "Visita Semana"
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string"
-                    },
-                    "name": "MyColumn4",
-                    "designerId": "f983d2a3-cbe3-451a-bd30-f7547bce6038"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "tipo_solicitante",
-                        "text": "Tipo Solicitante"
+                        "dataIndex": "tipo_solicitante_descripcion",
+                        "text": "Tipo</br>Solicitante"
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
@@ -646,12 +786,54 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "tipo_empresa",
-                        "text": "Tipo Empresa"
+                        "dataIndex": "codigo_cliente",
+                        "text": "Cliente",
+                        "width": 80
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn22",
+                    "designerId": "38a713de-9641-4a8e-b8b1-5fd59cbdd839"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "razon_social",
+                        "text": "Razón Social",
+                        "width": 200
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn23",
+                    "designerId": "22c0d434-89d3-4808-a5f1-2f550b75d0b1"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "tipo_empresa",
+                        "text": "Tipo</br>Empresa",
+                        "width": 120
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyColumn6",
                     "designerId": "3dd5ff8a-1dc8-4dba-9931-36c60f80dfb7"
@@ -664,15 +846,55 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "contacto_nombre",
-                        "text": "Contacto Nombre"
+                        "text": "Visita"
                     },
                     "configAlternates": {
-                        "dataIndex": "datafield",
                         "text": "string"
                     },
-                    "name": "MyColumn7",
-                    "designerId": "074ed51a-c0c6-43fb-b309-24dc189eaf0f"
+                    "name": "MyColumn",
+                    "designerId": "55291aaf-20e1-43b4-bfc2-da16d914e99a",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "visita_fecha",
+                                "text": "Fecha"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "align": "string"
+                            },
+                            "name": "MyColumn3",
+                            "designerId": "951aa36a-8253-41d7-b0e1-936cac6fe307"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "visita_semana",
+                                "text": "Semana"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "align": "string"
+                            },
+                            "name": "MyColumn4",
+                            "designerId": "f983d2a3-cbe3-451a-bd30-f7547bce6038"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -682,141 +904,75 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "contacto_cargo",
-                        "text": "Contacto Cargo"
+                        "text": "Cantidad de Unidades"
                     },
                     "configAlternates": {
-                        "dataIndex": "datafield",
                         "text": "string"
                     },
-                    "name": "MyColumn8",
-                    "designerId": "e6d2728b-c22b-4b3d-90d3-5c45248b9599"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "contacto_telefono",
-                        "text": "Contacto Telefono"
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string"
-                    },
-                    "name": "MyColumn9",
-                    "designerId": "69ace519-4b0e-43c4-ae1f-8e37057c25ac"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "contacto_movil",
-                        "text": "Contacto Movil"
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string"
-                    },
-                    "name": "MyColumn10",
-                    "designerId": "86b7a2e6-5225-4d0e-b020-ec816154399e"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "contacto_email",
-                        "text": "Contacto Email"
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string"
-                    },
-                    "name": "MyColumn11",
-                    "designerId": "ff1d65b2-eaa8-40c3-bbc7-fa24afc888ad"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "consecionario_descripcion",
-                        "text": "Consecionario Descripcion"
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string"
-                    },
-                    "name": "MyColumn12",
-                    "designerId": "c1f0bf52-926c-4223-875d-198aa38879ec"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "solicitud_estado",
-                        "text": "Solicitud Estado"
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string"
-                    },
-                    "name": "MyColumn13",
-                    "designerId": "644d9663-91aa-4f4e-9de6-19459675a947"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "solicitud_ciudad",
-                        "text": "Solicitud Ciudad"
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string"
-                    },
-                    "name": "MyColumn14",
-                    "designerId": "dd01d669-6793-4d8d-98a0-40489ba91667"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "cantidad",
-                        "text": "Cantidad"
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string"
-                    },
-                    "name": "MyColumn15",
-                    "designerId": "5013a46b-7362-4659-bd80-3894de883161"
+                    "name": "MyColumn26",
+                    "designerId": "f83209e4-93b0-4c11-97bf-da97ec139538",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "dataIndex": "cantidad_solicitada",
+                                "text": "Solicitadas"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "align": "string"
+                            },
+                            "name": "MyColumn15",
+                            "designerId": "5013a46b-7362-4659-bd80-3894de883161"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "dataIndex": "cantidad_atendida",
+                                "text": "Atendidas"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "align": "string"
+                            },
+                            "name": "MyColumn24",
+                            "designerId": "56ce2bf8-97d2-4dc0-bcdf-bb2c31620a51"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "dataIndex": "cantidad_saldo",
+                                "text": "Saldo"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "align": "string"
+                            },
+                            "name": "MyColumn25",
+                            "designerId": "596d9af0-8ff0-469f-a1cd-44229079ab53"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -853,6 +1009,238 @@
                     },
                     "name": "MyColumn17",
                     "designerId": "a2268a3d-e03b-4c79-8ef0-68bc603027bb"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Localizacion"
+                    },
+                    "configAlternates": {
+                        "text": "string"
+                    },
+                    "name": "MyColumn19",
+                    "designerId": "f0dfcae7-2ddb-42b0-8990-5c6c50ed3c74",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "solicitud_estado_descripcion",
+                                "text": "Estado",
+                                "width": 120
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn13",
+                            "designerId": "644d9663-91aa-4f4e-9de6-19459675a947"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "solicitud_municipio_descripcion",
+                                "text": "Municipio",
+                                "width": 120
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn14",
+                            "designerId": "dd01d669-6793-4d8d-98a0-40489ba91667"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Contacto"
+                    },
+                    "configAlternates": {
+                        "text": "string"
+                    },
+                    "name": "MyColumn18",
+                    "designerId": "89835222-5366-4d31-a6f6-e473981c267f",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "contacto_nombre",
+                                "text": "Nombre",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn7",
+                            "designerId": "074ed51a-c0c6-43fb-b309-24dc189eaf0f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "contacto_cargo",
+                                "text": "Cargo",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn8",
+                            "designerId": "e6d2728b-c22b-4b3d-90d3-5c45248b9599"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "contacto_telefono",
+                                "text": "Telefono"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn9",
+                            "designerId": "69ace519-4b0e-43c4-ae1f-8e37057c25ac"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "contacto_movil",
+                                "text": "Movil"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn10",
+                            "designerId": "86b7a2e6-5225-4d0e-b020-ec816154399e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "contacto_email",
+                                "text": "Email",
+                                "width": 200
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn11",
+                            "designerId": "ff1d65b2-eaa8-40c3-bbc7-fa24afc888ad"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "concesionario_descripcion",
+                        "text": "Consecionario",
+                        "width": 150
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn12",
+                    "designerId": "c1f0bf52-926c-4223-875d-198aa38879ec"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "gerente_regional_nombre",
+                        "text": "Gerente</br>Regional",
+                        "width": 150
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn1",
+                    "designerId": "e1dd6dd7-5454-4775-b30c-068782d4e2ef"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "vendedor_nombre",
+                        "text": "Vendedor",
+                        "width": 120
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "9be117e8-01e0-4460-9252-59697f180038"
                 }
             ]
         }

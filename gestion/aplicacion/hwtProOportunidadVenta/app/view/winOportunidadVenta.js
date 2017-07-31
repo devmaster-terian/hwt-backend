@@ -41,6 +41,7 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
     bodyCls: 'formBackground',
     closable: false,
     title: 'Oportunidad de Venta',
+    defaultListenerScope: true,
 
     dockedItems: [
         {
@@ -57,7 +58,10 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                     width: 130,
                     iconCls: 'fa fa-check-square icon16 iconColorGreen',
                     text: 'Confirmar',
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    listeners: {
+                        click: 'onBtnConfirmarOportunidadClick'
+                    }
                 },
                 {
                     xtype: 'tbfill'
@@ -69,7 +73,10 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                     width: 130,
                     iconCls: 'fa fa-window-close icon16 iconColorRed',
                     text: 'Cerrar',
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    listeners: {
+                        click: 'onBtnCerrarOportunidadClick'
+                    }
                 }
             ]
         }
@@ -77,6 +84,146 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
     items: [
         {
             xtype: 'form',
+            preparaInterfaz: function () {
+                var arrayCombos = new Array();
+
+                var objConfig = new Object();
+                objConfig.idComboBox = 'cbxTipoSolicitante';
+                objConfig.idDataBridge = 'datosOpciones';
+                objConfig.id = 'opcionesTipoSolicitante';
+                objConfig.fieldValue = 'codigo';
+                objConfig.fieldDisplay = 'descripcion';
+                arrayCombos.push(objConfig);
+
+                var objConfig = new Object();
+                objConfig.idComboBox = 'cbxMarca';
+                objConfig.idDataBridge = 'datosOpciones';
+                objConfig.id = 'opcionesMarca';
+                objConfig.fieldValue = 'descripcion';
+                objConfig.fieldDisplay = 'descripcion';
+                arrayCombos.push(objConfig);
+
+                var objConfig = new Object();
+                objConfig.idComboBox = 'cbxModelo';
+                objConfig.idDataBridge = 'datosOpciones';
+                objConfig.id = 'opcionesModelo';
+                objConfig.fieldValue = 'descripcion';
+                objConfig.fieldDisplay = 'descripcion';
+                arrayCombos.push(objConfig);
+
+                var objConfig = new Object();
+                objConfig.idComboBox = 'cbxCodigoGerenteRegional';
+                objConfig.idDataBridge = 'datosOpciones';
+                objConfig.id = 'opcionesGerenteRegional';
+                objConfig.fieldValue = 'usuario';
+                objConfig.fieldDisplay = 'nombre';
+                arrayCombos.push(objConfig);
+
+                var objConfig = new Object();
+                objConfig.idComboBox = 'cbxCodigoVendedor';
+                objConfig.idDataBridge = 'datosOpciones';
+                objConfig.id = 'opcionesVendedor';
+                objConfig.fieldValue = 'usuario';
+                objConfig.fieldDisplay = 'nombre';
+                arrayCombos.push(objConfig);
+
+                var objConfig = new Object();
+                objConfig.idComboBox = 'cbxCodigoConsecionario';
+                objConfig.idDataBridge = 'datosOpciones';
+                objConfig.id = 'opcionesConsecionario';
+                objConfig.fieldValue = 'codigo_consecionario';
+                objConfig.fieldDisplay = 'descripcion';
+                arrayCombos.push(objConfig);
+
+                var objConfig = new Object();
+                objConfig.idComboBox = 'cbxSolicitudPais';
+                objConfig.idDataBridge = 'datosOpciones';
+                objConfig.id = 'opcionesPais';
+                objConfig.fieldValue = 'cod_pais';
+                objConfig.fieldDisplay = 'pais';
+                arrayCombos.push(objConfig);
+
+                arrayCombos.forEach(elf.loadComboBoxConfig);
+
+                if (Ext.getCmp('formOportunidadVenta').operacionOportunidadVenta === 'crear') {
+                    var fechaActual = new Date();
+                    elf.writeElement('dtVisitaFecha', fechaActual);
+
+                    elf.writeElement('tfCantidadSolicitada', '0');
+                    elf.writeElement('tfCantidadAtendida', '0');
+                    elf.writeElement('tfCantidadSaldo', '0');
+                }
+
+            },
+            obtieneLocalizacion: function (pTipo, pFuncionCarga) {
+                var apiController = 'apiOportunidadVenta';
+                var apiMethod = 'datosLocalizacion';
+
+                var objJsonData = new Object();
+                objJsonData.pais = elf.readElement('cbxSolicitudPais');
+                objJsonData.estado = elf.readElement('cbxSolicitudEstado');
+                objJsonData.municipio = elf.readElement('cbxSolicitudMunicipio');
+                objJsonData.tipoDato = pTipo;
+
+                var objJsonRequest = new Object();
+                objJsonRequest.apiController = apiController;
+                objJsonRequest.apiMethod = apiMethod;
+                objJsonRequest.apiData = JSON.stringify(objJsonData);
+
+                var functionSuccess = function () {
+                    var jsonData = elf.getInfoDataBridge('datosLocalizacion');
+                    pFuncionCarga();
+                };
+
+                var functionFailure = function () {
+                    var jsonData = elf.getInfoDataBridge('datosLocalizacion');
+                    elf.showInfo(jsonData, 'error');
+                };
+
+
+                elf.doDataBridge(objJsonRequest,
+                    functionSuccess,
+                    null,
+                    functionFailure,
+                    null);
+            },
+            grabaOportunidadVenta: function () {
+                if (Ext.getCmp('formOportunidadVenta').isValid()) {
+                    var formRegistro = 'formOportunidadVenta';
+                    var apiController = 'apiOportunidadVenta';
+                    var apiMethod = 'grabaOportunidadVenta';
+
+                    var objJsonRequest = new Object();
+                    objJsonRequest.apiController = apiController;
+                    objJsonRequest.apiMethod = apiMethod;
+                    objJsonRequest.apiData = elf.prepareFormFields(formRegistro);
+
+                    var functionSuccess = function () {
+                        var jsonData = elf.getInfoDataBridge(apiMethod);
+
+                        elf.showInfo(jsonData, 'information');
+
+                        elf.closeWindow('winOportunidadVenta');
+                        elf.refreshGrid('gridOportunidadVenta');
+                    };
+
+                    var functionFailure = function () {
+                        var jsonData = elf.getInfoDataBridge(apiMethod);
+                        elf.showInfo(jsonData, 'error', 'tfCodigoCliente');
+                    };
+
+                    elf.doDataBridge(objJsonRequest,
+                        functionSuccess,
+                        null,
+                        functionFailure,
+                        null);
+                } //Formulario Valido
+                else {
+                    elf.message('error',
+                        'Formulario Incompleto',
+                        'Debe de llenar los Campos Requeridos');
+                }
+            },
             id: 'formOportunidadVenta',
             itemId: 'formOportunidadVenta',
             bodyCls: 'formBackground',
@@ -91,7 +238,7 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                     items: [
                         {
                             xtype: 'panel',
-                            height: 410,
+                            height: 470,
                             id: 'tabGeneral',
                             itemId: 'tabGeneral',
                             bodyCls: 'formBackground',
@@ -111,6 +258,8 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                         {
                                             xtype: 'textfield',
                                             columnWidth: 0.5,
+                                            disabled: true,
+                                            disabledCls: 'diaabledField',
                                             id: 'tfNumOportunidad',
                                             itemId: 'tfNumOportunidad',
                                             margin: '0 3 3 0',
@@ -132,7 +281,12 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                             id: 'dtVisitaFecha',
                                             itemId: 'dtVisitaFecha',
                                             margin: '0 3 3 0',
-                                            fieldLabel: 'Fecha'
+                                            fieldLabel: 'Fecha',
+                                            allowBlank: false,
+                                            editable: false,
+                                            listeners: {
+                                                change: 'onDtVisitaFechaChange'
+                                            }
                                         },
                                         {
                                             xtype: 'splitter',
@@ -142,20 +296,24 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                         {
                                             xtype: 'textfield',
                                             columnWidth: 0.5,
-                                            disabledCls: 'disabledField',
-                                            id: 'tfVisitaAnn',
-                                            itemId: 'tfVisitaAnn',
-                                            margin: '0 3 3 0',
-                                            fieldLabel: 'Año'
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            columnWidth: 0.5,
+                                            disabled: true,
                                             disabledCls: 'disabledField',
                                             id: 'tfVisitaSemana',
                                             itemId: 'tfVisitaSemana',
                                             margin: '0 3 3 0',
-                                            fieldLabel: 'Semana'
+                                            fieldLabel: 'Semana',
+                                            allowBlank: false
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            columnWidth: 0.5,
+                                            disabled: true,
+                                            disabledCls: 'disabledField',
+                                            id: 'tfVisitaAnn',
+                                            itemId: 'tfVisitaAnn',
+                                            margin: '0 3 3 0',
+                                            fieldLabel: 'Año',
+                                            allowBlank: false
                                         }
                                     ]
                                 },
@@ -177,24 +335,27 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                             displayField: 'descripcion',
                                             queryMode: 'local',
                                             store: 'storeTipoSolicitante',
-                                            valueField: 'codigo'
+                                            valueField: 'codigo',
+                                            listeners: {
+                                                change: 'onCbxTipoSolicitanteChange'
+                                            }
                                         },
                                         {
-                                            xtype: 'combobox',
+                                            xtype: 'textfield',
                                             columnWidth: 1,
-                                            id: 'cbxTipoEmpresa',
-                                            itemId: 'cbxTipoEmpresa',
+                                            id: 'tfTipoEmpresa',
+                                            itemId: 'tfTipoEmpresa',
                                             margin: '0 3 3 0',
                                             fieldLabel: 'Tipo Empresa',
-                                            editable: false,
-                                            displayField: 'descripcion',
-                                            queryMode: 'local',
-                                            store: 'storeTipoEmpresa',
-                                            valueField: 'codigo'
+                                            allowBlank: false,
+                                            listeners: {
+                                                change: 'onTfTipoEmpresaChange'
+                                            }
                                         },
                                         {
                                             xtype: 'textfield',
                                             columnWidth: 0.4,
+                                            hidden: true,
                                             id: 'tfCodigoCliente',
                                             itemId: 'tfCodigoCliente',
                                             margin: '0 0 3 0',
@@ -203,21 +364,27 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                         {
                                             xtype: 'button',
                                             cls: 'botonZoomWindow',
+                                            hidden: true,
                                             id: 'btnZoomCliente',
                                             itemId: 'btnZoomCliente',
                                             margin: '0 3 3 0',
                                             minWidth: 0.05,
                                             width: 30,
-                                            iconCls: 'fa fa-search icon16 iconColorWhite'
+                                            iconCls: 'fa fa-search icon16 iconColorWhite',
+                                            listeners: {
+                                                click: 'onBtnZoomClienteClick'
+                                            }
                                         },
                                         {
                                             xtype: 'textfield',
-                                            columnWidth: 0.53,
+                                            columnWidth: 1,
                                             disabled: true,
                                             disabledCls: 'disabledField',
                                             id: 'tfRazonSocial',
                                             itemId: 'tfRazonSocial',
-                                            margin: '0 3 3 0'
+                                            margin: '0 3 3 0',
+                                            fieldLabel: 'Razón Social',
+                                            allowBlank: false
                                         }
                                     ]
                                 },
@@ -255,12 +422,65 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                             valueField: 'codigo'
                                         },
                                         {
-                                            xtype: 'textfield',
-                                            columnWidth: 0.5,
-                                            id: 'tfCantidad',
-                                            itemId: 'tfCantidad',
-                                            margin: '0 3 3 0',
-                                            fieldLabel: 'Cantidad'
+                                            xtype: 'fieldset',
+                                            columnWidth: 1,
+                                            id: 'fieldsetCantidadUnidades',
+                                            itemId: 'fieldsetCantidadUnidades',
+                                            layout: 'column',
+                                            title: '<b>Cantidad de Unidades</b>',
+                                            items: [
+                                                {
+                                                    xtype: 'textfield',
+                                                    columnWidth: 0.4,
+                                                    id: 'tfCantidadSolicitada',
+                                                    itemId: 'tfCantidadSolicitada',
+                                                    margin: '0 3 3 0',
+                                                    fieldLabel: 'Solicitadas',
+                                                    labelWidth: 90,
+                                                    allowBlank: false,
+                                                    listeners: {
+                                                        change: 'onTfCantidadSolicitadaChange'
+                                                    }
+                                                },
+                                                {
+                                                    xtype: 'splitter',
+                                                    columnWidth: 1,
+                                                    height: 0,
+                                                    id: 'splitter',
+                                                    itemId: 'splitter'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    columnWidth: 0.4,
+                                                    disabled: true,
+                                                    disabledCls: 'disabledField',
+                                                    id: 'tfCantidadAtendida',
+                                                    itemId: 'tfCantidadAtendida',
+                                                    margin: '0 3 3 0',
+                                                    fieldLabel: 'Atendidas',
+                                                    labelWidth: 90,
+                                                    allowBlank: false
+                                                },
+                                                {
+                                                    xtype: 'splitter',
+                                                    columnWidth: 1,
+                                                    height: 0,
+                                                    id: 'splitter1',
+                                                    itemId: 'splitter1'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    columnWidth: 0.4,
+                                                    disabled: true,
+                                                    disabledCls: 'disabledField',
+                                                    id: 'tfCantidadSaldo',
+                                                    itemId: 'tfCantidadSaldo',
+                                                    margin: '0 3 3 0',
+                                                    fieldLabel: 'Saldo',
+                                                    labelWidth: 90,
+                                                    allowBlank: false
+                                                }
+                                            ]
                                         },
                                         {
                                             xtype: 'textareafield',
@@ -276,7 +496,7 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                         },
                         {
                             xtype: 'panel',
-                            height: 410,
+                            height: 470,
                             id: 'tabContacto',
                             itemId: 'tabContacto',
                             bodyCls: 'formBackground',
@@ -346,7 +566,8 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                             id: 'tfContactoNombre',
                                             itemId: 'tfContactoNombre',
                                             margin: '0 3 3 0',
-                                            fieldLabel: 'Nombre'
+                                            fieldLabel: 'Nombre',
+                                            allowBlank: false
                                         },
                                         {
                                             xtype: 'textfield',
@@ -354,7 +575,8 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                             id: 'tfContactoCargo',
                                             itemId: 'tfContactoCargo',
                                             margin: '0 3 3 0',
-                                            fieldLabel: 'Cargo'
+                                            fieldLabel: 'Cargo',
+                                            allowBlank: false
                                         },
                                         {
                                             xtype: 'textfield',
@@ -370,7 +592,8 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                             id: 'tfContactoMovil',
                                             itemId: 'tfContactoMovil',
                                             margin: '0 3 3 0',
-                                            fieldLabel: 'Móvil'
+                                            fieldLabel: 'Móvil',
+                                            allowBlank: false
                                         },
                                         {
                                             xtype: 'textfield',
@@ -378,7 +601,8 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                             id: 'tfContactoEmail',
                                             itemId: 'tfContactoEmail',
                                             margin: '0 3 3 0',
-                                            fieldLabel: 'Correo'
+                                            fieldLabel: 'Correo',
+                                            allowBlank: false
                                         }
                                     ]
                                 },
@@ -395,7 +619,11 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                             id: 'cbxSolicitudPais',
                                             itemId: 'cbxSolicitudPais',
                                             margin: '0 3 3 0',
-                                            fieldLabel: 'País'
+                                            fieldLabel: 'País',
+                                            editable: false,
+                                            listeners: {
+                                                change: 'onCbxSolicitudPaisChange'
+                                            }
                                         },
                                         {
                                             xtype: 'combobox',
@@ -403,7 +631,11 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                             id: 'cbxSolicitudEstado',
                                             itemId: 'cbxSolicitudEstado',
                                             margin: '0 3 3 0',
-                                            fieldLabel: 'Estado'
+                                            fieldLabel: 'Estado',
+                                            editable: false,
+                                            listeners: {
+                                                change: 'onCbxSolicitudEstadoChange'
+                                            }
                                         },
                                         {
                                             xtype: 'combobox',
@@ -411,15 +643,20 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                                             id: 'cbxSolicitudMunicipio',
                                             itemId: 'cbxSolicitudMunicipio',
                                             margin: '0 3 3 0',
-                                            fieldLabel: 'Municipio'
+                                            fieldLabel: 'Municipio',
+                                            editable: false,
+                                            listeners: {
+                                                change: 'onCbxSolicitudMunicipioChange'
+                                            }
                                         },
                                         {
                                             xtype: 'combobox',
                                             columnWidth: 1,
-                                            id: 'cbxSolicitudCiudad',
-                                            itemId: 'cbxSolicitudCiudad',
+                                            id: 'cbxSolicitudColonia',
+                                            itemId: 'cbxSolicitudColonia',
                                             margin: '0 3 3 0',
-                                            fieldLabel: 'Ciudad'
+                                            fieldLabel: 'Colonia',
+                                            editable: false
                                         },
                                         {
                                             xtype: 'textfield',
@@ -435,7 +672,7 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                         },
                         {
                             xtype: 'panel',
-                            height: 410,
+                            height: 470,
                             id: 'tabCotizaciones',
                             itemId: 'tabCotizaciones',
                             bodyCls: 'formBackground',
@@ -449,6 +686,113 @@ Ext.define('hwtProOportunidadVenta.view.winOportunidadVenta', {
                 }
             ]
         }
-    ]
+    ],
+
+    onBtnConfirmarOportunidadClick: function (button, e, eOpts) {
+        Ext.getCmp('formOportunidadVenta').grabaOportunidadVenta();
+    },
+
+    onBtnCerrarOportunidadClick: function (button, e, eOpts) {
+        elf.closeWindow('winOportunidadVenta');
+    },
+
+    onDtVisitaFechaChange: function (field, newValue, oldValue, eOpts) {
+        var fechaActual = newValue;
+        var annFecha = newValue.getFullYear();
+
+        elf.writeElement('tfVisitaAnn', annFecha);
+        elf.writeElement('tfVisitaSemana', elf.getWeekOfYear(fechaActual));
+    },
+
+    onCbxTipoSolicitanteChange: function (field, newValue, oldValue, eOpts) {
+        switch (newValue) {
+            case '1':
+                elf.showElement('tfCodigoCliente');
+                elf.showElement('btnZoomCliente');
+                elf.disableElement('tfRazonSocial');
+                break;
+            case '2':
+                elf.hideElement('tfCodigoCliente');
+                elf.hideElement('btnZoomCliente');
+                elf.enableElement('tfRazonSocial');
+                break;
+        }
+
+    },
+
+    onTfTipoEmpresaChange: function (field, newValue, oldValue, eOpts) {
+
+    },
+
+    onBtnZoomClienteClick: function (button, e, eOpts) {
+        elf.openWindow('winBuscaCliente');
+        elf.refreshGrid('gridBuscaCliente');
+    },
+
+    onTfCantidadSolicitadaChange: function (field, newValue, oldValue, eOpts) {
+        var cantidadSolicitada = parseInt(elf.readElement('tfCantidadSolicitada'));
+        var cantidadAtendida = parseInt(elf.readElement('tfCantidadAtendida'));
+        var cantidadSaldo = parseInt(elf.readElement('tfCantidadSaldo'));
+
+        cantidadSaldo = cantidadSolicitada - cantidadAtendida;
+
+        if (!isNaN(cantidadSaldo)) {
+            elf.writeElement('tfCantidadSaldo', cantidadSaldo);
+        }
+    },
+
+    onCbxSolicitudPaisChange: function (field, newValue, oldValue, eOpts) {
+        var funcionCarga = function () {
+            console.warn('Funcion de Carga');
+            var arrayCombos = new Array();
+            var objConfig = new Object();
+            objConfig.idComboBox = 'cbxSolicitudEstado';
+            objConfig.idDataBridge = 'datosLocalizacion';
+            objConfig.id = 'opcionesEstado';
+            objConfig.fieldValue = 'cod_estado';
+            objConfig.fieldDisplay = 'estado';
+            arrayCombos.push(objConfig);
+
+            arrayCombos.forEach(elf.loadComboBoxConfig);
+        };
+
+        Ext.getCmp('formOportunidadVenta').obtieneLocalizacion('estado', funcionCarga);
+    },
+
+    onCbxSolicitudEstadoChange: function (field, newValue, oldValue, eOpts) {
+        var funcionCarga = function () {
+            console.warn('Funcion de Carga');
+            var arrayCombos = new Array();
+            var objConfig = new Object();
+            objConfig.idComboBox = 'cbxSolicitudMunicipio';
+            objConfig.idDataBridge = 'datosLocalizacion';
+            objConfig.id = 'opcionesMunicipio';
+            objConfig.fieldValue = 'cod_municipio';
+            objConfig.fieldDisplay = 'municipio';
+            arrayCombos.push(objConfig);
+
+            arrayCombos.forEach(elf.loadComboBoxConfig);
+        };
+
+        Ext.getCmp('formOportunidadVenta').obtieneLocalizacion('municipio', funcionCarga);
+    },
+
+    onCbxSolicitudMunicipioChange: function (field, newValue, oldValue, eOpts) {
+        var funcionCarga = function () {
+            console.warn('Funcion de Carga');
+            var arrayCombos = new Array();
+            var objConfig = new Object();
+            objConfig.idComboBox = 'cbxSolicitudColonia';
+            objConfig.idDataBridge = 'datosLocalizacion';
+            objConfig.id = 'opcionesCiudad';
+            objConfig.fieldValue = 'asentamiento';
+            objConfig.fieldDisplay = 'asentamiento';
+            arrayCombos.push(objConfig);
+
+            arrayCombos.forEach(elf.loadComboBoxConfig);
+        };
+
+        Ext.getCmp('formOportunidadVenta').obtieneLocalizacion('ciudad', funcionCarga);
+    }
 
 });

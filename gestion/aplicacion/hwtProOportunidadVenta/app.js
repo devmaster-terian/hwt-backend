@@ -32,7 +32,9 @@ Ext.application({
         'modelSolicitudPais',
         'modelSolicitudEstado',
         'modelSolicitudMunicipio',
-        'modelSolicitudCiudad'
+        'modelSolicitudCiudad',
+        'modelSituacionOportunidad',
+        'modelBuscaCliente'
     ],
     stores: [
         'storeOportunidadVenta',
@@ -46,17 +48,42 @@ Ext.application({
         'storePais',
         'storeEstado',
         'storeCiudad',
-        'storeMunicipio'
+        'storeMunicipio',
+        'storeSituacionOportunidad',
+        'storeBuscaCliente'
     ],
     views: [
         'formAplicacion',
-        'winOportunidadVenta'
+        'winOportunidadVenta',
+        'winBuscaCliente',
+        'winBuscaOportunidad'
     ],
     name: 'hwtProOportunidadVenta',
 
     launch: function() {
         Ext.create('hwtProOportunidadVenta.view.formAplicacion', {renderTo: Ext.getBody()});
         elf.defaultDataApp();
+
+        appLocal = this.getApplication();
+        Ext.EventManager.onWindowResize(function (w, h) {
+            appLocal.ajustarVentana();
+        });
+
+        appLocal.ajustarVentana();
+        Ext.getCmp('formAplicacion').extraeOpcionesOportunidad();
+        /*
+
+        Ext.getCmp('formAplicacion').extraeListaProveedores();
+        */
+
+
+    },
+
+    ajustarVentana: function () {
+        elf.renderInterface(
+            'formAplicacion',
+            'gridOportunidadVenta',
+            58);
     }
 
 });

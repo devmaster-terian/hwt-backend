@@ -17,7 +17,9 @@ Ext.define('hwtProOportunidadVenta.store.storeOportunidadVenta', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'hwtProOportunidadVenta.model.modelOportunidadVenta'
+        'hwtProOportunidadVenta.model.modelOportunidadVenta',
+        'Ext.data.proxy.Rest',
+        'Ext.data.reader.Json'
     ],
 
     constructor: function(cfg) {
@@ -25,7 +27,68 @@ Ext.define('hwtProOportunidadVenta.store.storeOportunidadVenta', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'storeOportunidadVenta',
-            model: 'hwtProOportunidadVenta.model.modelOportunidadVenta'
+            model: 'hwtProOportunidadVenta.model.modelOportunidadVenta',
+            proxy: {
+                type: 'rest',
+                reader: {
+                    type: 'json',
+                    rootProperty: function (data) {
+                        var storeOportunidadVenta = Ext.getStore('storeOportunidadVenta');
+                        var rawData = storeOportunidadVenta.getProxy().getReader().rawData;
+                        return rawData.hwtOportunidadVenta;
+                    }
+                }
+            },
+            listeners: {
+                beforeload: {
+                    fn: me.onStoreBeforeLoad,
+                    scope: me
+                }
+            }
         }, cfg)]);
+    },
+
+    onStoreBeforeLoad: function (store, operation, eOpts) {
+        var storeOportunidadVenta = Ext.getStore('storeOportunidadVenta');
+        var proxyOportunidadVenta = storeOportunidadVenta.getProxy();
+
+        var objJsonData = new Object();
+        objJsonData.page = storeOportunidadVenta.currentPage;
+        objJsonData.start = (storeOportunidadVenta.currentPage - 1) * storeOportunidadVenta.pageSize;
+        objJsonData.limit = storeOportunidadVenta.pageSize;
+        objJsonData.filtroEstado = elf.readElement('cbxSituacionOportunidad');
+
+        var objBuscaOportunidadVenta = Ext.getCmp('formAplicacion').objBuscaOportunidadVenta;
+
+        if (objBuscaOportunidadVenta !== undefined) {
+            objJsonData.codigoBusca = objBuscaOportunidadVenta.codigo;
+
+        }
+
+        if (store.arrayBusqueda !== undefined) {
+            objJsonData.filtroEstado = 'BUSQUEDA';
+            arrayBusqueda = store.arrayBusqueda;
+            arrayBusqueda.forEach(function (element, index) {
+                objJsonData[element] = elf.readElement(element);
+            });
+
+            elf.hideElement('cbxSituacionOportunidad');
+            elf.showElement('btnLimpiaBusqueda');
+
+        }
+        else {
+            elf.showElement('cbxSituacionOportunidad');
+            elf.hideElement('btnLimpiaBusqueda');
+        }
+
+        var objJsonRequest = new Object();
+        objJsonRequest.apiController = 'apiOportunidadVenta';
+        objJsonRequest.apiMethod = 'listaOportunidadVenta';
+        objJsonRequest.apiData = JSON.stringify(objJsonData);
+
+        proxyOportunidadVenta.api.read = elf.setApiDataBridge(objJsonRequest.apiController);
+        proxyOportunidadVenta.extraParams = objJsonRequest;
+
     }
+
 });

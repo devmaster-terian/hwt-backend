@@ -32,6 +32,57 @@ var environment = {
 };
 
 var elf = {
+    getWeekOfYear: function (date) {
+        var target = new Date(date.valueOf()),
+            dayNumber = (date.getUTCDay() + 6) % 7,
+            firstThursday;
+
+        target.setUTCDate(target.getUTCDate() - dayNumber + 3);
+        firstThursday = target.valueOf();
+        target.setUTCMonth(0, 1);
+
+        if (target.getUTCDay() !== 4) {
+            target.setUTCMonth(0, 1 + ((4 - target.getUTCDay()) + 7) % 7);
+        }
+
+        return Math.ceil((firstThursday - target) / (7 * 24 * 3600 * 1000)) + 1;
+    },
+    loadComboBoxConfig: function (element, index, array) {
+        var objConfig = element;
+        var idCombo;
+        var jsonData;
+        var listaCombo;
+
+        if (objConfig.idComboBox === undefined) {
+            idCombo = 'cbx' + objConfig.id;
+        }
+        else {
+            idCombo = objConfig.idComboBox;
+        }
+
+        if (objConfig.idDataBridge === undefined) {
+            jsonData = elf.getInfoDataBridge('datosOpciones');
+            listaCombo = 'opciones' + objConfig.id;
+        }
+        else {
+            jsonData = elf.getInfoDataBridge(objConfig.idDataBridge);
+            listaCombo = objConfig.id;
+        }
+
+        if (Ext.getCmp(idCombo) !== undefined) {
+            elf.setComboBox(idCombo,
+                jsonData,
+                listaCombo,
+                objConfig.fieldValue,
+                objConfig.fieldDisplay,
+                objConfig.filterDefault,
+                objConfig.filterField,
+                objConfig.filterValue);
+        }
+        else {
+            console.warn('elf::loadComboConfig: - ComboBox was not found: ' + idCombo);
+        }
+    },
     loadCombos: function(element,index,array){
         var jsonData = elf.getInfoDataBridge('datosOpciones');
         var idCombo    = 'cbx' + element;
@@ -235,12 +286,12 @@ var elf = {
         entityName    = pIdComboBox.substring(3,pIdComboBox.length);
         storeName     = 'store' + entityName;
         storeCombo    = Ext.getStore(storeName);
-        
+
         if(jsonData === undefined){
             console.warn('elf::setComboBox: jsonData is undefined');
             return;
         }
-                         
+
         if(storeCombo === undefined){
             entityName = pIdComboBox.substring(4,pIdComboBox.length);
             storeName  = 'store' + entityName.toLowerCase();
@@ -274,16 +325,16 @@ var elf = {
         firstValue  = '';
         var iPos = 0;
         for(var iLoop=0; iLoop < numRecords; iLoop++){
-            
+
             if(jsonData[pTableName][iLoop] !== null){
-                
+
                 valKeyField    = jsonData[pTableName][iLoop][pKeyElement];
                 valValueField  = jsonData[pTableName][iLoop][pValueElement];
 
-                
+
                 if(pKeyFilter !== undefined){
                     var valKeyFilter      = jsonData[pTableName][iLoop][pKeyFilter];
-                    
+
                     if(valKeyFilter !== pKeyFilterValue){
                         continue;
                     }
@@ -292,12 +343,12 @@ var elf = {
                 if(firstValue === '' || firstValue === undefined ){
                     firstValue = valKeyField;
                 }
-                
+
                 var objData = [valKeyField,valValueField];
                 if(objData !== undefined){
                     comboBoxData[iPos] = objData;
                     iPos = iPos + 1;
-                    
+
                 }
             }
         }
@@ -778,8 +829,8 @@ var elf = {
         objJsonData.profile_code   = elf.getSessionData('profile_code');
         objJsonData.system_code    = elf.getSessionData('system_code');
         objJsonData.system_name    = elf.getSessionData('system_name');
-        objJsonData.system_version = elf.getSessionData('system_version');        
-        
+        objJsonData.system_version = elf.getSessionData('system_version');
+
         var returnValue = JSON.stringify(objJsonData);
         return returnValue;
     },
@@ -1906,11 +1957,11 @@ var elf = {
         objJsonData.system_code    = elf.getSessionData('system_code');
         objJsonData.system_name    = elf.getSessionData('system_name');
         objJsonData.system_version = elf.getSessionData('system_version');
-                
+
         apiData = JSON.stringify(objJsonData);
         return apiData;
     },
-    
+
     doDataBridge: function (p_jsonDataForm,
                              p_fncSuccess,
                              p_paramsSuccess,

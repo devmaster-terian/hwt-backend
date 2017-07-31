@@ -6,12 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
+        "basePath": "../../recurso/framework/ext-5.1.3/build/",
         "designer|userClassName": "Library",
         "theme": "hwtTemaAplicacion"
     },
     "configAlternates": {
         "designer|userClassName": "string",
-        "theme": "string"
+        "theme": "string",
+        "basePath": "uri"
     },
     "name": "Library",
     "designerId": "7316009e-ad2a-48b1-8850-e227b7714f06"

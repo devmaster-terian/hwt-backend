@@ -13,8 +13,144 @@
     "configAlternates": {
         "designer|userClassName": "string",
         "model": "model",
-        "storeId": "string"
+        "storeId": "string",
+        "arrayBusqueda": "array"
     },
     "name": "MyStore",
-    "designerId": "ab7984ae-2e18-484f-ba8f-fed11cf4975f"
+    "designerId": "ab7984ae-2e18-484f-ba8f-fed11cf4975f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "arrayBusqueda",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "restProxyOportunidadVenta"
+            },
+            "configAlternates": {
+                "designer|displayName": "string"
+            },
+            "name": "MyRestProxy1",
+            "designerId": "7589b6e9-5e78-47e8-a5b5-41831b70a0c6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "jsonReaderOportunidadVenta"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "function",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "5207416f-7000-429a-9edd-af28dd0924f7",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "rootProperty",
+                                "implHandler": [
+                                    "var storeOportunidadVenta = Ext.getStore('storeOportunidadVenta');",
+                                    "var rawData = storeOportunidadVenta.getProxy().getReader().rawData;",
+                                    "return rawData.hwtOportunidadVenta;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "rootProperty",
+                            "designerId": "0eff346a-f0de-46cb-9fbc-4cf9a5c9e286"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreBeforeLoad",
+                "implHandler": [
+                    "var storeOportunidadVenta = Ext.getStore('storeOportunidadVenta');",
+                    "var proxyOportunidadVenta = storeOportunidadVenta.getProxy();",
+                    "",
+                    "var objJsonData = new Object();",
+                    "objJsonData.page  = storeOportunidadVenta.currentPage;",
+                    "objJsonData.start = (storeOportunidadVenta.currentPage - 1) * storeOportunidadVenta.pageSize;",
+                    "objJsonData.limit = storeOportunidadVenta.pageSize;",
+                    "objJsonData.filtroEstado = elf.readElement('cbxSituacionOportunidad');",
+                    "",
+                    "var objBuscaOportunidadVenta = Ext.getCmp('formAplicacion').objBuscaOportunidadVenta;",
+                    "",
+                    "if(objBuscaOportunidadVenta !== undefined){",
+                    "    objJsonData.codigoBusca = objBuscaOportunidadVenta.codigo;",
+                    "",
+                    "}",
+                    "",
+                    "if(store.arrayBusqueda !== undefined){",
+                    "    objJsonData.filtroEstado = 'BUSQUEDA';",
+                    "    arrayBusqueda = store.arrayBusqueda;",
+                    "    arrayBusqueda.forEach(function(element,index){",
+                    "        objJsonData[element] = elf.readElement(element);",
+                    "    });",
+                    "",
+                    "    elf.hideElement('cbxSituacionOportunidad');",
+                    "    elf.showElement('btnLimpiaBusqueda');",
+                    "",
+                    "}",
+                    "else{",
+                    "    elf.showElement('cbxSituacionOportunidad');",
+                    "    elf.hideElement('btnLimpiaBusqueda');",
+                    "}",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = 'apiOportunidadVenta';",
+                    "objJsonRequest.apiMethod     = 'listaOportunidadVenta';",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "proxyOportunidadVenta.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                    "proxyOportunidadVenta.extraParams = objJsonRequest;",
+                    ""
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onStoreBeforeLoad",
+            "designerId": "471970a3-e413-415d-8584-d9391132acc2"
+        }
+    ]
 }
