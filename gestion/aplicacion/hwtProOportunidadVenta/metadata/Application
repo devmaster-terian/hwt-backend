@@ -18,7 +18,9 @@
             "modelSolicitudPais",
             "modelSolicitudEstado",
             "modelSolicitudMunicipio",
-            "modelSolicitudCiudad"
+            "modelSolicitudCiudad",
+            "modelSituacionOportunidad",
+            "modelBuscaCliente"
         ],
         "name": "hwtProOportunidadVenta",
         "stores": [
@@ -33,11 +35,15 @@
             "storePais",
             "storeEstado",
             "storeCiudad",
-            "storeMunicipio"
+            "storeMunicipio",
+            "storeSituacionOportunidad",
+            "storeBuscaCliente"
         ],
         "views": [
             "formAplicacion",
-            "winOportunidadVenta"
+            "winOportunidadVenta",
+            "winBuscaCliente",
+            "winBuscaOportunidad"
         ]
     },
     "configAlternates": {
@@ -59,7 +65,21 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "elf.defaultDataApp();"
+                    "elf.defaultDataApp();",
+                    "",
+                    "appLocal = this.getApplication();",
+                    "Ext.EventManager.onWindowResize(function(w, h){",
+                    "    appLocal.ajustarVentana();",
+                    "});",
+                    "",
+                    "appLocal.ajustarVentana();",
+                    "Ext.getCmp('formAplicacion').extraeOpcionesOportunidad();",
+                    "/*",
+                    "",
+                    "Ext.getCmp('formAplicacion').extraeListaProveedores();",
+                    "*/",
+                    "",
+                    ""
                 ]
             },
             "configAlternates": {
@@ -68,6 +88,29 @@
             },
             "name": "launch",
             "designerId": "b51f77f0-e6a5-46c2-93d2-cae320109b07"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ajustarVentana",
+                "implHandler": [
+                    "elf.renderInterface(",
+                    "    'formAplicacion',",
+                    "    'gridOportunidadVenta',",
+                    "    58);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "ajustarVentana",
+            "designerId": "55fdd7f6-b8c1-4f62-b57b-98a480332473"
         }
     ]
 }

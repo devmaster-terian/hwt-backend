@@ -22,6 +22,54 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "num_oportunidad"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField36",
+            "designerId": "c39f27ef-9dcf-4822-9f4d-0dbdfa4ab373"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "situacion_oportunidad"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField37",
+            "designerId": "61e3a2e3-184a-44b1-97c2-2a66475e546e"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "situacion_oportunidad_descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField38",
+            "designerId": "aadd6484-99bf-44e2-91e0-680d91c5c970"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "codigo_gerente_regional"
             },
             "configAlternates": {
@@ -134,6 +182,22 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "tipo_solicitante_descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField39",
+            "designerId": "a9f1b226-e1c1-4cc5-a5dc-182e5ff93784"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "tipo_empresa"
             },
             "configAlternates": {
@@ -141,6 +205,22 @@
             },
             "name": "MyField7",
             "designerId": "64620d80-6af2-4097-9aaa-445bfb2b30a1"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipo_empresa_descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField40",
+            "designerId": "aae56efe-2319-4c72-9463-2055721a07b3"
         },
         {
             "type": "Ext.data.field.Field",
@@ -246,7 +326,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "consecionario_descripcion"
+                "name": "concesionario_descripcion"
             },
             "configAlternates": {
                 "name": "string"
@@ -278,6 +358,22 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "solicitud_pais_descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField45",
+            "designerId": "0f99d1a9-1bc2-4161-8c8b-4aff392c5577"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "solicitud_estado"
             },
             "configAlternates": {
@@ -294,6 +390,22 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "solicitud_estado_descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField41",
+            "designerId": "1fb54407-7a6e-43d8-b507-8ae223c50533"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "solicitud_municipio"
             },
             "configAlternates": {
@@ -301,6 +413,22 @@
             },
             "name": "MyField17",
             "designerId": "2217e36e-0ead-4320-9d12-acd39f1f2bd0"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "solicitud_municipio_descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField42",
+            "designerId": "beab3a5a-c7f9-4bea-b03b-06a06f2a8b89"
         },
         {
             "type": "Ext.data.field.Field",
@@ -342,13 +470,45 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "cantidad"
+                "name": "cantidad_solicitada"
             },
             "configAlternates": {
                 "name": "string"
             },
             "name": "MyField20",
             "designerId": "da32d56f-f364-436a-9efa-abdd9bd3be89"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cantidad_atendida"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField46",
+            "designerId": "a98ca817-7c7e-4ca5-9be8-e520643a7bd5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cantidad_saldo"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField47",
+            "designerId": "d06d50a2-e47d-4e66-a033-1c0f2dbfacf4"
         },
         {
             "type": "Ext.data.field.Field",
@@ -397,6 +557,38 @@
             },
             "name": "MyField23",
             "designerId": "09dedad5-4ec1-44fc-bc3a-859d9dd7c129"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codigo_cliente"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField43",
+            "designerId": "3646756c-c19c-403f-8c6b-5aa30766f9aa"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "razon_social"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField44",
+            "designerId": "a1ea26b7-3673-471a-aa74-238e74d572c7"
         }
     ]
 }

@@ -478,6 +478,38 @@ Ext.define('hwtEsritorio.view.winWorkplace', {
                                             listeners: {
                                                 click: 'onBtnSysLimpiarCacheClick'
                                             }
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            columnWidth: 0.2,
+                                            cls: 'botonZoom',
+                                            height: 45,
+                                            id: 'btnMuestraPhpError',
+                                            itemId: 'btnSysLimpiarCache1',
+                                            margin: '10 10 10 10',
+                                            maxWidth: 170,
+                                            iconCls: 'fa fa-file-code-o fa-lg icono-blanco icon24',
+                                            text: 'Muestra</br>Errores PHP',
+                                            textAlign: 'left',
+                                            listeners: {
+                                                click: 'onBtnMuestraPhpErrorClick'
+                                            }
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            columnWidth: 0.2,
+                                            cls: 'botonZoom',
+                                            height: 45,
+                                            id: 'btnSysLimpiarPhpErrorLog',
+                                            itemId: 'btnSysLimpiarPhpErrorLog',
+                                            margin: '10 10 10 10',
+                                            maxWidth: 170,
+                                            iconCls: 'fa fa-trash-o fa-lg icono-blanco icon24',
+                                            text: 'Elimina Archivo<br>PHP Error Log',
+                                            textAlign: 'left',
+                                            listeners: {
+                                                click: 'onBtnSysLimpiarPhpErrorLogClick'
+                                            }
                                         }
                                     ]
                                 }
@@ -589,6 +621,50 @@ Ext.define('hwtEsritorio.view.winWorkplace', {
         msgTipo      = 'question';
         msgTitulo    = 'Cache de la Aplicación';
         msgContenido = 'Desea limpiar el Cache de la Aplicación (Flush)?';
+
+        elf.message(msgTipo, msgTitulo, msgContenido, msgFuncion);
+    },
+
+    onBtnMuestraPhpErrorClick: function (button, e, eOpts) {
+        elf.showUrlWindow('winPHPErrorLog',
+            'Errores PHP de la Aplicacion',
+            false,
+            '../../recurso/clase/PHPError/index.php');
+    },
+
+    onBtnSysLimpiarPhpErrorLogClick: function (button, e, eOpts) {
+        var msgFuncion = function () {
+            var apiController = 'sysApiDeveloper';
+            var apiMethod = 'eliminaPHPErrorLog';
+            var objJsonData = new Object();
+            objJsonData.accion = 'eliminaPHPErrorLog';
+
+            var objJsonRequest = new Object();
+            objJsonRequest.apiController = apiController;
+            objJsonRequest.apiMethod = apiMethod;
+            objJsonRequest.apiData = JSON.stringify(objJsonData);
+
+            var functionSuccess = function () {
+                var jsonData = elf.getInfoDataBridge('eliminaPHPErrorLog');
+                elf.showInfo(jsonData, 'information');
+            };
+
+            var functionFailure = function () {
+                var jsonData = elf.getInfoDataBridge('eliminaPHPErrorLog');
+                elf.showInfo(jsonData, 'error');
+            };
+
+
+            elf.doDataBridge(objJsonRequest,
+                functionSuccess,
+                null,
+                functionFailure,
+                null);
+
+        };
+        msgTipo = 'question';
+        msgTitulo = 'Archivo LOG de Errores PHP';
+        msgContenido = 'Desea depurar el Archivo LOG de Errores PHP?';
 
         elf.message(msgTipo,msgTitulo,msgContenido,msgFuncion);
     },

@@ -13,6 +13,62 @@ class Dataworker
 
     private static $activeConnection;
 
+    public static function getDistinct($pArrayColumn, $pTable, $pObjConstraint = null, $pArrayOrder = null)
+    {
+        Logger::enable(true, 'getDistinct');
+
+        $fieldsTable = '';
+        foreach ($pArrayColumn as $fieldColumn) {
+            if ($fieldsTable === '') {
+                $fieldsTable = $fieldColumn;
+            } else {
+                $fieldsTable = $fieldsTable . ', ' . $fieldColumn;
+            }
+        }
+
+        $SqlQuery = "SELECT DISTINCT " . $fieldsTable . "   FROM " . $pTable . " ";
+
+
+        Logger::write(json_encode($pObjConstraint));
+        if ($pObjConstraint !== null) {
+            $Constraint = null;
+            foreach ($pObjConstraint as $key => $value) {
+
+                Logger::write('$key: ' . $key . ' ------ ' . '$value: ' . $value);
+                Logger::write('$Constraint: ' . $Constraint);
+
+                if ($Constraint === null) {
+                    $Constraint = 'WHERE ' . $key . $value . ' ';
+                } else {
+                    $Constraint = 'AND ' . $key . $value . ' ';
+                }
+
+                $SqlQuery = $SqlQuery . $Constraint;
+            }
+        }
+
+        if ($pArrayOrder !== null) {
+            $SqlQuery = $SqlQuery . ' ORDER BY ';
+            $numFields = 0;
+            foreach ($pArrayOrder as $fieldOrder) {
+                if ($numFields === 0) {
+                    $SqlQuery = $SqlQuery . $fieldOrder;
+                } else {
+                    $SqlQuery = $SqlQuery . ', ' . $fieldOrder;
+                }
+
+                $numFields = $numFields + 1;
+            }
+        }
+
+        Logger::write($SqlQuery);
+        $objResultQuery = self::executeQuery($SqlQuery);
+
+        $recordResult = $objResultQuery->data;
+
+        return $recordResult;
+    }
+
     public static function getMaxValue($pTable, $pField, $pObjConstraint){
         Logger::enable(true,'getMaxValue');
         $SqlQuery = "SELECT MAX(" . $pField . ") AS 'maxvalue'    FROM " . $pTable. " ";
@@ -75,6 +131,9 @@ class Dataworker
 
 
         switch($comparison){
+            case 'notEqualThan':
+                $operator = ' != ';
+                break;
             case 'equalTo':
                 $operator = ' = ';
                 break;

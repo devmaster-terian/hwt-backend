@@ -25,6 +25,7 @@ Ext.define('hwtProOportunidadVenta.view.formAplicacion', {
         'Ext.grid.Panel',
         'Ext.view.Table',
         'Ext.toolbar.Paging',
+        'Ext.form.field.ComboBox',
         'Ext.grid.column.Column'
     ],
 
@@ -149,91 +150,120 @@ Ext.define('hwtProOportunidadVenta.view.formAplicacion', {
             reference: 'gridOportunidadVenta',
             id: 'gridOportunidadVenta',
             itemId: 'gridOportunidadVenta',
-            title: 'gridOportunidadVenta',
+            title: 'Oportunidad de Venta',
             store: 'storeOportunidadVenta',
             dockedItems: [
                 {
                     xtype: 'pagingtoolbar',
                     dock: 'bottom',
                     width: 360,
-                    displayInfo: true
+                    displayInfo: true,
+                    store: 'storeOportunidadVenta',
+                    items: [
+                        {
+                            xtype: 'combobox',
+                            id: 'cbxSituacionOportunidad',
+                            itemId: 'cbxSituacionOportunidad',
+                            fieldLabel: 'Situación',
+                            editable: false,
+                            displayField: 'descripcion',
+                            queryMode: 'local',
+                            store: 'storeSituacionOportunidad',
+                            valueField: 'codigo',
+                            listeners: {
+                                change: 'onCbxSituacionOportunidadChange'
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            id: 'btnLimpiaBusqueda',
+                            itemId: 'btnLimpiaBusqueda',
+                            text: 'MyButton',
+                            listeners: {
+                                click: 'onBtnLimpiaBusquedaClick'
+                            }
+                        }
+                    ]
                 }
             ],
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'gerente_regional_nombre',
-                    text: 'Gerente Regional Nombre'
+                    width: 90,
+                    dataIndex: 'num_oportunidad',
+                    locked: true,
+                    text: 'Oportunidad'
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'vendedor_nombre',
-                    text: 'Vendedor Nombre'
+                    dataIndex: 'situacion_oportunidad_descripcion',
+                    locked: true,
+                    text: 'Situación'
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'visita_fecha',
-                    text: 'Visita Fecha'
+                    dataIndex: 'tipo_solicitante_descripcion',
+                    text: 'Tipo</br>Solicitante'
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'visita_semana',
-                    text: 'Visita Semana'
+                    width: 80,
+                    dataIndex: 'codigo_cliente',
+                    text: 'Cliente'
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'tipo_solicitante',
-                    text: 'Tipo Solicitante'
+                    width: 200,
+                    dataIndex: 'razon_social',
+                    text: 'Razón Social'
                 },
                 {
                     xtype: 'gridcolumn',
+                    width: 120,
                     dataIndex: 'tipo_empresa',
-                    text: 'Tipo Empresa'
+                    text: 'Tipo</br>Empresa'
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'contacto_nombre',
-                    text: 'Contacto Nombre'
+                    text: 'Visita',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            align: 'center',
+                            dataIndex: 'visita_fecha',
+                            text: 'Fecha'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            align: 'center',
+                            dataIndex: 'visita_semana',
+                            text: 'Semana'
+                        }
+                    ]
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'contacto_cargo',
-                    text: 'Contacto Cargo'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'contacto_telefono',
-                    text: 'Contacto Telefono'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'contacto_movil',
-                    text: 'Contacto Movil'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'contacto_email',
-                    text: 'Contacto Email'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'consecionario_descripcion',
-                    text: 'Consecionario Descripcion'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'solicitud_estado',
-                    text: 'Solicitud Estado'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'solicitud_ciudad',
-                    text: 'Solicitud Ciudad'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'cantidad',
-                    text: 'Cantidad'
+                    text: 'Cantidad de Unidades',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            align: 'right',
+                            dataIndex: 'cantidad_solicitada',
+                            text: 'Solicitadas'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            align: 'right',
+                            dataIndex: 'cantidad_atendida',
+                            text: 'Atendidas'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            align: 'right',
+                            dataIndex: 'cantidad_saldo',
+                            text: 'Saldo'
+                        }
+                    ]
                 },
                 {
                     xtype: 'gridcolumn',
@@ -244,6 +274,76 @@ Ext.define('hwtProOportunidadVenta.view.formAplicacion', {
                     xtype: 'gridcolumn',
                     dataIndex: 'modelo',
                     text: 'Modelo'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    text: 'Localizacion',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            width: 120,
+                            dataIndex: 'solicitud_estado_descripcion',
+                            text: 'Estado'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            width: 120,
+                            dataIndex: 'solicitud_municipio_descripcion',
+                            text: 'Municipio'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'gridcolumn',
+                    text: 'Contacto',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            width: 150,
+                            dataIndex: 'contacto_nombre',
+                            text: 'Nombre'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            width: 150,
+                            dataIndex: 'contacto_cargo',
+                            text: 'Cargo'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'contacto_telefono',
+                            text: 'Telefono'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'contacto_movil',
+                            text: 'Movil'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            width: 200,
+                            dataIndex: 'contacto_email',
+                            text: 'Email'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 150,
+                    dataIndex: 'concesionario_descripcion',
+                    text: 'Consecionario'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 150,
+                    dataIndex: 'gerente_regional_nombre',
+                    text: 'Gerente</br>Regional'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 120,
+                    dataIndex: 'vendedor_nombre',
+                    text: 'Vendedor'
                 }
             ]
         }
@@ -254,11 +354,15 @@ Ext.define('hwtProOportunidadVenta.view.formAplicacion', {
     },
 
     onButtonClickBuscar: function(button, e, eOpts) {
+        elf.openWindow('winBuscaOportunidad');
+        Ext.getCmp('formBuscaOportunidad').preparaInterfaz();
 
     },
 
     onButtonClickCrear: function(button, e, eOpts) {
         elf.openWindow('winOportunidadVenta');
+        Ext.getCmp('formOportunidadVenta').operacionOportunidadVenta = 'crear';
+        Ext.getCmp('formOportunidadVenta').preparaInterfaz();
     },
 
     onButtonClickActualizar: function(button, e, eOpts) {
@@ -275,6 +379,56 @@ Ext.define('hwtProOportunidadVenta.view.formAplicacion', {
 
     onButtonClickSalir: function(button, e, eOpts) {
         elf.stopApp('hwtProOportunidadVenta');
+    },
+
+    onCbxSituacionOportunidadChange: function (field, newValue, oldValue, eOpts) {
+
+    },
+
+    onBtnLimpiaBusquedaClick: function (button, e, eOpts) {
+
+    },
+
+    extraeOpcionesOportunidad: function () {
+        var apiController = 'apiOportunidadVenta';
+        var apiMethod = 'datosOpciones';
+        var objJsonData = new Object();
+        objJsonData.tipo = 'OpcionesOportunidadVenta';
+
+        var objJsonRequest = new Object();
+        objJsonRequest.apiController = apiController;
+        objJsonRequest.apiMethod = apiMethod;
+        objJsonRequest.apiData = JSON.stringify(objJsonData);
+
+        var functionSuccess = function () {
+            var jsonData = elf.getInfoDataBridge(apiMethod);
+
+            var arrayCombos = new Array();
+            var objConfig = new Object();
+
+            objConfig.idComboBox = 'cbxSituacionOportunidad';
+            objConfig.idDataBridge = 'datosOpciones';
+            objConfig.id = 'opcionesSituacionOportunidad';
+            objConfig.fieldValue = 'codigo';
+            objConfig.fieldDisplay = 'descripcion';
+            objConfig.filterValue = undefined;
+
+            arrayCombos.push(objConfig);
+            arrayCombos.forEach(elf.loadComboBoxConfig);
+
+            elf.refreshGrid('gridOportunidadVenta');
+        };
+
+        var functionFailure = function () {
+            var jsonData = elf.getInfoDataBridge(apiMethod);
+        };
+
+        elf.doDataBridge(objJsonRequest,
+            functionSuccess,
+            null,
+            functionFailure,
+            null);
+
     }
 
 });

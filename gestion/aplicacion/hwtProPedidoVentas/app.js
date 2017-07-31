@@ -90,9 +90,6 @@ Ext.application({
             'formAplicacion',
             'gridPedidoVenta',
             58);
-
-
-        console.log('Ajustando el Render de l grid');
     }
 
 });

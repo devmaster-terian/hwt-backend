@@ -1656,6 +1656,166 @@
                                                     "designerId": "0119b5cd-da6f-4a81-bc67-0999a8ac07f1"
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "designer|displayName": "btnMuestraPhpError",
+                                                "height": 45,
+                                                "iconCls": "fa fa-file-code-o fa-lg icono-blanco icon24",
+                                                "id": "btnMuestraPhpError",
+                                                "itemId": "btnSysLimpiarCache1",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "Muestra</br>Errores PHP",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto"
+                                            },
+                                            "name": "MyButton5",
+                                            "designerId": "ddac2793-83b3-4665-addc-3852a8886cea",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnMuestraPhpErrorClick",
+                                                        "implHandler": [
+                                                            "elf.showUrlWindow('winPHPErrorLog',",
+                                                            "                  'Errores PHP de la Aplicacion',",
+                                                            "                  false,",
+                                                            "                  '../../recurso/clase/PHPError/index.php');"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnMuestraPhpErrorClick",
+                                                    "designerId": "d38ddb15-f6d6-445d-917a-efdf602af367"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "designer|displayName": "btnSysLimpiarPhpErrorLog",
+                                                "height": 45,
+                                                "iconCls": "fa fa-trash-o fa-lg icono-blanco icon24",
+                                                "id": "btnSysLimpiarPhpErrorLog",
+                                                "itemId": "btnSysLimpiarPhpErrorLog",
+                                                "layout|columnWidth": 0.2,
+                                                "margin": "10 10 10 10",
+                                                "maxWidth": 170,
+                                                "text": "Elimina Archivo<br>PHP Error Log",
+                                                "textAlign": "left"
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "designer|displayName": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "maxWidth": "number",
+                                                "text": "string",
+                                                "textAlign": "string",
+                                                "height": "auto"
+                                            },
+                                            "name": "MyButton7",
+                                            "designerId": "e7747523-4acb-4dbd-b3a2-9431ca0d14c9",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnSysLimpiarPhpErrorLogClick",
+                                                        "implHandler": [
+                                                            "var msgFuncion = function(){",
+                                                            "    var apiController = 'sysApiDeveloper';",
+                                                            "    var apiMethod     = 'eliminaPHPErrorLog';",
+                                                            "    var objJsonData    = new Object();",
+                                                            "    objJsonData.accion = 'eliminaPHPErrorLog';",
+                                                            "",
+                                                            "    var objJsonRequest = new Object();",
+                                                            "    objJsonRequest.apiController = apiController;",
+                                                            "    objJsonRequest.apiMethod     = apiMethod;",
+                                                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                                            "",
+                                                            "    var functionSuccess = function(){",
+                                                            "        var jsonData = elf.getInfoDataBridge('eliminaPHPErrorLog');",
+                                                            "        elf.showInfo(jsonData,'information');",
+                                                            "    };",
+                                                            "",
+                                                            "    var functionFailure = function(){",
+                                                            "        var jsonData = elf.getInfoDataBridge('eliminaPHPErrorLog');",
+                                                            "        elf.showInfo(jsonData,'error');",
+                                                            "    };",
+                                                            "",
+                                                            "",
+                                                            "    elf.doDataBridge(objJsonRequest,",
+                                                            "                     functionSuccess,",
+                                                            "                     null,",
+                                                            "                     functionFailure,",
+                                                            "                     null);",
+                                                            "",
+                                                            "};",
+                                                            "msgTipo      = 'question';",
+                                                            "msgTitulo    = 'Archivo LOG de Errores PHP';",
+                                                            "msgContenido = 'Desea depurar el Archivo LOG de Errores PHP?';",
+                                                            "",
+                                                            "elf.message(msgTipo,msgTitulo,msgContenido,msgFuncion);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnSysLimpiarPhpErrorLogClick",
+                                                    "designerId": "146e62a4-c8ed-4f67-a435-9de2835d3508"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

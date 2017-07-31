@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c39575a0-9494-4d5c-8ac8-8e2a46807ffb" name="Terian | HWT Usados (Beta)" url="http://ftp.terian.com.mx">
+        <fileTransfer host="ftp.terian.com.mx" port="21" rootFolder="/hwt-usados">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

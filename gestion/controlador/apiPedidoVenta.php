@@ -6,6 +6,7 @@ require_once('../recurso/clase/Logger.php');
 require_once('../recurso/clase/Mnemea.php');
 require_once('../recurso/clase/Reporter.php');
 require_once('apiConfigurador.php');
+require_once('apiCatalogoGeneral.php');
 
 function cancelarPedidoVenta(){
     Logger::enable(true,'cancelarPedido');
@@ -1324,7 +1325,6 @@ function grabaPedidoVentaLinea(){
                 . 'No es posible utilizarla nuevamente.';
             break;
         }
-
     }
 
     if($indProcesoCorrecto === false){
@@ -1651,86 +1651,6 @@ function listaPedidoVenta(){
     echo json_encode($objReturn);    
 }
 
-function nombreCliente($pCliente){
-    $keyCliente   = 'keyCliente' . $pCliente;
-    $valorRetorno = '';
-
-    if(Mnemea::checkKey($keyCliente)){
-        $valorRetorno  = Mnemea::getKey($keyCliente);
-    }
-    else{
-        $objCondicion = new \stdClass();
-        $objCondicion->codigo_cliente  = Dataworker::equalToString($pCliente);
-        $hwtCliente = Dataworker::findFirst('hwt_cliente',$objCondicion);
-
-        $valorRetorno  = $hwtCliente->razon_social;
-
-        Mnemea::setKey($keyCliente,$hwtCliente->razon_social);
-    }
-
-    $valorRetorno = strtoupper($valorRetorno);
-    return $valorRetorno;
-}
-
-function nombreUsuario($pUsuario){
-    $keyUsuario   = 'keyUsuario' . $pUsuario;
-    $valorRetorno = '';
-    if(Mnemea::checkKey($keyUsuario)){
-        $valorRetorno  = Mnemea::getKey($keyUsuario);
-    }
-    else{
-        $objCondicion = new \stdClass();
-        $objCondicion->usuario        = Dataworker::equalToString($pUsuario);
-        $sysUsuario = Dataworker::findFirst('sys_usuario',$objCondicion);
-
-        $valorRetorno  = $sysUsuario->nombre;
-
-        Mnemea::setKey($keyUsuario,$sysUsuario->nombre);
-    }
-
-    $valorRetorno = strtoupper($valorRetorno);
-    return $valorRetorno;
-}
-
-function descripcionConsecionario($pConsecionario){
-    $keyConsecionario = 'keyConsecionario'.$pConsecionario;
-    $valorRetorno = '';
-    if(Mnemea::checkKey($keyConsecionario)){
-        $valorRetorno = Mnemea::getKey($keyConsecionario);
-    }
-    else{
-        $objCondicion = new \stdClass();
-        $objCondicion->codigo_consecionario        = Dataworker::equalToString($pConsecionario);
-        $hwtConsecionario = Dataworker::findFirst('hwt_consecionario',$objCondicion);
-
-        $valorRetorno = $hwtConsecionario->descripcion;
-
-        Mnemea::setKey($keyConsecionario,$hwtConsecionario->descripcion);
-    }
-
-    return $valorRetorno;
-}
-
-function descripcionConsecionarioSucursal($pConsecionario, $pConsecionarioSucursal){
-    $keySucursal = 'keySucursal' . $pConsecionario . $pConsecionarioSucursal;
-    $valorRetorno = '';
-    if(Mnemea::checkKey($keySucursal)){
-        $valorRetorno = Mnemea::getKey($keySucursal);
-    }
-    else{
-        $objCondicion = new \stdClass();
-        $objCondicion->codigo_consecionario = Dataworker::equalToString($pConsecionario);
-        $objCondicion->codigo_sucursal      = Dataworker::equalToString($pConsecionarioSucursal);
-        $hwtConsecionarioSucursal = Dataworker::findFirst('hwt_consecionario_sucursal',$objCondicion);
-
-        $valorRetorno = $hwtConsecionarioSucursal->descripcion;
-
-        Mnemea::setKey($keySucursal,$hwtConsecionarioSucursal->descripcion);
-    }
-
-    return $valorRetorno;
-}
-
 function datosOpciones(){
     Logger::enable(true,'apiPedidoVenta::datosOpciones');
 
@@ -1794,70 +1714,8 @@ function datosOpciones(){
     array_push($arrayOpcionesFiltroMarca,$objValue);
     $objectOpcionesFiltroMarca = (object) $arrayOpcionesFiltroMarca;
 
-    // ECRC: Obteniendo el Listado de los Gerentes Regionales
-    Logger::write('Obteniendo el Listado de los Gerentes Regionales');
-    $objCondicion = new \stdClass();
-    $objCondicion->codigo_perfil   = Dataworker::equalToString('gerente');
-    $sysUsuarioGerente = Dataworker::getRecords('sys_usuario_perfil',$objCondicion);
-
-    $arrayOpcionesGerente = array();
-    $arrayBuscaGerente = array();
-    foreach($sysUsuarioGerente->data as $recordUsuarioGerente){
-
-        // ECRC: Localizando al Perfil Principal del Usuario
-        $objCondicion = new \stdClass();
-        $objCondicion->usuario   = Dataworker::equalToString($recordUsuarioGerente->usuario);
-        $sysUsuario = Dataworker::findFirst('sys_usuario',$objCondicion);
-        unset($sysUsuario->acceso);
-        array_push($arrayOpcionesGerente,$sysUsuario);
-        array_push($arrayBuscaGerente,$sysUsuario);
-    }
-
-    $objGerenteComodin = new \stdClass();
-    $objGerenteComodin->usuario = 'todo';
-    $objGerenteComodin->nombre  = 'TODOS LOS GERENTES REGIONALES';
-    array_push($arrayBuscaGerente,$objGerenteComodin);
-
-    // ECRC: Obteniendo el Listado de los Vendedores
-    Logger::write('Obteniendo el Listado de los Gerentes Regionales');
-    $objCondicion = new \stdClass();
-    $objCondicion->codigo_perfil = Dataworker::equalToString('vendedor');
-    $sysUsuarioVendedor = Dataworker::getRecords('sys_usuario_perfil',$objCondicion);
-
-    $arrayOpcionesVendedor = array();
-    $arrayBuscaVendedor    = array();
-    foreach($sysUsuarioVendedor->data as $recordUsuarioVendedor){
-
-        // ECRC: Localizando al Perfil Principal del Usuario
-        $objCondicion = new \stdClass();
-        $objCondicion->usuario   = Dataworker::equalToString($recordUsuarioVendedor->usuario);
-        $sysUsuario = Dataworker::findFirst('sys_usuario',$objCondicion);
-        unset($sysUsuario->acceso);
-        array_push($arrayOpcionesVendedor,$sysUsuario);
-        array_push($arrayBuscaVendedor,$sysUsuario);
-    }
-
-    $objVendedorComodin = new \stdClass();
-    $objVendedorComodin->usuario = 'todo';
-    $objVendedorComodin->nombre  = 'TODOS LOS VENDEDORES';
-    array_push($arrayBuscaVendedor,$objVendedorComodin);
-
-    // ECRC: Obteniendo el Listado de los Consecionarios
-    $hwtConsecionario = Dataworker::getRecords('hwt_consecionario');
-
-    $arrayConsecionario = (array) $hwtConsecionario->data;
-    $objConsecionario = (object) [
-        codigo_consecionario      => 'todo',
-        descripcion => 'TODOS LOS CONSECIONARIOS',
-    ];
-
-    array_push($arrayConsecionario,$objConsecionario);
-    //$objectOpcionesFiltroMarca = (object) $arrayOpcionesFiltroMarca;
-
-
     // ECRC: Obteniendo el Listado de las Sucursales
     $hwtSucursal = Dataworker::getRecords('hwt_consecionario_sucursal');
-
 
     // ECRC: Cerrando la Conexión
     Dataworker::closeConnection();
@@ -1870,19 +1728,19 @@ function datosOpciones(){
 
     Emissary::addData('opcionesFiltroTipoEntrega'     , $objectOpcionesFiltroTipoEntrega);
 
-    Emissary::addData('opcionesCodigoGerenteRegional' , $arrayOpcionesGerente);
-    Emissary::addData('opcionesBuscaGerenteRegional'  , $arrayBuscaGerente);
+    Emissary::addData('opcionesCodigoGerenteRegional', listadoGerentesRegionales());
+    Emissary::addData('opcionesBuscaGerenteRegional', listadoGerentesRegionales(true));
 
-    Emissary::addData('opcionesCodigoVendedor'        , $arrayOpcionesVendedor);
-    Emissary::addData('opcionesBuscaVendedor'         , $arrayBuscaVendedor);
+    Emissary::addData('opcionesCodigoVendedor', listaVendedores());
+    Emissary::addData('opcionesBuscaVendedor', listaVendedores(true));
 
-    Emissary::addData('opcionesCodigoConsecionario'   , $hwtConsecionario->data);
-    Emissary::addData('opcionesBuscaConsecionario'    , $arrayConsecionario);
+    Emissary::addData('opcionesCodigoConsecionario', listadoConsecionarios());
+    Emissary::addData('opcionesBuscaConsecionario', listadoConsecionarios(true));
 
     Emissary::addData('opcionesCodigoSucursal'        , $hwtSucursal->data);
     Emissary::addData('opcionesBuscaSucursal'         , $hwtSucursal->data);
 
-    Emissary::addData('opcionesCodigoConsecionarioEntrega' , $hwtConsecionario->data);
+    Emissary::addData('opcionesCodigoConsecionarioEntrega', listadoConsecionarios());
     Emissary::addData('opcionesCodigoSucursalEntrega'      , $hwtSucursal->data);
     Emissary::addData('opcionesFiltroModelo'               , $objectOpcionesFiltroModelo);
     Emissary::addData('opcionesFiltroMarca'                , $objectOpcionesFiltroMarca);
