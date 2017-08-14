@@ -59,6 +59,13 @@
             },
             "name": "MyForm",
             "designerId": "a9ed01ab-c359-49b8-bd73-48c523ebf600",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "estadoRegistro",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "basicfunction",
@@ -113,6 +120,92 @@
                     },
                     "name": "confirmarRegistro",
                     "designerId": "4a9313fe-53c7-4135-9381-61b879c3e8ad"
+                },
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "preparaInterfaz",
+                        "implHandler": [
+                            "var arrayCombos = new Array();",
+                            "arrayCombos.push('EstadoCliente');",
+                            "arrayCombos.forEach(Ext.getCmp('formAplicacion').cargaCombo);",
+                            "",
+                            "var objConfig   = new Object();",
+                            "objConfig.idComboBox    = 'cbxDirPais';",
+                            "objConfig.idDataBridge  = 'datosOpciones';",
+                            "objConfig.id            = 'opcionesPais';",
+                            "objConfig.fieldValue    = 'cod_pais';",
+                            "objConfig.fieldDisplay  = 'pais';",
+                            "arrayCombos.push(objConfig);",
+                            "",
+                            "arrayCombos.forEach(elf.loadComboBoxConfig);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "preparaInterfaz",
+                    "designerId": "6dd478b9-e951-46c6-9d75-0da9e5f518dd"
+                },
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "pTipo",
+                            "pFuncionCarga"
+                        ],
+                        "fn": "obtieneLocalizacion",
+                        "implHandler": [
+                            "var apiController = 'apiOportunidadVenta';",
+                            "var apiMethod     = 'datosLocalizacion';",
+                            "",
+                            "var objJsonData       = new Object();",
+                            "objJsonData.pais      = elf.readElement('cbxDirPais');",
+                            "objJsonData.estado    = elf.readElement('cbxDirEstado');",
+                            "objJsonData.municipio = elf.readElement('cbxDirMunicipio');",
+                            "objJsonData.tipoDato  = pTipo;",
+                            "",
+                            "var objJsonRequest = new Object();",
+                            "objJsonRequest.apiController = apiController;",
+                            "objJsonRequest.apiMethod     = apiMethod;",
+                            "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                            "",
+                            "var functionSuccess = function(){",
+                            "    var jsonData = elf.getInfoDataBridge('datosLocalizacion');",
+                            "    pFuncionCarga();",
+                            "};",
+                            "",
+                            "var functionFailure = function(){",
+                            "    var jsonData = elf.getInfoDataBridge('datosLocalizacion');",
+                            "    elf.showInfo(jsonData,'error');",
+                            "};",
+                            "",
+                            "",
+                            "elf.doDataBridge(objJsonRequest,",
+                            "                 functionSuccess,",
+                            "                 null,",
+                            "                 functionFailure,",
+                            "                 null);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "obtieneLocalizacion",
+                    "designerId": "2e3a6845-e6d3-4846-8d5a-020201a31f0d"
                 },
                 {
                     "type": "Ext.toolbar.Toolbar",
@@ -248,6 +341,7 @@
                                     "userConfig": {
                                         "fn": "onBtnClienteCerrarClick",
                                         "implHandler": [
+                                            "Ext.getCmp('formCliente').estadoRegistro = '';",
                                             "elf.closeWindow('winCliente');"
                                         ],
                                         "name": "click",
@@ -615,6 +709,36 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tfContactoCargo",
+                                "disabledCls": "disabledField",
+                                "fieldLabel": "Cargo",
+                                "id": "tfContactoCargo",
+                                "itemId": "tfContactoCargo",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.5,
+                                "margin": "0 20 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField18",
+                            "designerId": "9d4ff956-07c7-455a-b605-652a69d323ca"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
                                 "designer|displayName": "tfContactoTelefono",
                                 "disabledCls": "disabledField",
                                 "fieldLabel": "Teléfono",
@@ -824,37 +948,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|displayName": "tfDirColonia",
-                                "disabledCls": "disabledField",
-                                "fieldLabel": "Colonia",
-                                "id": "tfDirColonia",
-                                "itemId": "tfDirColonia",
-                                "labelWidth": 120,
-                                "layout|columnWidth": 0.5,
-                                "margin": "0 20 5 0"
-                            },
-                            "configAlternates": {
-                                "designer|displayName": "string",
-                                "disabledCls": "string",
-                                "fieldLabel": "string",
-                                "id": "string",
-                                "itemId": "string",
-                                "labelWidth": "number",
-                                "layout|columnWidth": "auto",
-                                "margin": "auto",
-                                "allowBlank": "boolean"
-                            },
-                            "name": "MyTextField9",
-                            "designerId": "b6cb8a2a-6584-4e98-866a-6ed521ee0e98"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
                                 "designer|displayName": "tfCodigoPostal",
                                 "disabledCls": "disabledField",
                                 "fieldLabel": "Codigo Postal",
@@ -888,12 +981,13 @@
                             "userConfig": {
                                 "designer|displayName": "tfDirPais",
                                 "disabledCls": "disabledField",
+                                "editable": false,
                                 "fieldLabel": "Pais",
                                 "id": "tfDirPais",
                                 "itemId": "tfDirPais",
                                 "labelWidth": 120,
-                                "layout|columnWidth": 0.5,
-                                "margin": "0 20 5 0"
+                                "layout|columnWidth": 0.44,
+                                "margin": "0 0 5 0"
                             },
                             "configAlternates": {
                                 "designer|displayName": "string",
@@ -904,10 +998,106 @@
                                 "labelWidth": "number",
                                 "layout|columnWidth": "auto",
                                 "margin": "auto",
-                                "allowBlank": "boolean"
+                                "allowBlank": "boolean",
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "store": "store",
+                                "valueField": "datafield"
                             },
-                            "name": "MyTextField12",
+                            "name": "MyTextField9",
                             "designerId": "d35b3789-a4f6-49b2-af23-87ec4671c649"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoom",
+                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                "id": "btnZoomPais",
+                                "itemId": "btnZoomPais",
+                                "layout|columnWidth": 0.03,
+                                "margin": "0 20 0 0",
+                                "minWidth": 27,
+                                "textAlign": "left",
+                                "width": 27
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "minWidth": "number",
+                                "textAlign": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyButton12",
+                            "designerId": "74e4c3d1-f206-4307-bf69-d25594191435",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnZoomPaisClick",
+                                        "implHandler": [
+                                            "elf.openWindow('winZoomGenerico');",
+                                            "Ext.getCmp('winZoomGenerico').setTitle('Seleccione un Pais');",
+                                            "",
+                                            "var funcionSeleccionaRegistro = function(){",
+                                            "    registroActivo = Ext.getCmp('gridZoomGenerico').recordActivo;",
+                                            "    elf.writeElement('tfDirPais'      ,registroActivo.descripcion);",
+                                            "    elf.closeWindow('winZoomGenerico');",
+                                            "};",
+                                            "",
+                                            "var funcionCarga = function(){",
+                                            "    console.log('funcion de carga');",
+                                            "",
+                                            "    var storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                            "    var proxyZoomGenerico = storeZoomGenerico.getProxy();",
+                                            "",
+                                            "    var objJsonData = new Object();",
+                                            "    objJsonData.page  = storeZoomGenerico.currentPage;",
+                                            "    objJsonData.start = (storeZoomGenerico.currentPage - 1) * storeZoomGenerico.pageSize;",
+                                            "    objJsonData.limit = storeZoomGenerico.pageSize;",
+                                            "    objJsonData.filtroEstado = 'ACTIVO';",
+                                            "",
+                                            "    var objJsonRequest = new Object();",
+                                            "    objJsonRequest.apiController = 'sysApiLocalizacion';",
+                                            "    objJsonRequest.apiMethod     = 'zoomPais';",
+                                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                            "",
+                                            "    proxyZoomGenerico.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                                            "    proxyZoomGenerico.extraParams = objJsonRequest;",
+                                            "",
+                                            "};",
+                                            "",
+                                            "storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                            "storeZoomGenerico.funcionCarga              = funcionCarga;",
+                                            "storeZoomGenerico.funcionSeleccionaRegistro = funcionSeleccionaRegistro;",
+                                            "storeZoomGenerico.load();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnZoomPaisClick",
+                                    "designerId": "9cf019a3-a981-4570-8d1a-5a224cd7252e"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -919,12 +1109,13 @@
                             "userConfig": {
                                 "designer|displayName": "tfDirEstado",
                                 "disabledCls": "disabledField",
+                                "editable": false,
                                 "fieldLabel": "Entidad",
                                 "id": "tfDirEstado",
                                 "itemId": "tfDirEstado",
                                 "labelWidth": 120,
-                                "layout|columnWidth": 0.5,
-                                "margin": "0 20 5 0"
+                                "layout|columnWidth": 0.44,
+                                "margin": "0 0 5 0"
                             },
                             "configAlternates": {
                                 "designer|displayName": "string",
@@ -935,10 +1126,110 @@
                                 "labelWidth": "number",
                                 "layout|columnWidth": "auto",
                                 "margin": "auto",
-                                "allowBlank": "boolean"
+                                "allowBlank": "boolean",
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "store": "store",
+                                "valueField": "datafield"
                             },
-                            "name": "MyTextField11",
+                            "name": "MyTextField10",
                             "designerId": "0c234c96-da5c-4993-9070-d0c2dd93267d"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoom",
+                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                "id": "btnZoomEstado",
+                                "itemId": "btnZoomEstado",
+                                "layout|columnWidth": 0.03,
+                                "margin": "0 20 0 0",
+                                "minWidth": 27,
+                                "textAlign": "left",
+                                "width": 27
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "minWidth": "number",
+                                "textAlign": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyButton11",
+                            "designerId": "c993c713-dd99-4ee9-8f3f-23113a93c196",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnZoomEstadoClick",
+                                        "implHandler": [
+                                            "elf.openWindow('winZoomGenerico');",
+                                            "Ext.getCmp('winZoomGenerico').setTitle('Seleccione un Estado');",
+                                            "",
+                                            "var funcionSeleccionaRegistro = function(){",
+                                            "    registroActivo = Ext.getCmp('gridZoomGenerico').recordActivo;",
+                                            "    elf.writeElement('tfDirEstado'      ,registroActivo.descripcion);",
+                                            "    elf.writeElement('tfDirMunicipio'   ,'');",
+                                            "    elf.writeElement('tfDirColonia'     ,'');    ",
+                                            "    elf.closeWindow('winZoomGenerico');",
+                                            "};",
+                                            "",
+                                            "var funcionCarga = function(){",
+                                            "    console.log('funcion de carga');",
+                                            "",
+                                            "    var storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                            "    var proxyZoomGenerico = storeZoomGenerico.getProxy();",
+                                            "",
+                                            "    var objJsonData = new Object();",
+                                            "    objJsonData.page  = storeZoomGenerico.currentPage;",
+                                            "    objJsonData.start = (storeZoomGenerico.currentPage - 1) * storeZoomGenerico.pageSize;",
+                                            "    objJsonData.limit = storeZoomGenerico.pageSize;",
+                                            "    objJsonData.filtroEstado = 'ACTIVO';",
+                                            "    objJsonData.pais = elf.readElement('tfDirPais');",
+                                            "",
+                                            "    var objJsonRequest = new Object();",
+                                            "    objJsonRequest.apiController = 'sysApiLocalizacion';",
+                                            "    objJsonRequest.apiMethod     = 'zoomEstado';",
+                                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                            "",
+                                            "    proxyZoomGenerico.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                                            "    proxyZoomGenerico.extraParams = objJsonRequest;",
+                                            "",
+                                            "};",
+                                            "",
+                                            "storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                            "storeZoomGenerico.funcionCarga              = funcionCarga;",
+                                            "storeZoomGenerico.funcionSeleccionaRegistro = funcionSeleccionaRegistro;",
+                                            "storeZoomGenerico.load();",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnZoomEstadoClick",
+                                    "designerId": "0412f3bf-259f-40ed-85f0-70d12bb78d9e"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -950,12 +1241,13 @@
                             "userConfig": {
                                 "designer|displayName": "tfDirMunicipio",
                                 "disabledCls": "disabledField",
+                                "editable": false,
                                 "fieldLabel": "Municipio",
                                 "id": "tfDirMunicipio",
                                 "itemId": "tfDirMunicipio",
                                 "labelWidth": 120,
-                                "layout|columnWidth": 0.5,
-                                "margin": "0 20 5 0"
+                                "layout|columnWidth": 0.44,
+                                "margin": "0 0 5 0"
                             },
                             "configAlternates": {
                                 "designer|displayName": "string",
@@ -966,10 +1258,240 @@
                                 "labelWidth": "number",
                                 "layout|columnWidth": "auto",
                                 "margin": "auto",
-                                "allowBlank": "boolean"
+                                "allowBlank": "boolean",
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "store": "store",
+                                "valueField": "datafield"
                             },
-                            "name": "MyTextField10",
+                            "name": "MyTextField11",
                             "designerId": "9d526f7b-c9ce-46a0-87de-398143b232aa"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoom",
+                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                "id": "btnZoomMunicipio",
+                                "itemId": "btnZoomMunicipio",
+                                "layout|columnWidth": 0.03,
+                                "margin": "0 20 0 0",
+                                "minWidth": 27,
+                                "textAlign": "left",
+                                "width": 27
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "minWidth": "number",
+                                "textAlign": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyButton13",
+                            "designerId": "c26b9fa1-fbb7-45d7-a937-83992d40ac99",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnZoomEstadoClick2",
+                                        "implHandler": [
+                                            "elf.openWindow('winZoomGenerico');",
+                                            "Ext.getCmp('winZoomGenerico').setTitle('Seleccione un Estado');",
+                                            "",
+                                            "var funcionSeleccionaRegistro = function(){",
+                                            "    registroActivo = Ext.getCmp('gridZoomGenerico').recordActivo;",
+                                            "    elf.writeElement('tfDirMunicipio'      ,registroActivo.descripcion);",
+                                            "    elf.writeElement('tfDirColonia'     ,'');    ",
+                                            "    elf.closeWindow('winZoomGenerico');",
+                                            "};",
+                                            "",
+                                            "var funcionCarga = function(){",
+                                            "    console.log('funcion de carga');",
+                                            "",
+                                            "    var storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                            "    var proxyZoomGenerico = storeZoomGenerico.getProxy();",
+                                            "",
+                                            "    var objJsonData = new Object();",
+                                            "    objJsonData.page  = storeZoomGenerico.currentPage;",
+                                            "    objJsonData.start = (storeZoomGenerico.currentPage - 1) * storeZoomGenerico.pageSize;",
+                                            "    objJsonData.limit = storeZoomGenerico.pageSize;",
+                                            "    objJsonData.filtroEstado = 'ACTIVO';",
+                                            "    objJsonData.pais         = elf.readElement('tfDirPais');",
+                                            "    objJsonData.estado       = elf.readElement('tfDirEstado');",
+                                            "",
+                                            "    var objJsonRequest = new Object();",
+                                            "    objJsonRequest.apiController = 'sysApiLocalizacion';",
+                                            "    objJsonRequest.apiMethod     = 'zoomMunicipio';",
+                                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                            "",
+                                            "    proxyZoomGenerico.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                                            "    proxyZoomGenerico.extraParams = objJsonRequest;",
+                                            "",
+                                            "};",
+                                            "",
+                                            "storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                            "storeZoomGenerico.funcionCarga              = funcionCarga;",
+                                            "storeZoomGenerico.funcionSeleccionaRegistro = funcionSeleccionaRegistro;",
+                                            "storeZoomGenerico.load();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnZoomEstadoClick2",
+                                    "designerId": "b1ab0b15-6c19-414d-9229-949f3a9ad301"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tfDirColonia",
+                                "disabledCls": "disabledField",
+                                "editable": false,
+                                "fieldLabel": "Colonia",
+                                "id": "tfDirColonia",
+                                "itemId": "tfDirColonia",
+                                "labelWidth": 120,
+                                "layout|columnWidth": 0.44,
+                                "margin": "0 0 5 0"
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "disabledCls": "string",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "allowBlank": "boolean",
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "store": "store",
+                                "valueField": "datafield"
+                            },
+                            "name": "MyTextField12",
+                            "designerId": "b6cb8a2a-6584-4e98-866a-6ed521ee0e98"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "botonZoom",
+                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                "id": "btnZoomColonia",
+                                "itemId": "btnZoomColonia",
+                                "layout|columnWidth": 0.03,
+                                "margin": "0 20 0 0",
+                                "minWidth": 27,
+                                "textAlign": "left",
+                                "width": 27
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "layout|columnWidth": "auto",
+                                "margin": "auto",
+                                "minWidth": "number",
+                                "textAlign": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyButton14",
+                            "designerId": "db94a891-975d-4ccf-8077-ed73f36e427b",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnZoomColoniaClick",
+                                        "implHandler": [
+                                            "elf.openWindow('winZoomGenerico');",
+                                            "Ext.getCmp('winZoomGenerico').setTitle('Seleccione un Estado');",
+                                            "",
+                                            "var funcionSeleccionaRegistro = function(){",
+                                            "    registroActivo = Ext.getCmp('gridZoomGenerico').recordActivo;",
+                                            "    elf.writeElement('tfDirColonia'      ,registroActivo.descripcion);",
+                                            "    elf.closeWindow('winZoomGenerico');",
+                                            "};",
+                                            "",
+                                            "var funcionCarga = function(){",
+                                            "    console.log('funcion de carga');",
+                                            "",
+                                            "    var storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                            "    var proxyZoomGenerico = storeZoomGenerico.getProxy();",
+                                            "",
+                                            "    var objJsonData = new Object();",
+                                            "    objJsonData.page  = storeZoomGenerico.currentPage;",
+                                            "    objJsonData.start = (storeZoomGenerico.currentPage - 1) * storeZoomGenerico.pageSize;",
+                                            "    objJsonData.limit = storeZoomGenerico.pageSize;",
+                                            "    objJsonData.filtroEstado = 'ACTIVO';",
+                                            "    objJsonData.pais         = elf.readElement('tfDirPais');",
+                                            "    objJsonData.estado       = elf.readElement('tfDirEstado');",
+                                            "    objJsonData.municipio    = elf.readElement('tfDirMunicipio');",
+                                            "",
+                                            "    var objJsonRequest = new Object();",
+                                            "    objJsonRequest.apiController = 'sysApiLocalizacion';",
+                                            "    objJsonRequest.apiMethod     = 'zoomColonia';",
+                                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                            "",
+                                            "    proxyZoomGenerico.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                                            "    proxyZoomGenerico.extraParams = objJsonRequest;",
+                                            "",
+                                            "};",
+                                            "",
+                                            "storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                            "storeZoomGenerico.funcionCarga              = funcionCarga;",
+                                            "storeZoomGenerico.funcionSeleccionaRegistro = funcionSeleccionaRegistro;",
+                                            "storeZoomGenerico.load();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnZoomColoniaClick",
+                                    "designerId": "b6b22d51-e874-4741-939b-356eeacc526c"
+                                }
+                            ]
                         }
                     ]
                 }

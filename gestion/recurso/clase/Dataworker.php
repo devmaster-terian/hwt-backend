@@ -173,11 +173,13 @@ class Dataworker
     public static function updateRecord($objFieldsRecord){
         Logger::enable(true,'updateRecord');
 
-        $SqlUpdateQuery = "INSERT INTO  " . $objFieldsRecord->tableName . " "
-            . $objFieldsRecord->fieldList
+        $SqlSpace = ' ';
+        $SqlUpdateQuery = "INSERT INTO  " . $objFieldsRecord->tableName
+            . $SqlSpace . $objFieldsRecord->fieldList
             . " VALUES " . $objFieldsRecord->fieldValue
             . " ON DUPLICATE KEY UPDATE "
             . $objFieldsRecord->fieldRecord;
+
 
         Logger::write($SqlUpdateQuery);
         self::updateQuery($SqlUpdateQuery);
@@ -219,7 +221,8 @@ class Dataworker
         return $fieldDataValue;
     }
 
-    public static function setFieldsTable($tableName, $objectData){
+    public static function setFieldsTable($tableName, $objectData = null)
+    {
         Logger::enable(true,'setFieldsTable');
 
         $Connection = self::$activeConnection;
@@ -258,7 +261,6 @@ class Dataworker
                     $objFieldsTable->$fieldName = implode(',',$objFieldsTable->$fieldName);
                 }
             }
-
 
             if(!strpos($fieldName, 'mail') and !strpos($fieldName, 'correo')){
                 $objFieldsTable->$fieldName = strtoupper($objFieldsTable->$fieldName);
@@ -312,6 +314,13 @@ class Dataworker
                     $fieldValue = $fieldValue . ',' . $fieldDataValue;
                 }
 
+                $fieldDataValue = utf8_decode($fieldDataValue);
+                $fieldDataValue = str_replace('á', 'A', $fieldDataValue);
+                $fieldDataValue = str_replace('é', 'E', $fieldDataValue);
+                $fieldDataValue = str_replace('í', 'I', $fieldDataValue);
+                $fieldDataValue = str_replace('ó', 'O', $fieldDataValue);
+                $fieldDataValue = str_replace('ú', 'U', $fieldDataValue);
+
                 if($fieldRecord === ''){
                     $fieldRecord = $fieldName . "=" . $fieldDataValue;
                 }
@@ -320,6 +329,13 @@ class Dataworker
                 }
             }
         }
+
+        $fieldValue = utf8_decode($fieldValue);
+        $fieldValue = str_replace('á', 'A', $fieldValue);
+        $fieldValue = str_replace('é', 'E', $fieldValue);
+        $fieldValue = str_replace('í', 'I', $fieldValue);
+        $fieldValue = str_replace('ó', 'O', $fieldValue);
+        $fieldValue = str_replace('ú', 'U', $fieldValue);
 
         $objFieldsTable->tableName   = $tableName;
         $objFieldsTable->fieldList   = '(' . $fieldList  . ')';
@@ -344,24 +360,24 @@ class Dataworker
             switch ($pEnvironment){
                 case 'prod':
                     $objServer = new \stdClass();
-                    $objServer->servername = "localhost";
-                    $objServer->username   = "utilityt_hwtustr";
-                    $objServer->password   = "HWTU$3dTrucks";
-                    $objServer->dbname     = "utilityt_hwtusedtrucks";
+                    $objServer->machinesrv = "localhost";
+                    $objServer->datausn = "utilityt_hwtustr";
+                    $objServer->datakey = "HWTU$3dTrucks";
+                    $objServer->dataspace = "utilityt_hwtusedtrucks";
                     break;
                 case 'beta':
                     $objServer = new stdClass();
-                    $objServer->servername = "localhost";
-                    $objServer->username   = "terianco_hwtusr";
-                    $objServer->password   = "4Ace33so$";
-                    $objServer->dbname     = "terianco_hwtsite";
+                    $objServer->machinesrv = "localhost";
+                    $objServer->datausn = "terianco_hwtusr";
+                    $objServer->datakey = "4Ace33so$";
+                    $objServer->dataspace = "terianco_hwtsite";
                     break;
                 case 'dev':
                     $objServer = new stdClass();
-                    $objServer->servername = "localhost";
-                    $objServer->username   = "terianco";
-                    $objServer->password   = "t3ri@n$723";
-                    $objServer->dbname     = "terianco_hwtsite";
+                    $objServer->machinesrv = "localhost";
+                    $objServer->datausn = "terianco";
+                    $objServer->datakey = "t3ri@n$723";
+                    $objServer->dataspace = "terianco_hwtsite";
                     break;
             }
 
@@ -391,10 +407,10 @@ class Dataworker
             if($dbLive === false){
                 // Create connection
                 $Connection = new mysqli(
-                    $currentServer->servername,
-                    $currentServer->username,
-                    $currentServer->password,
-                    $currentServer->dbname);
+                    $currentServer->machinesrv,
+                    $currentServer->datausn,
+                    $currentServer->datakey,
+                    $currentServer->dataspace);
 
                 // Check connection
                 if ($Connection->connect_error) {
@@ -473,12 +489,18 @@ class Dataworker
         return $objResultQuery;
     }
 
-    public static function getRecords($Table, $pObjConstraint = null)
+    public static function getRecords($Table, $pObjConstraint = null, $pArrayCustomFields = null)
     {
         Logger::enable(true,'getRecords');
 
         $Connection = self::$activeConnection;
-        $SqlQuery = "SELECT * FROM " . $Table. " ";
+
+        if ($pArrayCustomFields !== null) {
+            $SqlQuery = "SELECT " . implode(',', $pArrayCustomFields) . " FROM " . $Table . " ";
+        } else {
+            $SqlQuery = "SELECT * FROM " . $Table . " ";
+        }
+
 
         $Constraint = '';
 

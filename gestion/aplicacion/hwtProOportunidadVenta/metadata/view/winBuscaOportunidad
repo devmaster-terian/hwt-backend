@@ -111,45 +111,40 @@
                             "arrayCombos.push(objConfig);",
                             "",
                             "var objConfig   = new Object();",
-                            "objConfig.idComboBox   = 'cbxBuscaConsecionario';",
-                            "objConfig.idDataBridge = 'datosOpciones';",
-                            "objConfig.id           = 'opcionesConsecionario';",
-                            "objConfig.fieldValue   = 'codigo_consecionario';",
-                            "objConfig.fieldDisplay = 'descripcion';",
-                            "objConfig.filterValue  = undefined;",
+                            "objConfig.idComboBox    = 'cbxBuscaConsecionario';",
+                            "objConfig.idDataBridge  = 'datosOpciones';",
+                            "objConfig.id            = 'opcionesConsecionarioBusca';",
+                            "objConfig.fieldValue    = 'codigo_consecionario';",
+                            "objConfig.fieldDisplay  = 'descripcion';",
+                            "objConfig.filterValue   = undefined;",
+                            "objConfig.filterDefault = 'todo';",
                             "arrayCombos.push(objConfig);",
                             "",
                             "var objConfig   = new Object();",
-                            "objConfig.idComboBox   = 'cbxBuscaConsecionario';",
-                            "objConfig.idDataBridge = 'datosOpciones';",
-                            "objConfig.id           = 'opcionesConsecionario';",
-                            "objConfig.fieldValue   = 'codigo_consecionario';",
-                            "objConfig.fieldDisplay = 'descripcion';",
-                            "objConfig.filterValue  = undefined;",
+                            "objConfig.idComboBox    = 'cbxBuscaGerenteRegional';",
+                            "objConfig.idDataBridge  = 'datosOpciones';",
+                            "objConfig.id            = 'opcionesGerenteRegionalBusca';",
+                            "objConfig.fieldValue    = 'usuario';",
+                            "objConfig.fieldDisplay  = 'nombre';",
+                            "objConfig.filterValue   = undefined;",
+                            "objConfig.filterDefault = 'todo';",
                             "arrayCombos.push(objConfig);",
                             "",
                             "var objConfig   = new Object();",
-                            "objConfig.idComboBox   = 'cbxBuscaGerenteRegional';",
-                            "objConfig.idDataBridge = 'datosOpciones';",
-                            "objConfig.id           = 'opcionesGerenteRegional';",
-                            "objConfig.fieldValue   = 'usuario';",
-                            "objConfig.fieldDisplay = 'nombre';",
-                            "objConfig.filterValue  = undefined;",
-                            "arrayCombos.push(objConfig);",
-                            "",
-                            "var objConfig   = new Object();",
-                            "objConfig.idComboBox   = 'cbxBuscaVendedor';",
-                            "objConfig.idDataBridge = 'datosOpciones';",
-                            "objConfig.id           = 'opcionesVendedor';",
-                            "objConfig.fieldValue   = 'usuario';",
-                            "objConfig.fieldDisplay = 'nombre';",
-                            "objConfig.filterValue  = undefined;",
+                            "objConfig.idComboBox    = 'cbxBuscaVendedor';",
+                            "objConfig.idDataBridge  = 'datosOpciones';",
+                            "objConfig.id            = 'opcionesVendedorBusca';",
+                            "objConfig.fieldValue    = 'usuario';",
+                            "objConfig.fieldDisplay  = 'nombre';",
+                            "objConfig.filterValue   = undefined;",
+                            "objConfig.filterDefault = 'todo';",
                             "arrayCombos.push(objConfig);",
                             "",
                             "arrayCombos.forEach(elf.loadComboBoxConfig);",
                             "",
-                            "var fechaActual = new Date();",
-                            "elf.writeElement('dtBuscaFechaInicial' ,fechaActual);",
+                            "let fechaInicial = new Date(new Date().getFullYear(), 0, 1);",
+                            "let fechaActual = new Date();",
+                            "elf.writeElement('dtBuscaFechaInicial' ,fechaInicial);",
                             "elf.writeElement('dtBuscaFechaFinal'   ,fechaActual);"
                         ]
                     },
@@ -159,6 +154,54 @@
                     },
                     "name": "preparaInterfaz",
                     "designerId": "954eefbc-2b2f-4fac-bfb8-cb9d37d597a8"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "fieldsetFiltroOportunidad",
+                        "itemId": "fieldsetFiltroOportunidad",
+                        "title": "<b>Oportunidad</b>"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "itemId": "string",
+                        "title": "string"
+                    },
+                    "name": "MyFieldSet11",
+                    "designerId": "b44b0af2-2ff7-4543-ba94-b7d5a88e0ef4",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Num. Oportunidad",
+                                "id": "tfBuscaNumOportunidad",
+                                "itemId": "tfBuscaNumOportunidad",
+                                "labelWidth": 110,
+                                "layout|anchor": "100%",
+                                "maxWidth": 235
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "itemId": "string",
+                                "labelWidth": "number",
+                                "layout|anchor": "string",
+                                "maxWidth": "number"
+                            },
+                            "name": "MyTextField20",
+                            "designerId": "494681bf-96db-4d02-97c8-a85390a4a427"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.FieldSet",
@@ -193,6 +236,7 @@
                                 "fieldLabel": "Cliente",
                                 "id": "tfBuscaCodCliente",
                                 "itemId": "tfBuscaCodCliente",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 0.5,
                                 "margin": "0 3 3 0"
                             },
@@ -201,7 +245,8 @@
                                 "id": "string",
                                 "itemId": "string",
                                 "layout|columnWidth": "auto",
-                                "margin": "auto"
+                                "margin": "auto",
+                                "labelWidth": "number"
                             },
                             "name": "MyTextField16",
                             "designerId": "8e0b1c1f-3b42-48e4-89a3-c77a78f44f58"
@@ -287,6 +332,7 @@
                                 "fieldLabel": "Razón Social",
                                 "id": "tfBuscaRazonSocial",
                                 "itemId": "tfBuscaRazonSocial",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 1,
                                 "margin": "0 0 3 0"
                             },
@@ -295,7 +341,8 @@
                                 "id": "string",
                                 "itemId": "string",
                                 "layout|columnWidth": "auto",
-                                "margin": "auto"
+                                "margin": "auto",
+                                "labelWidth": "number"
                             },
                             "name": "MyTextField17",
                             "designerId": "e4ff06a8-6ed1-460c-a375-7dc92dcfcdc4"
@@ -337,6 +384,7 @@
                                 "fieldLabel": "Situación Inicial",
                                 "id": "cbxBuscaSituacionInicial",
                                 "itemId": "cbxBuscaSituacionInicial",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 0.5,
                                 "margin": "0 0 3 0",
                                 "queryMode": "local",
@@ -353,7 +401,8 @@
                                 "margin": "auto",
                                 "queryMode": "string",
                                 "store": "store",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "labelWidth": "number"
                             },
                             "name": "MyComboBox4",
                             "designerId": "947207b8-63eb-4b93-a4c7-4e31eacec1d1"
@@ -371,6 +420,7 @@
                                 "fieldLabel": "Situación Final",
                                 "id": "cbxBuscaSituacionFinal",
                                 "itemId": "cbxBuscaSituacionFinal",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 0.5,
                                 "margin": "0 0 3 5",
                                 "queryMode": "local",
@@ -387,7 +437,8 @@
                                 "margin": "auto",
                                 "queryMode": "string",
                                 "store": "store",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "labelWidth": "number"
                             },
                             "name": "MyComboBox12",
                             "designerId": "7be6ebcd-009a-4824-aa7a-f748b54e93f0"
@@ -403,6 +454,7 @@
                                 "fieldLabel": "Fecha Inicial",
                                 "id": "dtBuscaFechaInicial",
                                 "itemId": "dtBuscaFechaInicial",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 0.5,
                                 "margin": "0 0 3 0"
                             },
@@ -411,7 +463,8 @@
                                 "id": "string",
                                 "itemId": "string",
                                 "layout|columnWidth": "auto",
-                                "margin": "auto"
+                                "margin": "auto",
+                                "labelWidth": "number"
                             },
                             "name": "MyDateField1",
                             "designerId": "8ebbd87b-d0f8-4531-919b-b2a1e167ec86"
@@ -427,6 +480,7 @@
                                 "fieldLabel": "Fecha Final",
                                 "id": "dtBuscaFechaFinal",
                                 "itemId": "dtBuscaFechaFinal",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 0.5,
                                 "margin": "0 0 3 5"
                             },
@@ -435,7 +489,8 @@
                                 "id": "string",
                                 "itemId": "string",
                                 "layout|columnWidth": "auto",
-                                "margin": "auto"
+                                "margin": "auto",
+                                "labelWidth": "number"
                             },
                             "name": "MyDateField2",
                             "designerId": "ad938278-7389-492e-b0a7-99445416ebe8"
@@ -475,10 +530,12 @@
                                 "fieldLabel": "Marca",
                                 "id": "cbxBuscaMarca",
                                 "itemId": "cbxBuscaMarca",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 1,
                                 "margin": "0 0 3 0",
                                 "queryMode": "local",
                                 "store": "storeMarca",
+                                "useRawValue": true,
                                 "valueField": "codigo"
                             },
                             "configAlternates": {
@@ -491,10 +548,19 @@
                                 "margin": "auto",
                                 "queryMode": "string",
                                 "store": "store",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "labelWidth": "number",
+                                "useRawValue": "boolean"
                             },
                             "name": "MyComboBox13",
-                            "designerId": "1201c178-8432-41c8-8c75-5fdff57e8a79"
+                            "designerId": "1201c178-8432-41c8-8c75-5fdff57e8a79",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "useRawValue",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -509,10 +575,12 @@
                                 "fieldLabel": "Modelo",
                                 "id": "cbxBuscaModelo",
                                 "itemId": "cbxBuscaModelo",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 1,
                                 "margin": "0 0 3 0",
                                 "queryMode": "local",
                                 "store": "storeModelo",
+                                "useRawValue": true,
                                 "valueField": "codigo"
                             },
                             "configAlternates": {
@@ -525,10 +593,19 @@
                                 "margin": "auto",
                                 "queryMode": "string",
                                 "store": "store",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "labelWidth": "number",
+                                "useRawValue": "boolean"
                             },
                             "name": "MyComboBox14",
-                            "designerId": "173733b1-f8f8-47b8-8d7f-0a9dbe3b449f"
+                            "designerId": "173733b1-f8f8-47b8-8d7f-0a9dbe3b449f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "useRawValue",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -567,6 +644,7 @@
                                 "fieldLabel": "Consecionario",
                                 "id": "cbxBuscaConsecionario",
                                 "itemId": "cbxBuscaConsecionario",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 1,
                                 "margin": "0 0 3 0",
                                 "queryMode": "local",
@@ -583,7 +661,8 @@
                                 "margin": "auto",
                                 "queryMode": "string",
                                 "store": "store",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "labelWidth": "number"
                             },
                             "name": "MyComboBox15",
                             "designerId": "e2696f1b-06da-43bc-85a5-7e35b17822f1"
@@ -601,6 +680,7 @@
                                 "fieldLabel": "Gerente Regional",
                                 "id": "cbxBuscaGerenteRegional",
                                 "itemId": "cbxBuscaGerenteRegional",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 1,
                                 "margin": "0 0 3 0",
                                 "queryMode": "local",
@@ -617,7 +697,8 @@
                                 "margin": "auto",
                                 "queryMode": "string",
                                 "store": "store",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "labelWidth": "number"
                             },
                             "name": "MyComboBox16",
                             "designerId": "cae867d0-4701-4127-985b-ff12b1ff06ea"
@@ -635,6 +716,7 @@
                                 "fieldLabel": "Vendedor",
                                 "id": "cbxBuscaVendedor",
                                 "itemId": "cbxBuscaVendedor",
+                                "labelWidth": 110,
                                 "layout|columnWidth": 1,
                                 "margin": "0 0 3 0",
                                 "queryMode": "local",
@@ -651,7 +733,8 @@
                                 "margin": "auto",
                                 "queryMode": "string",
                                 "store": "store",
-                                "valueField": "datafield"
+                                "valueField": "datafield",
+                                "labelWidth": "number"
                             },
                             "name": "MyComboBox17",
                             "designerId": "e5ceab1b-d315-4016-97b3-9599b025705b"
@@ -720,22 +803,9 @@
                                     "userConfig": {
                                         "fn": "onBtnBuscarOportunidadClick",
                                         "implHandler": [
-                                            "var arrayBusqueda = new Array();",
-                                            "arrayBusqueda.push('tfBuscaCodCliente');",
-                                            "arrayBusqueda.push('tfBuscaRazonSocial');",
-                                            "arrayBusqueda.push('cbxBuscaSituacionInicial');",
-                                            "arrayBusqueda.push('cbxBuscaSituacionFinal');",
-                                            "arrayBusqueda.push('dtBuscaFechaInicial');",
-                                            "arrayBusqueda.push('dtBuscaFechaFinal');",
-                                            "arrayBusqueda.push('cbxBuscaMarca');",
-                                            "arrayBusqueda.push('cbxBuscaModelo');",
-                                            "arrayBusqueda.push('cbxBuscaConsecionario');",
-                                            "arrayBusqueda.push('cbxBuscaGerenteRegional');",
-                                            "arrayBusqueda.push('cbxBuscaVendedor');",
-                                            "",
+                                            "let arrayBusqueda = elf.prepareFormSearchFields('formBuscaOportunidad');",
                                             "Ext.getStore('storeOportunidadVenta').arrayBusqueda = arrayBusqueda;",
                                             "elf.refreshGrid('gridOportunidadVenta');",
-                                            "",
                                             ""
                                         ],
                                         "name": "click",

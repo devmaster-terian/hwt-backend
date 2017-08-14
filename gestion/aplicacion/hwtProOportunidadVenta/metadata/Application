@@ -20,7 +20,8 @@
             "modelSolicitudMunicipio",
             "modelSolicitudCiudad",
             "modelSituacionOportunidad",
-            "modelBuscaCliente"
+            "modelBuscaCliente",
+            "modelZoomGenerico"
         ],
         "name": "hwtProOportunidadVenta",
         "stores": [
@@ -37,13 +38,15 @@
             "storeCiudad",
             "storeMunicipio",
             "storeSituacionOportunidad",
-            "storeBuscaCliente"
+            "storeBuscaCliente",
+            "storeZoomGenerico"
         ],
         "views": [
             "formAplicacion",
             "winOportunidadVenta",
             "winBuscaCliente",
-            "winBuscaOportunidad"
+            "winBuscaOportunidad",
+            "winZoomGenerico"
         ]
     },
     "configAlternates": {

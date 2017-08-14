@@ -21,8 +21,8 @@
             }
         }
     },
-    "xdsVersion": "4.1.2",
-    "xdsBuild": 188,
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
@@ -39,7 +39,10 @@
             "926406a6-152e-471e-bcbb-02298d2faff1",
             "9c2cc2d7-9d4c-471d-96f3-d9e19c6d0511",
             "bb544c83-c3e8-4fa4-83f6-798a589b16c6",
-            "3ecfac82-d37c-4882-8b59-5db9de2d8bdd"
+            "3ecfac82-d37c-4882-8b59-5db9de2d8bdd",
+            "b9a7efd5-d837-452a-bbb4-f77a4264b6ac",
+            "c142901b-8a64-4132-91c1-85922b7ad804",
+            "cd812e44-1666-4fc6-98bd-daccefd1789c"
         ],
         "store": [
             "693498d2-6e26-48a7-8c7b-bca2b6b27c96",
@@ -55,7 +58,8 @@
             "3e48c64b-3a9e-4466-8e49-d08c88463fd5",
             "1f5253c9-c1f0-4c30-b8d8-de7e2ba2d19a",
             "ab7984ae-2e18-484f-ba8f-fed11cf4975f",
-            "b52a15de-ae18-4a11-b9d6-6e670d131c7d"
+            "b52a15de-ae18-4a11-b9d6-6e670d131c7d",
+            "5843fcb8-3741-4c09-88bb-adcabef683c4"
         ],
         "controller": [],
         "model": [
@@ -72,7 +76,8 @@
             "df3baf34-1f01-4279-b3a0-410d8be721a9",
             "541e0907-c7d8-4cd8-af65-fa42522dd440",
             "303e5c19-03ce-45a1-ae94-21aa71953006",
-            "e8c04c9a-225f-4d9a-833f-a14c1613ea45"
+            "e8c04c9a-225f-4d9a-833f-a14c1613ea45",
+            "11c8de0b-ee21-4ba0-bb81-cbca44badda5"
         ],
         "resource": [
             "74d82992-1ba7-4dc2-a877-d37915010199",

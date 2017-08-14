@@ -5,6 +5,7 @@ require_once('../recurso/clase/Dataworker.php');
 require_once('../recurso/clase/Logger.php');
 require_once('../recurso/clase/Mnemea.php');
 require_once('../recurso/clase/Reporter.php');
+require_once('apiCatalogoGeneral.php');
 require_once('apiConfigurador.php');
 
 function reporteCliente(){
@@ -104,6 +105,7 @@ function datosOpciones(){
     Emissary::addMessage('info-api' , $apiMessage);
     Emissary::addData('opcionesEstadoCliente'              , $objectOpcionesEstadoUnidad);
     Emissary::addData('opcionesGridEstadoCliente'          , $objectOpcionesEstadoUnidad);
+    Emissary::addData('opcionesPais', listaPais());
 
     Emissary::success($availableInfo);
 
