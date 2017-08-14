@@ -127,10 +127,13 @@
                     "    var arrayCombos = new Array();",
                     "    arrayCombos.push('EstadoCliente');",
                     "    arrayCombos.forEach(Ext.getCmp('formAplicacion').cargaCombo);",
-                    "    ",
+                    "",
                     "",
                     "    //ECRC: Función que se ejecuta después de que se carguen las Opciones",
                     "    var funcionCarga = function(){",
+                    "        Ext.getCmp('formCliente').estadoRegistro = 'edicion';",
+                    "        Ext.getCmp('formCliente').preparaInterfaz();",
+                    "",
                     "        var jsonData = elf.getInfoDataBridge('datosCliente');",
                     "        elf.showRecord(jsonData,'hwtCliente',pModo);",
                     "    };",
@@ -514,11 +517,7 @@
                                 "fn": "onButtonClickCrear",
                                 "implHandler": [
                                     "elf.openWindow('winCliente');",
-                                    "var arrayCombos = new Array();",
-                                    "arrayCombos.push('EstadoCliente');",
-                                    "",
-                                    "arrayCombos.forEach(Ext.getCmp('formAplicacion').cargaCombo);",
-                                    ""
+                                    "Ext.getCmp('formCliente').preparaInterfaz();"
                                 ],
                                 "name": "click",
                                 "scope": "me"

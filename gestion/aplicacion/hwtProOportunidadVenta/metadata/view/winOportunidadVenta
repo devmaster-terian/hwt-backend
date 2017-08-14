@@ -227,6 +227,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|params": [
+                            "pFuncionCarga"
+                        ],
                         "fn": "preparaInterfaz",
                         "implHandler": [
                             "var arrayCombos = new Array();",
@@ -279,30 +282,31 @@
                             "objConfig.fieldDisplay  = 'descripcion';",
                             "arrayCombos.push(objConfig);",
                             "",
-                            "var objConfig   = new Object();",
-                            "objConfig.idComboBox    = 'cbxSolicitudPais';",
-                            "objConfig.idDataBridge  = 'datosOpciones';",
-                            "objConfig.id            = 'opcionesPais';",
-                            "objConfig.fieldValue    = 'cod_pais';",
-                            "objConfig.fieldDisplay  = 'pais';",
-                            "arrayCombos.push(objConfig);",
-                            "",
                             "arrayCombos.forEach(elf.loadComboBoxConfig);",
+                            "",
+                            "console.log('Acaba de Cargar los Combos');",
                             "",
                             "if(Ext.getCmp('formOportunidadVenta').operacionOportunidadVenta === 'crear'){",
                             "    var fechaActual = new Date();",
                             "    elf.writeElement('dtVisitaFecha',fechaActual);",
-                            "    ",
+                            "",
                             "    elf.writeElement('tfCantidadSolicitada','0');",
                             "    elf.writeElement('tfCantidadAtendida'  ,'0');",
                             "    elf.writeElement('tfCantidadSaldo'     ,'0');",
+                            "}",
+                            "",
+                            "console.log('Prepara Interfaz');",
+                            "",
+                            "if(pFuncionCarga !== undefined){",
+                            "    pFuncionCarga();",
                             "}",
                             ""
                         ]
                     },
                     "configAlternates": {
                         "fn": "string",
-                        "implHandler": "code"
+                        "implHandler": "code",
+                        "designer|params": "typedarray"
                     },
                     "name": "preparaInterfaz",
                     "designerId": "693e561d-abb0-4e4e-8dde-520465ed6887"
@@ -512,7 +516,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "disabled": true,
-                                                "disabledCls": "diaabledField",
+                                                "disabledCls": "disabledField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Número",
                                                 "id": "tfNumOportunidad",
                                                 "itemId": "tfNumOportunidad",
@@ -526,7 +531,8 @@
                                                 "layout|columnWidth": "auto",
                                                 "margin": "auto",
                                                 "disabled": "boolean",
-                                                "disabledCls": "string"
+                                                "disabledCls": "string",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField12",
                                             "designerId": "e5a04af1-ef54-4b95-921c-0633da1aebd5"
@@ -541,6 +547,7 @@
                                             "userConfig": {
                                                 "disabled": true,
                                                 "disabledCls": "disabledField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Situación",
                                                 "id": "tfSituacionOportunidad",
                                                 "itemId": "tfSituacionOportunidad",
@@ -554,7 +561,8 @@
                                                 "id": "string",
                                                 "itemId": "string",
                                                 "layout|columnWidth": "auto",
-                                                "margin": "auto"
+                                                "margin": "auto",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField11",
                                             "designerId": "710f172a-7313-44f1-a7d8-1c3a4c249955"
@@ -568,7 +576,9 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "allowBlank": false,
+                                                "disabledCls": "disabledField",
                                                 "editable": false,
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Fecha",
                                                 "id": "dtVisitaFecha",
                                                 "itemId": "dtVisitaFecha",
@@ -582,7 +592,9 @@
                                                 "itemId": "string",
                                                 "margin": "auto",
                                                 "allowBlank": "boolean",
-                                                "editable": "boolean"
+                                                "editable": "boolean",
+                                                "disabledCls": "string",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyDateField",
                                             "designerId": "9695113b-7451-41d5-8f6a-7a454c2781f0",
@@ -648,6 +660,7 @@
                                                 "allowBlank": false,
                                                 "disabled": true,
                                                 "disabledCls": "disabledField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Semana",
                                                 "id": "tfVisitaSemana",
                                                 "itemId": "tfVisitaSemana",
@@ -662,7 +675,8 @@
                                                 "layout|columnWidth": "auto",
                                                 "margin": "auto",
                                                 "allowBlank": "boolean",
-                                                "disabled": "boolean"
+                                                "disabled": "boolean",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField2",
                                             "designerId": "cca59cb2-98b7-457c-9000-83e27155cc68"
@@ -678,6 +692,7 @@
                                                 "allowBlank": false,
                                                 "disabled": true,
                                                 "disabledCls": "disabledField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Año",
                                                 "id": "tfVisitaAnn",
                                                 "itemId": "tfVisitaAnn",
@@ -692,7 +707,8 @@
                                                 "layout|columnWidth": "auto",
                                                 "margin": "auto",
                                                 "allowBlank": "boolean",
-                                                "disabled": "boolean"
+                                                "disabled": "boolean",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField1",
                                             "designerId": "8c25f89d-48fa-44e7-b034-781528386d64"
@@ -729,8 +745,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "disabledCls": "disabledField",
                                                 "displayField": "descripcion",
                                                 "editable": false,
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Tipo Solicitante",
                                                 "id": "cbxTipoSolicitante",
                                                 "itemId": "cbxTipoSolicitante",
@@ -750,7 +768,9 @@
                                                 "margin": "auto",
                                                 "queryMode": "string",
                                                 "store": "store",
-                                                "valueField": "datafield"
+                                                "valueField": "datafield",
+                                                "disabledCls": "string",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyComboBox3",
                                             "designerId": "93009ea1-07d3-41b6-bd5a-48193b68cb8d",
@@ -802,6 +822,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "allowBlank": false,
+                                                "disabledCls": "disabledField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Tipo Empresa",
                                                 "id": "tfTipoEmpresa",
                                                 "itemId": "tfTipoEmpresa",
@@ -819,7 +841,9 @@
                                                 "queryMode": "string",
                                                 "store": "store",
                                                 "valueField": "datafield",
-                                                "allowBlank": "boolean"
+                                                "allowBlank": "boolean",
+                                                "disabledCls": "string",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField13",
                                             "designerId": "85bb76fe-bead-4cf8-a8c4-372597656c91",
@@ -854,6 +878,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "disabledCls": "disabledField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Cliente",
                                                 "hidden": true,
                                                 "id": "tfCodigoCliente",
@@ -867,7 +893,9 @@
                                                 "itemId": "string",
                                                 "layout|columnWidth": "auto",
                                                 "margin": "auto",
-                                                "hidden": "boolean"
+                                                "hidden": "boolean",
+                                                "disabledCls": "string",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField",
                                             "designerId": "0901ec28-002d-4341-b02e-d905a2d7d6db"
@@ -942,6 +970,7 @@
                                                 "allowBlank": false,
                                                 "disabled": true,
                                                 "disabledCls": "disabledField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Razón Social",
                                                 "id": "tfRazonSocial",
                                                 "itemId": "tfRazonSocial",
@@ -956,7 +985,8 @@
                                                 "itemId": "string",
                                                 "layout|columnWidth": "auto",
                                                 "margin": "auto",
-                                                "allowBlank": "boolean"
+                                                "allowBlank": "boolean",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField3",
                                             "designerId": "c963645c-ddc9-4d50-bc3c-683e70a5c5cd"
@@ -1349,8 +1379,11 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "autoLoadOnValue": true,
                                                 "displayField": "nombre",
+                                                "editable": false,
                                                 "fieldLabel": "Gerente Regional",
+                                                "forceSelection": true,
                                                 "id": "cbxCodigoGerenteRegional",
                                                 "itemId": "cbxCodigoGerenteRegional",
                                                 "layout|columnWidth": 1,
@@ -1368,7 +1401,10 @@
                                                 "margin": "auto",
                                                 "queryMode": "string",
                                                 "store": "store",
-                                                "valueField": "datafield"
+                                                "valueField": "datafield",
+                                                "autoLoadOnValue": "boolean",
+                                                "editable": "boolean",
+                                                "forceSelection": "boolean"
                                             },
                                             "name": "MyComboBox",
                                             "designerId": "c32ff8f1-ca5f-46eb-8b3d-0c63ef394c77"
@@ -1384,6 +1420,7 @@
                                                 "displayField": "nombre",
                                                 "editable": false,
                                                 "fieldLabel": "Vendedor",
+                                                "forceSelection": true,
                                                 "id": "cbxCodigoVendedor",
                                                 "itemId": "cbxCodigoVendedor",
                                                 "layout|columnWidth": 1,
@@ -1402,7 +1439,8 @@
                                                 "margin": "auto",
                                                 "queryMode": "string",
                                                 "store": "store",
-                                                "valueField": "datafield"
+                                                "valueField": "datafield",
+                                                "forceSelection": "boolean"
                                             },
                                             "name": "MyComboBox1",
                                             "designerId": "90488c29-ef2d-4882-8d0f-9cc180c13e4c"
@@ -1418,6 +1456,7 @@
                                                 "displayField": "descripcion",
                                                 "editable": false,
                                                 "fieldLabel": "Consecionario",
+                                                "forceSelection": true,
                                                 "id": "cbxCodigoConsecionario",
                                                 "itemId": "cbxCodigoConsecionario",
                                                 "layout|columnWidth": 1,
@@ -1436,7 +1475,8 @@
                                                 "margin": "auto",
                                                 "queryMode": "string",
                                                 "store": "store",
-                                                "valueField": "datafield"
+                                                "valueField": "datafield",
+                                                "forceSelection": "boolean"
                                             },
                                             "name": "MyComboBox2",
                                             "designerId": "38036d4a-93d7-4cbd-ad78-f1bf75722178"
@@ -1474,6 +1514,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "allowBlank": false,
+                                                "disabledCls": "keyField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Nombre",
                                                 "id": "tfContactoNombre",
                                                 "itemId": "tfContactoNombre",
@@ -1486,7 +1528,9 @@
                                                 "itemId": "string",
                                                 "layout|columnWidth": "auto",
                                                 "margin": "auto",
-                                                "allowBlank": "boolean"
+                                                "allowBlank": "boolean",
+                                                "disabledCls": "string",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField5",
                                             "designerId": "f51e3ee4-92f4-4421-bd9f-00f7b139f813"
@@ -1500,6 +1544,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "allowBlank": false,
+                                                "disabledCls": "keyField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Cargo",
                                                 "id": "tfContactoCargo",
                                                 "itemId": "tfContactoCargo",
@@ -1512,7 +1558,9 @@
                                                 "itemId": "string",
                                                 "layout|columnWidth": "auto",
                                                 "margin": "auto",
-                                                "allowBlank": "boolean"
+                                                "allowBlank": "boolean",
+                                                "disabledCls": "string",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField6",
                                             "designerId": "6cad8afc-88b6-4a26-9a09-0fc0b678a6d2"
@@ -1525,6 +1573,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "disabledCls": "keyField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Teléfono",
                                                 "id": "tfContactoTelefono",
                                                 "itemId": "tfContactoTelefono",
@@ -1536,7 +1586,9 @@
                                                 "id": "string",
                                                 "itemId": "string",
                                                 "layout|columnWidth": "auto",
-                                                "margin": "auto"
+                                                "margin": "auto",
+                                                "disabledCls": "string",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField7",
                                             "designerId": "989505c8-2dc8-4b9f-8766-c8a402a2e05e"
@@ -1550,6 +1602,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "allowBlank": false,
+                                                "disabledCls": "keyField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Móvil",
                                                 "id": "tfContactoMovil",
                                                 "itemId": "tfContactoMovil",
@@ -1562,7 +1616,9 @@
                                                 "itemId": "string",
                                                 "layout|columnWidth": "auto",
                                                 "margin": "auto",
-                                                "allowBlank": "boolean"
+                                                "allowBlank": "boolean",
+                                                "disabledCls": "string",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField8",
                                             "designerId": "0c0ba598-2acc-49c9-b4ea-fdee4c3f8a04"
@@ -1576,6 +1632,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "allowBlank": false,
+                                                "disabledCls": "keyField",
+                                                "fieldCls": "keyField",
                                                 "fieldLabel": "Correo",
                                                 "id": "tfContactoEmail",
                                                 "itemId": "tfContactoEmail",
@@ -1588,7 +1646,9 @@
                                                 "itemId": "string",
                                                 "layout|columnWidth": "auto",
                                                 "margin": "auto",
-                                                "allowBlank": "boolean"
+                                                "allowBlank": "boolean",
+                                                "disabledCls": "string",
+                                                "fieldCls": "string"
                                             },
                                             "name": "MyTextField9",
                                             "designerId": "7ea62353-600d-4ff1-a736-26a73e85ca4a"
@@ -1618,7 +1678,7 @@
                                     "designerId": "507ee7b4-06aa-4900-b80e-e87cf727d5cd",
                                     "cn": [
                                         {
-                                            "type": "Ext.form.field.ComboBox",
+                                            "type": "Ext.form.field.Text",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -1627,10 +1687,10 @@
                                             "userConfig": {
                                                 "editable": false,
                                                 "fieldLabel": "País",
-                                                "id": "cbxSolicitudPais",
-                                                "itemId": "cbxSolicitudPais",
-                                                "layout|columnWidth": 1,
-                                                "margin": "0 3 3 0"
+                                                "id": "tfSolicitudPais",
+                                                "itemId": "tfSolicitudPais",
+                                                "layout|columnWidth": 0.94,
+                                                "margin": "0 0 3 0"
                                             },
                                             "configAlternates": {
                                                 "fieldLabel": "string",
@@ -1640,8 +1700,40 @@
                                                 "margin": "auto",
                                                 "editable": "boolean"
                                             },
-                                            "name": "MyComboBox7",
-                                            "designerId": "62a07ab2-b671-4d78-b149-b15e48d08d68",
+                                            "name": "MyTextField16",
+                                            "designerId": "62a07ab2-b671-4d78-b149-b15e48d08d68"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                                "id": "btnZoomPais",
+                                                "itemId": "btnZoomPais",
+                                                "layout|columnWidth": 0.03,
+                                                "margin": "0 00 0 0",
+                                                "minWidth": 27,
+                                                "textAlign": "left",
+                                                "width": 27
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "minWidth": "number",
+                                                "textAlign": "string",
+                                                "width": "auto"
+                                            },
+                                            "name": "MyButton",
+                                            "designerId": "e2c65c5e-ff03-482d-b43f-b626a18d412e",
                                             "cn": [
                                                 {
                                                     "type": "basiceventbinding",
@@ -1651,25 +1743,43 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "onCbxSolicitudPaisChange",
+                                                        "fn": "onBtnZoomPaisClick",
                                                         "implHandler": [
-                                                            "var funcionCarga = function(){",
-                                                            "    console.warn('Funcion de Carga');",
-                                                            "    var arrayCombos = new Array();",
-                                                            "    var objConfig   = new Object();",
-                                                            "    objConfig.idComboBox    = 'cbxSolicitudEstado';",
-                                                            "    objConfig.idDataBridge  = 'datosLocalizacion';",
-                                                            "    objConfig.id            = 'opcionesEstado';",
-                                                            "    objConfig.fieldValue    = 'cod_estado';",
-                                                            "    objConfig.fieldDisplay  = 'estado';",
-                                                            "    arrayCombos.push(objConfig);",
+                                                            "elf.openWindow('winZoomGenerico');",
+                                                            "Ext.getCmp('winZoomGenerico').setTitle('Seleccione un Pais');",
                                                             "",
-                                                            "    arrayCombos.forEach(elf.loadComboBoxConfig);",
+                                                            "var funcionSeleccionaRegistro = function(){",
+                                                            "    registroActivo = Ext.getCmp('gridZoomGenerico').recordActivo;",
+                                                            "    elf.writeElement('tfSolicitudPais'      ,registroActivo.descripcion);",
+                                                            "    elf.closeWindow('winZoomGenerico');",
                                                             "};",
                                                             "",
-                                                            "Ext.getCmp('formOportunidadVenta').obtieneLocalizacion('estado',funcionCarga);"
+                                                            "var funcionCarga = function(){",
+                                                            "    var storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                                            "    var proxyZoomGenerico = storeZoomGenerico.getProxy();",
+                                                            "",
+                                                            "    var objJsonData = new Object();",
+                                                            "    objJsonData.page  = storeZoomGenerico.currentPage;",
+                                                            "    objJsonData.start = (storeZoomGenerico.currentPage - 1) * storeZoomGenerico.pageSize;",
+                                                            "    objJsonData.limit = storeZoomGenerico.pageSize;",
+                                                            "    objJsonData.filtroEstado = 'ACTIVO';",
+                                                            "",
+                                                            "    var objJsonRequest = new Object();",
+                                                            "    objJsonRequest.apiController = 'sysApiLocalizacion';",
+                                                            "    objJsonRequest.apiMethod     = 'zoomPais';",
+                                                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                                            "",
+                                                            "    proxyZoomGenerico.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                                                            "    proxyZoomGenerico.extraParams = objJsonRequest;",
+                                                            "",
+                                                            "};",
+                                                            "",
+                                                            "storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                                            "storeZoomGenerico.funcionCarga              = funcionCarga;",
+                                                            "storeZoomGenerico.funcionSeleccionaRegistro = funcionSeleccionaRegistro;",
+                                                            "storeZoomGenerico.load();"
                                                         ],
-                                                        "name": "change",
+                                                        "name": "click",
                                                         "scope": "me"
                                                     },
                                                     "configAlternates": {
@@ -1678,13 +1788,13 @@
                                                         "name": "string",
                                                         "scope": "string"
                                                     },
-                                                    "name": "onCbxSolicitudPaisChange",
-                                                    "designerId": "34e80622-8483-4b9d-9531-db670a508bf6"
+                                                    "name": "onBtnZoomPaisClick",
+                                                    "designerId": "ba072332-3b09-45d4-8e42-ecfbfae4456a"
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.ComboBox",
+                                            "type": "Ext.form.field.Text",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -1693,9 +1803,9 @@
                                             "userConfig": {
                                                 "editable": false,
                                                 "fieldLabel": "Estado",
-                                                "id": "cbxSolicitudEstado",
-                                                "itemId": "cbxSolicitudEstado",
-                                                "layout|columnWidth": 1,
+                                                "id": "tfSolicitudEstado",
+                                                "itemId": "tfSolicitudEstado",
+                                                "layout|columnWidth": 0.94,
                                                 "margin": "0 3 3 0"
                                             },
                                             "configAlternates": {
@@ -1706,8 +1816,40 @@
                                                 "margin": "auto",
                                                 "editable": "boolean"
                                             },
-                                            "name": "MyComboBox8",
-                                            "designerId": "6066cf51-9315-48b6-8872-4272f214338f",
+                                            "name": "MyTextField17",
+                                            "designerId": "6066cf51-9315-48b6-8872-4272f214338f"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                                "id": "btnZoomEstado",
+                                                "itemId": "btnZoomEstado",
+                                                "layout|columnWidth": 0.03,
+                                                "margin": "0 00 0 0",
+                                                "minWidth": 27,
+                                                "textAlign": "left",
+                                                "width": 27
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "minWidth": "number",
+                                                "textAlign": "string",
+                                                "width": "auto"
+                                            },
+                                            "name": "MyButton1",
+                                            "designerId": "aa098f9f-56fb-4013-aa17-718fcf554a53",
                                             "cn": [
                                                 {
                                                     "type": "basiceventbinding",
@@ -1717,25 +1859,49 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "onCbxSolicitudEstadoChange",
+                                                        "fn": "onBtnZoomEstadoClick",
                                                         "implHandler": [
-                                                            "var funcionCarga = function(){",
-                                                            "    console.warn('Funcion de Carga');",
-                                                            "    var arrayCombos = new Array();",
-                                                            "    var objConfig   = new Object();",
-                                                            "    objConfig.idComboBox    = 'cbxSolicitudMunicipio';",
-                                                            "    objConfig.idDataBridge  = 'datosLocalizacion';",
-                                                            "    objConfig.id            = 'opcionesMunicipio';",
-                                                            "    objConfig.fieldValue    = 'cod_municipio';",
-                                                            "    objConfig.fieldDisplay  = 'municipio';",
-                                                            "    arrayCombos.push(objConfig);",
+                                                            "elf.openWindow('winZoomGenerico');",
+                                                            "Ext.getCmp('winZoomGenerico').setTitle('Seleccione un Estado');",
                                                             "",
-                                                            "    arrayCombos.forEach(elf.loadComboBoxConfig);",
+                                                            "var funcionSeleccionaRegistro = function(){",
+                                                            "    registroActivo = Ext.getCmp('gridZoomGenerico').recordActivo;",
+                                                            "    elf.writeElement('tfSolicitudEstado'      ,registroActivo.descripcion);",
+                                                            "    elf.writeElement('tfSolicitudMunicipio'   ,'');",
+                                                            "    elf.writeElement('tfSolicitudCiudad'     ,'');",
+                                                            "    elf.closeWindow('winZoomGenerico');",
                                                             "};",
                                                             "",
-                                                            "Ext.getCmp('formOportunidadVenta').obtieneLocalizacion('municipio',funcionCarga);"
+                                                            "var funcionCarga = function(){",
+                                                            "    console.log('funcion de carga');",
+                                                            "",
+                                                            "    var storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                                            "    var proxyZoomGenerico = storeZoomGenerico.getProxy();",
+                                                            "",
+                                                            "    var objJsonData = new Object();",
+                                                            "    objJsonData.page  = storeZoomGenerico.currentPage;",
+                                                            "    objJsonData.start = (storeZoomGenerico.currentPage - 1) * storeZoomGenerico.pageSize;",
+                                                            "    objJsonData.limit = storeZoomGenerico.pageSize;",
+                                                            "    objJsonData.filtroEstado = 'ACTIVO';",
+                                                            "    objJsonData.pais = elf.readElement('tfSolicitudPais');",
+                                                            "",
+                                                            "    var objJsonRequest = new Object();",
+                                                            "    objJsonRequest.apiController = 'sysApiLocalizacion';",
+                                                            "    objJsonRequest.apiMethod     = 'zoomEstado';",
+                                                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                                            "",
+                                                            "    proxyZoomGenerico.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                                                            "    proxyZoomGenerico.extraParams = objJsonRequest;",
+                                                            "",
+                                                            "};",
+                                                            "",
+                                                            "storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                                            "storeZoomGenerico.funcionCarga              = funcionCarga;",
+                                                            "storeZoomGenerico.funcionSeleccionaRegistro = funcionSeleccionaRegistro;",
+                                                            "storeZoomGenerico.load();",
+                                                            ""
                                                         ],
-                                                        "name": "change",
+                                                        "name": "click",
                                                         "scope": "me"
                                                     },
                                                     "configAlternates": {
@@ -1744,13 +1910,13 @@
                                                         "name": "string",
                                                         "scope": "string"
                                                     },
-                                                    "name": "onCbxSolicitudEstadoChange",
-                                                    "designerId": "9e5cf858-6dbd-4666-80fc-f9ec047b7ba7"
+                                                    "name": "onBtnZoomEstadoClick",
+                                                    "designerId": "0670d39a-4e47-4667-925a-3a233b71902c"
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.ComboBox",
+                                            "type": "Ext.form.field.Text",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -1759,9 +1925,9 @@
                                             "userConfig": {
                                                 "editable": false,
                                                 "fieldLabel": "Municipio",
-                                                "id": "cbxSolicitudMunicipio",
-                                                "itemId": "cbxSolicitudMunicipio",
-                                                "layout|columnWidth": 1,
+                                                "id": "tfSolicitudMunicipio",
+                                                "itemId": "tfSolicitudMunicipio",
+                                                "layout|columnWidth": 0.94,
                                                 "margin": "0 3 3 0"
                                             },
                                             "configAlternates": {
@@ -1772,8 +1938,40 @@
                                                 "margin": "auto",
                                                 "editable": "boolean"
                                             },
-                                            "name": "MyComboBox9",
-                                            "designerId": "c351a45a-9739-4841-a081-7aad17d68d4e",
+                                            "name": "MyTextField18",
+                                            "designerId": "c351a45a-9739-4841-a081-7aad17d68d4e"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                                "id": "btnZoomMunicipio",
+                                                "itemId": "btnZoomMunicipio",
+                                                "layout|columnWidth": 0.03,
+                                                "margin": "0 00 0 0",
+                                                "minWidth": 27,
+                                                "textAlign": "left",
+                                                "width": 27
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "minWidth": "number",
+                                                "textAlign": "string",
+                                                "width": "auto"
+                                            },
+                                            "name": "MyButton2",
+                                            "designerId": "bf9d00ca-a914-4e3c-9557-0998b535af61",
                                             "cn": [
                                                 {
                                                     "type": "basiceventbinding",
@@ -1783,25 +1981,47 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "onCbxSolicitudMunicipioChange",
+                                                        "fn": "onBtnZoomMunicipioClick",
                                                         "implHandler": [
-                                                            "var funcionCarga = function(){",
-                                                            "    console.warn('Funcion de Carga');",
-                                                            "    var arrayCombos = new Array();",
-                                                            "    var objConfig   = new Object();",
-                                                            "    objConfig.idComboBox    = 'cbxSolicitudColonia';",
-                                                            "    objConfig.idDataBridge  = 'datosLocalizacion';",
-                                                            "    objConfig.id            = 'opcionesCiudad';",
-                                                            "    objConfig.fieldValue    = 'asentamiento';",
-                                                            "    objConfig.fieldDisplay  = 'asentamiento';",
-                                                            "    arrayCombos.push(objConfig);",
+                                                            "elf.openWindow('winZoomGenerico');",
+                                                            "Ext.getCmp('winZoomGenerico').setTitle('Seleccione un Estado');",
                                                             "",
-                                                            "    arrayCombos.forEach(elf.loadComboBoxConfig);",
+                                                            "var funcionSeleccionaRegistro = function(){",
+                                                            "    registroActivo = Ext.getCmp('gridZoomGenerico').recordActivo;",
+                                                            "    elf.writeElement('tfSolicitudMunicipio'      ,registroActivo.descripcion);",
+                                                            "    elf.closeWindow('winZoomGenerico');",
                                                             "};",
                                                             "",
-                                                            "Ext.getCmp('formOportunidadVenta').obtieneLocalizacion('ciudad',funcionCarga);"
+                                                            "var funcionCarga = function(){",
+                                                            "    console.log('funcion de carga');",
+                                                            "",
+                                                            "    var storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                                            "    var proxyZoomGenerico = storeZoomGenerico.getProxy();",
+                                                            "",
+                                                            "    var objJsonData = new Object();",
+                                                            "    objJsonData.page  = storeZoomGenerico.currentPage;",
+                                                            "    objJsonData.start = (storeZoomGenerico.currentPage - 1) * storeZoomGenerico.pageSize;",
+                                                            "    objJsonData.limit = storeZoomGenerico.pageSize;",
+                                                            "    objJsonData.filtroEstado = 'ACTIVO';",
+                                                            "    objJsonData.pais         = elf.readElement('tfSolicitudPais');",
+                                                            "    objJsonData.estado       = elf.readElement('tfSolicitudEstado');",
+                                                            "",
+                                                            "    var objJsonRequest = new Object();",
+                                                            "    objJsonRequest.apiController = 'sysApiLocalizacion';",
+                                                            "    objJsonRequest.apiMethod     = 'zoomMunicipio';",
+                                                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                                            "",
+                                                            "    proxyZoomGenerico.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                                                            "    proxyZoomGenerico.extraParams = objJsonRequest;",
+                                                            "",
+                                                            "};",
+                                                            "",
+                                                            "storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                                            "storeZoomGenerico.funcionCarga              = funcionCarga;",
+                                                            "storeZoomGenerico.funcionSeleccionaRegistro = funcionSeleccionaRegistro;",
+                                                            "storeZoomGenerico.load();"
                                                         ],
-                                                        "name": "change",
+                                                        "name": "click",
                                                         "scope": "me"
                                                     },
                                                     "configAlternates": {
@@ -1810,13 +2030,13 @@
                                                         "name": "string",
                                                         "scope": "string"
                                                     },
-                                                    "name": "onCbxSolicitudMunicipioChange",
-                                                    "designerId": "39fb30c1-8d3f-4bdd-85a1-ffed5509c731"
+                                                    "name": "onBtnZoomMunicipioClick",
+                                                    "designerId": "f74b90a6-545c-41e0-9ea1-af568c73bb6f"
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "Ext.form.field.ComboBox",
+                                            "type": "Ext.form.field.Text",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
@@ -1825,9 +2045,9 @@
                                             "userConfig": {
                                                 "editable": false,
                                                 "fieldLabel": "Colonia",
-                                                "id": "cbxSolicitudColonia",
-                                                "itemId": "cbxSolicitudColonia",
-                                                "layout|columnWidth": 1,
+                                                "id": "tfSolicitudCiudad",
+                                                "itemId": "tfSolicitudCiudad",
+                                                "layout|columnWidth": 0.94,
                                                 "margin": "0 3 3 0"
                                             },
                                             "configAlternates": {
@@ -1838,8 +2058,103 @@
                                                 "margin": "auto",
                                                 "editable": "boolean"
                                             },
-                                            "name": "MyComboBox10",
+                                            "name": "MyTextField19",
                                             "designerId": "47b29966-695b-442f-b905-b87e9b500309"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": "botonZoom",
+                                                "iconCls": "fa fa-search icon16 iconColorWhite",
+                                                "id": "btnZoomColonia",
+                                                "itemId": "btnZoomColonia",
+                                                "layout|columnWidth": 0.03,
+                                                "margin": "0 00 0 0",
+                                                "minWidth": 27,
+                                                "textAlign": "left",
+                                                "width": 27
+                                            },
+                                            "configAlternates": {
+                                                "cls": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "itemId": "string",
+                                                "layout|columnWidth": "auto",
+                                                "margin": "auto",
+                                                "minWidth": "number",
+                                                "textAlign": "string",
+                                                "width": "auto"
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "b9a9548c-3d75-43dd-beee-f84719910dd9",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnZoomCiudadClick",
+                                                        "implHandler": [
+                                                            "elf.openWindow('winZoomGenerico');",
+                                                            "Ext.getCmp('winZoomGenerico').setTitle('Seleccione un Estado');",
+                                                            "",
+                                                            "var funcionSeleccionaRegistro = function(){",
+                                                            "    registroActivo = Ext.getCmp('gridZoomGenerico').recordActivo;",
+                                                            "    elf.writeElement('tfSolicitudCiudad'      ,registroActivo.descripcion);",
+                                                            "    elf.closeWindow('winZoomGenerico');",
+                                                            "};",
+                                                            "",
+                                                            "var funcionCarga = function(){",
+                                                            "    console.log('funcion de carga');",
+                                                            "",
+                                                            "    var storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                                            "    var proxyZoomGenerico = storeZoomGenerico.getProxy();",
+                                                            "",
+                                                            "    var objJsonData = new Object();",
+                                                            "    objJsonData.page  = storeZoomGenerico.currentPage;",
+                                                            "    objJsonData.start = (storeZoomGenerico.currentPage - 1) * storeZoomGenerico.pageSize;",
+                                                            "    objJsonData.limit = storeZoomGenerico.pageSize;",
+                                                            "    objJsonData.filtroEstado = 'ACTIVO';",
+                                                            "    objJsonData.pais         = elf.readElement('tfSolicitudPais');",
+                                                            "    objJsonData.estado       = elf.readElement('tfSolicitudEstado');",
+                                                            "    objJsonData.municipio    = elf.readElement('tfSolicitudMunicipio');",
+                                                            "",
+                                                            "    var objJsonRequest = new Object();",
+                                                            "    objJsonRequest.apiController = 'sysApiLocalizacion';",
+                                                            "    objJsonRequest.apiMethod     = 'zoomColonia';",
+                                                            "    objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                                            "",
+                                                            "    proxyZoomGenerico.api.read    = elf.setApiDataBridge(objJsonRequest.apiController);",
+                                                            "    proxyZoomGenerico.extraParams = objJsonRequest;",
+                                                            "",
+                                                            "};",
+                                                            "",
+                                                            "storeZoomGenerico = Ext.getStore('storeZoomGenerico');",
+                                                            "storeZoomGenerico.funcionCarga              = funcionCarga;",
+                                                            "storeZoomGenerico.funcionSeleccionaRegistro = funcionSeleccionaRegistro;",
+                                                            "storeZoomGenerico.load();"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnZoomCiudadClick",
+                                                    "designerId": "6910b374-e331-48e5-8371-79e3b232cb6f"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.form.field.Text",

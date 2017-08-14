@@ -9,18 +9,29 @@
         "models": [
             "modelCliente",
             "modelEstadoCliente",
-            "modelGridEstadoCliente"
+            "modelGridEstadoCliente",
+            "modelDirPais",
+            "modelDirEstado",
+            "modelDirMunicipio",
+            "modelDirColonia",
+            "modelZoomGenerico"
         ],
         "name": "hwtCatCliente",
         "stores": [
             "storeCliente",
             "storeEstadoCliente",
-            "storeGridEstadoCliente"
+            "storeGridEstadoCliente",
+            "storeDirPais",
+            "storeDirEstado",
+            "storeDirMunicipio",
+            "storeDirColonia",
+            "storeZoomGenerico"
         ],
         "views": [
             "formAplicacion",
             "winCliente",
-            "winParametrosBusqueda"
+            "winParametrosBusqueda",
+            "winZoomGenerico"
         ]
     },
     "configAlternates": {

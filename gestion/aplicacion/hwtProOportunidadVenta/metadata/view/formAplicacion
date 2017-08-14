@@ -71,8 +71,8 @@
                     "",
                     "    arrayCombos.push(objConfig);",
                     "    arrayCombos.forEach(elf.loadComboBoxConfig);",
-                    "    ",
-                    "    elf.refreshGrid('gridOportunidadVenta');    ",
+                    "",
+                    "    elf.refreshGrid('gridOportunidadVenta');",
                     "};",
                     "",
                     "var functionFailure = function(){",
@@ -93,6 +93,82 @@
             },
             "name": "extraeOpcionesOportunidad",
             "designerId": "a6c11f64-6742-4582-ab15-6df1d19f5e20"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "pEstado"
+                ],
+                "fn": "presentaRegistro",
+                "implHandler": [
+                    "registroActivo = Ext.getCmp('gridOportunidadVenta').recordActivo;",
+                    "",
+                    "var apiController = 'apiOportunidadVenta';",
+                    "var apiMethod     = 'datosOportunidadVenta';",
+                    "var objJsonData   = new Object();",
+                    "objJsonData.numOportunidadVenta = registroActivo.num_oportunidad;",
+                    "",
+                    "var objJsonRequest = new Object();",
+                    "objJsonRequest.apiController = apiController;",
+                    "objJsonRequest.apiMethod     = apiMethod;",
+                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                    "",
+                    "var functionSuccess = function(){",
+                    "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                    "",
+                    "    var pModo = '';",
+                    "    if(pEstado === 'editar'){",
+                    "        pModo = 'edit';",
+                    "    }",
+                    "",
+                    "    elf.openWindow('winOportunidadVenta');",
+                    "    /*",
+                    "    var arrayCombos = new Array();",
+                    "    arrayCombos.push('EstadoOportunidadVenta');",
+                    "    arrayCombos.forEach(Ext.getCmp('formAplicacion').cargaCombo);",
+                    "    */",
+                    "",
+                    "    //ECRC: Función que se ejecuta después de que se carguen las Opciones",
+                    "    var funcionCarga = function(){",
+                    "        Ext.getCmp('formOportunidadVenta').operacionOportunidadVenta = 'edicion';",
+                    "        Ext.getCmp('formOportunidadVenta').estadoRegistro = 'edicion';",
+                    "        var jsonData = elf.getInfoDataBridge('datosOportunidadVenta');",
+                    "",
+                    "        elf.showRecord(jsonData,'hwtOportunidadVenta','edit');",
+                    "    };",
+                    "",
+                    "    Ext.getCmp('formOportunidadVenta').preparaInterfaz(funcionCarga);",
+                    "",
+                    "    //ECRC: Después de que cargue las Opciones desplegará el Registro",
+                    "    //Ext.getCmp('formAplicacion').cargaOpciones(funcionCarga);",
+                    "};",
+                    "",
+                    "var functionFailure = function(){",
+                    "    var jsonData = elf.getInfoDataBridge(apiMethod);",
+                    "    elf.showInfo(jsonData,",
+                    "                 'error');",
+                    "};",
+                    "",
+                    "elf.doDataBridge(objJsonRequest,",
+                    "                 functionSuccess,",
+                    "                 null,",
+                    "                 functionFailure,",
+                    "                 null);"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "presentaRegistro",
+            "designerId": "d66cc224-2792-4104-85af-d15e609c279a"
         },
         {
             "type": "Ext.toolbar.Toolbar",
@@ -471,13 +547,45 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fn": "onButtonClickReporte",
+                                "implHandler": [
+                                    "var apiController = 'apiOportunidadVenta';",
+                                    "var apiMethod     = 'reporteOportunidadVenta';",
+                                    "var objJsonData   = new Object();",
+                                    "objJsonData.tipoEjecucion  = 'REPORTE';",
+                                    "",
+                                    "var objJsonRequest = new Object();",
+                                    "objJsonRequest.apiController = apiController;",
+                                    "objJsonRequest.apiMethod     = apiMethod;",
+                                    "objJsonRequest.apiData       = JSON.stringify(objJsonData);",
+                                    "",
+                                    "",
+                                    "var functionSuccess = function(){",
+                                    "    var jsonData = elf.getInfoDataBridge('reporteOportunidadVenta');",
+                                    "",
+                                    "    var archivoGenerado = elf.getGeneratedFile(jsonData.archivoGenerado.nombre);",
+                                    "    window.open(archivoGenerado);",
+                                    "};",
+                                    "",
+                                    "var functionFailure = function(){",
+                                    "    var jsonData = elf.getInfoDataBridge('reporteOportunidadVenta');",
+                                    "    elf.showInfo(jsonData,'error');",
+                                    "};",
+                                    "",
+                                    "",
+                                    "elf.doDataBridge(objJsonRequest,",
+                                    "                 functionSuccess,",
+                                    "                 null,",
+                                    "                 functionFailure,",
+                                    "                 null);"
+                                ],
                                 "name": "click",
                                 "scope": "me"
                             },
                             "configAlternates": {
                                 "fn": "string",
                                 "name": "string",
-                                "scope": "string"
+                                "scope": "string",
+                                "implHandler": "code"
                             },
                             "name": "onButtonClickReporte",
                             "designerId": "3c5160bf-3c71-4c3f-aa8a-ddc13db983e1"
@@ -579,10 +687,18 @@
                 "itemId": "string",
                 "reference": "string",
                 "store": "store",
-                "title": "string"
+                "title": "string",
+                "recordActivo": "object"
             },
             "name": "MyGridPanel",
             "designerId": "2bb10523-6249-476f-abf1-14ceec2213a9",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "recordActivo",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.view.Table",
@@ -680,16 +796,20 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "cls": "botonZoomToolbar",
+                                "iconCls": "fa fa-retweet icon16 iconColorDarkBlue",
                                 "id": "btnLimpiaBusqueda",
                                 "itemId": "btnLimpiaBusqueda",
                                 "layout|flex": null,
-                                "text": "MyButton"
+                                "text": "Limpiar Busqueda"
                             },
                             "configAlternates": {
                                 "id": "string",
                                 "itemId": "string",
                                 "layout|flex": "number",
-                                "text": "string"
+                                "text": "string",
+                                "cls": "string",
+                                "iconCls": "string"
                             },
                             "name": "MyButton10",
                             "designerId": "bb3800bf-ce54-4faa-acad-507b97f42f0d",
@@ -703,13 +823,17 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "fn": "onBtnLimpiaBusquedaClick",
+                                        "implHandler": [
+                                            "elf.refreshGrid('gridOportunidadVenta');"
+                                        ],
                                         "name": "click",
                                         "scope": "me"
                                     },
                                     "configAlternates": {
                                         "fn": "string",
                                         "name": "string",
-                                        "scope": "string"
+                                        "scope": "string",
+                                        "implHandler": "code"
                                     },
                                     "name": "onBtnLimpiaBusquedaClick",
                                     "designerId": "9e382085-1c10-4bc5-8002-6a83547cc8ff"
@@ -828,7 +952,7 @@
                     "userConfig": {
                         "dataIndex": "tipo_empresa",
                         "text": "Tipo</br>Empresa",
-                        "width": 120
+                        "width": 150
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
@@ -922,12 +1046,14 @@
                             "userConfig": {
                                 "align": "right",
                                 "dataIndex": "cantidad_solicitada",
-                                "text": "Solicitadas"
+                                "text": "Solicitadas",
+                                "width": 80
                             },
                             "configAlternates": {
                                 "dataIndex": "datafield",
                                 "text": "string",
-                                "align": "string"
+                                "align": "string",
+                                "width": "auto"
                             },
                             "name": "MyColumn15",
                             "designerId": "5013a46b-7362-4659-bd80-3894de883161"
@@ -942,12 +1068,14 @@
                             "userConfig": {
                                 "align": "right",
                                 "dataIndex": "cantidad_atendida",
-                                "text": "Atendidas"
+                                "text": "Atendidas",
+                                "width": 80
                             },
                             "configAlternates": {
                                 "dataIndex": "datafield",
                                 "text": "string",
-                                "align": "string"
+                                "align": "string",
+                                "width": "auto"
                             },
                             "name": "MyColumn24",
                             "designerId": "56ce2bf8-97d2-4dc0-bcdf-bb2c31620a51"
@@ -962,12 +1090,14 @@
                             "userConfig": {
                                 "align": "right",
                                 "dataIndex": "cantidad_saldo",
-                                "text": "Saldo"
+                                "text": "Saldo",
+                                "width": 80
                             },
                             "configAlternates": {
                                 "dataIndex": "datafield",
                                 "text": "string",
-                                "align": "string"
+                                "align": "string",
+                                "width": "auto"
                             },
                             "name": "MyColumn25",
                             "designerId": "596d9af0-8ff0-469f-a1cd-44229079ab53"
@@ -1034,7 +1164,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "dataIndex": "solicitud_estado_descripcion",
+                                "dataIndex": "solicitud_estado",
                                 "text": "Estado",
                                 "width": 120
                             },
@@ -1054,7 +1184,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "dataIndex": "solicitud_municipio_descripcion",
+                                "dataIndex": "solicitud_municipio",
                                 "text": "Municipio",
                                 "width": 120
                             },
@@ -1241,6 +1371,54 @@
                     },
                     "name": "MyColumn2",
                     "designerId": "9be117e8-01e0-4460-9252-59697f180038"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridOportunidadVentaItemClick",
+                        "implHandler": [
+                            "Ext.getCmp('gridOportunidadVenta').recordActivo = record.data;"
+                        ],
+                        "name": "itemclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridOportunidadVentaItemClick",
+                    "designerId": "0130b580-40d0-482e-ae15-a6f5e4d7bdcb"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridOportunidadVentaItemDblClick",
+                        "implHandler": [
+                            "Ext.getCmp('formAplicacion').presentaRegistro();"
+                        ],
+                        "name": "itemdblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridOportunidadVentaItemDblClick",
+                    "designerId": "de5b86e9-03c6-434f-be6c-25fc53240c7b"
                 }
             ]
         }

@@ -654,6 +654,27 @@ var elf = {
         return returnValue;
     },
 
+    prepareFormSearchFields: function (p_idForm) {
+
+        if (Ext.getCmp(p_idForm) === undefined) {
+            console.warn('elf::prepareFormSearchFields: Form was not found to retieve data');
+            return null;
+        }
+
+        objSearchFields = JSON.parse(elf.prepareFormFields('formBuscaOportunidad'));
+
+        var arraySearch = new Array();
+        for (let keyCampoBusca in objSearchFields) {
+
+            let objField = Ext.getCmp(keyCampoBusca);
+
+            if (objField !== undefined) {
+                arraySearch.push(keyCampoBusca);
+            }
+        }
+
+        return arraySearch;
+    },
     prepareFormFields: function (p_idForm, p_sufix) {
         var objJsonData = new Object();
         var formItems = Ext.getCmp(p_idForm).items;
@@ -865,26 +886,18 @@ var elf = {
         var formComponent = Ext.getCmp(p_idForm);
 
         if(formComponent === undefined){
-            console.warn('valueFormFields: Form was not found - ' + p_idForm);
+            console.warn('elf::valueFormFields: Form was not found - ' + p_idForm);
             return;
         }
 
-
-        console.log('tomando campos del formulario: ' + p_idForm);
-
         var formItems = formComponent.items;
         var formRadio = formComponent;
-
-        console.log('Numero de items: ' + formItems.keys.length);
 
         for (iLoop = 0; iLoop < formItems.keys.length; iLoop++) {
             var nameElement = formItems.keys[iLoop];
             var element = Ext.getCmp(formItems.keys[iLoop]);
 
-            console.log('elemento encontrado: ' + p_idForm + ' ' + nameElement);
-
             if(element === undefined){
-
                 if(p_sufix !== undefined){
                     nameElement = nameElement + p_sufix;
                     element = Ext.getCmp(nameElement);
@@ -1028,9 +1041,10 @@ var elf = {
                         elf.disableElement(fieldUpdated);
 
                         if (p_mode === 'edit') {
-                            elf.enableElement(fieldUpdated);
+                            if (fieldForm.fieldCls !== 'keyField') {
+                                elf.enableElement(fieldUpdated);
+                            }
                         }
-
                     }
                     catch (error) {
                         console.error(fieldUpdated + '(' + jsonObject[key] + ')' + ' >> ' + error.message);
@@ -1614,11 +1628,21 @@ var elf = {
                 case 'combobox':
                     if(p_valor.indexOf(',') !== 0){
                         var arrayValor = p_valor.split(',');
-                        elemento.setValue(arrayValor);
+                        p_valor = arrayValor;
+                        elemento.reset();
+                        //elemento.setValue(arrayValor);
                     }
                     else{
-                        elemento.setValue(p_valor);
+                        elemento.reset();
                     }
+
+                    elemento.setValue(p_valor);
+
+                    if (elf.readElement(p_elemento) === null) {
+                        let lcValue = String(p_valor).toLowerCase();
+                        elemento.setValue(lcValue);
+                    }
+
                     break;
                 default:
                     elemento.setValue(p_valor);
@@ -1732,7 +1756,7 @@ var elf = {
             case 'checkbox':
                 returnValue = Ext.getCmp(p_element).getValue().toString();
                 break;
-            case 'combo':
+            case 'combobox':
                 if(Array.isArray(Ext.getCmp(p_element).getValue())){
                     comboBoxValue = Ext.getCmp(p_element).getRawValue();
                     comboBoxValue = comboBoxValue.replace(/\s+/g, '');
@@ -1741,6 +1765,12 @@ var elf = {
                     comboBoxValue = Ext.getCmp(p_element).getValue();
                 }
 
+                if (Ext.getCmp(p_element).useRawValue !== undefined && Ext.getCmp(p_element).useRawValue) {
+                    comboBoxValue = Ext.getCmp(p_element).getRawValue();
+                }
+
+                console.warn('comboBoxValue: ' + p_element + ' > ' + comboBoxValue);
+                
                 returnValue = comboBoxValue;
                 break;
             default:

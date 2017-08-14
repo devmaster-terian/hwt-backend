@@ -19,6 +19,13 @@
     },
     "name": "MyStore",
     "designerId": "06bc0601-c042-4f54-9a7d-b41e2650c5a7",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "funcionCarga",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "basiceventbinding",

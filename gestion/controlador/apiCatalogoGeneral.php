@@ -177,10 +177,17 @@ function listaMunicipio($pCodPais, $pCodEstado)
 
     $tabla = 'sys_localizacion';
 
-    $objConsulta = new \stdClass();
-    $objConsulta->cod_pais = Dataworker::equalToString($pCodPais);
-    $objConsulta->cod_estado = Dataworker::equalToValue($pCodEstado);
-    $objConsulta->zona = Dataworker::compare('notEqualThan', 'string', 'Rural');
+    if (strlen($pCodEstado) <= 2) {
+        $objConsulta = new \stdClass();
+        $objConsulta->cod_pais = Dataworker::equalToString($pCodPais);
+        $objConsulta->cod_estado = Dataworker::equalToValue($pCodEstado);
+        $objConsulta->zona = Dataworker::compare('notEqualThan', 'string', 'Rural');
+    } else {
+        $objConsulta = new \stdClass();
+        $objConsulta->pais = Dataworker::equalToString($pCodPais);
+        $objConsulta->estado = Dataworker::equalToString($pCodEstado);
+        $objConsulta->zona = Dataworker::compare('notEqualThan', 'string', 'Rural');
+    }
 
     $arrayOrden = array();
     array_push($arrayOrden, 'municipio');
@@ -217,11 +224,20 @@ function listaCiudad($pCodPais, $pCodEstado, $codMunicipio)
 
     $tabla = 'sys_localizacion';
 
-    $objConsulta = new \stdClass();
-    $objConsulta->cod_pais = Dataworker::equalToString($pCodPais);
-    $objConsulta->cod_estado = Dataworker::equalToValue($pCodEstado);
-    $objConsulta->cod_municipio = Dataworker::equalToValue($codMunicipio);
-    $objConsulta->zona = Dataworker::compare('notEqualThan', 'string', 'Rural');
+
+    if (strlen($pCodEstado) <= 2) {
+        $objConsulta = new \stdClass();
+        $objConsulta->cod_pais = Dataworker::equalToString($pCodPais);
+        $objConsulta->cod_estado = Dataworker::equalToValue($pCodEstado);
+        $objConsulta->cod_municipio = Dataworker::equalToValue($codMunicipio);
+        $objConsulta->zona = Dataworker::compare('notEqualThan', 'string', 'Rural');
+    } else {
+        $objConsulta = new \stdClass();
+        $objConsulta->pais = Dataworker::equalToString($pCodPais);
+        $objConsulta->estado = Dataworker::equalToString($pCodEstado);
+        $objConsulta->municipio = Dataworker::equalToString($codMunicipio);
+        $objConsulta->zona = Dataworker::compare('notEqualThan', 'string', 'Rural');
+    }
 
     $arrayOrden = array();
     array_push($arrayOrden, 'asentamiento');
