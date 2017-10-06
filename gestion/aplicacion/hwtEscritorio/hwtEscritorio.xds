@@ -28,8 +28,8 @@
         "installStatus": "Not Installed",
         "urlPrefixTemplate": "http://localhost:{port}/{path}"
     },
-    "xdsVersion": "4.1.2",
-    "xdsBuild": 188,
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 282,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",

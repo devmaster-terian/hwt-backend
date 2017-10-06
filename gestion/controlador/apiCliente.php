@@ -11,6 +11,8 @@ require_once('apiConfigurador.php');
 function reporteCliente(){
     $filtroEstadoCliente = Receiver::getApiParameter('filtroEstadoCliente');
 
+    Dataworker::openConnection();
+
     $archivoGenerado = Reporter::openFile('reporteCliente');
     $nombreReporte = "Clientes";
     Reporter::prepareHeader($nombreReporte);
@@ -70,7 +72,6 @@ function reporteCliente(){
             . " WHERE estado_cliente = '$filtroEstadoCliente'";
     }
 
-    Dataworker::openConnection();
     $resultHwtCliente = Dataworker::executeQuery($SqlCliente);
     Reporter::writeContent($resultHwtCliente->data);
     Reporter::saveFile();

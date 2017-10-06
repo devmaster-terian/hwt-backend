@@ -983,12 +983,12 @@
                                                 "designer|displayName": "btnProPedidoVentas",
                                                 "height": 45,
                                                 "iconCls": "fa fa-check-square-o fa-lg icono-blanco icon24",
-                                                "id": "btnProPedidoVentas1",
-                                                "itemId": "btnProPedidoVentas",
+                                                "id": "btnProPropuestaAdquisicionUnidades",
+                                                "itemId": "btnProPropuestaAdquisicionUnidades",
                                                 "layout|columnWidth": 0.2,
                                                 "margin": "10 10 10 10",
                                                 "maxWidth": 170,
-                                                "text": "Solicitud de Toma</br>de Unidades",
+                                                "text": "Propuesta de</br>Adquisicion",
                                                 "textAlign": "left"
                                             },
                                             "configAlternates": {
@@ -1018,19 +1018,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "onBtnProPedidoVentasClick1",
+                                                        "fn": "onBtnProPropuestaAdquiscionUnidadesClick",
                                                         "implHandler": [
-                                                            "var msgTipo = 'information';",
-                                                            "var msgTitulo = 'Proceso de Pedidos de Venta';",
-                                                            "var msgContenido = 'Ésta funcionalidad está en Fase de Desarrollo.';",
-                                                            "var msgFuncion = undefined;",
-                                                            "var msgFormato = undefined;",
-                                                            "elf.message(msgTipo,",
-                                                            "            msgTitulo,",
-                                                            "            msgContenido,",
-                                                            "            msgFuncion,",
-                                                            "            msgFormato",
-                                                            "           );"
+                                                            "elf.showAppWindow('hwtProPropuestaAdquisicion','Propuesta de Adquisición de Unidades', true);"
                                                         ],
                                                         "name": "click",
                                                         "scope": "me"
@@ -1041,7 +1031,7 @@
                                                         "name": "string",
                                                         "scope": "string"
                                                     },
-                                                    "name": "onBtnProPedidoVentasClick1",
+                                                    "name": "onBtnProPropuestaAdquiscionUnidadesClick",
                                                     "designerId": "4d772e20-7721-4b48-bc01-1b7c798354d5"
                                                 }
                                             ]

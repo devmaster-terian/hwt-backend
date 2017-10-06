@@ -273,11 +273,7 @@
         }
     },
     "tabState": {
-        "openTabs": [
-            "b2211294-cf51-4972-b132-d451e20778fc",
-            "1e6c4aa5-39a0-459d-a40d-2867d64926be",
-            "5645def3-1f97-4c7c-9b89-f8b2b2aedbad"
-        ]
+        "openTabs": []
     },
     "canvasState": {
         "topInstance": null

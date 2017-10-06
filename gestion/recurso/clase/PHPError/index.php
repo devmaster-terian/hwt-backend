@@ -77,7 +77,7 @@ try {
     $log = new SplFileObject($error_log);
     $log->setFlags(SplFileObject::DROP_NEW_LINE);
 } catch (RuntimeException $e) {
-    die("<p>The file '{$error_log}' cannot be opened for reading.\n</p>");
+    die("<p><font face='Courier New'color=#8b0000>Archivo '{$error_log}' no se puede leer o esta vacio.\n</font></p>");
 }
 
 if ($cache !== null && file_exists($cache)) {

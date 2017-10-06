@@ -387,6 +387,10 @@ class Dataworker
     public static function openConnection()    {
         $dbLive = false;
 
+        if (self::validateConnection(self::$activeConnection)) {
+            return self::$activeConnection;
+        }
+
         for($iCiclo = 1; $iCiclo <= 3; $iCiclo++){
 
             switch($iCiclo){
@@ -440,13 +444,9 @@ class Dataworker
 
     public static function executeQuery($SqlQuery)
     {
-        Logger::enable('executeQuery');
-
         $Connection = self::$activeConnection;
         $SqlResult  = $Connection->query($SqlQuery);
         $numRecords = 0;
-
-        Logger::write(json_encode($SqlResult));
 
         $rows = array();
         if(substr($SqlQuery,0,6) === "SELECT" and $SqlResult){
@@ -463,15 +463,13 @@ class Dataworker
         $objResultQuery = new \stdClass();
         $objResultQuery->sqlQuery   = $SqlQuery;
         $objResultQuery->numRecords = $numRecords;
-        $objResultQuery->data     = $jsonData;
+        $objResultQuery->data = $jsonData;
 
         return $objResultQuery;
     }
 
     public static function updateQuery($SqlQuery)
     {
-        Logger::enable(true,'updateQuery');
-
         $Connection = self::$activeConnection;
         $SqlResult  = $Connection->query($SqlQuery);
         $numRecords = 0;
@@ -501,9 +499,7 @@ class Dataworker
             $SqlQuery = "SELECT * FROM " . $Table . " ";
         }
 
-
         $Constraint = '';
-
 
         if($pObjConstraint !== null){
             foreach($pObjConstraint as $key=>$value) {

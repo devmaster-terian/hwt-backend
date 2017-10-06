@@ -8,11 +8,19 @@ require_once('../recurso/clase/Reporter.php');
 require_once('apiConfigurador.php');
 
 function reporteProveedor(){
+    Logger::enable(true, 'reporteProveedor');
+    Logger::write('Iniciando');
+
+    Dataworker::openConnection();
+
     $filtroEstadoProveedor = Receiver::getApiParameter('filtroEstadoProveedor');
 
     $archivoGenerado = Reporter::openFile('reporteProveedor');
     $nombreReporte = "Proveedores";
     Reporter::prepareHeader($nombreReporte);
+
+    Logger::write('va aqui');
+
 
     //ECRC: Preparando el Titulo de las Columnas
     $arrayTituloColumnas = array(
@@ -62,15 +70,10 @@ function reporteProveedor(){
 
     );
 
-    $SqlProveedor = "SELECT " . implode(',',$arrayCamposTabla) ." FROM hwt_proveedor ";
+    $objCondicion = new \stdClass();
+    $objCondicion->estado_proveedor = Dataworker::equalToString($filtroEstadoProveedor);
+    $resultHwtProveedor = Dataworker::getRecords('hwt_proveedor', $objCondicion, $arrayCamposTabla);
 
-    if($filtroEstadoProveedor){
-        $SqlProveedor = $SqlProveedor
-            . " WHERE estado_proveedor = '$filtroEstadoProveedor'";
-    }
-
-    Dataworker::openConnection();
-    $resultHwtProveedor = Dataworker::executeQuery($SqlProveedor);
     Reporter::writeContent($resultHwtProveedor->data);
     Reporter::saveFile();
 

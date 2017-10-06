@@ -1300,8 +1300,7 @@ function datosOpciones(){
 
     Emissary::success($availableInfo);
 
-    $objReturn = Emissary::getEnvelope();
-    echo json_encode($objReturn);
+    Emissary::deliverEnvelope();
 }
 
 function datosUnidadUsada(){

@@ -566,7 +566,7 @@ function eliminarUnidadCotizacion(){
     $objCondicion->tableName = 'hwt_cotizacion_unidad';
     $objCondicion->keyField  = 'rowid';
     $objCondicion->keyValue  = $rowidUnidadCotizacion;
-    $objDeletedRecord = Dataworker::deleteRecord(,$objCondicion);
+    $objDeletedRecord = Dataworker::deleteRecord($objCondicion);
     Dataworker::closeConnection();
 
     Logger::write(json_encode($objDeletedRecord));
@@ -884,7 +884,7 @@ function eliminarCotizacion(){
     $objCondicion->tableName = 'hwt_cotizacion';
     $objCondicion->keyField  = 'rowid';
     $objCondicion->keyValue  = $rowidCotizacion;
-    $objDeletedRecord = Dataworker::deleteRecord(,$objCondicion);
+    $objDeletedRecord = Dataworker::deleteRecord($objCondicion);
     Dataworker::closeConnection();
 
     Logger::write(json_encode($objDeletedRecord));

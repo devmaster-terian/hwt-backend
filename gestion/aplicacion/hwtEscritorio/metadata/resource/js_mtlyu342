@@ -9,15 +9,13 @@
         "defer": false,
         "designer|userClassName": "js_mtlyu342",
         "id": "elf",
-        "url": "../../recurso/complemento/elf.js",
-        "x-compile": true
+        "url": "../../recurso/complemento/elf.js"
     },
     "configAlternates": {
         "defer": "boolean",
         "designer|userClassName": "string",
         "id": "string",
-        "url": "uri",
-        "x-compile": "boolean"
+        "url": "uri"
     },
     "name": "js",
     "designerId": "5645def3-1f97-4c7c-9b89-f8b2b2aedbad"

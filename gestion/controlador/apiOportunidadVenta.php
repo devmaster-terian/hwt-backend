@@ -320,19 +320,17 @@ function datosOpciones()
         'situacion_oportunidad',
         $objConfig);
 
-    Logger::write(json_encode($objOpcionesSituacionOportunidad));
     $objSituacion = new \stdClass();
     $objSituacion->codigo = '0';
     $objSituacion->descripcion = 'TODAS LAS SITUACIONES';
 
     $arrayOpcionesSituacion = (array)$objOpcionesSituacionOportunidad;
     array_push($arrayOpcionesSituacion, $objSituacion);
-    $arrayOpcionesSituacion = array_values($arrayOpcionesSituacion);
+
+    $arrayOpcionesSituacion = array_values($arrayOpcionesSituacion); /* Renumeración de Objetos */
     $objOpcionesSituacionOportunidad = null;
     $objOpcionesSituacionOportunidad = (object)$arrayOpcionesSituacion;
 
-    Logger::write('!!!Termino de Agregar la SItuación');
-    Logger::write(json_encode($objOpcionesSituacionOportunidad));
 
     // ECRC: Opciones de Solicitante
     $objOpcionesTipoSolicitante = listaParametro(

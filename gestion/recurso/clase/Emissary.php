@@ -3,6 +3,13 @@ class Emissary
 {
     private static $dataReturn;
 
+    public static function deliverEnvelope()
+    {
+        $objReturn = self::$dataReturn;
+        header('Content-type:application/json;charset=utf-8');
+        echo json_encode($objReturn);
+    }
+
     public static function isReady()
     {
         return 'Emisary is Ready!</br>';

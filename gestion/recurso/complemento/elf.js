@@ -2,15 +2,15 @@ Ext.define('modelSession',
            {
                extend: 'Ext.data.Model',
                fields: [
-                   {name: 'company_code',   type: 'string'},
-                   {nafome: 'company_name',   type: 'string'},
-                   {name: 'user_id',        type: 'string'},
-                   {name: 'user_name',      type: 'string'},
-                   {name: 'user_profile',   type: 'string'},
-                   {name: 'user_email',     type: 'string'},
-                   {name: 'profile_code',   type: 'string'},
-                   {name: 'system_code',    type: 'string'},
-                   {name: 'system_name',    type: 'string'},
+                   {name: 'company_code', type: 'string'},
+                   {nafome: 'company_name', type: 'string'},
+                   {name: 'user_id', type: 'string'},
+                   {name: 'user_name', type: 'string'},
+                   {name: 'user_profile', type: 'string'},
+                   {name: 'user_email', type: 'string'},
+                   {name: 'profile_code', type: 'string'},
+                   {name: 'system_code', type: 'string'},
+                   {name: 'system_name', type: 'string'},
                    {name: 'system_version', type: 'string'}
                ]
            });
@@ -32,6 +32,104 @@ var environment = {
 };
 
 var elf = {
+    showUrlWindow: function (pIdWinUrl, pTitleWindow, pMaximized, pUrl) {
+
+        var buttonWindow = new Array();
+        var winUrl = Ext.getCmp(pIdWinUrl);
+
+        buttonWindow.push({
+            text: 'Cerrar',
+            handler: function () {
+                winUrlClose();
+
+            }
+        });
+
+        if (!winUrl) {
+            winUrl = new Ext.Window({
+                titlebar: true,
+                title: pTitleWindow,
+                width: 900,
+                height: 600,
+                draggable: false,
+                closable: false,
+                modal: true,
+                maximized: pMaximized,
+                id: 'winUrl',
+                itemId: 'winUrl',
+                layout: 'fit',
+                items: [{
+                    xtype: "component",
+                    autoEl: {
+                        tag: "iframe",
+                        src: pUrl
+                    }
+                }],
+                buttons: buttonWindow
+
+            });
+        }
+
+        winUrlOpen();
+
+        function winUrlOpen() {
+            winUrl.show();
+
+        }
+
+        function winUrlClose() {
+            winUrl.close();
+
+        }
+    },
+    writeFieldData: function (pActiveRecord, pTableName, pElement) {
+        console.warn(pElement.fieldForm);
+        console.warn(pActiveRecord[pElement.fieldData]);
+
+        elf.writeElement(pElement.fieldForm,
+            pActiveRecord[pElement.fieldData]);
+    },
+    setFieldData: function (pFieldForm, pFieldData) {
+        var objData = new Object();
+        objData.fieldForm = pFieldForm;
+        objData.fieldData = pFieldData;
+        return objData;
+    },
+    deleteFileServer: function (pPathServer, pFileName) {
+        console.info('deleteFileServer');
+
+        var apiController = 'sysApiDeveloper';
+        var apiMethod = 'eliminarArchivo';
+        var objJsonData = new Object();
+        objJsonData.accion = 'eliminarArchivo';
+        objJsonData.ruta_archivo = pPathServer;
+        objJsonData.nombre_archivo = pFileName;
+
+        var objJsonRequest = new Object();
+        objJsonRequest.apiController = apiController;
+        objJsonRequest.apiMethod = apiMethod;
+        objJsonRequest.apiData = JSON.stringify(objJsonData);
+
+        var functionSuccess = function () {
+            var jsonData = elf.getInfoDataBridge('eliminarArchivo');
+        };
+
+        var functionFailure = function () {
+            var jsonData = elf.getInfoDataBridge('eliminarArchivo');
+            elf.showInfo(jsonData, 'error');
+        };
+
+        setTimeout(function () {
+                console.log('Va a elimianr');
+                elf.doDataBridge(objJsonRequest,
+                    functionSuccess,
+                    null,
+                    functionFailure,
+                    null);
+            },
+            100
+        );
+    },
     getWeekOfYear: function (date) {
         var target = new Date(date.valueOf()),
             dayNumber = (date.getUTCDay() + 6) % 7,
@@ -84,6 +182,9 @@ var elf = {
         }
     },
     loadCombos: function(element,index,array){
+        console.info('loadCombos');
+        console.info(element);
+        
         var jsonData = elf.getInfoDataBridge('datosOpciones');
         var idCombo    = 'cbx' + element;
         var listaCombo = 'opciones' + element;
@@ -96,7 +197,7 @@ var elf = {
                             'descripcion');
         }
         else{
-            console.warn('elf::loadCombos: - ComboBox wa not found: ' + idCombo);
+            console.warn('elf::loadCombos: - ComboBox was not found: ' + idCombo);
         }        
     },
     hideElement: function(pElement){
@@ -801,6 +902,7 @@ var elf = {
                                             if (fieldFieldsetPanelObject.xtype === 'fieldset') {
                                                 for (iLoopFieldsetNested = 0; iLoopFieldsetNested < fieldFieldsetPanelObject.items.keys.length; iLoopFieldsetNested++) {
                                                     var fieldFieldsetNestedObject = Ext.getCmp(fieldFieldsetPanelObject.items.keys[iLoopFieldsetNested]);
+                                                    var nameItem = fieldFieldsetPanelObject.items.keys[iLoopFieldsetNested];
 
                                                     if(fieldFieldsetNestedObject !== undefined){
                                                         if (fieldFieldsetNestedObject.xtype === 'radiogroup') {
@@ -814,9 +916,36 @@ var elf = {
                                                         }
                                                     }
                                                     else{
-                                                        var nameItem = fieldFieldsetPanelObject.items.keys[iLoopFieldsetNested];
                                                         console.warn('elf::prepareFormFields - Field not found ' + nameItem);
                                                     }
+
+                                                    console.info('Nivel 1 :' + nameItem + ' ' + fieldFieldsetNestedObject.xtype);
+
+                                                    if (fieldFieldsetNestedObject.xtype === 'fieldset') {
+                                                        var lenKeys = fieldFieldsetNestedObject.items.keys.length;
+                                                        for (iLoopFieldsetNestedL2 = 0; iLoopFieldsetNestedL2 < lenKeys; iLoopFieldsetNestedL2++) {
+                                                            var fieldFieldsetNested = Ext.getCmp(fieldFieldsetNestedObject.items.keys[iLoopFieldsetNestedL2]);
+                                                            var nameItem = fieldFieldsetNestedObject.items.keys[iLoopFieldsetNested];
+
+                                                            if (fieldFieldsetNested !== undefined) {
+                                                                if (fieldFieldsetNested.xtype === 'radiogroup') {
+
+                                                                    var radioGroup = Ext.getCmp(fieldFieldsetNested.itemId).getValue();
+                                                                    var optionRadio = radioGroup[fieldFieldsetNested.id];
+                                                                    objJsonData[fieldFieldsetNested.itemId] = optionRadio;
+                                                                }
+                                                                else {
+                                                                    objJsonData[fieldFieldsetNested.itemId] = elf.getValueWidget(fieldFieldsetNested);
+                                                                }
+                                                            }
+                                                            else {
+                                                                console.warn('elf::prepareFormFields - Field not found ' + nameItem);
+                                                            }
+
+                                                            console.info('Nivel 1 :' + nameItem + ' ' + fieldFieldsetNested.xtype);
+                                                        }
+
+                                                    } //fieldset
                                                 }                                                
                                             }//fieldset
                                         }
@@ -1000,8 +1129,9 @@ var elf = {
     },
 
     showRecord: function (p_jsonRecordData,
-                           p_recordTable,
-                           p_mode) {
+                          p_recordTable,
+                          p_mode,
+                          p_config) {
         var fieldUpdated;
         var prefixObj = ['fi', 'df', 'dt', 'ch', 'cbx', 'ind', 'tf', 'ta', 'rg', 'rb'];
         var fieldForm;
@@ -1014,15 +1144,26 @@ var elf = {
 
         for (var key in jsonObject) {
             for (var prefix in prefixObj) {
-
                 var valPrefix = prefixObj[prefix];
 
-                fieldUpdated = valPrefix + elf.toCamelCase(key);
+                fieldForm = undefined;
 
-                fieldForm = Ext.getCmp(fieldUpdated);
+                if (p_config !== undefined) {
+                    fieldUpdated = valPrefix + p_config.widgetPrefix + elf.toCamelCase(key);
+                    fieldForm = Ext.getCmp(fieldUpdated);
+                }
+
+                if (fieldForm === undefined) {
+                    fieldUpdated = valPrefix + elf.toCamelCase(key);
+                    fieldForm = Ext.getCmp(fieldUpdated);
+                }
 
                 if (fieldForm !== undefined) {
                     try {
+
+                        console.info('fieldUpdated');
+                        console.info(fieldUpdated);
+                        
                         var fieldValue = jsonObject[key];
 
                         switch (fieldForm.xtype) {
@@ -1237,7 +1378,7 @@ var elf = {
                            type: 'sessionstorage',
                            id: p_idStore
                        }
-                   });        
+                   });
 
         var storeClauseZoom = Ext.create('storeClauseZoom');
         storeClauseZoom.getProxy().clear();
@@ -1330,12 +1471,12 @@ var elf = {
         stringReturn = str.replace(/_/g, ' ');
 
         stringReturn = stringReturn.toLowerCase()
-        .replace(/['"]/g, '')
-        .replace(/\W+/g, ' ')
-        .replace(/ (.)/g, function ($1) {
+            .replace(/['"]/g, '')
+            .replace(/\W+/g, ' ')
+            .replace(/ (.)/g, function ($1) {
             return $1.toUpperCase();
         })
-        .replace(/ /g, '')
+            .replace(/ /g, '')
         ;
 
         stringReturn = stringReturn.charAt(0).toUpperCase() + stringReturn.slice(1);
@@ -1770,7 +1911,7 @@ var elf = {
                 }
 
                 console.warn('comboBoxValue: ' + p_element + ' > ' + comboBoxValue);
-                
+
                 returnValue = comboBoxValue;
                 break;
             default:
@@ -1831,7 +1972,7 @@ var elf = {
                            type: 'sessionstorage',
                            id: p_idStore
                        }
-                   });        
+                   });
 
         var storeDataZoom = Ext.create('storeDataZoom');
         storeDataZoom.getProxy().clear();

@@ -134,3 +134,25 @@ function valorParametro($pCodeConfig, $pCodeParam){
 
     return $objReturnValue;
 }
+
+function obtieneValorOpcion($pConfig, $pParam, $pCode)
+{
+    $valReturn = '';
+
+    // ECRC: Extrayendo las Opciones para desplegar en el Registro
+    $objConfig = new \stdClass();
+    $objConfig->decode = true;
+    $objOptionsConfig = listaParametro($pConfig, $pParam, $objConfig);
+
+    foreach ($objOptionsConfig as $optionParameter) {
+        if ($valReturn !== '') {
+            break;
+        }
+
+        if ($optionParameter->codigo === $pCode) {
+            $valReturn = $optionParameter->descripcion;
+        }
+    }
+
+    return $valReturn;
+}

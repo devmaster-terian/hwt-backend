@@ -393,19 +393,22 @@ Ext.define('hwtProOportunidadVenta.view.formAplicacion', {
         objJsonRequest.apiMethod = apiMethod;
         objJsonRequest.apiData = JSON.stringify(objJsonData);
 
-
         var functionSuccess = function () {
             var jsonData = elf.getInfoDataBridge('reporteOportunidadVenta');
 
+            console.info('Archivo Generado:');
+            console.info(jsonData);
+
             var archivoGenerado = elf.getGeneratedFile(jsonData.archivoGenerado.nombre);
             window.open(archivoGenerado);
+
+            elf.deleteFileServer('../reporte/', jsonData.archivoGenerado.nombre + '.xlsx');
         };
 
         var functionFailure = function () {
             var jsonData = elf.getInfoDataBridge('reporteOportunidadVenta');
             elf.showInfo(jsonData, 'error');
         };
-
 
         elf.doDataBridge(objJsonRequest,
             functionSuccess,
