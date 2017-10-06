@@ -1,3 +1,7 @@
+.textButtonToolbar .x-btn-inner {
+    color: #ffffff !important;
+}
+
 .basura16{
     background-image: url(../../recurso/imagen/web/basura16.png) !important;
     width           : 16px!important;

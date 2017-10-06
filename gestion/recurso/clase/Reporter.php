@@ -41,6 +41,11 @@ class Reporter
     private static $maxColumn = '';
     private static $currentRow = 0;
 
+    public static function deleteFile($fileName)
+    {
+
+    }
+
     public static function setFontSize($pCellInitial,$pCellEnd,$pFontSize){
         $rangeCells = $pCellInitial. ':'. $pCellEnd;
         $styleArray = [
@@ -407,6 +412,8 @@ class Reporter
 
     public static function printVerticalSeparator($valueSeparator, $pForeground, $pBackgroundColor, $pBold = null){
 
+        $valueSeparator = utf8_encode($valueSeparator);
+
         $fontBold = true;
         if(isset($pBold)){
             $fontBold = $pBold;
@@ -638,7 +645,11 @@ class Reporter
     }
 
     public static function writeContent($objRecords){
-        $numRow = 7;
+        if (self::$currentRow < 8) {
+            $numRow = 8;
+        } else {
+            $numRow = self::$currentRow;
+        }
 
         foreach($objRecords as $field => $value){
             $numColumn = 0;
@@ -646,11 +657,27 @@ class Reporter
 
                 $cellColumn = self::$arrayAlpha[$numColumn] . $numRow;
 
+                if (strpos($fieldRecord, 'num_') !== false) {
+                    $valueRecord = number_format(floatval($valueRecord));
+                }
+
                 self::$objPHPExcel->getActiveSheet()
                     ->setCellValue($cellColumn, $valueRecord);
                 $numColumn++;
+
+                if (strpos($fieldRecord, 'num_') !== false) {
+                    $styleCell = array(
+                        'alignment' => array(
+                            'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_RIGHT,
+                            'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER)
+                    );
+
+                    self::$objPHPExcel->getActiveSheet()
+                        ->getStyle($cellColumn)->applyFromArray($styleCell);
+                }
             }
             $numRow++;
+            self::increaseCurrentRow();
         }
     }
 
@@ -754,14 +781,29 @@ class Reporter
 
     } // writeCell
 
-    public static function prepareTitleColumns($pArrayTitleColumns){
+    public static function prepareTitleColumns($pArrayTitleColumns, $pObjConfig = null)
+    {
         $numColumn = 0;
-        $numRow    = 6;
+
+        if (self::$currentRow < 7) {
+            $numRow = 7;
+        } else {
+            $numRow = self::$currentRow;
+        }
+
+        if ($pObjConfig !== null) {
+            $textFgColor = $pObjConfig->fgColor;
+            $textBgColor = $pObjConfig->bgColor;
+        } else {
+            $textFgColor = 'FFFFFF';
+            $textBgColor = '054F7D';
+        }
+
 
         $styleCellTitle = array(
             'font'  => array(
                 'bold'  => true,
-                'color' => array('rgb' => 'FFFFFF'),
+                'color' => array('rgb' => $textFgColor),
                 'size'  => 10,
                 'name'  => 'Verdana'
             ));
@@ -784,7 +826,7 @@ class Reporter
             self::fillCellColor(
                 self::$objPHPExcel->getActiveSheet(),
                 $cellColumn,
-                '054F7D');
+                $textBgColor);
 
             self::$objPHPExcel->getActiveSheet()
                 ->setCellValue($cellColumn, utf8_encode($cellLabel));
@@ -797,10 +839,14 @@ class Reporter
             $numColumn = $numColumn + 1;
         }
 
-        self::$currentRow = 7;
+        if ($numRow === 7) {
+            self::$currentRow = $numRow;
+        }
+
     }
 
-    public static function saveFile(){
+    public static function saveFile($pObjConfig = null)
+    {
         Logger::enable(true,'saveFile');
 
         $finalName = str_replace('.php', '.xlsx', __FILE__);
@@ -812,14 +858,31 @@ class Reporter
         Logger::write('$sheetsWoorkbook: ');
         Logger::write(json_encode($sheetsWoorkbook));
 
+        $pageOrientation = 'vertical';
+
+        if ($pObjConfig !== null) {
+            if ($pObjConfig->pageOrientation !== null) {
+                $pageOrientation = $pObjConfig->pageOrientation;
+            }
+        }
+
         $iLoop = 0;
         while($iLoop < $sheetsWoorkbook){
             self::setActiveSheet($iLoop);
             $iLoop = $iLoop + 1;
 
-            self::$objPHPExcel->getActiveSheet()
-                ->getPageSetup()
-                ->setOrientation(PHPExcel_Worksheet_PageSetup::ORIENTATION_PORTRAIT);
+            if ($pageOrientation === 'vertical') {
+                self::$objPHPExcel->getActiveSheet()
+                    ->getPageSetup()
+                    ->setOrientation(PHPExcel_Worksheet_PageSetup::ORIENTATION_PORTRAIT);
+            }
+
+            if ($pageOrientation === 'horizontal') {
+                Logger::write('va en landscape');
+                self::$objPHPExcel->getActiveSheet()
+                    ->getPageSetup()
+                    ->setOrientation(PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE);
+            }
 
             self::$objPHPExcel->getActiveSheet()
                 ->getPageSetup()
